@@ -1,6 +1,6 @@
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
+  /*padding: 0 0.5rem;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,7 +47,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .title,
@@ -118,4 +118,18 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.header {
+  height: 95px;
+  background-color: darkblue;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 40px;
 }
