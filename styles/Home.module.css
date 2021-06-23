@@ -6,6 +6,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: 'Lexend Deca', sans-serif;
+  background-color: rgb(19, 19, 95);
 }
 
 .main {
@@ -45,9 +47,21 @@
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 3rem;
+  
+  /*width: 631px;*/
+  height: 40px;
+  margin-bottom: 36px;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 32px;
+  /*font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;*/
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
 }
 
 .title,
@@ -132,4 +146,31 @@
   justify-content: left;
   align-items: center;
   padding-left: 40px;
+}
+
+.button {
+  width: 193px;
+  height: 50px;
+  margin-left: 14px;
+  box-shadow: 0 10px 40px 0 #141e4b;
+  border: solid 2px #3a52b8;
+  background-color: #3a52b8;
+  font-size: 16px;
+  font-family: 'Lexend Deca', sans-serif;
+  border-radius: 6px;
+  
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+
+.input {
+  width: 374px;
+  height: 50px;
+  padding-left: 13.3px;
+  border: solid 2px #ffffff;
+  border-radius: 6px;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-family: 'Lexend Deca', sans-serif;
 }
