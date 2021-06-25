@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 type Props = {
@@ -9,6 +9,13 @@ type Props = {
 
 function CustomForm(props: Props) {
   const [email, setEmail] = useState('');
+
+  useEffect(
+    function () {
+      if (props.status === 'success') setEmail('');
+    },
+    [props.status]
+  );
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.target.value);
@@ -24,17 +31,47 @@ function CustomForm(props: Props) {
 
   return (
     <form className="mc__form" onSubmit={handleSubmit}>
-      <h3 className="mc__title">Get early access for Enterprise</h3>
-      <div className="mc__field-container">
-        <input
-          type="email"
-          value={email}
-          placeholder="your@email.com"
-          onChange={handleChange}
-          required
+      <h3 className="mc__title">
+        {props.status === 'success'
+          ? 'Success!'
+          : 'Get early access for Enterprise'}
+      </h3>
+
+      {props.status === 'sending' && (
+        <div className="mc__alert mc__alert--sending">sending...</div>
+      )}
+
+      {props.status === 'error' && (
+        <div
+          className="mc__alert mc__alert--error"
+          dangerouslySetInnerHTML={{ __html: String(props.message) }}
         />
-      </div>
-      <input type="submit" value="Submit" />
+      )}
+
+      {props.status === 'success' && (
+        <div
+          className="mc__alert mc__alert--success"
+          dangerouslySetInnerHTML={{ __html: String(props.message) }}
+        />
+      )}
+
+      {props.status !== 'success' ? (
+        <div className="mc__field-container">
+          <input
+            type="email"
+            value={email}
+            placeholder="your@email.com"
+            onChange={handleChange}
+            required
+          />
+        </div>
+      ) : null}
+
+      {props.status !== 'success' ? (
+        <input value="Submit" type="submit" />
+      ) : (
+        <></>
+      )}
     </form>
   );
 }
