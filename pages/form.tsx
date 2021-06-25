@@ -1,32 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import React, { useState, useEffect } from 'react'
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
 
 type Props = {
-  status: string | null;
-  message: string | Error | null;
-  onValidated: (obj: { EMAIL: string }) => void;
-};
+  status: string | null
+  message: string | Error | null
+  onValidated: (obj: { EMAIL: string }) => void
+}
 
 function CustomForm(props: Props) {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('')
 
   useEffect(
     function () {
-      if (props.status === 'success') setEmail('');
+      if (props.status === 'success') setEmail('')
     },
     [props.status]
-  );
+  )
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setEmail(event.target.value);
+    setEmail(event.target.value)
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+    event.preventDefault()
     email &&
       props.onValidated({
         EMAIL: email,
-      });
+      })
   }
 
   return (
@@ -62,22 +62,27 @@ function CustomForm(props: Props) {
             value={email}
             placeholder="your@email.com"
             onChange={handleChange}
+            style={{ fontFamily: 'Lexend Deca' }}
             required
           />
         </div>
       ) : null}
 
       {props.status !== 'success' ? (
-        <input value="Submit" type="submit" />
+        <input
+          value="Submit"
+          type="submit"
+          style={{ fontFamily: 'Lexend Deca' }}
+        />
       ) : (
         <></>
       )}
     </form>
-  );
+  )
 }
 
 function MailchimpFormContainer() {
-  const postUrl = `https://beamdata.us18.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`;
+  const postUrl = `https://beamdata.us18.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`
 
   return (
     <div className="mc__form-container">
@@ -92,7 +97,7 @@ function MailchimpFormContainer() {
         )}
       />
     </div>
-  );
+  )
 }
 
-export default MailchimpFormContainer;
+export default MailchimpFormContainer

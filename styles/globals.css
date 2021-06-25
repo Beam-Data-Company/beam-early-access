@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('../public/fonts/LexendDeca-Regular.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 html,
 body {
   padding: 0;

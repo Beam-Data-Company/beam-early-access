@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from 'next/head'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
@@ -8,17 +8,6 @@ export default function Home() {
         <title>Beam Data Early Access</title>
         {/* <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" /> */}
-        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
-          rel="stylesheet"
-        ></link>
-        <link
-          href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
-          rel="stylesheet"
-          type="text/css"
-        ></link>
       </Head>
 
       <div id="mc_embed_signup">
@@ -64,10 +53,10 @@ export default function Home() {
         </form>
       </div>
 
-      <script
+      {/* <script
         type="text/javascript"
         src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
-      ></script>
+      ></script> */}
 
       <div className={styles.header}>Beam</div>
 
@@ -85,5 +74,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }
