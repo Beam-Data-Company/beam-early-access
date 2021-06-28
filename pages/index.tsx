@@ -13,25 +13,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
 
-      <div className={styles.header}>
+      <header className={styles.header}>
         <Image src={logo} alt="Beam Logo" />
-      </div>
+      </header>
 
       <MailchimpFormContainer />
-
-      {/* <div className={styles.main}>
-        <div className={styles.title}>Get early access for Enterprise</div>
-        <div>
-          <form>
-            <input
-              type="email"
-              placeholder="Your work email address"
-              className={styles.input}
-            />
-            <button className={styles.button}>Get Access</button>
-          </form>
-        </div>
-      </div> */}
     </div>
   )
 }

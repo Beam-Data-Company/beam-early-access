@@ -1,3 +1,5 @@
+/* still have to remove a lot of unused code */
+
 .container {
   min-height: 100vh;
   display: flex;
@@ -51,8 +53,6 @@
   font-size: 32px;
   line-height: 1.75;
   text-align: center;
-  justify-content: center;
-  align-items: center;
   color: #ffffff;
 }
 
@@ -140,30 +140,6 @@
   padding-left: 40px;
 }
 
-.button {
-  width: 193px;
-  height: 50px;
-  margin-left: 14px;
-  box-shadow: 0 10px 40px 0 #141e4b;
-  border: solid 2px #3a52b8;
-  background-color: #3a52b8;
-  font-size: 16px;
-  border-radius: 6px;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-}
-
-.input {
-  width: 374px;
-  height: 50px;
-  padding-left: 13.3px;
-  border: solid 2px #ffffff;
-  border-radius: 6px;
-  background-color: #ffffff;
-  font-size: 16px;
-}
-
 .bg {
   width: 1366px;
   height: 770px;
@@ -176,9 +152,4 @@
     #1a36b0 27%,
     #16235b 77%
   );
-}
-
-.alert {
-  color: #ffffff;
-  padding-bottom: 16px;
 }

@@ -1,88 +1,80 @@
-import React, { useState, useEffect } from 'react'
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
-import styles from '../styles/Home.module.css'
+import React, { useState } from 'react'
+import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
+import styles from '../components/MailchimpForm.module.css'
 
 type Props = {
-  status: string | null
+  status: 'success' | 'sending' | 'error' | null
   message: string | Error | null
-  onValidated: (obj: { EMAIL: string }) => void
+  onValidated: (data: EmailFormFields) => void
 }
 
 function CustomForm(props: Props) {
   const [email, setEmail] = useState('')
 
-  useEffect(
-    function () {
-      if (props.status === 'success') setEmail('')
-    },
-    [props.status]
-  )
-
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    email &&
-      props.onValidated({
-        EMAIL: email,
-      })
+    props.onValidated({
+      EMAIL: email,
+    })
   }
 
   return (
-    <div className={styles.main}>
-      <div className={styles.title}>
-        {props.status === 'success'
-          ? 'Success!'
-          : 'Instant Checkout Early Access'}
-      </div>
+    <div className={styles.form_container}>
+      <h1 className={styles.title}>Instant Checkout Early Access</h1>
 
-      <div className={styles.alert}>
-        {props.status === 'sending' && <div>sending...</div>}
+      {props.status === 'success' ? (
+        <div className={styles.alert}>Thank you!</div>
+      ) : (
+        <div>
+          <div className={styles.alert}>
+            {props.status === 'sending' && <div>sending...</div>}
 
-        {props.status === 'error' && (
-          <div dangerouslySetInnerHTML={{ __html: String(props.message) }} />
-        )}
-
-        {props.status === 'success' && (
-          <div dangerouslySetInnerHTML={{ __html: String(props.message) }} />
-        )}
-      </div>
-
-      <form onSubmit={handleSubmit}>
-        {props.status !== 'success' ? (
-          <input
-            type="email"
-            value={email}
-            placeholder="Your work email address"
-            onChange={handleChange}
-            className={styles.input}
-            style={{ fontFamily: 'Lexend Deca' }}
-            required
-          />
-        ) : null}
-
-        {props.status !== 'success' ? (
-          <div>
-            <input
-              value="Get Access"
-              type="submit"
-              className={styles.button}
-              style={{ fontFamily: 'Lexend Deca' }}
-            />
+            {props.status === 'error' && (
+              <div
+                dangerouslySetInnerHTML={{ __html: String(props.message) }}
+              />
+            )}
           </div>
-        ) : (
-          <></>
-        )}
-      </form>
+
+          <form className={styles.form} onSubmit={handleSubmit}>
+            {props.status === 'error' || props.status === null ? (
+              <input
+                type="email"
+                value={email}
+                placeholder="Your work email address"
+                onChange={handleChange}
+                className={styles.input}
+                required
+              />
+            ) : null}
+
+            {props.status === 'error' || props.status === null ? (
+              <div>
+                <input
+                  value="Get Access"
+                  type="submit"
+                  className={styles.button}
+                />
+              </div>
+            ) : null}
+          </form>
+        </div>
+      )}
     </div>
   )
 }
 
-function MailchimpFormContainer() {
+function getMailchimpUrl() {
   const postUrl = `https://beamdata.us18.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`
+  return postUrl
+}
 
+function MailchimpFormContainer() {
+  const postUrl = getMailchimpUrl()
   return (
     <MailchimpSubscribe
       url={postUrl}
