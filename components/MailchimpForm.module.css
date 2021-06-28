@@ -2,6 +2,7 @@
 
 .form {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
@@ -53,5 +54,32 @@
 
 .alert {
   color: #ffffff;
-  padding-bottom: 16px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+@media (max-width: 650px) {
+  .button {
+    width: 274px;
+  }
+
+  .input {
+    width: 332px;
+    margin-bottom: 24px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 25px;
+    width: 220px;
+    margin-bottom: 48px;
+  }
+
+  .alert {
+    width: 350px;
+    margin-top: 18px;
+  }
 }
