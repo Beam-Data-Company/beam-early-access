@@ -1,11 +1,13 @@
+/* still have to remove a lot of unused code */
+
 .container {
   min-height: 100vh;
-  padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: rgb(19, 19, 95);
 }
 
 .main {
@@ -15,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .footer {
@@ -45,9 +48,12 @@
 }
 
 .title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  height: 40px;
+  margin-bottom: 36px;
+  font-size: 32px;
+  line-height: 1.75;
+  text-align: center;
+  color: #ffffff;
 }
 
 .title,
@@ -118,4 +124,32 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.header {
+  height: 95px;
+  background-color: darkblue;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 40px;
+}
+
+.bg {
+  width: 1366px;
+  height: 770px;
+  padding: 35px 0 0;
+  opacity: 0.21;
+  box-shadow: 0 3px 50px 0 rgba(44, 70, 181, 0.3);
+  background-image: linear-gradient(
+    154deg,
+    #1c42e6 0%,
+    #1a36b0 27%,
+    #16235b 77%
+  );
 }
