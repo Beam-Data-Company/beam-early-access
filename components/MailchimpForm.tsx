@@ -10,6 +10,7 @@ type Props = {
 
 function CustomForm(props: Props) {
   const [email, setEmail] = useState('')
+  const [fcolor, setFColor] = useState('red')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
@@ -22,9 +23,19 @@ function CustomForm(props: Props) {
     })
   }
 
+  const changeToBlack = () => {
+    setFColor('black')
+  }
+
+  const changeToRed = () => {
+    setFColor('red')
+  }
+  
   return (
     <div className={styles.form_container}>
       <h1 className={styles.title}>Instant Checkout Early Access</h1>
+      <h2 className={styles.desc}>Get Beam Instant Checkout for your business. 
+      Experience the frictionless payment available for all platforms.</h2>
 
       {props.status === 'success' ? (
         <div className={styles.alert}>Thank you!</div>
@@ -32,21 +43,28 @@ function CustomForm(props: Props) {
         <div>
           <div className={styles.alert}>
             {props.status === 'sending' && <div>sending...</div>}
-
-            {props.status === 'error' && (
-              <div
-                dangerouslySetInnerHTML={{ __html: String(props.message) }}
-              />
-            )}
           </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
-            {props.status === 'error' || props.status === null ? (
+            {props.status === null ? (
               <input
                 type="email"
                 value={email}
                 placeholder="Your work email address"
                 onChange={handleChange}
+                className={styles.input}
+                style={{color: 'black'}}
+                required
+              />
+            ) : null}
+
+            {props.status === 'error' ? (
+              <input
+                type="email"
+                value={email}
+                placeholder="Your work email address"
+                style={{color: fcolor}}
+                onChange={ (event) => {handleChange(event); changeToBlack();}}
                 className={styles.input}
                 required
               />
@@ -55,12 +73,14 @@ function CustomForm(props: Props) {
             {props.status === 'error' || props.status === null ? (
               <div>
                 <input
-                  value="Get Access"
+                  value="Get Access &#xf061;"
                   type="submit"
                   className={styles.button}
+                  onClick={changeToRed}
                 />
               </div>
             ) : null}
+            
           </form>
         </div>
       )}
