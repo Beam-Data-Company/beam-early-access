@@ -1,6 +1,6 @@
-.bg{
+.container_background {
   background-image: linear-gradient(to left, #001365, #000b3c, #000a33);
-  height: 100vh; 
+  height: 100vh;
   overflow: hidden;
   position: sticky;
 }
@@ -38,10 +38,9 @@
 }
 
 @media (max-width: 650px) {
-  
   .header {
     padding-left: 33.5px;
-    padding-top: 26px; 
+    padding-top: 26px;
   }
 
   .logo {
@@ -51,13 +50,12 @@
 
   .iphonePic {
     left: -195px;
-    top: 480px;
+    top: 485px;
   }
 
   .laptopPic {
-    top: 450px;
-    right: -250px;
+    top: 410px;
+    right: -240px;
     width: 600px;
   }
-
 }

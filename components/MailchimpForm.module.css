@@ -8,7 +8,7 @@
 }
 
 .form_container {
-  padding: 3.2rem 0 0 0;
+  padding-top: 50px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -43,6 +43,7 @@
 
 .title {
   height: 40px;
+  margin-top: 0px;
   margin-bottom: 24px;
   font-size: 32px;
   font-weight: 400;
@@ -51,7 +52,7 @@
   color: #ffffff;
 }
 
-.desc {
+.description {
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -93,7 +94,7 @@
     line-height: 1.36;
   }
 
-  .desc {
+  .description {
     font-size: 14px;
     width: 316px;
     line-height: 1.86;
@@ -105,6 +106,6 @@
   }
 
   .form_container {
-    padding: 5rem 0 3rem 0;
+    padding-top: 52px;
   }
 }
