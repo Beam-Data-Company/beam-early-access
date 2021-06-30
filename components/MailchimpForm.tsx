@@ -45,9 +45,9 @@ function CustomForm(props: Props) {
         <div className={styles.alert}>Thank you!</div>
       ) : (
         <div>
-          <div className={styles.alert}>
-            {props.status === 'sending' && <div>sending...</div>}
-          </div>
+          {props.status === 'sending' && (
+            <div className={styles.alert}>sending...</div>
+          )}
 
           <form className={styles.form} onSubmit={handleSubmit}>
             {props.status === null ? (
@@ -79,7 +79,7 @@ function CustomForm(props: Props) {
             {props.status === 'error' || props.status === null ? (
               <div>
                 <input
-                  // '&#xf061' is arrow symbol
+                  // '&#xf061' is arrow symbol.
                   value="Get Access &#xf061;"
                   type="submit"
                   className={styles.button}
