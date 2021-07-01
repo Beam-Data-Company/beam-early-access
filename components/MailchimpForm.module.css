@@ -26,7 +26,6 @@
   font-weight: 400;
   border-radius: 6px;
   color: #ffffff;
-  font-family: 'Lexend Deca', FontAwesome, sans-serif;
   cursor: pointer;
 }
 
@@ -40,6 +39,10 @@
   font-size: 16px;
   font-family: 'Lexend Deca';
   margin-top: 38px;
+}
+
+.inputError {
+  color: red;
 }
 
 .title {

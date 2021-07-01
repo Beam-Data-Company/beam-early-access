@@ -11,13 +11,6 @@ export default function Home() {
     <div className={styles.container_background}>
       <Head>
         <title>Beam Data Early Access</title>
-        {/* <meta name="description" content="" />
-        <link rel="icon" href="/favicon.ico" /> */}
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        ></link>
       </Head>
 
       <div className={styles.container}>

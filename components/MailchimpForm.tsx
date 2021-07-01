@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
+import classNames from 'classnames'
+
 import styles from '../components/MailchimpForm.module.css'
 import Modal from './Modal'
 
@@ -12,9 +14,6 @@ type Props = {
 function CustomForm(props: Props) {
   const [email, setEmail] = useState('')
 
-  // temporary state
-  const [fcolor, setFColor] = useState('red')
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
   }
@@ -26,12 +25,38 @@ function CustomForm(props: Props) {
     })
   }
 
-  const changeToBlack = () => {
-    setFColor('black')
-  }
+  const renderEmailForm = () => {
+    if (props.status === 'success') {
+      return (
+        <div>
+          <div className={styles.alert}>Thank you!</div>
+          <Modal />
+        </div>
+      )
+    }
 
-  const changeToRed = () => {
-    setFColor('red')
+    if (props.status === 'sending') {
+      return <div className={styles.alert}>sending...</div>
+    }
+
+    return (
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="email"
+          value={email}
+          placeholder="Your work email address"
+          onChange={handleChange}
+          className={classNames(
+            styles.input,
+            props.status === 'error' && styles.inputError
+          )}
+          required
+        />
+        <button className={styles.button} type="submit">
+          Get Access &#10132;
+        </button>
+      </form>
+    )
   }
 
   return (
@@ -41,59 +66,7 @@ function CustomForm(props: Props) {
         Get Beam Instant Checkout for your business. Experience the frictionless
         payment available for all platforms.
       </h2>
-
-      {props.status === 'success' ? (
-        <div>
-          <div className={styles.alert}>Thank you!</div>
-          <Modal />
-        </div>
-      ) : (
-        <div>
-          {props.status === 'sending' && (
-            <div className={styles.alert}>sending...</div>
-          )}
-
-          <form className={styles.form} onSubmit={handleSubmit}>
-            {props.status === null ? (
-              <input
-                type="email"
-                value={email}
-                placeholder="Your work email address"
-                onChange={handleChange}
-                className={styles.input}
-                required
-              />
-            ) : null}
-
-            {props.status === 'error' ? (
-              <input
-                type="email"
-                value={email}
-                placeholder="Your work email address"
-                style={{ color: fcolor }}
-                onChange={(event) => {
-                  handleChange(event)
-                  changeToBlack()
-                }}
-                className={styles.input}
-                required
-              />
-            ) : null}
-
-            {props.status === 'error' || props.status === null ? (
-              <div>
-                <input
-                  // '&#xf061' is arrow symbol.
-                  value="Get Access &#xf061;"
-                  type="submit"
-                  className={styles.button}
-                  onClick={changeToRed}
-                />
-              </div>
-            ) : null}
-          </form>
-        </div>
-      )}
+      {renderEmailForm()}
     </div>
   )
 }
