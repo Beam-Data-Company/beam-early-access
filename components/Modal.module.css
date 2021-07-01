@@ -1,0 +1,89 @@
+.modalBox {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 377px;
+  width: 524px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  border-color: solid 2px #ffffff;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* dark background when display modal */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* prevent outline when modal appear first time*/
+.modalBox:focus {
+  outline: 0px;
+}
+
+.modalTitle {
+  height: 40px;
+  font-size: 32px;
+  line-height: 1.75;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-top: 27px;
+  margin-bottom: 0px;
+  color: #000000;
+}
+
+.modalSubtitle {
+  width: 298px;
+  height: 58px;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: center;
+  color: #535353;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.modalImage {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  width: 236px;
+}
+
+@media (max-width: 650px) {
+  .modalBox {
+    height: 334px;
+    width: 290px;
+    border-radius: 10px;
+  }
+
+  .modalTitle {
+    height: 31px;
+    font-size: 25px;
+    line-height: 2.24;
+    margin-top: 23px;
+  }
+
+  .modalSubtitle {
+    width: 221px;
+    font-size: 14px;
+    line-height: 1.86;
+    margin-top: 11px;
+  }
+
+  .modalImage {
+    height: 132px;
+    width: 208px;
+    margin-top: 52px;
+  }
+}

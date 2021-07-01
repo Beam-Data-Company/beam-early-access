@@ -1,3 +1,5 @@
+var module
+
 module.exports = {
   env: {
     browser: true,

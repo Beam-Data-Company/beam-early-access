@@ -1,5 +1,3 @@
-/* everything in this file is mainly from Home.module.css */
-
 .form {
   display: flex;
   flex-direction: row;
@@ -7,13 +5,11 @@
   align-items: center;
 }
 
-/* renamed from .main to .form_container */
 .form_container {
-  padding: 5rem 0;
+  padding-top: 84px;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -22,13 +18,19 @@
   width: 193px;
   height: 50px;
   margin-left: 14px;
+  margin-top: 38px;
   box-shadow: 0 10px 40px 0 #141e4b;
   border: solid 2px #3a52b8;
   background-color: #3a52b8;
   font-size: 16px;
+  font-weight: 400;
+  font-family: 'Lexend Deca';
   border-radius: 6px;
   color: #ffffff;
-  font-family: 'Lexend Deca';
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input {
@@ -40,32 +42,64 @@
   background-color: #ffffff;
   font-size: 16px;
   font-family: 'Lexend Deca';
+  margin-top: 38px;
+}
+
+.inputError {
+  color: red;
+}
+
+.inputDisable {
+  background-color: gray;
+  border-color: gray;
 }
 
 .title {
   height: 40px;
-  margin-bottom: 36px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-size: 32px;
   font-weight: 400;
-  line-height: 1.75;
   text-align: center;
   color: #ffffff;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  width: 480px;
+  line-height: 1.88;
+  text-align: center;
+  margin-top: 22px;
+  margin-bottom: 0px;
 }
 
 .alert {
   color: #ffffff;
-  margin-bottom: 28px;
+  margin-top: 38px;
+  margin-bottom: 26px;
   text-align: center;
+  font-size: 18px;
+  height: 24px;
 }
 
+.button:hover {
+  border: solid 2px #4166ff;
+  background-color: #4166ff;
+}
+
+/* phone portrait */
 @media (max-width: 650px) {
   .button {
-    width: 274px;
+    width: 308px;
+    margin-left: 0px;
+    margin-top: 20px;
   }
 
   .input {
-    width: 332px;
-    margin-bottom: 24px;
+    width: 308px;
+    margin-top: 24px;
   }
 
   .form {
@@ -75,11 +109,42 @@
   .title {
     font-size: 25px;
     width: 220px;
-    margin-bottom: 48px;
+    line-height: 1.36;
+  }
+
+  .description {
+    font-size: 14px;
+    width: 316px;
+    line-height: 1.86;
+    margin-top: 22px;
+    margin-bottom: 0px;
   }
 
   .alert {
     width: 350px;
-    margin-top: 18px;
+    margin-top: 24px;
+    margin-bottom: 96px;
+    font-size: 16px;
+  }
+
+  .form_container {
+    padding-top: 52px;
+  }
+}
+
+/* iphone5 portrait */
+@media (max-width: 340px) {
+  .button {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }

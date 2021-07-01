@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
+import classNames from 'classnames'
 import styles from '../components/MailchimpForm.module.css'
+import ThankYouModal from './ThankYouModal'
+import Loading from './Loading'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
@@ -22,48 +25,46 @@ function CustomForm(props: Props) {
     })
   }
 
+  const renderEmailForm = () => {
+    if (props.status === 'success') {
+      return (
+        <div>
+          <div className={styles.alert}>Thank you!</div>
+          <ThankYouModal />
+        </div>
+      )
+    }
+
+    return (
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="email"
+          value={email}
+          placeholder="Your work email address"
+          onChange={handleChange}
+          className={classNames(
+            styles.input,
+            props.status === 'error' && styles.inputError,
+            props.status === 'sending' && styles.inputDisable
+          )}
+          disabled={props.status === 'sending'}
+          required
+        />
+        <button className={styles.button} type="submit">
+          {props.status === 'sending' ? <Loading /> : 'Get Access \u2192'}
+        </button>
+      </form>
+    )
+  }
+
   return (
     <div className={styles.form_container}>
-      <h1 className={styles.title}>Instant Checkout Early Access</h1>
-
-      {props.status === 'success' ? (
-        <div className={styles.alert}>Thank you!</div>
-      ) : (
-        <div>
-          <div className={styles.alert}>
-            {props.status === 'sending' && <div>sending...</div>}
-
-            {props.status === 'error' && (
-              <div
-                dangerouslySetInnerHTML={{ __html: String(props.message) }}
-              />
-            )}
-          </div>
-
-          <form className={styles.form} onSubmit={handleSubmit}>
-            {props.status === 'error' || props.status === null ? (
-              <input
-                type="email"
-                value={email}
-                placeholder="Your work email address"
-                onChange={handleChange}
-                className={styles.input}
-                required
-              />
-            ) : null}
-
-            {props.status === 'error' || props.status === null ? (
-              <div>
-                <input
-                  value="Get Access"
-                  type="submit"
-                  className={styles.button}
-                />
-              </div>
-            ) : null}
-          </form>
-        </div>
-      )}
+      <h1 className={styles.title}>Get Early Access</h1>
+      <h2 className={styles.description}>
+        Beam Instant Checkout, a frictionless customer experience on your social
+        messaging platforms and website
+      </h2>
+      {renderEmailForm()}
     </div>
   )
 }
