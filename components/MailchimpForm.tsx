@@ -3,6 +3,7 @@ import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import classNames from 'classnames'
 import styles from '../components/MailchimpForm.module.css'
 import ThankYouModal from './ThankYouModal'
+import Loading from './Loading'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
@@ -34,10 +35,6 @@ function CustomForm(props: Props) {
       )
     }
 
-    if (props.status === 'sending') {
-      return <div className={styles.alert}>sending...</div>
-    }
-
     return (
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
@@ -47,12 +44,14 @@ function CustomForm(props: Props) {
           onChange={handleChange}
           className={classNames(
             styles.input,
-            props.status === 'error' && styles.inputError
+            props.status === 'error' && styles.inputError,
+            props.status === 'sending' && styles.inputDisable
           )}
+          disabled={props.status === 'sending'}
           required
         />
         <button className={styles.button} type="submit">
-          Get Access &#10132;
+          {props.status === 'sending' ? <Loading /> : 'Get Access \u2192'}
         </button>
       </form>
     )

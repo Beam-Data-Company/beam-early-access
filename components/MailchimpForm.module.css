@@ -28,6 +28,9 @@
   border-radius: 6px;
   color: #ffffff;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input {
@@ -44,6 +47,11 @@
 
 .inputError {
   color: red;
+}
+
+.inputDisable {
+  background-color: gray;
+  border-color: gray;
 }
 
 .title {
