@@ -1,5 +1,3 @@
-/* everything in this file is mainly from Home.module.css */
-
 .form {
   display: flex;
   flex-direction: row;
@@ -29,6 +27,7 @@
   border-radius: 6px;
   color: #ffffff;
   font-family: 'Lexend Deca', FontAwesome, sans-serif;
+  cursor: pointer;
 }
 
 .input {

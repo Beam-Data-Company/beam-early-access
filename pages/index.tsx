@@ -41,11 +41,11 @@ export default function Home() {
       </div>
 
       <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1500">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1600">
           <path
             fill="#000a33"
             fillOpacity="1"
-            d="M0,1500 L0,370 L1440,0 L1440,1500 L0,1500 Z"
+            d="M0,1600 L0,370 L1440,0 L1440,1600 L0,1600 Z"
           ></path>
         </svg>
       </div>

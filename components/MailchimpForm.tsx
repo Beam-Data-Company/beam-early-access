@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import styles from '../components/MailchimpForm.module.css'
+import Modal from './Modal'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
@@ -42,7 +43,10 @@ function CustomForm(props: Props) {
       </h2>
 
       {props.status === 'success' ? (
-        <div className={styles.alert}>Thank you!</div>
+        <div>
+          <div className={styles.alert}>Thank you!</div>
+          <Modal />
+        </div>
       ) : (
         <div>
           {props.status === 'sending' && (
