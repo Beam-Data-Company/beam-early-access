@@ -24,6 +24,7 @@
   background-color: #3a52b8;
   font-size: 16px;
   font-weight: 400;
+  font-family: 'Lexend Deca';
   border-radius: 6px;
   color: #ffffff;
   cursor: pointer;
@@ -80,6 +81,7 @@
   background-color: #4166ff;
 }
 
+/* phone portrait */
 @media (max-width: 650px) {
   .button {
     width: 308px;
@@ -99,7 +101,6 @@
   .title {
     font-size: 25px;
     width: 220px;
-    margin-bottom: 25px;
     line-height: 1.36;
   }
 
@@ -120,5 +121,22 @@
 
   .form_container {
     padding-top: 52px;
+  }
+}
+
+/* iphone5 portrait */
+@media (max-width: 340px) {
+  .button {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .form {
+    width: 100%;
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }

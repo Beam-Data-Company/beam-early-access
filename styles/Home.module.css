@@ -1,6 +1,6 @@
 .container_background {
   background-image: linear-gradient(to left, #001365, #000b3c, #000a33);
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: sticky;
 }
@@ -25,18 +25,51 @@
 
 .iphonePic {
   position: absolute;
-  top: 170px;
+  /* top: 170px; */
+  bottom: -30px;
   left: -270px;
   z-index: 3;
 }
 
 .laptopPic {
   position: absolute;
-  top: 75px;
+  /* top: 75px; */
+  bottom: -54px;
   right: -415px;
   z-index: 2;
 }
 
+/* normal ipad landscape */
+@media (max-width: 1040px) and (orientation: landscape) {
+  .iphonePic {
+    left: -300px;
+    width: 950px;
+    bottom: -10px;
+  }
+
+  .laptopPic {
+    right: -460px;
+    width: 1150px;
+    bottom: -40px;
+  }
+}
+
+/* normal ipad portrait */
+@media (max-width: 800px) {
+  .iphonePic {
+    left: -240px;
+    width: 900px;
+    bottom: -10px;
+  }
+
+  .laptopPic {
+    right: -380px;
+    width: 1050px;
+    bottom: 70px;
+  }
+}
+
+/* phone portrait */
 @media (max-width: 650px) {
   .header {
     padding-left: 33.5px;
@@ -50,12 +83,40 @@
 
   .iphonePic {
     left: -195px;
-    top: 485px;
+    width: 570px;
+    bottom: 0px;
   }
 
   .laptopPic {
-    top: 410px;
+    /* top: 410px; */
+    bottom: 70px;
     right: -240px;
     width: 600px;
+  }
+}
+
+/* iphone5 portrait */
+@media (max-width: 340px) {
+  .header {
+    padding-left: 33.5px;
+    padding-top: 26px;
+  }
+
+  .logo {
+    width: 69.5px;
+    height: 19.6px;
+  }
+
+  .iphonePic {
+    left: -155px;
+    width: 470px;
+    bottom: -40px;
+  }
+
+  .laptopPic {
+    /* top: 410px; */
+    bottom: 12px;
+    right: -200px;
+    width: 500px;
   }
 }

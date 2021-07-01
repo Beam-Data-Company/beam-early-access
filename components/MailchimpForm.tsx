@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import classNames from 'classnames'
-
 import styles from '../components/MailchimpForm.module.css'
-import Modal from './Modal'
+import ThankYouModal from './ThankYouModal'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
@@ -30,7 +29,7 @@ function CustomForm(props: Props) {
       return (
         <div>
           <div className={styles.alert}>Thank you!</div>
-          <Modal />
+          <ThankYouModal />
         </div>
       )
     }
@@ -61,10 +60,10 @@ function CustomForm(props: Props) {
 
   return (
     <div className={styles.form_container}>
-      <h1 className={styles.title}>Instant Checkout Early Access</h1>
+      <h1 className={styles.title}>Get Early Access</h1>
       <h2 className={styles.description}>
-        Get Beam Instant Checkout for your business. Experience the frictionless
-        payment available for all platforms.
+        Beam Instant Checkout, a frictionless customer experience on your social
+        messaging platforms and website
       </h2>
       {renderEmailForm()}
     </div>
