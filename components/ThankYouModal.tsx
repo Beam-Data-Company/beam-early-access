@@ -23,7 +23,7 @@ export default function ThankYouModal() {
       </div>
       <h2 className={styles.modalTitle}>Thank you!</h2>
       <p className={styles.modalSubtitle}>
-        The Beam team will get in touch with you as soon as possible
+        The Beam team will get in touch with you as soon as possible.
       </p>
     </ReactModal>
   )
