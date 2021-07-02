@@ -58,10 +58,15 @@ function CustomForm(props: Props) {
   }
 
   const checkSubscribed = new RegExp('already subscribed', 'g')
+  const checkInvalid = new RegExp('invalid', 'g')
   const returnMessage =
     typeof props.message === 'string' ? String(props.message) : ''
   const showSubscribedError =
     props.status === 'error' && checkSubscribed.test(returnMessage)
+  const showInvalidError =
+    props.status === 'error' && checkInvalid.test(returnMessage)
+
+  console.log(props.message)
 
   return (
     <div className={styles.form_container}>
@@ -74,10 +79,11 @@ function CustomForm(props: Props) {
       <div
         className={classNames(
           styles.error_box,
-          showSubscribedError && styles.show_error_box
+          (showSubscribedError || showInvalidError) && styles.show_error_box
         )}
       >
         {showSubscribedError && 'This email is already subscribed.'}
+        {showInvalidError && 'This email is invalid.'}
       </div>
     </div>
   )
