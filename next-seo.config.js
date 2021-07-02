@@ -16,7 +16,7 @@ export default {
     description: 'Your exclusive invitation to Beam Instant Checkout',
     images: [
       {
-        url: 'https://beam-early-access.vercel.app/logo.png',
+        url: 'https://beamcheckout.com/social-image.jpg',
         width: 375,
         height: 375,
         alt: 'Open graph image',
@@ -27,7 +27,7 @@ export default {
     imageHeight: 1200,
   },
   twitter: {
-    handle: '@oukunanan',
+    handle: '@beamdataco',
     cardType: 'summary',
   },
 }
