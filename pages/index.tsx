@@ -9,10 +9,6 @@ import blackDesktop from '../black-desktop.png'
 export default function Home() {
   return (
     <div className={styles.container_background}>
-      <Head>
-        <title>Beam Data Early Access</title>
-      </Head>
-
       <div className={styles.container}>
         <header className={styles.header}>
           <div className={styles.logo}>
