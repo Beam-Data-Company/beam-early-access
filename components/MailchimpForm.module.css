@@ -84,6 +84,23 @@
   height: 24px;
 }
 
+.error_box {
+  color: white;
+  background-color: transparent;
+  font-size: 14px;
+  border-radius: 6px;
+  margin-top: 16px;
+  height: 36px;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show_error_box {
+  background-color: rgb(237, 36, 29);
+}
+
 .button:hover {
   border: solid 2px #4166ff;
   background-color: #4166ff;
@@ -129,6 +146,13 @@
 
   .form_container {
     padding-top: 52px;
+  }
+
+  .error_box {
+    font-size: 12px;
+    margin-top: 20px;
+    height: 34px;
+    width: 240px;
   }
 }
 

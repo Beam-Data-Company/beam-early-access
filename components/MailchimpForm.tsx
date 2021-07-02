@@ -57,14 +57,27 @@ function CustomForm(props: Props) {
     )
   }
 
+  const checkSubscribed = new RegExp('already subscribed', 'g')
+  const returnMessage = String(props.message)
+  const showSubscribedError =
+    props.status === 'error' && checkSubscribed.test(returnMessage)
+
   return (
     <div className={styles.form_container}>
       <h1 className={styles.title}>Get Early Access</h1>
       <h2 className={styles.description}>
         Beam Instant Checkout, a frictionless customer experience on your social
-        messaging platforms and website
+        messaging platforms and website.
       </h2>
       {renderEmailForm()}
+      <div
+        className={classNames(
+          styles.error_box,
+          showSubscribedError && styles.show_error_box
+        )}
+      >
+        {showSubscribedError ? 'This email is already subscribed.' : ''}
+      </div>
     </div>
   )
 }
