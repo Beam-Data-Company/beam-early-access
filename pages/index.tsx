@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import styles from '../styles/Home.module.css'
 import MailchimpForm from '../components/MailchimpForm'
+import styles from '../styles/Home.module.css'
 import logo from '../logo.svg'
 import iphone12 from '../iphone12.png'
 import blackDesktop from '../black-desktop.png'
@@ -30,7 +30,6 @@ export default function Home() {
 
       <div className={styles.laptopPic}>
         <Image
-          className={styles.laptopPic}
           src={blackDesktop}
           alt="Black Desktop"
           placeholder="blur"

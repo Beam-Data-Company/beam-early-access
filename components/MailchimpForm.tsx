@@ -2,9 +2,10 @@ import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import classNames from 'classnames'
 
-import styles from '../components/MailchimpForm.module.css'
 import Loading from './Loading'
-import ThankyouModal from './ThankyouModal'
+import SuccessModal from './SuccessModal'
+
+import styles from '../components/MailchimpForm.module.css'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
@@ -38,7 +39,7 @@ function EmailForm(props: Props) {
 
   const errorMessage = useMemo(() => {
     if (!props.message) {
-      return null
+      return ''
     }
 
     if (props.message instanceof Error) {
@@ -123,7 +124,7 @@ export default function MailchimpForm() {
             message={message}
             subscribeEmail={subscribe}
           />
-          {status === 'success' && <ThankyouModal />}
+          {status === 'success' && <SuccessModal />}
         </>
       )}
     />

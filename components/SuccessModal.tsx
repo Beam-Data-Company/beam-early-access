@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import envelope from '../envelope.png'
 import Image from 'next/image'
-import styles from './ThankyouModal.module.css'
+import styles from './SuccessModal.module.css'
 
-export default function ThankyouModal() {
+export default function SuccessModal() {
   const [visible, setVisible] = useState(true)
 
   return (
