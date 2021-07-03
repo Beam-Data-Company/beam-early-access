@@ -18,7 +18,6 @@ function EmailForm(props: Props) {
   const [email, setEmail] = useState('')
   const [inputError, setInputError] = useState(false)
 
-
   useEffect(() => {
     if (props.status === 'success') {
       emailInput && emailInput.current?.focus()
@@ -27,9 +26,7 @@ function EmailForm(props: Props) {
     }
 
     emailInput && emailInput.current?.focus()
-
   }, [props.status])
-
 
   useEffect(() => {
     if (props.status === 'error') {
@@ -37,9 +34,7 @@ function EmailForm(props: Props) {
     }
   }, [props.status])
 
-  const isSending = useMemo(() =>
-    props.status === 'sending'
-    , [props.status])
+  const isSending = useMemo(() => props.status === 'sending', [props.status])
 
   const errorMessage = useMemo(() => {
     if (!props.message) {
@@ -57,7 +52,6 @@ function EmailForm(props: Props) {
       return 'This email is already subscribed.'
     }
 
-
     if (isInvalid) {
       return 'This email is invalid.'
     }
@@ -70,28 +64,19 @@ function EmailForm(props: Props) {
       return null
     }
 
-    return (
-      <span className={styles.error_container}>
-        {errorMessage}
-      </span>
-    )
+    return <span className={styles.error_container}>{errorMessage}</span>
   }, [errorMessage, inputError])
 
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
 
-  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-
-
-    props.subscribeEmail({
-      EMAIL: email,
-    })
-
-
-  }, [email, props])
-
-
-
+      props.subscribeEmail({
+        EMAIL: email,
+      })
+    },
+    [email, props]
+  )
 
   return (
     <div style={{ width: '100%' }}>
@@ -101,7 +86,7 @@ function EmailForm(props: Props) {
           className={classNames(
             styles.input,
             isSending && styles.inputDisabled,
-            inputError && styles.inputError,
+            inputError && styles.inputError
           )}
           type="email"
           placeholder="Your work email address"
@@ -133,7 +118,11 @@ export default function MailchimpForm() {
       url={postUrl}
       render={({ subscribe, status, message }) => (
         <>
-          <EmailForm status={status} message={message} subscribeEmail={subscribe} />
+          <EmailForm
+            status={status}
+            message={message}
+            subscribeEmail={subscribe}
+          />
           {status === 'success' && <ThankyouModal />}
         </>
       )}
@@ -142,7 +131,10 @@ export default function MailchimpForm() {
 }
 
 function getMailchimpUrl() {
-  if (!process.env.NEXT_PUBLIC_MAILCHIMP_U || !process.env.NEXT_PUBLIC_MAILCHIMP_ID) {
+  if (
+    !process.env.NEXT_PUBLIC_MAILCHIMP_U ||
+    !process.env.NEXT_PUBLIC_MAILCHIMP_ID
+  ) {
     throw new Error('Cannot get mailchimp information.')
   }
 
