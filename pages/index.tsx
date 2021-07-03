@@ -1,41 +1,43 @@
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
-import MailchimpFormContainer from '../components/MailchimpForm'
+import MailchimpForm from '../components/MailchimpForm'
 import logo from '../logo.svg'
 import iphone12 from '../iphone12.png'
 import blackDesktop from '../black-desktop.png'
 
 export default function Home() {
   return (
-    <div className={styles.container_background}>
-      <div className={styles.container}>
-        <header className={styles.header}>
-          <div className={styles.logo}>
-            <Image src={logo} alt="Beam Logo" />
-          </div>
-        </header>
-
-        <div className={styles.iphonePic}>
-          <Image src={iphone12} alt="iPhone12" placeholder="blur" />
+    <div className={styles.wrapper}>
+      <header className={styles.header}>
+        <div className={styles.logo}>
+          <Image src={logo} alt="Beam Logo" />
         </div>
+      </header>
 
-        <div className={styles.laptopPic}>
-          <Image src={blackDesktop} alt="Black Desktop" placeholder="blur" />
-        </div>
+      <svg className={styles.svgWrapper} preserveAspectRatio="none" width="1440" height="500" viewBox="0 0 1440 500">
+        <path
+          fill="#000a33"
+          d="M0,1700 L0,370 L1440,0 L1440,1700 L0,1700 Z"
+        ></path></svg>
 
-        <div style={{ zIndex: 4 }}>
-          <MailchimpFormContainer />
-        </div>
+
+      <div className={styles.iphonePic}>
+        <Image src={iphone12} alt="iPhone12" placeholder="blur" priority />
+      </div>
+      <div className={styles.laptopPic}>
+        <Image className={styles.laptopPic} src={blackDesktop} alt="Black Desktop" placeholder="blur" priority />
       </div>
 
-      <div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1700">
-          <path
-            fill="#000a33"
-            fillOpacity="1"
-            d="M0,1700 L0,370 L1440,0 L1440,1700 L0,1700 Z"
-          ></path>
-        </svg>
+      <div className={styles.main_container}>
+        <main className={styles.main}>
+          <h1 className={styles.title}>Get Early Access</h1>
+          <span className={styles.description}>
+            Beam Instant Checkout, a frictionless customer experience on your social
+            messaging platforms and website.
+          </span>
+          <MailchimpForm />
+        </main>
       </div>
     </div>
   )
