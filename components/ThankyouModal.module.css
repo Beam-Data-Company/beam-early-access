@@ -56,11 +56,10 @@
   .modalBox {
     height: 330px;
     width: 290px;
-    border-radius: 10px;
   }
 
   .modalTitle {
-    height: 31px;
+    height: 30px;
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
@@ -72,5 +71,30 @@
   .modalImage {
     height: 130px;
     width: 200px;
+  }
+}
+
+
+@media (max-width: 850px) and (orientation: landscape) {
+  .modalBox {
+    height: 260px;
+    width: 280px;
+  }
+
+  .modalImage {
+    height: auto;
+    width: 150px;
+  }
+
+  .modalTitle {
+    margin-bottom: 8px;
+  }
+
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+
+  .modalSubtitle {
+    font-size: 0.9rem;
   }
 }

@@ -16,15 +16,24 @@ function EmailForm(props: Props) {
   const emailInput = useRef<HTMLInputElement | null>(null)
 
   const [email, setEmail] = useState('')
+  const [inputError, setInputError] = useState(false)
 
-
-  useEffect(() => {
-    emailInput && emailInput.current?.focus()
-  }, [])
 
   useEffect(() => {
     if (props.status === 'success') {
+      emailInput && emailInput.current?.focus()
+
       setEmail('')
+    }
+
+    emailInput && emailInput.current?.focus()
+
+  }, [props.status])
+
+
+  useEffect(() => {
+    if (props.status === 'error') {
+      setInputError(true)
     }
   }, [props.status])
 
@@ -57,7 +66,7 @@ function EmailForm(props: Props) {
   }, [props.message])
 
   const renderErrorMessage = useCallback(() => {
-    if (props.status !== 'error' || !errorMessage) {
+    if (!inputError || !errorMessage) {
       return null
     }
 
@@ -66,32 +75,43 @@ function EmailForm(props: Props) {
         {errorMessage}
       </span>
     )
-  }, [errorMessage, props.status])
+  }, [errorMessage, inputError])
 
 
   const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
+
+
     props.subscribeEmail({
       EMAIL: email,
     })
+
+
   }, [email, props])
 
 
 
+
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <form className={styles.form_container} onSubmit={handleSubmit}>
         <input
           ref={emailInput}
           className={classNames(
             styles.input,
             isSending && styles.inputDisabled,
-            props.status === 'error' && styles.inputError,
+            inputError && styles.inputError,
           )}
           type="email"
           placeholder="Your work email address"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            if (inputError) {
+              setInputError(false)
+            }
+
+            setEmail(e.target.value)
+          }}
           value={email}
           disabled={isSending}
           required
@@ -101,7 +121,7 @@ function EmailForm(props: Props) {
         </button>
       </form>
       {renderErrorMessage()}
-    </>
+    </div>
   )
 }
 
