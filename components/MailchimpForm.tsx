@@ -3,8 +3,8 @@ import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import classNames from 'classnames'
 
 import styles from '../components/MailchimpForm.module.css'
-import ThankYouModal from './ThankYouModal'
 import Loading from './Loading'
+import ThankyouModal from './ThankyouModal'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
@@ -114,7 +114,7 @@ export default function MailchimpForm() {
       render={({ subscribe, status, message }) => (
         <>
           <EmailForm status={status} message={message} subscribeEmail={subscribe} />
-          {status === 'success' && <ThankYouModal />}
+          {status === 'success' && <ThankyouModal />}
         </>
       )}
     />
