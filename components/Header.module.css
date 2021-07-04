@@ -1,0 +1,41 @@
+.logo {
+  width: 92px;
+  height: 26px;
+}
+
+.header {
+  width: 100%;
+  padding-left: 51px;
+  padding-top: 35px;
+}
+
+/* phone portrait */
+@media (max-width: 650px) {
+  .header {
+    padding-left: 33.5px;
+    padding-top: 26px;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    width: 70px;
+    height: 20px;
+  }
+}
+
+/* iphone5 portrait */
+@media (max-width: 340px) {
+  .header {
+    padding-left: 33.5px;
+    padding-top: 26px;
+  }
+
+  .logo {
+    width: 69.5px;
+    height: 19.6px;
+  }
+}
