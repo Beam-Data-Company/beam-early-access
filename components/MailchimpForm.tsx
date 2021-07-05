@@ -19,15 +19,24 @@ function EmailForm(props: Props) {
   const [email, setEmail] = useState('')
   const [inputError, setInputError] = useState(false)
 
-  useEffect(() => {
-    if (props.status === 'success') {
-      emailInput && emailInput.current?.focus()
+  const focusEmailInput = useCallback(() => {
+    if (emailInput) {
+      emailInput.current?.focus()
+    }
+  }, [])
 
+  const clearInputError = useCallback(() => {
+    if (inputError) {
+      setInputError(false)
+    }
+  }, [inputError])
+
+  useEffect(() => {
+    focusEmailInput()
+    if (props.status === 'success') {
       setEmail('')
     }
-
-    emailInput && emailInput.current?.focus()
-  }, [props.status])
+  }, [props.status, focusEmailInput])
 
   useEffect(() => {
     if (props.status === 'error') {
@@ -72,11 +81,12 @@ function EmailForm(props: Props) {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault()
 
+      clearInputError()
       props.subscribeEmail({
         EMAIL: email,
       })
     },
-    [email, props]
+    [email, props, clearInputError]
   )
 
   return (
@@ -92,10 +102,7 @@ function EmailForm(props: Props) {
           type="email"
           placeholder="Your work email address"
           onChange={(e) => {
-            if (inputError) {
-              setInputError(false)
-            }
-
+            clearInputError()
             setEmail(e.target.value)
           }}
           value={email}
