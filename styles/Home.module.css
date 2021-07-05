@@ -106,7 +106,7 @@
 /* phone portrait */
 @media (max-width: 650px) {
   .main_container {
-    padding-top: 48px;
+    padding-top: 100px;
   }
 
   .title {
