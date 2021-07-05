@@ -1,10 +1,8 @@
 import Image from 'next/image'
-
 import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
 import styles from '../styles/Home.module.css'
-import iphone12 from '../iphone12.png'
-import blackDesktop from '../black-desktop.png'
+import phoneScreen from '../phone-screen.png'
 
 export default function Home() {
   return (
@@ -21,21 +19,17 @@ export default function Home() {
         >
           <path
             fill="#000a33"
-            d="M0,1700 L0,370 L1440,0 L1440,1700 L0,1700 Z"
+            d="M0,500 L0,370 L1440,0 L1440,500 L0,500 Z"
           ></path>
         </svg>
 
-        <div className={styles.laptopPic}>
+        <div className={styles.phoneScreenPic}>
           <Image
-            src={blackDesktop}
-            alt="Black Desktop"
+            src={phoneScreen}
+            alt="Phone Screen"
             placeholder="blur"
             priority
           />
-        </div>
-
-        <div className={styles.iphonePic}>
-          <Image src={iphone12} alt="iPhone12" placeholder="blur" priority />
         </div>
 
         <div className={styles.main_container}>
