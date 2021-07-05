@@ -12,8 +12,22 @@
 .phoneScreenPic {
   position: absolute;
   top: 50%;
-  left: 65%;
-  transform: translate(0%, -50%);
+  left: 50%;
+  transform: translate(70%, -50%);
+}
+
+.shapeLeftPic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-25%, -60%);
+}
+
+.shapeRightPic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(160%, -120%);
 }
 
 .main_container {
@@ -22,7 +36,7 @@
 
   width: 100%;
   height: 100%;
-  max-width: 1100px;
+  max-width: 1300px;
   margin: 0 auto;
   padding: 0 32px;
   padding-top: 120px;
@@ -80,6 +94,12 @@
     transform: translate(-50%, 0%);
   }
 
+  /* just for now */
+  .shapeLeftPic,
+  .shapeRightPic {
+    display: none;
+  }
+
   .title_with_description_container {
     align-items: center;
   }
@@ -118,7 +138,9 @@
     margin-bottom: 0;
   }
 
-  .phoneScreenPic {
+  .phoneScreenPic,
+  .shapeLeftPic,
+  .shapeRightPic {
     display: none;
   }
 }
@@ -139,7 +161,9 @@
     justify-content: center;
   }
 
-  .phoneScreenPic {
+  .phoneScreenPic,
+  .shapeLeftPic,
+  .shapeRightPic {
     display: none;
   }
 }

@@ -3,6 +3,8 @@ import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
 import styles from '../styles/Home.module.css'
 import phoneScreen from '../phone-screen.png'
+import shapeLeft from '../shape-left.png'
+import shapeRight from '../shape-right.png'
 
 export default function Home() {
   return (
@@ -22,6 +24,19 @@ export default function Home() {
             d="M0,500 L0,370 L1440,0 L1440,500 L0,500 Z"
           ></path>
         </svg>
+
+        <div className={styles.shapeLeftPic}>
+          <Image src={shapeLeft} alt="Shape Left" placeholder="blur" priority />
+        </div>
+
+        <div className={styles.shapeRightPic}>
+          <Image
+            src={shapeRight}
+            alt="shapeRight"
+            placeholder="blur"
+            priority
+          />
+        </div>
 
         <div className={styles.phoneScreenPic}>
           <Image
