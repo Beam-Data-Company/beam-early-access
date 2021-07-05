@@ -1,5 +1,3 @@
-var module
-
 module.exports = {
   env: {
     browser: true,
@@ -35,5 +33,6 @@ module.exports = {
         argsIgnorePattern: '^_',
       },
     ],
+    'no-console': 'error',
   },
 }

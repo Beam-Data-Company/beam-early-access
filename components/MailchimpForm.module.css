@@ -1,97 +1,55 @@
-.form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
 .form_container {
-  padding-top: 84px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.button {
-  width: 193px;
-  height: 50px;
-  margin-left: 14px;
-  margin-top: 38px;
-  box-shadow: 0 10px 40px 0 #141e4b;
-  border: solid 2px #3a52b8;
-  background-color: #3a52b8;
-  font-size: 16px;
-  font-weight: 400;
-  font-family: 'Lexend Deca';
-  border-radius: 6px;
-  color: #ffffff;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .input {
-  width: 374px;
-  height: 50px;
-  padding-left: 13.3px;
-  border: solid 2px #ffffff;
+  width: 375px;
+  height: 100%;
+  padding: 12px 0 12px 15px;
+  border: 2px solid #ffffff;
   border-radius: 6px;
-  background-color: #ffffff;
-  font-size: 16px;
+  margin-right: 15px;
+  font-size: 1rem;
   font-family: 'Lexend Deca';
-  margin-top: 38px;
+  outline: none;
 }
 
 .inputError {
-  color: red;
+  border: 2px solid red;
 }
 
-.inputDisable {
+.inputDisabled {
   background-color: gray;
   border-color: gray;
 }
 
-.title {
-  height: 40px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 32px;
-  font-weight: 400;
-  text-align: center;
-  color: #ffffff;
-}
-
-.description {
-  font-size: 16px;
-  font-weight: 400;
-  color: #ffffff;
-  width: 480px;
-  line-height: 1.88;
-  text-align: center;
-  margin-top: 22px;
-  margin-bottom: 0px;
-}
-
-.alert {
-  color: #ffffff;
-  margin-top: 38px;
-  margin-bottom: 26px;
-  text-align: center;
-  font-size: 18px;
-  height: 24px;
-}
-
-.error_box {
-  color: white;
-  background-color: transparent;
-  font-size: 14px;
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  box-shadow: 0 10px 40px 0 #141e4b;
+  border: 2px solid #3a52b8;
   border-radius: 6px;
-  margin-top: 16px;
+  background-color: #3a52b8;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: 'Lexend Deca';
+  color: #ffffff;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+.error_container {
+  color: white;
+  background-color: rgb(237, 36, 29);
+  font-size: 0.8rem;
+  border-radius: 6px;
+  margin: 16px auto 0 auto;
   height: 36px;
-  width: 260px;
+  max-width: 260px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,17 +67,18 @@
 /* phone portrait */
 @media (max-width: 650px) {
   .button {
-    width: 308px;
+    width: 100%;
     margin-left: 0px;
     margin-top: 20px;
   }
 
   .input {
-    width: 308px;
+    width: 100%;
+    margin: 0;
     margin-top: 24px;
   }
 
-  .form {
+  .form_container {
     flex-direction: column;
   }
 
@@ -144,10 +103,6 @@
     font-size: 16px;
   }
 
-  .form_container {
-    padding-top: 52px;
-  }
-
   .error_box {
     font-size: 12px;
     margin-top: 20px;
@@ -156,19 +111,18 @@
   }
 }
 
-/* iphone5 portrait */
-@media (max-width: 340px) {
-  .button {
-    width: 100%;
+@media (max-width: 850px) and (orientation: landscape) {
+  .form_container {
+    flex-direction: column;
   }
 
   .input {
     width: 100%;
+    margin: 0 0 16px 0;
   }
 
-  .form {
+  .button {
     width: 100%;
-    padding-left: 25px;
-    padding-right: 25px;
+    margin: 0;
   }
 }

@@ -2,16 +2,18 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 377px;
-  width: 524px;
+  height: 380px;
+  width: 525px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border-radius: 10px;
   border-color: solid 2px #ffffff;
   position: absolute;
   background-color: #ffffff;
   box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
 }
 
 /* dark background when display modal */
@@ -26,65 +28,69 @@
 
 /* prevent outline when modal appear first time*/
 .modalBox:focus {
-  outline: 0px;
+  outline: none;
 }
 
 .modalTitle {
   height: 40px;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 400;
-  line-height: 1.75;
   text-align: center;
-  display: flex;
-  align-items: center;
-  margin-top: 27px;
-  margin-bottom: 0px;
   color: #000000;
 }
 
 .modalSubtitle {
-  width: 298px;
-  height: 58px;
-  font-size: 16px;
-  line-height: 1.63;
+  max-width: 300px;
+  line-height: 1.6;
   text-align: center;
   color: #535353;
-  margin-top: 15px;
-  margin-bottom: 0px;
+  margin: 0;
 }
 
 .modalImage {
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
   height: 150px;
-  width: 236px;
+  width: 235px;
 }
 
 @media (max-width: 650px) {
   .modalBox {
-    height: 334px;
+    height: 330px;
     width: 290px;
-    border-radius: 10px;
   }
 
   .modalTitle {
-    height: 31px;
-    font-size: 25px;
-    line-height: 2.24;
-    margin-top: 23px;
+    height: 30px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
   }
 
   .modalSubtitle {
-    width: 221px;
-    font-size: 14px;
-    line-height: 1.86;
-    margin-top: 11px;
+    font-size: 0.875rem;
   }
 
   .modalImage {
-    height: 132px;
-    width: 208px;
-    margin-top: 52px;
+    height: 130px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 850px) and (orientation: landscape) {
+  .modalBox {
+    height: 260px;
+    width: 280px;
+  }
+
+  .modalImage {
+    height: auto;
+    width: 150px;
+  }
+
+  .modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .modalSubtitle {
+    font-size: 0.9rem;
   }
 }

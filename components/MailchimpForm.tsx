@@ -1,109 +1,150 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import classNames from 'classnames'
-import styles from '../components/MailchimpForm.module.css'
-import ThankYouModal from './ThankYouModal'
+
 import Loading from './Loading'
+import SuccessModal from './SuccessModal'
+
+import styles from '../components/MailchimpForm.module.css'
 
 type Props = {
   status: 'success' | 'sending' | 'error' | null
   message: string | Error | null
-  onValidated: (data: EmailFormFields) => void
+  subscribeEmail: (data: EmailFormFields) => void
 }
 
-function CustomForm(props: Props) {
+function EmailForm(props: Props) {
+  const emailInput = useRef<HTMLInputElement | null>(null)
+
   const [email, setEmail] = useState('')
+  const [inputError, setInputError] = useState(false)
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value)
-  }
+  const focusEmailInput = useCallback(() => {
+    if (emailInput) {
+      emailInput.current?.focus()
+    }
+  }, [])
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    props.onValidated({
-      EMAIL: email,
-    })
-  }
+  const clearInputError = useCallback(() => {
+    if (inputError) {
+      setInputError(false)
+    }
+  }, [inputError])
 
   useEffect(() => {
+    focusEmailInput()
     if (props.status === 'success') {
       setEmail('')
     }
+  }, [props.status, focusEmailInput])
+
+  useEffect(() => {
+    if (props.status === 'error') {
+      setInputError(true)
+    }
   }, [props.status])
 
-  const renderEmailForm = () => {
-    return (
-      <>
-        <form className={styles.form} onSubmit={handleSubmit}>
-          <input
-            type="email"
-            value={email}
-            placeholder="Your work email address"
-            onChange={handleChange}
-            className={classNames(
-              styles.input,
-              props.status === 'error' && styles.inputError,
-              props.status === 'sending' && styles.inputDisable
-            )}
-            disabled={props.status === 'sending'}
-            required
-          />
-          <button className={styles.button} type="submit">
-            {props.status === 'sending' ? <Loading /> : 'Get Access \u2192'}
-          </button>
-        </form>
-        {props.status === 'success' ? <ThankYouModal /> : null}
-      </>
-    )
-  }
+  const isSending = useMemo(() => props.status === 'sending', [props.status])
 
-  const checkSubscribed = new RegExp('already subscribed', 'g')
-  const checkInvalid = new RegExp('invalid', 'g')
-  const returnMessage =
-    typeof props.message === 'string' ? String(props.message) : ''
-  const showSubscribedError =
-    props.status === 'error' && checkSubscribed.test(returnMessage)
-  const showInvalidError =
-    props.status === 'error' && checkInvalid.test(returnMessage)
+  const errorMessage = useMemo(() => {
+    if (!props.message) {
+      return ''
+    }
 
-  console.log(props.message)
+    if (props.message instanceof Error) {
+      return props.message.message
+    }
+
+    const isSubscribed = /already subscribed/g.test(props.message)
+    const isInvalid = /invalid/g.test(props.message)
+
+    if (isSubscribed) {
+      return 'This email is already subscribed.'
+    }
+
+    if (isInvalid) {
+      return 'This email is invalid.'
+    }
+
+    return props.message
+  }, [props.message])
+
+  const renderErrorMessage = useCallback(() => {
+    if (!inputError || !errorMessage) {
+      return null
+    }
+
+    return <span className={styles.error_container}>{errorMessage}</span>
+  }, [errorMessage, inputError])
+
+  const handleSubmit = useCallback(
+    (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault()
+
+      clearInputError()
+      props.subscribeEmail({
+        EMAIL: email,
+      })
+    },
+    [email, props, clearInputError]
+  )
 
   return (
-    <div className={styles.form_container}>
-      <h1 className={styles.title}>Get Early Access</h1>
-      <h2 className={styles.description}>
-        Beam Instant Checkout, a frictionless customer experience on your social
-        messaging platforms and website.
-      </h2>
-      {renderEmailForm()}
-      <div
-        className={classNames(
-          styles.error_box,
-          (showSubscribedError || showInvalidError) && styles.show_error_box
-        )}
-      >
-        {showSubscribedError && 'This email is already subscribed.'}
-        {showInvalidError && 'This email is invalid.'}
-      </div>
+    <div style={{ width: '100%' }}>
+      <form className={styles.form_container} onSubmit={handleSubmit}>
+        <input
+          ref={emailInput}
+          className={classNames(
+            styles.input,
+            isSending && styles.inputDisabled,
+            inputError && styles.inputError
+          )}
+          type="email"
+          placeholder="Your work email address"
+          onChange={(e) => {
+            clearInputError()
+            setEmail(e.target.value)
+          }}
+          value={email}
+          disabled={isSending}
+          required
+        />
+        <button className={styles.button} type="submit" disabled={isSending}>
+          {isSending ? <Loading /> : 'Get Access \u2192'}
+        </button>
+      </form>
+      {renderErrorMessage()}
     </div>
   )
 }
 
-function getMailchimpUrl() {
-  const postUrl = `https://beamdata.us18.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`
-  return postUrl
-}
-
-function MailchimpFormContainer() {
+export default function MailchimpForm() {
   const postUrl = getMailchimpUrl()
+
   return (
     <MailchimpSubscribe
       url={postUrl}
       render={({ subscribe, status, message }) => (
-        <CustomForm status={status} message={message} onValidated={subscribe} />
+        <>
+          <EmailForm
+            status={status}
+            message={message}
+            subscribeEmail={subscribe}
+          />
+          {status === 'success' && <SuccessModal />}
+        </>
       )}
     />
   )
 }
 
-export default MailchimpFormContainer
+function getMailchimpUrl() {
+  if (
+    !process.env.NEXT_PUBLIC_MAILCHIMP_U ||
+    !process.env.NEXT_PUBLIC_MAILCHIMP_ID
+  ) {
+    throw new Error('Cannot get mailchimp information.')
+  }
+
+  return `https://beamdata.us18.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`
+}
