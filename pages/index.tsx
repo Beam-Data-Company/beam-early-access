@@ -2,11 +2,36 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
 import styles from '../styles/Home.module.css'
-import phoneScreen from '../phone-screen.png'
-import shapeLeft from '../shape-left.png'
-import shapeRight from '../shape-right.png'
+import phoneScreen from '../public/phone-screen.png'
+import { useSpring, animated } from 'react-spring'
+import { useMediaQuery } from 'react-responsive'
 
 export default function Home() {
+  const isTablet = useMediaQuery({ maxWidth: 1040 })
+  const isPortrait = useMediaQuery({ orientation: 'portrait' })
+
+  const fadeIn = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { tension: 70 },
+  })
+
+  const slideRight = useSpring({
+    opacity: 1,
+    transform: 'translate(70%, -50%)',
+    from: { opacity: 0, transform: 'translate(120%, -50%)' },
+    config: { tension: 80 },
+    delay: 1200,
+  })
+
+  const slideUp = useSpring({
+    opacity: 1,
+    transform: 'translate(-50%, 0%)',
+    from: { opacity: 0, transform: 'translate(-50%, 20%)' },
+    config: { tension: 60 },
+    delay: 1000,
+  })
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
@@ -25,29 +50,19 @@ export default function Home() {
           ></path>
         </svg>
 
-        <div className={styles.shapeLeftPic}>
-          <Image src={shapeLeft} alt="Shape Left" placeholder="blur" priority />
-        </div>
-
-        <div className={styles.shapeRightPic}>
-          <Image
-            src={shapeRight}
-            alt="shapeRight"
-            placeholder="blur"
-            priority
-          />
-        </div>
-
-        <div className={styles.phoneScreenPic}>
+        <animated.div
+          className={styles.phoneScreenPic}
+          style={isTablet && isPortrait ? slideUp : slideRight}
+        >
           <Image
             src={phoneScreen}
             alt="Phone Screen"
             placeholder="blur"
             priority
           />
-        </div>
+        </animated.div>
 
-        <div className={styles.main_container}>
+        <animated.div className={styles.main_container} style={fadeIn}>
           <main className={styles.main}>
             <div className={styles.title_with_description_container}>
               <h1 className={styles.title}>Get Early Access</h1>
@@ -58,7 +73,7 @@ export default function Home() {
             </div>
             <MailchimpForm />
           </main>
-        </div>
+        </animated.div>
       </div>
     </div>
   )
