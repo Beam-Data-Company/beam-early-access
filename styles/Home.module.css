@@ -17,6 +17,22 @@
   width: 265px;
 }
 
+.shapeLeftPic {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-25%, -240%);
+  width: 300px;
+}
+
+.shapeRightPic {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(145%, -275%);
+  width: 278px;
+}
+
 .main_container {
   /* Make sure  this element will stack on top (order of DOM element) */
   position: relative;
@@ -91,6 +107,19 @@
   .main_container {
     margin-top: 120px;
   }
+
+  .shapeLeftPic,
+  .shapeRightPic {
+    display: none;
+  }
+}
+
+/* normal ipad landscape */
+@media (max-width: 1040px) and (orientation: landscape) {
+  .shapeLeftPic,
+  .shapeRightPic {
+    display: none;
+  }
 }
 
 /* normal ipad portrait */
@@ -143,7 +172,9 @@
     justify-content: center;
   }
 
-  .phoneScreenPic {
+  .phoneScreenPic,
+  .shapeLeftPic,
+  .shapeRightPic {
     display: none;
   }
 }

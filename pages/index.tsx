@@ -2,6 +2,8 @@ import Image from 'next/image'
 import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
 import styles from '../styles/Home.module.css'
+import shapeLeft from '../public/shape-left.png'
+import shapeRight from '../public/shape-right.png'
 import phoneScreen from '../public/phone-screen.png'
 import { useSpring, animated } from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
@@ -28,8 +30,15 @@ export default function Home() {
     opacity: 1,
     transform: 'translate(-50%, 0%)',
     from: { opacity: 0, transform: 'translate(-50%, 20%)' },
-    config: { tension: 60 },
-    delay: 1000,
+    config: { tension: 80 },
+    delay: 1200,
+  })
+
+  const shapeFadeIn = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { tension: 30 },
+    delay: 2400,
   })
 
   return (
@@ -50,6 +59,22 @@ export default function Home() {
           ></path>
         </svg>
 
+        {/* shape left */}
+        <animated.div className={styles.shapeLeftPic} style={shapeFadeIn}>
+          <Image src={shapeLeft} alt="Shape Left" placeholder="blur" priority />
+        </animated.div>
+
+        {/* shape right */}
+        <animated.div className={styles.shapeRightPic} style={shapeFadeIn}>
+          <Image
+            src={shapeRight}
+            alt="Shape Right"
+            placeholder="blur"
+            priority
+          />
+        </animated.div>
+
+        {/* phone screen */}
         <animated.div
           className={styles.phoneScreenPic}
           style={isTablet && isPortrait ? slideUp : slideRight}
