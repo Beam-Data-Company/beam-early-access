@@ -1,11 +1,11 @@
 .form_container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 
 .input {
-  width: 375px;
+  width: 305px;
   height: 100%;
   padding: 12px 0 12px 15px;
   border: 2px solid #ffffff;
@@ -29,8 +29,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  box-shadow: 0 10px 40px 0 #141e4b;
+  width: 180px;
+  box-shadow: 0 2px 20px 2px #141e4b;
   border: 2px solid #3a52b8;
   border-radius: 6px;
   background-color: #3a52b8;
@@ -47,21 +47,28 @@
   background-color: rgb(237, 36, 29);
   font-size: 0.8rem;
   border-radius: 6px;
-  margin: 16px auto 0 auto;
+  margin: 12px auto 0 0;
   height: 36px;
-  max-width: 260px;
+  width: 305px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.show_error_box {
-  background-color: rgb(237, 36, 29);
-}
-
 .button:hover {
   border: solid 2px #4166ff;
   background-color: #4166ff;
+}
+
+/* ipad pro and ipad portrait */
+@media (max-width: 1040px) and (orientation: portrait) {
+  .form_container {
+    justify-content: center;
+  }
+
+  .error_container {
+    margin: 12px auto 0 auto;
+  }
 }
 
 /* phone portrait */
@@ -75,7 +82,7 @@
   .input {
     width: 100%;
     margin: 0;
-    margin-top: 24px;
+    margin-top: 50px;
   }
 
   .form_container {
@@ -103,14 +110,12 @@
     font-size: 16px;
   }
 
-  .error_box {
-    font-size: 12px;
-    margin-top: 20px;
-    height: 34px;
-    width: 240px;
+  .error_container {
+    width: 100%;
   }
 }
 
+/* phone landscape */
 @media (max-width: 850px) and (orientation: landscape) {
   .form_container {
     flex-direction: column;
@@ -124,5 +129,9 @@
   .button {
     width: 100%;
     margin: 0;
+  }
+
+  .error_container {
+    margin: 12px auto 0 auto;
   }
 }

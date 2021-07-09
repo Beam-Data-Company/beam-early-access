@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
-import envelope from '../envelope.png'
+import envelope from '../public/envelope.png'
 import Image from 'next/image'
 import styles from './SuccessModal.module.css'
 
