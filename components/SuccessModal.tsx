@@ -1,19 +1,12 @@
-import React, { useState } from 'react'
-import Modal from 'react-modal'
+import React from 'react'
 import envelope from '../public/envelope.png'
 import Image from 'next/image'
 import styles from './SuccessModal.module.css'
+import Modal from './Modal'
 
 export default function SuccessModal() {
-  const [visible, setVisible] = useState(true)
-
-  return (
-    <Modal
-      isOpen={visible}
-      onRequestClose={() => setVisible(false)}
-      className={styles.modalBox}
-      overlayClassName={styles.overlay}
-    >
+   return (
+    <Modal>
       <div className={styles.modalImage}>
         <Image src={envelope} alt="Envelope" placeholder="blur" priority />
       </div>
