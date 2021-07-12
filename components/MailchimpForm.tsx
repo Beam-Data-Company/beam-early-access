@@ -18,6 +18,7 @@ function EmailForm(props: Props) {
 
   const [email, setEmail] = useState('')
   const [inputError, setInputError] = useState(false)
+  const [successModalVisible, setSuccessModalVisible] = useState(false)
 
   const focusEmailInput = useCallback(() => {
     if (emailInput) {
@@ -35,6 +36,7 @@ function EmailForm(props: Props) {
     focusEmailInput()
     if (props.status === 'success') {
       setEmail('')
+      setSuccessModalVisible(true)
     }
   }, [props.status, focusEmailInput])
 
@@ -114,6 +116,10 @@ function EmailForm(props: Props) {
         </button>
       </form>
       {renderErrorMessage()}
+      <SuccessModal
+        isOpen={successModalVisible}
+        closeModal={() => setSuccessModalVisible(false)}
+      />
     </div>
   )
 }
@@ -131,7 +137,6 @@ export default function MailchimpForm() {
             message={message}
             subscribeEmail={subscribe}
           />
-          {status === 'success' && <SuccessModal />}
         </>
       )}
     />

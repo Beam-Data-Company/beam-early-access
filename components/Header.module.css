@@ -1,15 +1,13 @@
 .logo {
   width: 92px;
-  height: 40px;
+  height: auto;
   display: flex;
   align-content: center;
 }
 
 .header {
   width: 100%;
-  padding-left: 51px;
-  padding-top: 28px;
-  padding-right: 51px;
+  padding: 28px 51px 0px 51px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -26,18 +24,18 @@
   font-family: 'Lexend Deca';
   cursor: pointer;
   z-index: 1;
+  padding: auto;
+  text-align: center;
 }
 
 /* phone portrait */
 @media (max-width: 650px) {
   .header {
-    padding-left: 33.5px;
-    padding-top: 26px;
+    padding: 22px 34px 0px 34px;
   }
 
   .logo {
     width: 70px;
-    height: 20px;
   }
 
   .getStartedButton {
@@ -45,6 +43,5 @@
     height: 32px;
     font-size: 0.875rem;
     border-width: 1px;
-    padding-bottom: 3px;
   }
 }

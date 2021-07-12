@@ -1,33 +1,7 @@
-.modalBox {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.startedModalBox {
   height: 430px;
   width: 590px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 25px;
-  position: absolute;
-  background-color: #ffffff;
-  padding: 20px;
-}
-
-/* dark background when display modal */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-/* prevent outline when modal appear first time*/
-.modalBox:focus {
-  outline: none;
 }
 
 .modalTitle {
@@ -53,15 +27,17 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 3px 20px 0 rgba(203, 210, 240, 0.4);
+  box-shadow: 0 3px 20px 5px rgba(203, 210, 240, 0.5);
   background-color: #ffffff;
   cursor: pointer;
   margin: 10px;
   font-family: 'Lexend Deca';
+  border-color: transparent;
+  padding: 20px;
 }
 
 @media (max-width: 650px) {
-  .modalBox {
+  .startedModalBox {
     height: 400px;
     width: 290px;
     padding: 20px 10px 10px 10px;
@@ -80,13 +56,18 @@
     height: 130px;
     width: auto;
   }
+
+  .buttonTitle,
+  .buttonSubtitle {
+    margin: 6px 0px 6px 0px;
+  }
 }
 
 @media (max-width: 850px) and (orientation: landscape) {
-  .modalBox {
+  .startedModalBox {
     height: 320px;
     width: 400px;
-    padding: 20px 10px 10px 10px;
+    padding: 20px 20px 10px 20px;
   }
 
   .modalTitle {
@@ -101,5 +82,10 @@
   .button {
     height: 100px;
     width: 100%;
+  }
+
+  .buttonTitle,
+  .buttonSubtitle {
+    margin: 8px 0px 8px 0px;
   }
 }

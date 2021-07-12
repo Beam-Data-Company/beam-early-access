@@ -4,9 +4,18 @@ import Image from 'next/image'
 import styles from './SuccessModal.module.css'
 import Modal from './Modal'
 
-export default function SuccessModal() {
-   return (
-    <Modal>
+type Props = {
+  isOpen: boolean
+  closeModal: () => void
+}
+
+export default function SuccessModal(props: Props) {
+  return (
+    <Modal
+      visible={props.isOpen}
+      closeModal={props.closeModal}
+      className={styles.successModalBox}
+    >
       <div className={styles.modalImage}>
         <Image src={envelope} alt="Envelope" placeholder="blur" priority />
       </div>
