@@ -5,7 +5,7 @@ import styles from './StartedModal.module.css'
 
 type Props = {
   visible: boolean
-  setVisible: React.Dispatch<React.SetStateAction<boolean>>
+  setVisible: (arg0:boolean) => void
 }
 
 export default function StartedModal(props: Props) {

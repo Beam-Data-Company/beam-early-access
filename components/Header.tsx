@@ -7,8 +7,8 @@ import { useState } from 'react'
 export default function Header() {
   const [showModal, setShowModal] = useState(false)
 
-  const handleClick = () => {
-    setShowModal((prev) => !prev)
+  const toggleModalVisible = () => {
+    setShowModal(!showModal)
   }
 
   return (
@@ -16,7 +16,7 @@ export default function Header() {
       <div className={styles.logo}>
         <Image src={logo} alt="Beam Logo" priority />
       </div>
-      <button className={styles.button} onClick={handleClick}>
+      <button className={styles.getStartedButton} onClick={toggleModalVisible}>
         Get Started
       </button>
       <StartedModal visible={showModal} setVisible={setShowModal} />

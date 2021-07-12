@@ -1,18 +1,21 @@
 .logo {
   width: 92px;
-  height: 26px;
+  height: 40px;
+  display: flex;
+  align-content: center;
 }
 
 .header {
   width: 100%;
   padding-left: 51px;
-  padding-top: 35px;
+  padding-top: 28px;
+  padding-right: 51px;
   display: flex;
   flex-direction: row;
-  position: relative;
+  justify-content: space-between;
 }
 
-.button {
+.getStartedButton {
   width: 190px;
   height: 40px;
   border-radius: 5px;
@@ -21,10 +24,8 @@
   background-color: transparent;
   color: white;
   font-family: 'Lexend Deca';
-  position: absolute;
-  top: 25px;
-  right: 50px;
   cursor: pointer;
+  z-index: 1;
 }
 
 /* phone portrait */
@@ -37,5 +38,13 @@
   .logo {
     width: 70px;
     height: 20px;
+  }
+
+  .getStartedButton {
+    width: 105px;
+    height: 32px;
+    font-size: 0.875rem;
+    border-width: 1px;
+    padding-bottom: 3px;
   }
 }
