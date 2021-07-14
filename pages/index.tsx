@@ -3,6 +3,11 @@ import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
 import styles from '../styles/Home.module.css'
 import phoneScreen from '../public/phone-screen.png'
+import shape1 from '../public/shape1.png'
+import shape2 from '../public/shape2.png'
+import shape3 from '../public/shape3.png'
+import shape4 from '../public/shape4.png'
+import shape5 from '../public/shape5.png'
 import { useSpring, animated } from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
 
@@ -30,6 +35,13 @@ export default function Home() {
     from: { opacity: 0, transform: 'translate(-50%, 20%)' },
     config: { tension: 80 },
     delay: 1200,
+  })
+
+  const shapeFadeIn = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { tension: 60 },
+    delay: 2500,
   })
 
   return (
@@ -61,6 +73,26 @@ export default function Home() {
             placeholder="blur"
             priority
           />
+        </animated.div>
+
+        <animated.div className={styles.shape1} style={shapeFadeIn}>
+          <Image src={shape1} alt="shape1" placeholder="blur" priority />
+        </animated.div>
+
+        <animated.div className={styles.shape2} style={shapeFadeIn}>
+          <Image src={shape2} alt="shape2" placeholder="blur" priority />
+        </animated.div>
+
+        <animated.div className={styles.shape3} style={shapeFadeIn}>
+          <Image src={shape3} alt="shape3" placeholder="blur" priority />
+        </animated.div>
+
+        <animated.div className={styles.shape4} style={shapeFadeIn}>
+          <Image src={shape4} alt="shape4" placeholder="blur" priority />
+        </animated.div>
+
+        <animated.div className={styles.shape5} style={shapeFadeIn}>
+          <Image src={shape5} alt="shape5" placeholder="blur" priority />
         </animated.div>
 
         <animated.div className={styles.main_container} style={fadeIn}>

@@ -1,4 +1,3 @@
-import React from 'react'
 import envelope from '../public/envelope.png'
 import Image from 'next/image'
 import styles from './SuccessModal.module.css'

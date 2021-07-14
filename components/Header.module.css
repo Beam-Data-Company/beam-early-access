@@ -1,6 +1,5 @@
 .logo {
   width: 92px;
-  height: auto;
   display: flex;
   align-content: center;
 }
@@ -24,8 +23,7 @@
   font-family: 'Lexend Deca';
   cursor: pointer;
   z-index: 1;
-  padding: auto;
-  text-align: center;
+  padding: auto 0px 3px 0px;
 }
 
 /* phone portrait */
@@ -43,5 +41,6 @@
     height: 32px;
     font-size: 0.875rem;
     border-width: 1px;
+    padding-bottom: 2px;
   }
 }

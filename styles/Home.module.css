@@ -17,6 +17,36 @@
   width: 265px;
 }
 
+.shape1,
+.shape2,
+.shape3,
+.shape4,
+.shape5 {
+  position: absolute;
+  bottom: 315px;
+  left: 50vw;
+}
+
+.shape1 {
+  transform: translate(-50%, 10%);
+}
+
+.shape2 {
+  transform: translate(52%, calc(-50px + 2vw));
+}
+
+.shape3 {
+  transform: translate(70%, calc(-150px + 4.3vw));
+}
+
+.shape4 {
+  transform: translate(322%, calc(-182px + 5vw));
+}
+
+.shape5 {
+  transform: translate(260%, calc(-250px + 8vw));
+}
+
 .main_container {
   /* Make sure  this element will stack on top (order of DOM element) */
   position: relative;
@@ -90,6 +120,16 @@
 
   .main_container {
     margin-top: 120px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .shape1,
+  .shape2,
+  .shape3,
+  .shape4,
+  .shape5 {
+    display: none;
   }
 }
 
