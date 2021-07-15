@@ -23,7 +23,7 @@
   font-family: 'Lexend Deca';
   cursor: pointer;
   z-index: 1;
-  padding: auto 0px 3px 0px;
+  padding: 0 0 3px 0;
 }
 
 /* phone portrait */

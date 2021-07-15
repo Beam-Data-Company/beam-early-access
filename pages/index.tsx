@@ -15,6 +15,24 @@ export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
 
+  const shapeArray = [
+    { data: shape1, name: 'shape1', styleName: styles.shape1 },
+    { data: shape2, name: 'shape2', styleName: styles.shape2 },
+    { data: shape3, name: 'shape3', styleName: styles.shape3 },
+    { data: shape4, name: 'shape4', styleName: styles.shape4 },
+    { data: shape5, name: 'shape5', styleName: styles.shape5 },
+  ]
+
+  const renderShape = () => {
+    return shapeArray.map(({ data, name, styleName }) => {
+      return (
+        <animated.div className={styleName} style={shapeFadeIn} key={name}>
+          <Image src={data} alt={name} placeholder="blur" priority />
+        </animated.div>
+      )
+    })
+  }
+
   const fadeIn = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },
@@ -62,6 +80,8 @@ export default function Home() {
           ></path>
         </svg>
 
+        {renderShape()}
+
         {/* phone screen */}
         <animated.div
           className={styles.phoneScreenPic}
@@ -73,26 +93,6 @@ export default function Home() {
             placeholder="blur"
             priority
           />
-        </animated.div>
-
-        <animated.div className={styles.shape1} style={shapeFadeIn}>
-          <Image src={shape1} alt="shape1" placeholder="blur" priority />
-        </animated.div>
-
-        <animated.div className={styles.shape2} style={shapeFadeIn}>
-          <Image src={shape2} alt="shape2" placeholder="blur" priority />
-        </animated.div>
-
-        <animated.div className={styles.shape3} style={shapeFadeIn}>
-          <Image src={shape3} alt="shape3" placeholder="blur" priority />
-        </animated.div>
-
-        <animated.div className={styles.shape4} style={shapeFadeIn}>
-          <Image src={shape4} alt="shape4" placeholder="blur" priority />
-        </animated.div>
-
-        <animated.div className={styles.shape5} style={shapeFadeIn}>
-          <Image src={shape5} alt="shape5" placeholder="blur" priority />
         </animated.div>
 
         <animated.div className={styles.main_container} style={fadeIn}>
