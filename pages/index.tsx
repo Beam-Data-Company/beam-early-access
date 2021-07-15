@@ -16,17 +16,17 @@ export default function Home() {
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
 
   const shapeArray = [
-    { data: shape1, name: 'shape1', styleName: styles.shape1 },
-    { data: shape2, name: 'shape2', styleName: styles.shape2 },
-    { data: shape3, name: 'shape3', styleName: styles.shape3 },
-    { data: shape4, name: 'shape4', styleName: styles.shape4 },
-    { data: shape5, name: 'shape5', styleName: styles.shape5 },
+    { data: shape1, name: 'shape1', className: styles.shape1 },
+    { data: shape2, name: 'shape2', className: styles.shape2 },
+    { data: shape3, name: 'shape3', className: styles.shape3 },
+    { data: shape4, name: 'shape4', className: styles.shape4 },
+    { data: shape5, name: 'shape5', className: styles.shape5 },
   ]
 
-  const renderShape = () => {
-    return shapeArray.map(({ data, name, styleName }) => {
+  const renderShapes = () => {
+    return shapeArray.map(({ data, name, className }) => {
       return (
-        <animated.div className={styleName} style={shapeFadeIn} key={name}>
+        <animated.div className={className} style={shapeFadeIn} key={name}>
           <Image src={data} alt={name} placeholder="blur" priority />
         </animated.div>
       )
@@ -56,7 +56,7 @@ export default function Home() {
   })
 
   const shapeFadeIn = useSpring({
-    to: { opacity: 1 },
+    to: { opacity: 0.7 },
     from: { opacity: 0 },
     config: { tension: 60 },
     delay: 2500,
@@ -80,7 +80,7 @@ export default function Home() {
           ></path>
         </svg>
 
-        {renderShape()}
+        {renderShapes()}
 
         {/* phone screen */}
         <animated.div

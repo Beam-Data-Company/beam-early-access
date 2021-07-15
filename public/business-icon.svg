@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_14112" width="87.636" height="87.636" viewBox="0 0 87.636 87.636">
+    <defs>
+        <style>
+            .cls-2{fill:#3a52b8}.cls-3{fill:#fff}
+        </style>
+    </defs>
+    <g id="Group_14110">
+        <circle id="Ellipse_390" cx="43.818" cy="43.818" r="43.818"/>
+    </g>
+    <path id="Intersection_56" fill="#6280ff" d="M0 58.065V2a2 2 0 0 1 2-2h40.75a2 2 0 0 1 2 2v55.7A43.866 43.866 0 0 1 0 58.065z" transform="translate(21.753 23.618)"/>
+    <rect id="Rectangle_5762" width="6.215" height="12.431" class="cls-2" rx="2" transform="translate(29.212 31.077)"/>
+    <rect id="Rectangle_5763" width="6.215" height="12.431" class="cls-2" rx="2" transform="translate(40.4 31.077)"/>
+    <rect id="Rectangle_5764" width="6.215" height="12.431" class="cls-2" rx="2" transform="translate(29.212 50.966)"/>
+    <rect id="Rectangle_5765" width="6.215" height="12.431" class="cls-2" rx="2" transform="translate(40.4 50.966)"/>
+    <rect id="Rectangle_5766" width="6.215" height="12.431" class="cls-3" rx="2" transform="translate(30.455 31.077)"/>
+    <rect id="Rectangle_5767" width="6.215" height="12.431" class="cls-3" rx="2" transform="translate(41.643 31.077)"/>
+    <rect id="Rectangle_5768" width="6.215" height="12.431" class="cls-3" rx="2" transform="translate(30.455 50.966)"/>
+    <rect id="Rectangle_5769" width="6.215" height="12.431" class="cls-3" rx="2" transform="translate(41.643 50.966)"/>
+</svg>
