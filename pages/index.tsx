@@ -61,7 +61,7 @@ export default function Home() {
     config: { tension: 60 },
     delay: 2500,
   })
-
+  
   return (
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
