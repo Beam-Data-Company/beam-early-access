@@ -193,3 +193,17 @@
     display: none;
   }
 }
+
+@media (max-height: 700px) and (orientation: landscape) {
+  .phoneScreenPic {
+    display: none;
+  }
+
+  .shape1,
+  .shape2,
+  .shape3,
+  .shape4,
+  .shape5 {
+    display: none;
+  }
+}
