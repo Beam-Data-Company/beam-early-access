@@ -196,7 +196,7 @@
 
 @media (max-height: 700px) and (orientation: landscape) {
   .phoneScreenPic {
-    display: none;
+    width: calc(100vh / 2.85);
   }
 
   .shape1,
