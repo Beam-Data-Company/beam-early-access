@@ -12,12 +12,15 @@ export default function Header() {
       <div className={styles.logo}>
         <Image src={logo} alt="Beam Logo" priority />
       </div>
-      <button
+
+      {/* will bring this button back when the lighthouse website is ready */}
+      {/* <button
         className={styles.getStartedButton}
         onClick={() => setStartedModalVisible(true)}
       >
         Get Started
-      </button>
+      </button> */}
+
       <StartedModal
         isOpen={startedModalVisible}
         onClose={() => setStartedModalVisible(false)}
