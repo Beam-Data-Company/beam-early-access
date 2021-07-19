@@ -112,7 +112,7 @@ function EmailForm(props: Props) {
           required
         />
         <button className={styles.button} type="submit" disabled={isSending}>
-          {isSending ? <Loading /> : 'Get Access \u2192'}
+          {isSending ? <Loading /> : 'Get Access'}
         </button>
       </form>
       {renderErrorMessage()}
