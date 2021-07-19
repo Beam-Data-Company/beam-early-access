@@ -1,41 +1,44 @@
 .logo {
   width: 92px;
-  height: 26px;
+  display: flex;
+  align-content: center;
 }
 
 .header {
   width: 100%;
-  padding-left: 51px;
-  padding-top: 35px;
+  padding: 28px 51px 0px 51px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.getStartedButton {
+  width: 190px;
+  height: 40px;
+  border-radius: 5px;
+  border: solid 2px #ffffff;
+  font-size: 1rem;
+  background-color: transparent;
+  color: white;
+  font-family: 'Lexend Deca';
+  cursor: pointer;
+  z-index: 1;
 }
 
 /* phone portrait */
 @media (max-width: 650px) {
   .header {
-    padding-left: 33.5px;
-    padding-top: 26px;
-  }
-
-  .description {
-    font-size: 0.9rem;
-    margin-bottom: 0;
+    padding: 22px 34px 0px 34px;
   }
 
   .logo {
     width: 70px;
-    height: 20px;
-  }
-}
-
-/* iphone5 portrait */
-@media (max-width: 340px) {
-  .header {
-    padding-left: 33.5px;
-    padding-top: 26px;
   }
 
-  .logo {
-    width: 69.5px;
-    height: 19.6px;
+  .getStartedButton {
+    width: 105px;
+    height: 32px;
+    font-size: 0.875rem;
+    border-width: 1px;
   }
 }

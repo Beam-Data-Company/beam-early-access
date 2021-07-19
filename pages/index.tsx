@@ -3,12 +3,35 @@ import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
 import styles from '../styles/Home.module.css'
 import phoneScreen from '../public/phone-screen.png'
+import shape1 from '../public/shape1.png'
+import shape2 from '../public/shape2.png'
+import shape3 from '../public/shape3.png'
+import shape4 from '../public/shape4.png'
+import shape5 from '../public/shape5.png'
 import { useSpring, animated } from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
 
 export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
+
+  const shapeArray = [
+    { data: shape1, name: 'shape1', className: styles.shape1 },
+    { data: shape2, name: 'shape2', className: styles.shape2 },
+    { data: shape3, name: 'shape3', className: styles.shape3 },
+    { data: shape4, name: 'shape4', className: styles.shape4 },
+    { data: shape5, name: 'shape5', className: styles.shape5 },
+  ]
+
+  const renderShapes = () => {
+    return shapeArray.map(({ data, name, className }) => {
+      return (
+        <animated.div className={className} style={shapeFadeIn} key={name}>
+          <Image src={data} alt={name} placeholder="blur" priority />
+        </animated.div>
+      )
+    })
+  }
 
   const fadeIn = useSpring({
     to: { opacity: 1 },
@@ -32,6 +55,13 @@ export default function Home() {
     delay: 1200,
   })
 
+  const shapeFadeIn = useSpring({
+    to: { opacity: 0.7 },
+    from: { opacity: 0 },
+    config: { tension: 60 },
+    delay: 2500,
+  })
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.contentWrapper}>
@@ -49,6 +79,8 @@ export default function Home() {
             d="M0,500 L0,370 L1440,0 L1440,500 L0,500 Z"
           ></path>
         </svg>
+
+        {renderShapes()}
 
         {/* phone screen */}
         <animated.div

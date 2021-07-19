@@ -1,0 +1,155 @@
+.startedModalBox {
+  height: 430px;
+  width: 590px;
+}
+
+.modalTitle {
+  margin-top: 0px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+  color: #000000;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  height: 305px;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 3px 20px 5px rgba(203, 210, 240, 0.5);
+  background-color: #ffffff;
+  margin: 10px;
+  font-family: 'Lexend Deca';
+  border: solid transparent 0px;
+  padding: 20px;
+  position: relative;
+}
+
+.icon {
+  width: 88px;
+  margin: 20px 0px;
+}
+
+/* phone portrait */
+@media (max-width: 650px) {
+  .startedModalBox {
+    height: 370px;
+    width: 330px;
+    padding: 25px 20px;
+    justify-content: flex-end;
+  }
+
+  .modalTitle {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 10px;
+    height: 115px;
+    width: 100%;
+    align-items: flex-end;
+    padding: 0px 10px;
+  }
+
+  .buttonTitle,
+  .buttonSubtitle {
+    margin: 4px 0px;
+    text-align: left;
+    width: 180px;
+  }
+
+  .icon {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: 18px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    margin: 0px;
+  }
+}
+
+/* phone landscape */
+@media (max-width: 850px) and (orientation: landscape) {
+  .startedModalBox {
+    height: 300px;
+    width: 360px;
+    padding: 15px 20px;
+    justify-content: flex-end;
+  }
+
+  .modalTitle {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+  }
+
+  .buttonContainer {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 6px;
+    height: 100px;
+    width: 100%;
+    align-items: flex-end;
+    padding: 0px 24px;
+  }
+
+  .buttonTitle,
+  .buttonSubtitle {
+    margin: 4px 0px;
+    text-align: left;
+    width: 180px;
+  }
+
+  .icon {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: 25px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    margin: 0px;
+  }
+}
+
+/* iphone5 portrait */
+@media (max-width: 360px) {
+  .startedModalBox {
+    width: 290px;
+    height: 310px;
+    padding: 25px 12px;
+  }
+
+  .button {
+    padding: 0px 5px;
+    margin: 6px;
+    height: 100px;
+  }
+
+  .modalTitle {
+    font-size: 1.2rem;
+  }
+
+  .icon {
+    left: 16px;
+    width: 50px;
+    height: 50px;
+  }
+}
