@@ -1,0 +1,159 @@
+.container {
+  width: 375px;
+  height: 770px;
+}
+
+.status_bar {
+  width: 100%;
+  height: 45px;
+  padding: 14px 20px 14px 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5b5e6e;
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  gap: 4px;
+}
+
+.chat_header {
+  width: 100%;
+  height: 55px;
+  background-color: #5b5e6e;
+  color: white;
+  padding: 0px 20px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat_title {
+  margin-bottom: 4px;
+  margin-left: 10px;
+}
+
+.chat_name {
+  font-size: 20px;
+}
+
+.chat_status {
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.message_container {
+  width: 100%;
+  height: 595px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px 0px 16px;
+}
+
+.message_right {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-top: 12px;
+}
+
+.message_left {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-top: 12px;
+  padding-left: 44px;
+  position: relative;
+}
+
+.time {
+  color: gray;
+  font-size: 10px;
+  margin: 2px 8px;
+}
+
+.message_box {
+  background-color: #f4f6ff;
+  border-radius: 15px;
+  padding: 12px 15px;
+  line-height: 1.4;
+}
+
+.message_box_first_right {
+  background-color: #f4f6ff;
+  border-radius: 15px 15px 0px 15px;
+  padding: 12px 15px;
+  line-height: 1.4;
+}
+
+.message_box_first_left {
+  background-color: #f4f6ff;
+  border-radius: 15px 15px 15px 0px;
+  padding: 12px 15px;
+  line-height: 1.4;
+}
+
+.cookie_profile {
+  position: absolute;
+  left: 0px;
+  width: 36px;
+}
+
+.chat_footer {
+  width: 100%;
+  height: 75px;
+  background-color: #dbe3ff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.text_input {
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  color: lightgray;
+  background-color: white;
+  padding: 10px 0px 0px 18px;
+}
+
+.button {
+  width: 235px;
+  height: 195px;
+  background-color: #5071ff;
+  color: white;
+  border-radius: 20px;
+  border: 2px solid #5071ff;
+  cursor: pointer;
+  font-family: 'Lexend Deca';
+  text-align: center;
+  padding-top: 20px;
+}
+
+.shopping_bag {
+  background-color: #5071ff;
+  height: 50px;
+  width: 100%;
+}
+
+.message_box_last {
+  background-color: #f4f6ff;
+  border-radius: 15px 15px 15px 0px;
+  padding: 0;
+  line-height: 1.4;
+  overflow: hidden;
+}
