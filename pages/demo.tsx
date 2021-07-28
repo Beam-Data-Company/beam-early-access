@@ -8,14 +8,6 @@ import ReceiptPage from '../components/demo_pages/ReceiptPage'
 export default function Demo() {
   const [pageNumber, setPageNumber] = useState(1)
 
-  const nextPage = () => {
-    setPageNumber(pageNumber + 1)
-  }
-
-  const firstPage = () => {
-    setPageNumber(1)
-  }
-
   const fadeIn = useSpring({
     opacity: 1,
     from: { opacity: 0 },
@@ -23,21 +15,39 @@ export default function Demo() {
     delay: 1200,
   })
 
-  return (
-    <div className={styles.container}>
-      {pageNumber === 1 ? (
+  const nextPage = () => {
+    setPageNumber((pageNumber) => pageNumber + 1)
+  }
+
+  const backToFirstPage = () => {
+    setPageNumber(1)
+  }
+
+  const displayPage = () => {
+    if (pageNumber === 1) {
+      return (
         <animated.div style={fadeIn}>
-          <ChatPage onClick={nextPage} />
+          <ChatPage buttonHandleClick={nextPage} />
         </animated.div>
-      ) : pageNumber === 2 ? (
+      )
+    }
+
+    if (pageNumber === 2) {
+      return (
         <animated.div style={fadeIn}>
-          <PaymentPage onClick={nextPage} />
+          <PaymentPage buttonHandleClick={nextPage} />
         </animated.div>
-      ) : (
+      )
+    }
+
+    if (pageNumber === 3) {
+      return (
         <animated.div style={fadeIn}>
-          <ReceiptPage onClick={firstPage} />
+          <ReceiptPage onClick={backToFirstPage} />
         </animated.div>
-      )}
-    </div>
-  )
+      )
+    }
+  }
+
+  return <div className={styles.container}>{displayPage()}</div>
 }

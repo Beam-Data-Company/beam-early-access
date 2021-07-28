@@ -2,11 +2,12 @@ import styles from './PaymentPage.module.css'
 import React from 'react'
 import Image from 'next/image'
 import cardIcon from '../../public/card-icon.png'
+import classNames from 'classnames'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
-  onClick: () => void
+  buttonHandleClick: () => void
 }
 
 export default function PaymentPage(props: Props) {
@@ -14,23 +15,23 @@ export default function PaymentPage(props: Props) {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.wrapper}>
-          <div>Pic</div>
-          <div>You&apos;re logged in as Jenny Jones</div>
+          <span>Pic</span>
+          <span>You&apos;re logged in as Jenny Jones</span>
         </div>
-        <div className={styles.wrapper_blue}>
-          <div>Switch</div>
+        <div className={classNames(styles.wrapper, styles.wrapper_blue)}>
+          <span>Switch</span>
           <FontAwesomeIcon width="8px" icon={faChevronRight} />
         </div>
       </div>
 
       <div className={styles.id_and_ref}>
-        <p>Bill# 923812397</p>
-        <p>Ref: E-Commerce</p>
+        <span>Bill# 923812397</span>
+        <span>Ref: E-Commerce</span>
       </div>
 
       <div className={styles.section}>
         <div className={styles.section_header}>
-          <div>Customer Detail</div>
+          <span>Customer Detail</span>
           <FontAwesomeIcon width="14px" color="#c9c9c9" icon={faPen} />
         </div>
 
@@ -56,30 +57,35 @@ export default function PaymentPage(props: Props) {
 
       <div className={styles.section}>
         <div className={styles.section_header}>
-          <div>Payment</div>
+          <span>Payment</span>
           <FontAwesomeIcon width="14px" color="#c9c9c9" icon={faPen} />
         </div>
 
         <div className={styles.info_box_payment}>
           <div className={styles.wrapper}>
-          <div className={styles.card_icon}>
-            <Image src={cardIcon} alt="Card Icon" placeholder="blur" priority />
+            <div className={styles.card_icon}>
+              <Image
+                src={cardIcon}
+                alt="Card Icon"
+                placeholder="blur"
+                priority
+              />
+            </div>
+            <span>Credit/Debit</span>
           </div>
-          <div>Credit/Debit</div>
-          </div>
-          <div>HSBC *1234</div>
+          <span>HSBC *1234</span>
         </div>
       </div>
 
       <div className={styles.row_bottom}>
         <div className={styles.wrapper}>
-          <div>Total</div>
-          <div className={styles.vat_text}>(%7 Vat Included)</div>
+          <span>Total</span>
+          <span className={styles.vat_text}>(%7 Vat Included)</span>
         </div>
-        <div>8,400 THB</div>
+        <span>8,400 THB</span>
       </div>
 
-      <button className={styles.button} onClick={props.onClick}>
+      <button className={styles.button} onClick={props.buttonHandleClick}>
         CLICK TO PAY
       </button>
     </div>

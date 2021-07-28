@@ -8,7 +8,6 @@
   height: 45px;
   padding: 14px 20px 14px 32px;
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: #5b5e6e;
@@ -17,7 +16,6 @@
 
 .wrapper {
   display: flex;
-  flex-direction: row;
   align-items: center;
   margin: 0;
   gap: 4px;
@@ -30,7 +28,6 @@
   color: white;
   padding: 0px 20px 10px 20px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -59,32 +56,33 @@
   padding: 0px 20px 0px 16px;
 }
 
-.message_right {
+/* message_row for every row, and each row 
+   have to choose between align right or left */
+.message_row {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   align-items: flex-end;
   padding-top: 12px;
 }
 
-.message_left {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+.row_align_right {
+  justify-content: flex-end;
+}
+
+.row_align_left {
   justify-content: flex-start;
-  align-items: flex-end;
-  padding-top: 12px;
   padding-left: 44px;
   position: relative;
 }
 
-.time {
+.message_time {
   color: gray;
   font-size: 10px;
   margin: 2px 8px;
 }
 
+/* message_box for every box, and there is an
+   extra class for the first box on each side */
 .message_box {
   background-color: #f4f6ff;
   border-radius: 15px;
@@ -92,18 +90,12 @@
   line-height: 1.4;
 }
 
-.message_box_first_right {
-  background-color: #f4f6ff;
+.box_first_right {
   border-radius: 15px 15px 0px 15px;
-  padding: 12px 15px;
-  line-height: 1.4;
 }
 
-.message_box_first_left {
-  background-color: #f4f6ff;
+.box_first_left {
   border-radius: 15px 15px 15px 0px;
-  padding: 12px 15px;
-  line-height: 1.4;
 }
 
 .cookie_profile {
@@ -117,7 +109,6 @@
   height: 75px;
   background-color: #dbe3ff;
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
@@ -128,7 +119,9 @@
   border-radius: 20px;
   color: lightgray;
   background-color: white;
-  padding: 10px 0px 0px 18px;
+  padding-left: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .button {
