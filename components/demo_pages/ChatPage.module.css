@@ -54,6 +54,7 @@
   flex-direction: column;
   align-items: center;
   padding: 0px 20px 0px 16px;
+  background-color: white;
 }
 
 /* message_row for every row, and each row 

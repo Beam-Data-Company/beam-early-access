@@ -6,7 +6,7 @@ import confetti from '../../public/confetti.png'
 import checkIcon from '../../public/check-icon.png'
 
 type Props = {
-  onClick: () => void
+  buttonHandleClick: () => void
 }
 
 export default function ReceiptPage(props: Props) {
@@ -28,11 +28,11 @@ export default function ReceiptPage(props: Props) {
           </div>
         </div>
 
-        <span className={styles.time_and_id}>
+        <div className={styles.time_and_id}>
           14 Jul 2021, 15:00
           <br />
           Bill# 923812397
-        </span>
+        </div>
 
         <div className={styles.info_container}>
           <div className={styles.info_child}>
@@ -50,15 +50,15 @@ export default function ReceiptPage(props: Props) {
         </div>
       </div>
 
-      <span className={styles.description}>
+      <div className={styles.description}>
         We have informed the merchant
         <br />
         that you have successfully paid
-      </span>
+      </div>
 
-      {/* <button className={styles.button} onClick={props.onClick}>
+      <button className={styles.button} onClick={props.buttonHandleClick}>
         Demo Again
-      </button> */}
+      </button>
     </div>
   )
 }
