@@ -36,7 +36,7 @@ export default function PaymentPage(props: Props) {
       <div className={styles.header}>
         <div className={styles.wrapper}>
           <Image src={profilePic} alt="Profile Pic" width="27px" height="27px"/>
-          <span>You&apos;re logged in as Jenny Jones</span>
+          <span>You&apos;re logged in as Jacky Jones</span>
         </div>
         <div className={classNames(styles.wrapper, styles.wrapper_blue)}>
           <span>Switch</span>
@@ -45,7 +45,7 @@ export default function PaymentPage(props: Props) {
       </div>
 
       <div className={styles.id_and_ref}>
-        <span>Bill# 923812397</span>
+        <span>Order ID# 923812397</span>
         <span>Ref: E-Commerce</span>
       </div>
 
@@ -58,9 +58,9 @@ export default function PaymentPage(props: Props) {
         <div className={styles.info_box}>
           <div className={styles.info_box_name}>Contact</div>
           <div>
-            Jenny Jones
+            Jacky Jones
             <br />
-            Jenny@beamcheckout.com
+            Jacky@beamcheckout.com
             <br />
             +65 6656 4656
           </div>
@@ -93,7 +93,7 @@ export default function PaymentPage(props: Props) {
             </div>
             <span>Credit/Debit</span>
           </div>
-          <span>HSBC *1234</span>
+          <span>HSBC*1234</span>
         </div>
       </div>
 
@@ -102,7 +102,7 @@ export default function PaymentPage(props: Props) {
           <span>Total</span>
           <span className={styles.vat_text}>(%7 Vat Included)</span>
         </div>
-        <span>8,400 THB</span>
+        <span>$12</span>
       </div>
 
       <div className={styles.slide_rail}>

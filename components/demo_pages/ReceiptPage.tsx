@@ -29,15 +29,15 @@ export default function ReceiptPage(props: Props) {
         </div>
 
         <div className={styles.time_and_id}>
-          14 Jul 2021, 15:00
+          14 Jul 2021, 9:41
           <br />
-          Bill# 923812397
+          Order ID# 923812397
         </div>
 
         <div className={styles.info_container}>
           <div className={styles.info_child}>
             <span className={styles.child_key}>Merchant</span>
-            <span>XYZ Furniture</span>
+            <span>Jenny&rsquo;s Cookie Shop</span>
           </div>
           <div className={styles.info_child}>
             <span className={styles.child_key}>Payment</span>
@@ -45,7 +45,7 @@ export default function ReceiptPage(props: Props) {
           </div>
           <div className={styles.info_child}>
             <span className={styles.child_key}>Amount</span>
-            <span>8,400 THB</span>
+            <span>$12</span>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default function ReceiptPage(props: Props) {
       </div>
 
       <button className={styles.button} onClick={props.buttonHandleClick}>
-        Demo Again
+        TRY THIS DEMO AGAIN
       </button>
     </div>
   )

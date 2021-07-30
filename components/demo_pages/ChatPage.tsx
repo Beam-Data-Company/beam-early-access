@@ -37,7 +37,7 @@ export default function ChatPage(props: Props) {
         <div className={styles.wrapper}>
           <Image src={arrowLeftIcon} alt="Arrow Left Icon" width="20px" height="22px"/>
           <div className={styles.chat_title}>
-            <div className={styles.chat_name}>Jenny&rsquo;s Cookies</div>
+            <div className={styles.chat_name}>Jenny&rsquo;s Cookie Shop</div>
             <div className={styles.chat_status}>Active Now</div>
           </div>
         </div>
@@ -46,17 +46,17 @@ export default function ChatPage(props: Props) {
 
       <div className={styles.message_container}>
         <div className={classNames(styles.message_row, styles.row_align_right)}>
-          <div className={styles.message_time}>12:00</div>
+          <div className={styles.message_time}>9:41</div>
           <div
             className={classNames(styles.message_box, styles.box_first_right)}
           >
             Can I order a box of your
             <br />
-            signature cookies please?
+            Signature&rsquo;s Cookies please?
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_right)}>
-          <div className={styles.message_time}>12:00</div>
+          <div className={styles.message_time}>9:41</div>
           <div className={classNames(styles.message_box, styles.box_photo)}>
             <Image src={cookiePic} alt="Cookie Pic" width="142px" height="127px"/>
           </div>
@@ -68,13 +68,15 @@ export default function ChatPage(props: Props) {
           <div
             className={classNames(styles.message_box, styles.box_first_left)}
           >
-            Yes sure! Please pay
+            Good choice! That will be $12,
             <br />
-            through this checkout link
+            you can instantly checkout 
+            <br />
+            via this link
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
-          <div className={classNames(styles.message_box,styles.link_message)}>beamdata.co/checkout=1220</div>
+          <div className={classNames(styles.message_box,styles.link_message)}>beampay.me/checkout=Jcs10e9</div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
           <div className={classNames(styles.message_box, styles.box_shopping_bag)} onClick={props.buttonHandleClick}>
@@ -82,9 +84,9 @@ export default function ChatPage(props: Props) {
               <Image src={shoppingBag} alt="Shopping Bag" width="74px" height="88px" priority />
             </div>
             <div className={styles.shopping_bag_title}>Instant Checkout</div>
-            <div className={styles.shopping_bag_id}>Bill# 923812397</div>
+            <div className={styles.shopping_bag_id}>Order ID# 923812397</div>
           </div>
-          <div className={styles.message_time}>12:03</div>
+          <div className={styles.message_time}>9:41</div>
         </div>
       </div>
 
