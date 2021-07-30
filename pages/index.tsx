@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Header from '../components/Header'
 import MailchimpForm from '../components/MailchimpForm'
+import Demo from '../components/demo_pages/Demo'
 import styles from '../styles/Home.module.css'
-import phoneScreen from '../public/phone-screen.png'
 import shape1 from '../public/shape1.png'
 import shape2 from '../public/shape2.png'
 import shape3 from '../public/shape3.png'
@@ -39,9 +39,9 @@ export default function Home() {
     config: { tension: 70 },
   })
 
-  const slideRight = useSpring({
+  const slideLeft = useSpring({
     opacity: 1,
-    transform: 'translate(70%, -50%)',
+    transform: 'translate(30%, -50%)',
     from: { opacity: 0, transform: 'translate(120%, -50%)' },
     config: { tension: 80 },
     delay: 1200,
@@ -49,7 +49,7 @@ export default function Home() {
 
   const slideUp = useSpring({
     opacity: 1,
-    transform: 'translate(-50%, 0%)',
+    transform: 'translate(-50%, -15%)',
     from: { opacity: 0, transform: 'translate(-50%, 20%)' },
     config: { tension: 80 },
     delay: 1200,
@@ -85,14 +85,9 @@ export default function Home() {
         {/* phone screen */}
         <animated.div
           className={styles.phoneScreenPic}
-          style={isTablet && isPortrait ? slideUp : slideRight}
+          style={isTablet && isPortrait ? slideUp : slideLeft}
         >
-          <Image
-            src={phoneScreen}
-            alt="Phone Screen"
-            placeholder="blur"
-            priority
-          />
+          <Demo/>
         </animated.div>
 
         <animated.div className={styles.main_container} style={fadeIn}>
