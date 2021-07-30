@@ -87,7 +87,7 @@ export default function Home() {
           className={styles.phoneScreenPic}
           style={isTablet && isPortrait ? slideUp : slideLeft}
         >
-          <Demo/>
+          <Demo />
         </animated.div>
 
         <animated.div className={styles.main_container} style={fadeIn}>

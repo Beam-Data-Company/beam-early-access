@@ -25,14 +25,14 @@ export default function Demo() {
     if (props.pageNumber % 3 === 1) {
       return (
         <animated.div style={fadeIn}>
-          <ChatPage buttonHandleClick={nextPage} />
+          <ChatPage goToPaymentPage={nextPage} />
         </animated.div>
       )
     } else {
       if (props.pageNumber % 3 === 2) {
         return (
           <div className={styles.temp}>
-            <ChatPage buttonHandleClick={nextPage} />
+            <ChatPage goToPaymentPage={nextPage} />
           </div>
         )
       } else {
@@ -52,7 +52,7 @@ export default function Demo() {
     if (props.pageNumber % 3 === 2) {
       return (
         <animated.div style={slideUp}>
-          <PaymentPage buttonHandleClick={nextPage} />
+          <PaymentPage goToReceiptPage={nextPage} />
         </animated.div>
       )
     } else {
@@ -69,7 +69,7 @@ export default function Demo() {
     if (props.pageNumber % 3 === 0) {
       return (
         <animated.div style={fadeIn}>
-          <ReceiptPage buttonHandleClick={nextPage} />
+          <ReceiptPage goToChatPage={nextPage} />
         </animated.div>
       )
     } else {

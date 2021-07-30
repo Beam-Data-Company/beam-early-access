@@ -18,7 +18,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
-  buttonHandleClick: () => void
+  goToPaymentPage: () => void
 }
 
 export default function ChatPage(props: Props) {
@@ -32,10 +32,16 @@ export default function ChatPage(props: Props) {
           <FontAwesomeIcon width="16px" icon={faBatteryFull} />
         </div>
       </div>
-      
+
       <div className={styles.chat_header}>
         <div className={styles.wrapper}>
-          <Image src={arrowLeftIcon} alt="Arrow Left Icon" width="20px" height="22px" priority/>
+          <Image
+            src={arrowLeftIcon}
+            alt="Arrow Left Icon"
+            width="20px"
+            height="22px"
+            priority
+          />
           <div className={styles.chat_title}>
             <div className={styles.chat_name}>Jenny&rsquo;s Cookie Shop</div>
             <div className={styles.chat_status}>Active Now</div>
@@ -58,7 +64,13 @@ export default function ChatPage(props: Props) {
         <div className={classNames(styles.message_row, styles.row_align_right)}>
           <div className={styles.message_time}>9:41</div>
           <div className={classNames(styles.message_box, styles.box_photo)}>
-            <Image src={cookiePic} alt="Cookie Pic" width="142px" height="127px" priority/>
+            <Image
+              src={cookiePic}
+              alt="Cookie Pic"
+              width="142px"
+              height="127px"
+              priority
+            />
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
@@ -70,18 +82,29 @@ export default function ChatPage(props: Props) {
           >
             Good choice! That will be $12,
             <br />
-            you can instantly checkout 
+            you can instantly checkout
             <br />
             via this link
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
-          <div className={classNames(styles.message_box,styles.link_message)}>beampay.me/checkout=Jcs10e9</div>
+          <div className={classNames(styles.message_box, styles.link_message)}>
+            beampay.me/checkout=Jcs10e9
+          </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
-          <div className={classNames(styles.message_box, styles.box_shopping_bag)} onClick={props.buttonHandleClick}>
+          <div
+            className={classNames(styles.message_box, styles.box_shopping_bag)}
+            onClick={props.goToPaymentPage}
+          >
             <div className={styles.shopping_bag_background}>
-              <Image src={shoppingBag} alt="Shopping Bag" width="74px" height="88px" priority />
+              <Image
+                src={shoppingBag}
+                alt="Shopping Bag"
+                width="74px"
+                height="88px"
+                priority
+              />
             </div>
             <div className={styles.shopping_bag_title}>Instant Checkout</div>
             <div className={styles.shopping_bag_id}>Order ID# 923812397</div>
@@ -91,10 +114,20 @@ export default function ChatPage(props: Props) {
       </div>
 
       <div className={styles.chat_footer}>
-        <Image src={plusCircleIcon} alt="Plus Circle Icon" width="24px" height="24px"/>
-        <Image src={cameraIcon} alt="Camera Icon" width="25px" height="20px"/>
+        <Image
+          src={plusCircleIcon}
+          alt="Plus Circle Icon"
+          width="24px"
+          height="24px"
+        />
+        <Image src={cameraIcon} alt="Camera Icon" width="25px" height="20px" />
         <div className={styles.text_input}>Text Message...</div>
-        <Image src={sendIcon} alt="Arrow Left Icon" width="24px" height="22px"/>
+        <Image
+          src={sendIcon}
+          alt="Arrow Left Icon"
+          width="24px"
+          height="22px"
+        />
       </div>
     </div>
   )

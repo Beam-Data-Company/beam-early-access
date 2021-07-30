@@ -6,7 +6,7 @@ import confetti from '../../public/confetti.png'
 import checkIcon from '../../public/check-icon.png'
 
 type Props = {
-  buttonHandleClick: () => void
+  goToChatPage: () => void
 }
 
 export default function ReceiptPage(props: Props) {
@@ -56,7 +56,7 @@ export default function ReceiptPage(props: Props) {
         that you have successfully paid
       </div>
 
-      <button className={styles.button} onClick={props.buttonHandleClick}>
+      <button className={styles.button} onClick={props.goToChatPage}>
         TRY THIS DEMO AGAIN
       </button>
     </div>
