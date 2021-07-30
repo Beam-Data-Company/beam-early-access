@@ -110,12 +110,12 @@ export default function PaymentPage(props: Props) {
         {buttonStatic ? 
           <div className={styles.button_white_container}>
             <button className={styles.button_white} onClick={startSlide}>
-              <Image src={beamLogo} alt="Beam Logo" width="13px" height="17px" />
+              <Image src={beamLogo} alt="Beam Logo" width="13px" height="17px" priority/>
             </button>
           </div> 
         : <animated.div style={slideRight} className={styles.button_white_container}>
             <button className={styles.button_white}>
-              <Image src={beamLogo} alt="Beam Logo" width="13px" height="17px" />
+              <Image src={beamLogo} alt="Beam Logo" width="13px" height="17px" priority/>
             </button>
           </animated.div> 
         }

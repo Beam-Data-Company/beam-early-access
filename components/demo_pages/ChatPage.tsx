@@ -32,10 +32,10 @@ export default function ChatPage(props: Props) {
           <FontAwesomeIcon width="16px" icon={faBatteryFull} />
         </div>
       </div>
-
+      
       <div className={styles.chat_header}>
         <div className={styles.wrapper}>
-          <Image src={arrowLeftIcon} alt="Arrow Left Icon" width="20px" height="22px"/>
+          <Image src={arrowLeftIcon} alt="Arrow Left Icon" width="20px" height="22px" priority/>
           <div className={styles.chat_title}>
             <div className={styles.chat_name}>Jenny&rsquo;s Cookie Shop</div>
             <div className={styles.chat_status}>Active Now</div>
@@ -58,7 +58,7 @@ export default function ChatPage(props: Props) {
         <div className={classNames(styles.message_row, styles.row_align_right)}>
           <div className={styles.message_time}>9:41</div>
           <div className={classNames(styles.message_box, styles.box_photo)}>
-            <Image src={cookiePic} alt="Cookie Pic" width="142px" height="127px"/>
+            <Image src={cookiePic} alt="Cookie Pic" width="142px" height="127px" priority/>
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
