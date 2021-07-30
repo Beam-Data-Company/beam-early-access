@@ -86,7 +86,7 @@
    extra class for the first box on each side */
 .message_box {
   background-color: #f4f6ff;
-  border-radius: 15px;
+  border-radius: 20px;
   padding: 12px 15px;
   line-height: 1.4;
 }
@@ -97,6 +97,19 @@
 
 .box_first_left {
   border-radius: 15px 15px 15px 0px;
+}
+
+.box_photo {
+  padding: 0px;
+  background-color: transparent;
+  height: 127px;
+}
+
+.box_shopping_bag {
+  padding: 0px;
+  width: 234px;
+  overflow: hidden;
+  font-size: 16px;
 }
 
 .cookie_profile {
@@ -110,15 +123,16 @@
   height: 75px;
   background-color: #dbe3ff;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0px 12px 4px 18px;
 }
 
 .text_input {
-  width: 200px;
+  width: 224px;
   height: 40px;
   border-radius: 20px;
-  color: lightgray;
+  color: #98a4bf;
   background-color: white;
   padding-left: 18px;
   display: flex;
@@ -138,16 +152,30 @@
   padding-top: 20px;
 }
 
-.shopping_bag {
+.shopping_bag_background {
   background-color: #5071ff;
-  height: 50px;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0px;
 }
 
-.message_box_last {
-  background-color: #f4f6ff;
-  border-radius: 15px 15px 15px 0px;
-  padding: 0;
-  line-height: 1.4;
-  overflow: hidden;
+.shopping_bag_title {
+  font-size: 14px;
+  margin-left: 15px;
+  margin-top: 8px;
+  line-height: 1.25;
+}
+
+.shopping_bag_id {
+  font-family: 'Assistant';
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #898989;
+  margin: 5px 0px 10px 15px;
+  line-height: 1.25;
+}
+
+.link_message {
+  color: #3a52b8;
+  text-decoration: underline;
 }

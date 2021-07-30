@@ -3,16 +3,18 @@ import React from 'react'
 import Image from 'next/image'
 import classNames from 'classnames'
 import cookieProfile from '../../public/cookie-profile.png'
+import cookiePic from '../../public/cookie-pic.png'
+import arrowLeftIcon from '../../public/arrow-left-icon.png'
+import cameraIcon from '../../public/camera-icon.png'
+import plusCircleIcon from '../../public/plus-circle-icon.png'
+import sendIcon from '../../public/send-icon.png'
+import shoppingBag from '../../public/shopping-bag.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faArrowLeft,
   faWifi,
   faBatteryFull,
   faSignal,
   faEllipsisH,
-  faPlusCircle,
-  faCamera,
-  faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons'
 
 type Props = {
@@ -33,7 +35,7 @@ export default function ChatPage(props: Props) {
 
       <div className={styles.chat_header}>
         <div className={styles.wrapper}>
-          <FontAwesomeIcon width="20px" icon={faArrowLeft} />
+          <Image src={arrowLeftIcon} alt="Arrow Left Icon" width="20px" height="22px"/>
           <div className={styles.chat_title}>
             <div className={styles.chat_name}>Jenny&rsquo;s Cookies</div>
             <div className={styles.chat_status}>Active Now</div>
@@ -55,7 +57,9 @@ export default function ChatPage(props: Props) {
         </div>
         <div className={classNames(styles.message_row, styles.row_align_right)}>
           <div className={styles.message_time}>12:00</div>
-          <div className={styles.message_box}>cookie pic</div>
+          <div className={classNames(styles.message_box, styles.box_photo)}>
+            <Image src={cookiePic} alt="Cookie Pic" width="142px" height="127px"/>
+          </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
           <div className={styles.cookie_profile}>
@@ -66,28 +70,29 @@ export default function ChatPage(props: Props) {
           >
             Yes sure! Please pay
             <br />
-            through this chackout link
+            through this checkout link
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
-          <div className={styles.message_box}>beamdata.co/checkout=1220</div>
+          <div className={classNames(styles.message_box,styles.link_message)}>beamdata.co/checkout=1220</div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
-          <div className={styles.message_box} onClick={props.buttonHandleClick}>
-            <div className={styles.shopping_bag}>shopping bag</div>
-            Instant Checkout
-            <br />
-            Bill #923812397
+          <div className={classNames(styles.message_box, styles.box_shopping_bag)} onClick={props.buttonHandleClick}>
+            <div className={styles.shopping_bag_background}>
+              <Image src={shoppingBag} alt="Shopping Bag" width="74px" height="88px" priority />
+            </div>
+            <div className={styles.shopping_bag_title}>Instant Checkout</div>
+            <div className={styles.shopping_bag_id}>Bill# 923812397</div>
           </div>
           <div className={styles.message_time}>12:03</div>
         </div>
       </div>
 
       <div className={styles.chat_footer}>
-        <FontAwesomeIcon width="24px" icon={faPlusCircle} />
-        <FontAwesomeIcon width="24px" icon={faCamera} />
+        <Image src={plusCircleIcon} alt="Plus Circle Icon" width="24px" height="24px"/>
+        <Image src={cameraIcon} alt="Camera Icon" width="25px" height="20px"/>
         <div className={styles.text_input}>Text Message...</div>
-        <FontAwesomeIcon width="24px" icon={faPaperPlane} />
+        <Image src={sendIcon} alt="Arrow Left Icon" width="24px" height="22px"/>
       </div>
     </div>
   )
