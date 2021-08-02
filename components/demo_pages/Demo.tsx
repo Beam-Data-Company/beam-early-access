@@ -75,9 +75,12 @@ export default function Demo() {
 
   return (
     <div className={styles.container}>
-      <Page1 pageNumber={pageNumber} />
-      <Page2 pageNumber={pageNumber} />
-      <Page3 pageNumber={pageNumber} />
+      <div className={styles.phone_demo_container}>
+        <Page1 pageNumber={pageNumber} />
+        <Page2 pageNumber={pageNumber} />
+        <Page3 pageNumber={pageNumber} />
+      </div>
+      <div className={styles.try_demo_tag}>Try Demo</div>
     </div>
   )
 }

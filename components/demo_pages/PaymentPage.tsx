@@ -25,14 +25,15 @@ export default function PaymentPage(props: Props) {
 
   const beating = useSpring({
     loop: true,
-    to: [ {opacity: 1}, 
-          {opacity: 0},
-          {opacity: 1},
-          {opacity: 0},
-          {opacity: 1}
-        ],
+    to: [
+      { opacity: 1 },
+      { opacity: 0 },
+      { opacity: 1 },
+      { opacity: 0 },
+      { opacity: 1 },
+    ],
     from: { opacity: 1 },
-    config: { tension : 200},
+    config: { tension: 200 },
     delay: 1200,
   })
 
@@ -125,7 +126,10 @@ export default function PaymentPage(props: Props) {
 
       <div className={styles.slide_rail}>
         {buttonStatic ? (
-          <animated.div className={styles.button_white_container} style={beating}>
+          <animated.div
+            className={styles.button_white_container}
+            style={beating}
+          >
             <button className={styles.button_white} onClick={startSlide}>
               <Image
                 src={beamLogo}

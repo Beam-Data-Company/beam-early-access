@@ -23,17 +23,17 @@ type Props = {
 }
 
 export default function ChatPage(props: Props) {
-
   const beating = useSpring({
     loop: true,
-    to: [ {opacity: 1}, 
-          {opacity: 0},
-          {opacity: 1},
-          {opacity: 0},
-          {opacity: 1}
-        ],
+    to: [
+      { opacity: 1 },
+      { opacity: 0 },
+      { opacity: 1 },
+      { opacity: 0 },
+      { opacity: 1 },
+    ],
     from: { opacity: 1 },
-    config: { tension : 200},
+    config: { tension: 200 },
     delay: 1200,
   })
 
@@ -114,13 +114,13 @@ export default function ChatPage(props: Props) {
           >
             <div className={styles.shopping_bag_background}>
               <animated.div style={beating}>
-              <Image
-                src={shoppingBag}
-                alt="Shopping Bag"
-                width="74px"
-                height="88px"
-                priority
-              />
+                <Image
+                  src={shoppingBag}
+                  alt="Shopping Bag"
+                  width="74px"
+                  height="88px"
+                  priority
+                />
               </animated.div>
             </div>
             <div className={styles.shopping_bag_title}>Instant Checkout</div>
