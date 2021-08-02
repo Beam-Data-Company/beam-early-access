@@ -23,12 +23,25 @@ export default function PaymentPage(props: Props) {
     setTimeout(() => props.goToReceiptPage(), 2000)
   }
 
+  const beating = useSpring({
+    loop: true,
+    to: [ {opacity: 1}, 
+          {opacity: 0},
+          {opacity: 1},
+          {opacity: 0},
+          {opacity: 1}
+        ],
+    from: { opacity: 1 },
+    config: { tension : 200},
+    delay: 1200,
+  })
+
   const slideRight = useSpring({
     opacity: 1,
     transform: 'translate(72%, 0%)',
     from: { opacity: 1, transform: 'translate(0%, 0%)' },
     config: { tension: 90 },
-    delay: 2300,
+    delay: 2500,
   })
 
   return (
@@ -112,7 +125,7 @@ export default function PaymentPage(props: Props) {
 
       <div className={styles.slide_rail}>
         {buttonStatic ? (
-          <div className={styles.button_white_container}>
+          <animated.div className={styles.button_white_container} style={beating}>
             <button className={styles.button_white} onClick={startSlide}>
               <Image
                 src={beamLogo}
@@ -122,7 +135,7 @@ export default function PaymentPage(props: Props) {
                 priority
               />
             </button>
-          </div>
+          </animated.div>
         ) : (
           <animated.div
             style={slideRight}

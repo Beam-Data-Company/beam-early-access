@@ -10,6 +10,7 @@ import plusCircleIcon from '../../public/plus-circle-icon.png'
 import sendIcon from '../../public/send-icon.png'
 import shoppingBag from '../../public/shopping-bag.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { animated, useSpring } from 'react-spring'
 import {
   faWifi,
   faBatteryFull,
@@ -22,6 +23,20 @@ type Props = {
 }
 
 export default function ChatPage(props: Props) {
+
+  const beating = useSpring({
+    loop: true,
+    to: [ {opacity: 1}, 
+          {opacity: 0},
+          {opacity: 1},
+          {opacity: 0},
+          {opacity: 1}
+        ],
+    from: { opacity: 1 },
+    config: { tension : 200},
+    delay: 1200,
+  })
+
   return (
     <div className={styles.container}>
       <div className={styles.status_bar}>
@@ -98,6 +113,7 @@ export default function ChatPage(props: Props) {
             onClick={props.goToPaymentPage}
           >
             <div className={styles.shopping_bag_background}>
+              <animated.div style={beating}>
               <Image
                 src={shoppingBag}
                 alt="Shopping Bag"
@@ -105,6 +121,7 @@ export default function ChatPage(props: Props) {
                 height="88px"
                 priority
               />
+              </animated.div>
             </div>
             <div className={styles.shopping_bag_title}>Instant Checkout</div>
             <div className={styles.shopping_bag_id}>Order ID# 923812397</div>

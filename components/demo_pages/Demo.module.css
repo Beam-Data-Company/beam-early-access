@@ -9,7 +9,7 @@
   border: solid 8px black;
   border-radius: 45px;
   transform: scale(0.8);
-  background-color: white;
+  background-color: black;
 }
 
 .temp {
@@ -17,4 +17,10 @@
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+@media (max-height: 700px) and (orientation: landscape) {
+ .container {
+   transform: scale(0.6);
+ }
 }

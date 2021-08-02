@@ -111,6 +111,7 @@
   width: 234px;
   overflow: hidden;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .cookie_profile {
