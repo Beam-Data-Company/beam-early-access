@@ -4,6 +4,7 @@
   width: 390px;
   position: relative;
   transform: scale(0.8);
+  cursor: default;
 }
 
 .phone_demo_container {

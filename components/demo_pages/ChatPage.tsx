@@ -73,7 +73,7 @@ export default function ChatPage(props: Props) {
           >
             Can I order a box of your
             <br />
-            Signature&rsquo;s Cookies please?
+            Signature Cookies please?
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_right)}>
