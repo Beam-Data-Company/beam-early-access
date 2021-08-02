@@ -78,7 +78,7 @@ export default function ChatPage(props: Props) {
         </div>
         <div className={classNames(styles.message_row, styles.row_align_right)}>
           <div className={styles.message_time}>9:41</div>
-          <div className={classNames(styles.message_box, styles.box_photo)}>
+          <div className={classNames(styles.message_box, styles.box_picture)}>
             <Image
               src={cookiePic}
               alt="Cookie Pic"

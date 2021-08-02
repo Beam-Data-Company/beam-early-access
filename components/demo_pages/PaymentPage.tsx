@@ -116,7 +116,7 @@ export default function PaymentPage(props: Props) {
         </div>
       </div>
 
-      <div className={styles.row_bottom}>
+      <div className={styles.total_amount_container}>
         <div className={styles.wrapper}>
           <span>Total</span>
           <span className={styles.vat_text}>(%7 Vat Included)</span>

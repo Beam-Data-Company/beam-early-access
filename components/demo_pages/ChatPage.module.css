@@ -14,6 +14,7 @@
   color: white;
 }
 
+/* for grouping components together*/
 .wrapper {
   display: flex;
   align-items: center;
@@ -33,6 +34,7 @@
   margin-top: -1px;
 }
 
+/* for grouping chat name and status */
 .chat_title {
   margin-bottom: 4px;
   margin-left: 10px;
@@ -84,7 +86,8 @@
 }
 
 /* message_box for every box, and there is an
-   extra class for the first box on each side */
+   extra class for the first box on each side 
+   and for picture box, shopping bag box*/
 .message_box {
   background-color: #f4f6ff;
   border-radius: 20px;
@@ -100,7 +103,7 @@
   border-radius: 15px 15px 15px 0px;
 }
 
-.box_photo {
+.box_picture {
   padding: 0px;
   background-color: transparent;
   height: 127px;
@@ -164,6 +167,8 @@
   line-height: 1.25;
 }
 
+/* extra class for link message 
+   (blue and underline) */
 .link_message {
   color: #3a52b8;
   text-decoration: underline;
