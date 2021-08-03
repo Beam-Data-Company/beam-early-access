@@ -1,0 +1,176 @@
+.container {
+  width: 375px;
+  height: 770px;
+}
+
+.status_bar {
+  width: 100%;
+  height: 45px;
+  padding: 14px 20px 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #5b5e6e;
+  color: white;
+}
+
+/* for grouping components together*/
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  gap: 4px;
+}
+
+.chat_header {
+  width: 100%;
+  height: 55px;
+  background-color: #5b5e6e;
+  color: white;
+  padding: 0px 20px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -1px;
+}
+
+/* for grouping chat name and status */
+.chat_title {
+  margin-bottom: 4px;
+  margin-left: 10px;
+}
+
+.chat_name {
+  font-size: 20px;
+}
+
+.chat_status {
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.message_container {
+  width: 100%;
+  height: 595px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px 0px 16px;
+  background-color: white;
+}
+
+/* message_row for every row, and each row 
+   have to choose between align right or left */
+.message_row {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 10px;
+}
+
+.row_align_right {
+  justify-content: flex-end;
+}
+
+.row_align_left {
+  justify-content: flex-start;
+  padding-left: 44px;
+  position: relative;
+}
+
+.message_time {
+  color: gray;
+  font-size: 10px;
+  margin: 2px 8px;
+}
+
+/* message_box for every box, and there is an
+   extra class for the first box on each side 
+   and for picture box, shopping bag box*/
+.message_box {
+  background-color: #f4f6ff;
+  border-radius: 20px;
+  padding: 12px 15px;
+  line-height: 1.4;
+}
+
+.box_first_right {
+  border-radius: 15px 15px 0px 15px;
+}
+
+.box_first_left {
+  border-radius: 15px 15px 15px 0px;
+}
+
+.box_picture {
+  padding: 0px;
+  background-color: transparent;
+  height: 127px;
+}
+
+.box_shopping_bag {
+  padding: 0px;
+  width: 234px;
+  overflow: hidden;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cookie_profile {
+  position: absolute;
+  left: 0px;
+  width: 36px;
+}
+
+.chat_footer {
+  width: 100%;
+  height: 75px;
+  background-color: #dbe3ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 12px 4px 18px;
+}
+
+.text_input {
+  width: 224px;
+  height: 40px;
+  border-radius: 20px;
+  color: #98a4bf;
+  background-color: white;
+  padding-left: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.shopping_bag_background {
+  background-color: #5071ff;
+  display: flex;
+  justify-content: center;
+  padding: 25px 0px;
+}
+
+.shopping_bag_title {
+  font-size: 14px;
+  margin-left: 15px;
+  margin-top: 8px;
+  line-height: 1.25;
+}
+
+.shopping_bag_id {
+  font-family: 'Assistant';
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: #898989;
+  margin: 5px 0px 10px 15px;
+  line-height: 1.25;
+}
+
+/* extra class for link message 
+   (blue and underline) */
+.link_message {
+  color: #3a52b8;
+  text-decoration: underline;
+  cursor: pointer;
+}

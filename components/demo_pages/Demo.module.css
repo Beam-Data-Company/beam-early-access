@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  height: 785px;
+  width: 390px;
+  position: relative;
+  transform: scale(0.8);
+  cursor: default;
+}
+
+.phone_demo_container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 785px;
+  width: 390px;
+  position: relative;
+  overflow: hidden;
+  border: solid 8px black;
+  border-radius: 45px;
+}
+
+.temp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.try_demo_tag {
+  width: 55px;
+  height: 135px;
+  border-radius: 0px 12px 12px 0px;
+  writing-mode: vertical-lr;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  top: 106px;
+  left: 385px;
+  color: white;
+  background-color: black;
+}
+
+@media (max-height: 700px) and (orientation: landscape) {
+  .container {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    transform: scale(0.6);
+  }
+}

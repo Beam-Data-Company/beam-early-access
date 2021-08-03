@@ -13,8 +13,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(70%, -50%);
-  width: 265px;
+  z-index: 1;
 }
 
 .shape1,
@@ -107,7 +106,6 @@
   .phoneScreenPic {
     top: 42%;
     left: 50%;
-    transform: translate(-50%, 0%);
   }
 
   .title_with_description_container {
@@ -140,10 +138,8 @@
   }
 
   .phoneScreenPic {
-    top: 42%;
+    top: 40%;
     left: 50%;
-    width: 250px;
-    transform: translate(-50%, 0%);
   }
 }
 
@@ -195,10 +191,6 @@
 }
 
 @media (max-height: 700px) and (orientation: landscape) {
-  .phoneScreenPic {
-    width: calc(100vh / 2.85);
-  }
-
   .shape1,
   .shape2,
   .shape3,

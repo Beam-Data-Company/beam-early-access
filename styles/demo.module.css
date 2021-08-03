@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  height: 770px;
+  position: relative;
+  overflow: hidden;
+}
+
+.temp {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: -1;
+}
