@@ -172,4 +172,5 @@
 .link_message {
   color: #3a52b8;
   text-decoration: underline;
+  cursor: pointer;
 }

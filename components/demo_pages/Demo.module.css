@@ -47,3 +47,9 @@
     transform: scale(0.6);
   }
 }
+
+@media (max-width: 800px) {
+  .container {
+    transform: scale(0.6);
+  }
+}

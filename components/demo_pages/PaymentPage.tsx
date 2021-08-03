@@ -20,7 +20,7 @@ export default function PaymentPage(props: Props) {
 
   const startSlide = () => {
     setButtonStatic((buttonStatic) => !buttonStatic)
-    setTimeout(() => props.goToReceiptPage(), 2000)
+    setTimeout(() => props.goToReceiptPage(), 2500)
   }
 
   const beating = useSpring({
@@ -38,11 +38,10 @@ export default function PaymentPage(props: Props) {
   })
 
   const slideRight = useSpring({
-    opacity: 1,
-    transform: 'translate(72%, 0%)',
-    from: { opacity: 1, transform: 'translate(0%, 0%)' },
+    to: { x: 234 },
+    from: { x: 0 },
     config: { tension: 90 },
-    delay: 2500,
+    delay: 3000,
   })
 
   return (
@@ -142,8 +141,8 @@ export default function PaymentPage(props: Props) {
           </animated.div>
         ) : (
           <animated.div
-            style={slideRight}
             className={styles.button_white_container}
+            style={slideRight}
           >
             <button className={styles.button_white}>
               <Image

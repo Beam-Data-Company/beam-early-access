@@ -103,7 +103,10 @@ export default function ChatPage(props: Props) {
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
-          <div className={classNames(styles.message_box, styles.link_message)}>
+          <div
+            className={classNames(styles.message_box, styles.link_message)}
+            onClick={props.goToPaymentPage}
+          >
             beampay.me/checkout=Jcs10e9
           </div>
         </div>
