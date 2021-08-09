@@ -1,0 +1,88 @@
+.wrapper {
+  background-image: linear-gradient(
+    to top,
+    #fff -6%,
+    #f4f6ff 27%,
+    #bec9ff 88%,
+    #8399ff 101%
+  );
+  min-height: 1300px;
+  font-family: 'Assistant';
+  position: relative;
+}
+
+.main_container {
+  width: 815px;
+  height: 1220px;
+  border-radius: 25px;
+  position: absolute;
+  background-color: white;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  box-shadow: 0 3px 30px 0 rgba(184, 191, 222, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bird_top_left {
+  position: absolute;
+  top: 242px;
+  left: 880px;
+  z-index: 1;
+}
+
+.bird_top_right {
+  position: absolute;
+  top: 220px;
+  left: 1065px;
+  z-index: 1;
+}
+
+.bird_bottom {
+  position: absolute;
+  top: 900px;
+  left: 250px;
+  z-index: 1;
+}
+
+.paragraph {
+  margin-top: 30px;
+  line-height: 24px;
+  width: 700px;
+  padding-left: 6px;
+}
+
+.message_list {
+  font-size: 18px;
+  width: 100%;
+  padding-left: 80px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.list_child {
+  margin-top: 25px;
+  display: flex;
+  gap: 18px;
+}
+
+.thai_message {
+  font-family: 'Prompt';
+  font-size: 16px;
+  margin-top: 6px;
+  color: #535353;
+}
+
+.remarks {
+  margin-top: 50px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #535353;
+  padding-top: 20px;
+  border-top: solid 0.5px #bbc1db;
+  width: 700px;
+  padding-left: 6px;
+}
