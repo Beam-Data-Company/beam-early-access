@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  height: 310px;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Assistant';
+  color: #3a52b8;
+}
