@@ -3,22 +3,24 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import styles from './SignupForm.module.css'
 
+const FormExtractSchema = Yup.object({
+  fullName: Yup.string()
+    .max(30, 'Must be 30 characters or less')
+    .required('Required'),
+  country: Yup.string()
+    .oneOf(['Thailand', 'Singapore', 'USA'])
+    .required('Required'),
+  phoneNumber: Yup.string()
+    .max(10, 'Must be 10 characters or less')
+    .required('Required'),
+  email: Yup.string().email('Invalid email address').required('Required'),
+})
+
 export default function SignupForm() {
   return (
     <Formik
       initialValues={{ fullName: '', country: '', phoneNumber: '', email: '' }}
-      validationSchema={Yup.object({
-        fullName: Yup.string()
-          .max(30, 'Must be 30 characters or less')
-          .required('Required'),
-        country: Yup.string()
-          .oneOf(['Thailand', 'Singapore', 'USA'])
-          .required('Required'),
-        phoneNumber: Yup.string()
-          .max(10, 'Must be 10 characters or less')
-          .required('Required'),
-        email: Yup.string().email('Invalid email address').required('Required'),
-      })}
+      validationSchema={FormExtractSchema}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2))
@@ -32,7 +34,9 @@ export default function SignupForm() {
           placeholder="Full Name"
           className={styles.input_field}
         />
-        <ErrorMessage name="fullName" />
+        <div className={styles.error_message}>
+          <ErrorMessage name="fullName" />
+        </div>
 
         <div className={styles.phone_number_container}>
           <Field name="country" as="select" className={styles.country}>
@@ -46,17 +50,21 @@ export default function SignupForm() {
             className={styles.phone_input}
           />
         </div>
-        <ErrorMessage name="phoneNumber" />
+        <div className={styles.error_message}>
+          <ErrorMessage name="phoneNumber" />
+        </div>
         <Field
           name="email"
           type="email"
           placeholder="Work Email"
           className={styles.input_field}
         />
-        <ErrorMessage name="email" />
+        <div className={styles.error_message}>
+          <ErrorMessage name="email" />
+        </div>
 
         <button type="submit" className={styles.submit_button}>
-          Submit
+          Register now
         </button>
       </Form>
     </Formik>

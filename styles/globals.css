@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: 'Prompt';
-  src: url('../public/fonts/Prompt-Light.ttf');
+  src: url('/fonts/Prompt-Light.ttf');
   font-style: normal;
   font-weight: 300;
   font-display: swap;
@@ -42,4 +42,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+input {
+  font-size: 16px;
+  font-family: 'Lexend Deca';
 }

@@ -6,22 +6,21 @@
     #bec9ff 88%,
     #8399ff 101%
   );
-  min-height: 1300px;
+  min-height: 1320px;
   font-family: 'Assistant';
   position: relative;
+  overflow: hidden;
 }
 
 .main_container {
   width: 815px;
   height: 1220px;
   border-radius: 25px;
-  position: absolute;
+  position: relative;
   background-color: white;
-  top: 50px;
   left: 50%;
   transform: translate(-50%, 0%);
   box-shadow: 0 3px 30px 0 rgba(184, 191, 222, 0.3);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,34 +28,34 @@
 
 .bird_top_left {
   position: absolute;
-  top: 242px;
-  left: 880px;
-  z-index: 1;
+  top: 194px;
+  left: 520px;
+  width: 204px;
 }
 
 .bird_top_right {
   position: absolute;
-  top: 220px;
-  left: 1065px;
-  z-index: 1;
+  top: 172px;
+  left: 705px;
+  width: 168px;
 }
 
 .bird_bottom {
   position: absolute;
-  top: 900px;
-  left: 250px;
-  z-index: 1;
+  top: 820px;
+  left: -110px;
+  width: 214px;
 }
 
 .paragraph {
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 0px;
   line-height: 24px;
   width: 700px;
-  padding-left: 6px;
+  text-align: center;
 }
 
 .message_list {
-  font-size: 18px;
   width: 100%;
   padding-left: 80px;
   margin-top: 20px;
@@ -69,9 +68,12 @@
   gap: 18px;
 }
 
+.english_message {
+  font-size: 18px;
+}
+
 .thai_message {
   font-family: 'Prompt';
-  font-size: 16px;
   margin-top: 6px;
   color: #535353;
 }
@@ -81,8 +83,22 @@
   font-size: 12px;
   line-height: 20px;
   color: #535353;
-  padding-top: 20px;
-  border-top: solid 0.5px #bbc1db;
+  padding-top: 30px;
+  border-top: solid 1px #bbc1db;
   width: 700px;
   padding-left: 6px;
+}
+
+.shapes_container {
+  position: absolute;
+  width: 110vw;
+  margin-left: -5vw;
+}
+
+@media (max-width: 1000px) {
+  .bird_bottom,
+  .bird_top_left,
+  .bird_top_right {
+    display: none;
+  }
 }
