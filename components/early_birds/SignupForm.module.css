@@ -18,6 +18,11 @@
   cursor: pointer;
 }
 
+.submit_button_submitting {
+  background-color: lightgray;
+  cursor: default;
+}
+
 .phone_number_container {
   width: 100%;
   height: 45px;
