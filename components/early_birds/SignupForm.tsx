@@ -37,13 +37,11 @@ export default function SignupForm() {
           axios
             .post('/api/subscribe', values)
             .then(function (response) {
-              console.log(response)
               setSuccessModalVisible(true)
               resetForm()
               setFailMessage('')
             })
             .catch(function (error) {
-              console.log(error)
               setFailMessage(error.response.data.error)
             })
           setTimeout(() => {
