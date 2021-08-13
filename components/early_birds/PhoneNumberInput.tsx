@@ -1,9 +1,18 @@
-import { Field, ErrorMessage } from 'formik'
+import { Field, FormikProps } from 'formik'
 import styles from './PhoneNumberInput.module.css'
 import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 
-export default function SignupForm(props) {
+type Props = {
+ renderProps: FormikProps<{
+    fullName: string;
+    country: string;
+    phoneNumber: string;
+    email: string;
+  }>
+}
+
+export default function SignupForm( props : Props) {
 
   const createCountryCodeOptions = () => {
     return PHONE_COUNTRY_CODE.map((code) => {
@@ -22,9 +31,15 @@ export default function SignupForm(props) {
         placeholder="098 000 0000"
         className={classNames(
           styles.phone_input,
-          styles.error_input_field)}
+          props.renderProps.errors.phoneNumber && props.renderProps.touched.phoneNumber && styles.error_input_field)}
       />
-      <Field name="country" as="select" className={styles.country_select}>
+      <Field 
+        name="country" 
+        as="select"
+        className={classNames(
+          styles.country,
+          props.renderProps.errors.phoneNumber && props.renderProps.touched.phoneNumber && styles.error_input_field)}    
+      >
         {createCountryCodeOptions()}
       </Field>
     </div>

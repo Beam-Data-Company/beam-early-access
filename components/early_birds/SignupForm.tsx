@@ -6,6 +6,7 @@ import axios from 'axios'
 import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 import SuccessModal from '../SuccessModal'
+import PhoneNumberInput from './PhoneNumberInput'
 
 const FormExtractSchema = Yup.object({
   fullName: Yup.string()
@@ -21,16 +22,6 @@ const FormExtractSchema = Yup.object({
 export default function SignupForm() {
   const [successModalVisible, setSuccessModalVisible] = useState(false)
   const [failMessage, setFailMessage] = useState("")
-  
-  const createCountryCodeOptions = () => {
-    return PHONE_COUNTRY_CODE.map((code) => {
-      return (
-        <option value={code} key={code}>
-          {code}
-        </option>
-      )
-    })
-  }
 
   return (
     <>
@@ -74,22 +65,7 @@ export default function SignupForm() {
             <ErrorMessage name="fullName" />
           </div>
 
-          <div className={classNames(
-              styles.phone_number_container,
-              props.errors.phoneNumber && props.touched.phoneNumber && styles.error_input_field  
-          )}
-          >
-            <Field name="country" as="select" className={styles.country}>
-              {createCountryCodeOptions()}
-            </Field>
-            <Field
-              name="phoneNumber"
-              placeholder="098 000 0000"
-              className={classNames(
-                styles.phone_input,
-                props.errors.phoneNumber && props.touched.phoneNumber && styles.error_input_field)}
-            />
-          </div>
+          <PhoneNumberInput renderProps={props}/>
 
           <div className={styles.error_message}>
             <ErrorMessage name="phoneNumber" />
