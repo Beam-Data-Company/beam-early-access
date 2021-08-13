@@ -53,8 +53,7 @@ export default function SignupForm() {
           })
           .catch(function (error) {
             console.log(error)
-            // have to change this line
-            setFailMessage("Please use a different email.")
+            setFailMessage(error.response.data.error)
           })
         setTimeout(() => {
           // alert(JSON.stringify(values, null, 2))
@@ -77,6 +76,7 @@ export default function SignupForm() {
 
           <div className={classNames(
               styles.phone_number_container,
+              props.errors.phoneNumber && props.touched.phoneNumber && styles.error_input_field  
           )}
           >
             <Field name="country" as="select" className={styles.country}>
@@ -87,7 +87,7 @@ export default function SignupForm() {
               placeholder="098 000 0000"
               className={classNames(
                 styles.phone_input,
-                styles.error_input_field)}
+                props.errors.phoneNumber && props.touched.phoneNumber && styles.error_input_field)}
             />
           </div>
 
