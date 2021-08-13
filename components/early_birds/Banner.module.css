@@ -12,7 +12,7 @@
   text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
 .banner_picture {
@@ -20,14 +20,14 @@
 }
 
 @media (max-width: 815px) {
-  .container{
+  .container {
     width: 815px;
     height: 312px;
   }
-} 
+}
 
 @media (max-width: 600px) {
-  .container{
+  .container {
     width: 606px;
     height: 232px;
   }

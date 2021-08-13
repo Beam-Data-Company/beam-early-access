@@ -85,7 +85,7 @@
   border-color: #f65129;
 }
 
-@media (max-width:600px) {
+@media (max-width: 600px) {
   .form_container {
     margin-top: 0px;
   }

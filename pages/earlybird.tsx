@@ -14,13 +14,15 @@ import backgroundShapes from '../public/earlybird/background-shapes.png'
 const messageArray = [
   {
     icon: triangleIcon,
-    englishMessage: 'Sign up today get free fees of up to THB 120k in sales value',
+    englishMessage:
+      'Sign up today get free fees of up to THB 120k in sales value',
     thaiMessage:
       'ฟรี GP สำหรับ SMEs รับชำระสินค้าในร้านของคุณได้สูงสุดถึง 120,000 บาท',
   },
   {
     icon: squareIcon,
-    englishMessage: 'A special campaign for online stores focused on social commerce',
+    englishMessage:
+      'A special campaign for online stores focused on social commerce',
     thaiMessage: 'สิทธิพิเศษสำหรับร้านค้าออนไลน์เท่านั้น',
   },
   {
@@ -58,19 +60,13 @@ export default function Earlybird() {
         <Banner />
 
         <div className={styles.bird_top_left}>
-          <Image
-            src={birdTopLeft}
-            alt="Bird Top Left"
-          />
+          <Image src={birdTopLeft} alt="Bird Top Left" />
         </div>
         <div className={styles.bird_top_right}>
           <Image src={birdTopRight} alt="Bird Top Right" />
         </div>
         <div className={styles.bird_bottom}>
-          <Image
-            src={birdBottom}
-            alt="Bird Bottom"
-          />
+          <Image src={birdBottom} alt="Bird Bottom" />
         </div>
 
         <p className={styles.paragraph}>
@@ -94,10 +90,10 @@ export default function Earlybird() {
 
         <div className={styles.remarks}>
           Remarks: This campaign is applicable for stores with online sales
-          value of over THB 20k/month. By registering this campaign, you agree to
-          Beam&apos;s <b>Privacy Policy</b> and <b>Terms and Conditions</b>. We
-          reserve the right to refuse providing offers and/or promotions at any
-          time, either for particular individuals or organizations at our
+          value of over THB 20k/month. By registering this campaign, you agree
+          to Beam&apos;s <b>Privacy Policy</b> and <b>Terms and Conditions</b>.
+          We reserve the right to refuse providing offers and/or promotions at
+          any time, either for particular individuals or organizations at our
           discretion.
         </div>
       </div>

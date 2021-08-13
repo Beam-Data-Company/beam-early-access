@@ -6,7 +6,7 @@
     #bec9ff 88%,
     #8399ff 101%
   );
-  min-height: 1320px;
+  min-height: 1400px;
   font-family: 'Assistant';
   position: relative;
   overflow: hidden;
@@ -14,7 +14,7 @@
 
 .main_container {
   width: 815px;
-  height: 1220px;
+  height: 1270px;
   border-radius: 25px;
   position: relative;
   background-color: white;
@@ -24,6 +24,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
 }
 
 .bird_top_left {
@@ -61,7 +63,7 @@
   margin-top: 20px;
   margin-bottom: 30px;
   padding-left: 80px;
-  align-self: flex-start
+  align-self: flex-start;
 }
 
 .list_child {
@@ -81,7 +83,7 @@
 }
 
 .remarks {
-  margin-top: 40px;
+  margin-top: 80px;
   font-size: 12px;
   line-height: 20px;
   color: #535353;
@@ -106,14 +108,15 @@
   }
 }
 
+/* phone landscape, normal ipad portrait */
 @media (max-width: 815px) {
   .main_container {
     width: 100%;
-    height: 1250px;
+    min-height: 1330px;
     border-radius: 25px 25px 0px 0px;
     margin-top: 30px;
     overflow: hidden;
-    padding: 0px 20px;
+    padding: 0px 40px;
   }
 
   /* .bird_top_left {
@@ -125,14 +128,19 @@
   } */
 
   .message_list {
-    padding: 0px
-  }
-
-  .paragraph {
-    /* display: none; */
+    padding: 0px;
   }
 
   .remarks {
+    margin-top: 100px;
     width: 100%;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 450px) {
+  .main_container {
+    padding: 0px 20px;
+    min-height: 1520px;
   }
 }
