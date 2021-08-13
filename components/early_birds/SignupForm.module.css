@@ -71,3 +71,15 @@
   margin-top: 5px;
   margin-bottom: 12px;
 }
+
+@media (max-width:600px) {
+  .form_container {
+    margin-top: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form_container {
+    width: 100%;
+  }
+}
