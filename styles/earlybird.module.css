@@ -81,7 +81,7 @@
 }
 
 .remarks {
-  margin-top: 50px;
+  margin-top: 40px;
   font-size: 12px;
   line-height: 20px;
   color: #535353;
@@ -129,7 +129,7 @@
   }
 
   .paragraph {
-    display: none;
+    /* display: none; */
   }
 
   .remarks {

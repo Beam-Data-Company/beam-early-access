@@ -33,6 +33,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     })
     return res.status(201).json({ error: '' })
   } catch (error: any) {
-    return res.status(500).json({ error: error.message || error.toString() })
+    const errorObject = JSON.parse(error.response.text)
+    return res.status(errorObject.status).json({ error: errorObject.detail })
   }
 }

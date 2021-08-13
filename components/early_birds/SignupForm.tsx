@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import styles from './SignupForm.module.css'
 import axios from 'axios'
 import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
+import SuccessModal from '../SuccessModal'
 
 const FormExtractSchema = Yup.object({
   fullName: Yup.string()
@@ -18,6 +19,9 @@ const FormExtractSchema = Yup.object({
 })
 
 export default function SignupForm() {
+  const [successModalVisible, setSuccessModalVisible] = useState(false)
+  const [failMessage, setFailMessage] = useState("")
+  
   const createCountryCodeOptions = () => {
     return PHONE_COUNTRY_CODE.map((code) => {
       return (
@@ -29,6 +33,7 @@ export default function SignupForm() {
   }
 
   return (
+    <>
     <Formik
       initialValues={{
         fullName: '',
@@ -37,14 +42,19 @@ export default function SignupForm() {
         email: '',
       }}
       validationSchema={FormExtractSchema}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, resetForm }) => {
         axios
           .post('/api/subscribe', values)
           .then(function (response) {
             console.log(response)
+            setSuccessModalVisible(true)
+            resetForm()
+            setFailMessage("")
           })
           .catch(function (error) {
             console.log(error)
+            // have to change this line
+            setFailMessage("Please use a different email.")
           })
         setTimeout(() => {
           // alert(JSON.stringify(values, null, 2))
@@ -57,35 +67,46 @@ export default function SignupForm() {
           <Field
             name="fullName"
             placeholder="Full Name"
-            className={styles.input_field}
+            className={classNames(
+              styles.input_field,
+              props.errors.fullName && props.touched.fullName && styles.error_input_field)}
           />
           <div className={styles.error_message}>
             <ErrorMessage name="fullName" />
           </div>
 
-          <div className={styles.phone_number_container}>
+          <div className={classNames(
+              styles.phone_number_container,
+          )}
+          >
             <Field name="country" as="select" className={styles.country}>
               {createCountryCodeOptions()}
             </Field>
             <Field
               name="phoneNumber"
               placeholder="098 000 0000"
-              className={styles.phone_input}
+              className={classNames(
+                styles.phone_input,
+                styles.error_input_field)}
             />
           </div>
+
           <div className={styles.error_message}>
             <ErrorMessage name="phoneNumber" />
           </div>
+
           <Field
             name="email"
             type="email"
             placeholder="Work Email"
-            className={styles.input_field}
+            className={classNames(
+              styles.input_field,
+              props.errors.email && props.touched.email && styles.error_input_field)}
           />
           <div className={styles.error_message}>
             <ErrorMessage name="email" />
           </div>
-
+          
           <button
             type="submit"
             className={classNames(
@@ -96,8 +117,16 @@ export default function SignupForm() {
           >
             Register now
           </button>
+          <div className={styles.fail_message}>
+            {failMessage}
+          </div>
         </Form>
       )}
     </Formik>
+    <SuccessModal
+    isOpen={successModalVisible}
+    closeModal={() => setSuccessModalVisible(false)}
+    />
+    </>
   )
 }

@@ -14,13 +14,13 @@ import backgroundShapes from '../public/earlybird/background-shapes.png'
 const messageArray = [
   {
     icon: triangleIcon,
-    englishMessage: 'Sign Up #BeamEarlyBirds, Free fees up to THB 120k in GMV',
+    englishMessage: 'Sign up today get free fees of up to THB 120k in sales value',
     thaiMessage:
       'ฟรี GP สำหรับ SMEs รับชำระสินค้าในร้านของคุณได้สูงสุดถึง 120,000 บาท',
   },
   {
     icon: squareIcon,
-    englishMessage: 'An exclusive campaign for all merchants selling online',
+    englishMessage: 'A special campaign for online stores focused on social commerce',
     thaiMessage: 'สิทธิพิเศษสำหรับร้านค้าออนไลน์เท่านั้น',
   },
   {
@@ -74,12 +74,14 @@ export default function Earlybird() {
         </div>
 
         <p className={styles.paragraph}>
-          <b>Beam Instant Checkout,</b> introducing the world&apos;s simplest
-          way to checkout
-          <br />
-          Helping you maximize your online sales. Accepted credit card, e-wallet
-          and mobile banking!
-          <br />
+          <span className={styles.english_message}>
+            <b>Beam Instant Checkout,</b> introducing the world&apos;s simplest
+            way to checkout
+            <br />
+            Helping you maximise your online sales. Accept credit card, wallet
+            and mobile banking!
+            <br />
+          </span>
           <span className={styles.thai_message}>
             เปิดประสบการณ์ชำระเงินให้ง่ายดาย รวดเร็ว
             และเพิ่มความสามารถทางการขายของคุณให้มากยิ่งขึ้น
@@ -91,8 +93,8 @@ export default function Earlybird() {
         <SignupForm />
 
         <div className={styles.remarks}>
-          Remarks: This campaign is applicable for merchants with online sales
-          of more than THB 20k/month. By registering this campaign, you agree to
+          Remarks: This campaign is applicable for stores with online sales
+          value of over THB 20k/month. By registering this campaign, you agree to
           Beam&apos;s <b>Privacy Policy</b> and <b>Terms and Conditions</b>. We
           reserve the right to refuse providing offers and/or promotions at any
           time, either for particular individuals or organizations at our
