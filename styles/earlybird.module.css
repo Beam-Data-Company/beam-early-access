@@ -28,25 +28,18 @@
   margin-top: 20px;
 }
 
-.bird_top_left {
+.bird_left {
+  position: absolute;
+  top: 55px;
+  left: 122px;
+  width: 105px;
+}
+
+.bird_right {
   position: absolute;
   top: 194px;
-  left: 520px;
+  left: 530px;
   width: 204px;
-}
-
-.bird_top_right {
-  position: absolute;
-  top: 172px;
-  left: 705px;
-  width: 168px;
-}
-
-.bird_bottom {
-  position: absolute;
-  top: 820px;
-  left: -110px;
-  width: 214px;
 }
 
 .paragraph {
@@ -69,7 +62,13 @@
 .list_child {
   margin-top: 25px;
   display: flex;
-  gap: 18px;
+}
+
+.icon_container {
+  width: 12px;
+  min-width: 12px;
+  padding-top: 3px;
+  margin-right: 18px;
 }
 
 .english_message {
@@ -99,10 +98,12 @@
   margin-left: -5vw;
 }
 
+.link {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
-  .bird_bottom,
-  .bird_top_left,
-  .bird_top_right,
   .shapes_container {
     display: none;
   }
@@ -119,21 +120,24 @@
     padding: 0px 40px;
   }
 
-  /* .bird_top_left {
-    display: block;
-    position: absolute;
-    top: 161px;
-    left: 230px;
-    width: 123px;
-  } */
-
   .message_list {
     padding: 0px;
+  }
+
+  .bird_left,
+  .bird_right {
+    display: none;
   }
 
   .remarks {
     margin-top: 100px;
     width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .main_container {
+    min-height: 1370px;
   }
 }
 

@@ -3,9 +3,9 @@ import SignupForm from '../components/early_birds/SignupForm'
 import Header from '../components/Header'
 import styles from '../styles/earlybird.module.css'
 import Image from 'next/image'
-import birdTopLeft from '../public/earlybird/bird-icon-top-left.png'
-import birdTopRight from '../public/earlybird/bird-icon-top-right.png'
-import birdBottom from '../public/earlybird/bird-icon-bottom.png'
+import Link from 'next/link'
+import birdLeft from '../public/earlybird/bird-left.png'
+import birdRight from '../public/earlybird/bird-right.png'
 import triangleIcon from '../public/earlybird/triangle-icon.png'
 import squareIcon from '../public/earlybird/square-icon.png'
 import circleIcon from '../public/earlybird/circle-icon.png'
@@ -37,7 +37,7 @@ export default function Earlybird() {
     return messageArray.map(({ icon, englishMessage, thaiMessage }) => {
       return (
         <li className={styles.list_child} key={englishMessage}>
-          <div>
+          <div className={styles.icon_container}>
             <Image src={icon} alt="Icon" width="12px" height="12px" priority />
           </div>
           <div>
@@ -59,20 +59,17 @@ export default function Earlybird() {
       <div className={styles.main_container}>
         <Banner />
 
-        <div className={styles.bird_top_left}>
-          <Image src={birdTopLeft} alt="Bird Top Left" />
+        <div className={styles.bird_left}>
+          <Image src={birdLeft} alt="Bird Left" />
         </div>
-        <div className={styles.bird_top_right}>
-          <Image src={birdTopRight} alt="Bird Top Right" />
-        </div>
-        <div className={styles.bird_bottom}>
-          <Image src={birdBottom} alt="Bird Bottom" />
+        <div className={styles.bird_right}>
+          <Image src={birdRight} alt="Bird Right" />
         </div>
 
         <p className={styles.paragraph}>
           <span className={styles.english_message}>
-            <b>Beam Instant Checkout,</b> introducing the world&apos;s simplest
-            way to checkout
+            Beam Instant Checkout, introducing the world&apos;s simplest way to
+            checkout
             <br />
             Helping you maximise your online sales. Accept credit card, wallet
             and mobile banking!
@@ -91,8 +88,15 @@ export default function Earlybird() {
         <div className={styles.remarks}>
           Remarks: This campaign is applicable for stores with online sales
           value of over THB 20k/month. By registering this campaign, you agree
-          to Beam&apos;s <b>Privacy Policy</b> and <b>Terms and Conditions</b>.
-          We reserve the right to refuse providing offers and/or promotions at
+          to Beam&apos;s{' '}
+          <Link href="https://beamdata.co/privacy/" passHref>
+            <a>Privacy Policy</a>
+          </Link>{' '}
+          and{' '}
+          <Link href="https://beamdata.co/terms-of-service/" passHref>
+            <a>Terms and Conditions</a>
+          </Link>
+          . We reserve the right to refuse providing offers and/or promotions at
           any time, either for particular individuals or organizations at our
           discretion.
         </div>
