@@ -9,8 +9,8 @@ export default function Banner() {
         <Image src={bannerPicture} alt="Banner Picture" priority />
       </div>
       <div className={styles.text_container}>
-        <h1>#BeamEarlyBirds</h1>
-        <h3>Feel Free, Free of Fees!</h3>
+        <div className={styles.banner_title}>#BeamEarlyBirds</div>
+        Feel Free, Free of Fees!
       </div>
     </div>
   )

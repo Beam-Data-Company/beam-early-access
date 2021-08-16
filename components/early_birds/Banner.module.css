@@ -15,6 +15,12 @@
   transform: translate(-50%, -50%);
 }
 
+.banner_title {
+  font-family: 'Lexend Deca';
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
 .banner_picture {
   width: 100%;
 }
@@ -30,5 +36,9 @@
   .container {
     width: 606px;
     height: 232px;
+  }
+
+  .banner_title {
+    font-size: 32px;
   }
 }
