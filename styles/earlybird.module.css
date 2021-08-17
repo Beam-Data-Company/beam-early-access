@@ -144,7 +144,23 @@
 /* phone portrait */
 @media (max-width: 450px) {
   .main_container {
-    padding: 0px 20px;
-    min-height: 1520px;
+    padding: 0px 10px;
+    min-height: 1420px;
+  }
+
+  .message_list {
+    padding-left: 10px;
+  }
+}
+
+/* small phone portrait */
+@media (max-width: 350px) {
+  .main_container {
+    padding: 0px 7px;
+    min-height: 1470px;
+  }
+
+  .message_list {
+    padding-left: 5px;
   }
 }

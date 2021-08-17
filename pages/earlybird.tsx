@@ -10,6 +10,7 @@ import triangleIcon from '../public/earlybird/triangle-icon.png'
 import squareIcon from '../public/earlybird/square-icon.png'
 import circleIcon from '../public/earlybird/circle-icon.png'
 import backgroundShapes from '../public/earlybird/background-shapes.png'
+import { useMediaQuery } from 'react-responsive'
 
 const messageArray = [
   {
@@ -33,6 +34,9 @@ const messageArray = [
 ]
 
 export default function Earlybird() {
+  const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
+  const isSmallPhonePortrait = useMediaQuery({ maxWidth: 350 })
+
   const renderMessages = () => {
     return messageArray.map(({ icon, englishMessage, thaiMessage }) => {
       return (
@@ -60,21 +64,47 @@ export default function Earlybird() {
         <Banner />
 
         <div className={styles.bird_left}>
-          <Image src={birdLeft} alt="Bird Left" />
+          <Image src={birdLeft} alt="Bird Left" priority />
         </div>
         <div className={styles.bird_right}>
-          <Image src={birdRight} alt="Bird Right" />
+          <Image src={birdRight} alt="Bird Right" priority />
         </div>
 
         <p className={styles.paragraph}>
-          <span className={styles.english_message}>
-            Beam Instant Checkout, introducing the world&apos;s simplest way to
-            checkout
-            <br />
-            Helping you maximise your online sales. Accept credit card, wallet
-            and mobile banking!
-            <br />
-          </span>
+          {isSmallPhonePortrait ? (
+            <span className={styles.english_message}>
+              Beam Instant Checkout, introducing
+              <br />
+              the world&apos;s simplest way to checkout.
+              <br />
+              Helping you maximise your online sales.
+              <br />
+              Accept credit card, wallet and
+              <br />
+              mobile banking!
+              <br />
+            </span>
+          ) : isPhonePortrait ? (
+            <span className={styles.english_message}>
+              Beam Instant Checkout, introducing
+              <br />
+              the world&apos;s simplest way to checkout.
+              <br />
+              Helping you maximise your online sales.
+              <br />
+              Accept credit card, wallet and mobile banking!
+              <br />
+            </span>
+          ) : (
+            <span className={styles.english_message}>
+              Beam Instant Checkout, introducing the world&apos;s simplest way
+              to checkout.
+              <br />
+              Helping you maximise your online sales. Accept credit card, wallet
+              and mobile banking!
+              <br />
+            </span>
+          )}
           <span className={styles.thai_message}>
             เปิดประสบการณ์ชำระเงินให้ง่ายดาย รวดเร็ว
             และเพิ่มความสามารถทางการขายของคุณให้มากยิ่งขึ้น
