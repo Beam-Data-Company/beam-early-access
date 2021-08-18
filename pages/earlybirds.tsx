@@ -11,6 +11,8 @@ import squareIcon from '../public/earlybird/square-icon.png'
 import circleIcon from '../public/earlybird/circle-icon.png'
 import backgroundShapes from '../public/earlybird/background-shapes.png'
 import { useMediaQuery } from 'react-responsive'
+import Text from '../components/Text'
+import Spacer from '../components/Spacer'
 
 const messageArray = [
   {
@@ -45,8 +47,11 @@ export default function Earlybird() {
             <Image src={icon} alt="Icon" width="12px" height="12px" priority />
           </div>
           <div>
-            <div className={styles.english_message}>{englishMessage}</div>
-            <div className={styles.thai_message}>{thaiMessage}</div>
+            <Text size={18}>{englishMessage}</Text>
+            <Spacer height={6} />
+            <Text color="#535353" family="Prompt">
+              {thaiMessage}
+            </Text>
           </div>
         </li>
       )
@@ -57,7 +62,7 @@ export default function Earlybird() {
     return (
       <p className={styles.paragraph}>
         {isSmallPhonePortrait ? (
-          <span className={styles.english_message}>
+          <Text size={18}>
             Beam Instant Checkout, introducing
             <br />
             the world&apos;s simplest way to checkout.
@@ -68,9 +73,9 @@ export default function Earlybird() {
             <br />
             mobile banking!
             <br />
-          </span>
+          </Text>
         ) : isPhonePortrait ? (
-          <span className={styles.english_message}>
+          <Text size={18}>
             Beam Instant Checkout, introducing
             <br />
             the world&apos;s simplest way to checkout.
@@ -79,21 +84,21 @@ export default function Earlybird() {
             <br />
             Accept credit card, wallet and mobile banking!
             <br />
-          </span>
+          </Text>
         ) : (
-          <span className={styles.english_message}>
+          <Text size={18}>
             Beam Instant Checkout, introducing the world&apos;s simplest way to
             checkout.
             <br />
             Helping you maximise your online sales. Accept credit card, wallet
             and mobile banking!
             <br />
-          </span>
+          </Text>
         )}
-        <span className={styles.thai_message}>
+        <Text color="#535353" family="Prompt">
           เปิดประสบการณ์ชำระเงินให้ง่ายดาย รวดเร็ว
           และเพิ่มความสามารถทางการขายของคุณให้มากยิ่งขึ้น
-        </span>
+        </Text>
       </p>
     )
   }
@@ -121,20 +126,24 @@ export default function Earlybird() {
 
         <SignupForm />
 
+        <Spacer height={isPhonePortrait ? 100 : 80} />
+
         <div className={styles.remarks}>
-          Remarks: This campaign is applicable for stores with online sales
-          value of over THB 20k/month. By registering this campaign, you agree
-          to Beam&apos;s{' '}
-          <Link href="https://beamdata.co/privacy/" passHref>
-            <a>Privacy Policy</a>
-          </Link>{' '}
-          and{' '}
-          <Link href="https://beamdata.co/terms-of-service/" passHref>
-            <a>Terms and Conditions</a>
-          </Link>
-          . We reserve the right to refuse providing offers and/or promotions at
-          any time, either for particular individuals or organizations at our
-          discretion.
+          <Text size={12} color="#535353">
+            Remarks: This campaign is applicable for stores with online sales
+            value of over THB 20k/month. By registering this campaign, you agree
+            to Beam&apos;s{' '}
+            <Link href="https://beamdata.co/privacy/" passHref>
+              <a>Privacy Policy</a>
+            </Link>{' '}
+            and{' '}
+            <Link href="https://beamdata.co/terms-of-service/" passHref>
+              <a>Terms and Conditions</a>
+            </Link>
+            . We reserve the right to refuse providing offers and/or promotions
+            at any time, either for particular individuals or organizations at
+            our discretion.
+          </Text>
         </div>
       </div>
     </div>

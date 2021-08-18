@@ -1,6 +1,6 @@
 import { ErrorMessage } from 'formik'
 import styles from './ErrorStateMessage.module.css'
-
+import Text from '../Text'
 type Props = {
   name: string
 }
@@ -8,7 +8,9 @@ type Props = {
 export default function ErrorStateMessage(props: Props) {
   return (
     <div className={styles.error_message}>
-      <ErrorMessage name={props.name} />
+      <Text color="#f65129" family="Assistant">
+        <ErrorMessage name={props.name} />
+      </Text>
     </div>
   )
 }

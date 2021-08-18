@@ -69,21 +69,8 @@
   margin-right: 18px;
 }
 
-.english_message {
-  font-size: 18px;
-}
-
-.thai_message {
-  font-family: 'Prompt';
-  margin-top: 6px;
-  color: #535353;
-}
-
 .remarks {
-  margin-top: 80px;
-  font-size: 12px;
   line-height: 20px;
-  color: #535353;
   padding-top: 20px;
   border-top: solid 1px #bbc1db;
   width: 700px;
@@ -93,8 +80,7 @@
 
 .shapes_container {
   position: absolute;
-  width: 110vw;
-  margin-left: -5vw;
+  width: 110%;
 }
 
 .link {
@@ -132,7 +118,6 @@
   }
 
   .remarks {
-    margin-top: 100px;
     width: 100%;
   }
 }
