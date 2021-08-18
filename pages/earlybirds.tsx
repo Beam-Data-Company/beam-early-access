@@ -53,6 +53,51 @@ export default function Earlybird() {
     })
   }
 
+  const renderParagraph = () => {
+    return (
+      <p className={styles.paragraph}>
+        {isSmallPhonePortrait ? (
+          <span className={styles.english_message}>
+            Beam Instant Checkout, introducing
+            <br />
+            the world&apos;s simplest way to checkout.
+            <br />
+            Helping you maximise your online sales.
+            <br />
+            Accept credit card, wallet and
+            <br />
+            mobile banking!
+            <br />
+          </span>
+        ) : isPhonePortrait ? (
+          <span className={styles.english_message}>
+            Beam Instant Checkout, introducing
+            <br />
+            the world&apos;s simplest way to checkout.
+            <br />
+            Helping you maximise your online sales.
+            <br />
+            Accept credit card, wallet and mobile banking!
+            <br />
+          </span>
+        ) : (
+          <span className={styles.english_message}>
+            Beam Instant Checkout, introducing the world&apos;s simplest way to
+            checkout.
+            <br />
+            Helping you maximise your online sales. Accept credit card, wallet
+            and mobile banking!
+            <br />
+          </span>
+        )}
+        <span className={styles.thai_message}>
+          เปิดประสบการณ์ชำระเงินให้ง่ายดาย รวดเร็ว
+          และเพิ่มความสามารถทางการขายของคุณให้มากยิ่งขึ้น
+        </span>
+      </p>
+    )
+  }
+
   return (
     <div className={styles.wrapper}>
       <Header />
@@ -70,46 +115,7 @@ export default function Earlybird() {
           <Image src={birdRight} alt="Bird Right" priority />
         </div>
 
-        <p className={styles.paragraph}>
-          {isSmallPhonePortrait ? (
-            <span className={styles.english_message}>
-              Beam Instant Checkout, introducing
-              <br />
-              the world&apos;s simplest way to checkout.
-              <br />
-              Helping you maximise your online sales.
-              <br />
-              Accept credit card, wallet and
-              <br />
-              mobile banking!
-              <br />
-            </span>
-          ) : isPhonePortrait ? (
-            <span className={styles.english_message}>
-              Beam Instant Checkout, introducing
-              <br />
-              the world&apos;s simplest way to checkout.
-              <br />
-              Helping you maximise your online sales.
-              <br />
-              Accept credit card, wallet and mobile banking!
-              <br />
-            </span>
-          ) : (
-            <span className={styles.english_message}>
-              Beam Instant Checkout, introducing the world&apos;s simplest way
-              to checkout.
-              <br />
-              Helping you maximise your online sales. Accept credit card, wallet
-              and mobile banking!
-              <br />
-            </span>
-          )}
-          <span className={styles.thai_message}>
-            เปิดประสบการณ์ชำระเงินให้ง่ายดาย รวดเร็ว
-            และเพิ่มความสามารถทางการขายของคุณให้มากยิ่งขึ้น
-          </span>
-        </p>
+        {renderParagraph()}
 
         <ul className={styles.message_list}>{renderMessages()}</ul>
 

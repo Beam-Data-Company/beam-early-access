@@ -12,6 +12,10 @@
   border-radius: 6px;
 }
 
+.phone_input::placeholder {
+  color: #dbdbdb;
+}
+
 .country {
   position: absolute;
   height: 45px;

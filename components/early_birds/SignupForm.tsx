@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { Formik, Field, Form } from 'formik'
 import * as Yup from 'yup'
 import styles from './SignupForm.module.css'
 import axios from 'axios'
@@ -7,6 +7,7 @@ import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 import SuccessModal from '../SuccessModal'
 import PhoneNumberInput from './PhoneNumberInput'
+import ErrorStateMessage from './ErrorStateMessage'
 
 const FormExtractSchema = Yup.object({
   fullName: Yup.string()
@@ -33,21 +34,16 @@ export default function SignupForm() {
           email: '',
         }}
         validationSchema={FormExtractSchema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          axios
-            .post('/api/subscribe', values)
-            .then(function (response) {
-              setSuccessModalVisible(true)
-              resetForm()
-              setFailMessage('')
-            })
-            .catch(function (error) {
-              setFailMessage(error.response.data.error)
-            })
-          setTimeout(() => {
-            // alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          try {
+            await axios.post('/api/subscribe', values)
+            setSuccessModalVisible(true)
+            resetForm()
+            setFailMessage('')
+          } catch (error: any) {
+            setFailMessage(error.response.data.error)
+          }
+          setSubmitting(false)
         }}
       >
         {(props) => (
@@ -61,15 +57,12 @@ export default function SignupForm() {
                   props.touched.fullName &&
                   styles.error_input_field
               )}
+              disabled={props.isSubmitting}
             />
-            <div className={styles.error_message}>
-              <ErrorMessage name="fullName" />
-            </div>
+            <ErrorStateMessage name="fullName" />
 
             <PhoneNumberInput renderProps={props} />
-            <div className={styles.error_message}>
-              <ErrorMessage name="phoneNumber" />
-            </div>
+            <ErrorStateMessage name="phoneNumber" />
 
             <Field
               name="email"
@@ -81,10 +74,9 @@ export default function SignupForm() {
                   props.touched.email &&
                   styles.error_input_field
               )}
+              disabled={props.isSubmitting}
             />
-            <div className={styles.error_message}>
-              <ErrorMessage name="email" />
-            </div>
+            <ErrorStateMessage name="email" />
 
             <button
               type="submit"

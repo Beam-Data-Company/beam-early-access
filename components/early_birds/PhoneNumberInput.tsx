@@ -13,7 +13,7 @@ type Props = {
 }
 
 export default function SignupForm(props: Props) {
-  const createCountryCodeOptions = () => {
+  const renderCountryCode = () => {
     return PHONE_COUNTRY_CODE.map((code) => {
       return (
         <option value={code} key={code}>
@@ -34,6 +34,7 @@ export default function SignupForm(props: Props) {
             props.renderProps.touched.phoneNumber &&
             styles.error_input_field
         )}
+        disabled={props.renderProps.isSubmitting}
       />
       <Field
         name="country"
@@ -44,8 +45,9 @@ export default function SignupForm(props: Props) {
             props.renderProps.touched.phoneNumber &&
             styles.error_input_field
         )}
+        disabled={props.renderProps.isSubmitting}
       >
-        {createCountryCodeOptions()}
+        {renderCountryCode()}
       </Field>
     </div>
   )
