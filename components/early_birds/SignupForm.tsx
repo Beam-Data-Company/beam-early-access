@@ -8,6 +8,8 @@ import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 import SuccessModal from '../SuccessModal'
 import PhoneNumberInput from './PhoneNumberInput'
 import ErrorStateMessage from './ErrorStateMessage'
+import Text from '../Text'
+import Spacer from '../Spacer'
 
 const FormExtractSchema = Yup.object({
   fullName: Yup.string()
@@ -48,47 +50,76 @@ export default function SignupForm() {
       >
         {(props) => (
           <Form className={styles.form_container}>
-            <Field
-              name="fullName"
-              placeholder="Full Name"
-              className={classNames(
-                styles.input_field,
-                props.errors.fullName &&
-                  props.touched.fullName &&
-                  styles.error_input_field
+            <div className={styles.field_error_wrapper}>
+              <Field
+                name="fullName"
+                placeholder="Full Name"
+                className={classNames(
+                  styles.input_field,
+                  props.errors.fullName &&
+                    props.touched.fullName &&
+                    styles.error_input_field
+                )}
+                disabled={props.isSubmitting}
+              />
+              {props.errors.fullName && props.touched.fullName ? (
+                <ErrorStateMessage name="fullName" />
+              ) : (
+                <Spacer height={20} />
               )}
-              disabled={props.isSubmitting}
-            />
-            <ErrorStateMessage name="fullName" />
+            </div>
 
-            <PhoneNumberInput renderProps={props} />
-            <ErrorStateMessage name="phoneNumber" />
-
-            <Field
-              name="email"
-              type="email"
-              placeholder="Work Email"
-              className={classNames(
-                styles.input_field,
-                props.errors.email &&
-                  props.touched.email &&
-                  styles.error_input_field
+            <div className={styles.field_error_wrapper}>
+              <PhoneNumberInput renderProps={props} />
+              {props.errors.phoneNumber && props.touched.phoneNumber ? (
+                <ErrorStateMessage name="phoneNumber" />
+              ) : (
+                <Spacer height={20} />
               )}
-              disabled={props.isSubmitting}
-            />
-            <ErrorStateMessage name="email" />
+            </div>
 
-            <button
-              type="submit"
-              className={classNames(
-                styles.submit_button,
-                props.isSubmitting && styles.submit_button_submitting
+            <div className={styles.field_error_wrapper}>
+              <Field
+                name="email"
+                type="email"
+                placeholder="Work Email"
+                className={classNames(
+                  styles.input_field,
+                  props.errors.email &&
+                    props.touched.email &&
+                    styles.error_input_field
+                )}
+                disabled={props.isSubmitting}
+              />
+              {props.errors.email && props.touched.email ? (
+                <ErrorStateMessage name="email" />
+              ) : (
+                <Spacer height={20} />
               )}
-              disabled={props.isSubmitting}
+            </div>
+
+            <div
+              className={classNames(
+                styles.field_error_wrapper,
+                styles.button_error_wrapper
+              )}
             >
-              Register now
-            </button>
-            <div className={styles.fail_message}>{failMessage}</div>
+              <button
+                type="submit"
+                className={classNames(
+                  styles.submit_button,
+                  props.isSubmitting && styles.submit_button_submitting
+                )}
+                disabled={props.isSubmitting}
+              >
+                Register now
+              </button>
+              <div className={styles.fail_message}>
+                <Text color="#f65129" size={18}>
+                  {failMessage}
+                </Text>
+              </div>
+            </div>
           </Form>
         )}
       </Formik>

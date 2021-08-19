@@ -22,7 +22,9 @@ export default function Banner() {
           #BeamEarlyBirds
         </Text>
         <Spacer height={13} />
-        <Text color="#3a52b8">Feel Free, Free of Fees!</Text>
+        <Text color="#3a52b8" weight={600}>
+          Feel Free, Free of Fees!
+        </Text>
       </div>
     </div>
   )

@@ -47,7 +47,9 @@ export default function Earlybird() {
             <Image src={icon} alt="Icon" width="12px" height="12px" priority />
           </div>
           <div>
-            <Text size={18}>{englishMessage}</Text>
+            <Text size={18} weight={600}>
+              {englishMessage}
+            </Text>
             <Spacer height={6} />
             <Text color="#535353" family="Prompt">
               {thaiMessage}
@@ -62,7 +64,7 @@ export default function Earlybird() {
     return (
       <p className={styles.paragraph}>
         {isSmallPhonePortrait ? (
-          <Text size={18}>
+          <Text size={18} weight={600}>
             Beam Instant Checkout, introducing
             <br />
             the world&apos;s simplest way to checkout.
@@ -75,7 +77,7 @@ export default function Earlybird() {
             <br />
           </Text>
         ) : isPhonePortrait ? (
-          <Text size={18}>
+          <Text size={18} weight={600}>
             Beam Instant Checkout, introducing
             <br />
             the world&apos;s simplest way to checkout.
@@ -86,7 +88,7 @@ export default function Earlybird() {
             <br />
           </Text>
         ) : (
-          <Text size={18}>
+          <Text size={18} weight={600}>
             Beam Instant Checkout, introducing the world&apos;s simplest way to
             checkout.
             <br />
@@ -129,16 +131,16 @@ export default function Earlybird() {
         <Spacer height={isPhonePortrait ? 100 : 80} />
 
         <div className={styles.remarks}>
-          <Text size={12} color="#535353">
+          <Text size={12} color="#535353" weight={600}>
             Remarks: This campaign is applicable for stores with online sales
             value of over THB 20k/month. By registering this campaign, you agree
             to Beam&apos;s{' '}
             <Link href="https://beamdata.co/privacy/" passHref>
-              <a>Privacy Policy</a>
+              Privacy Policy
             </Link>{' '}
             and{' '}
             <Link href="https://beamdata.co/terms-of-service/" passHref>
-              <a>Terms and Conditions</a>
+              Terms and Conditions
             </Link>
             . We reserve the right to refuse providing offers and/or promotions
             at any time, either for particular individuals or organizations at

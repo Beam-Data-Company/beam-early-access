@@ -30,22 +30,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   margin-top: 20px;
   width: 375px;
+  gap: 12px;
 }
 
 .fail_message {
-  color: #f65129;
   text-align: center;
   height: 20px;
   width: 100%;
-  margin-top: 10px;
-  font-size: 18px;
 }
 
 .error_input_field {
   border-color: #f65129;
+}
+
+.field_error_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.button_error_wrapper {
+  align-items: center;
+  gap: 15px;
 }
 
 @media (max-width: 600px) {
