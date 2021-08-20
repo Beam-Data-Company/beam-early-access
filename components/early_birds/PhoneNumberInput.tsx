@@ -4,7 +4,7 @@ import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 
 type Props = {
-  renderProps: FormikProps<{
+  formik: FormikProps<{
     fullName: string
     country: string
     phoneNumber: string
@@ -30,22 +30,22 @@ export default function SignupForm(props: Props) {
         placeholder="098 000 0000"
         className={classNames(
           styles.phone_input,
-          props.renderProps.errors.phoneNumber &&
-            props.renderProps.touched.phoneNumber &&
+          props.formik.errors.phoneNumber &&
+            props.formik.touched.phoneNumber &&
             styles.error_input_field
         )}
-        disabled={props.renderProps.isSubmitting}
+        disabled={props.formik.isSubmitting}
       />
       <Field
         name="country"
         as="select"
         className={classNames(
           styles.country,
-          props.renderProps.errors.phoneNumber &&
-            props.renderProps.touched.phoneNumber &&
+          props.formik.errors.phoneNumber &&
+            props.formik.touched.phoneNumber &&
             styles.error_input_field
         )}
-        disabled={props.renderProps.isSubmitting}
+        disabled={props.formik.isSubmitting}
       >
         {renderCountryCode()}
       </Field>

@@ -39,12 +39,12 @@ export default function Earlybird() {
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
   const isSmallPhonePortrait = useMediaQuery({ maxWidth: 350 })
 
-  const renderMessages = () => {
-    return messageArray.map(({ icon, englishMessage, thaiMessage }) => {
+  const renderMessages = () =>
+    messageArray.map(({ icon, englishMessage, thaiMessage }) => {
       return (
         <li className={styles.list_child} key={englishMessage}>
           <div className={styles.icon_container}>
-            <Image src={icon} alt="Icon" width="12px" height="12px" priority />
+            <Image src={icon} alt="Icon" width={12} height={12} priority />
           </div>
           <div>
             <Text size={18} weight={600}>
@@ -58,7 +58,6 @@ export default function Earlybird() {
         </li>
       )
     })
-  }
 
   const renderParagraph = () => {
     return (
