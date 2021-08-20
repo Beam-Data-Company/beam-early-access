@@ -11,15 +11,22 @@ import ErrorStateMessage from './ErrorStateMessage'
 import Text from '../Text'
 import Spacer from '../Spacer'
 
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
 const FormExtractSchema = Yup.object({
   fullName: Yup.string()
     .max(30, 'Must be 30 characters or less')
     .required('Required'),
   country: Yup.string().oneOf(PHONE_COUNTRY_CODE).required('Required'),
   phoneNumber: Yup.string()
-    .max(10, 'Must be 10 characters or less')
+    .matches(phoneRegExp, 'Please enter a valid phone number')
+    .min(8, 'Must be between 8-10 characters')
+    .max(10, 'Must be between 8-10 characters')
     .required('Required'),
-  email: Yup.string().email('Invalid email address').required('Required'),
+  email: Yup.string()
+    .email('Please enter a valid email address')
+    .required('Required'),
 })
 
 export default function SignupForm() {
