@@ -37,29 +37,30 @@ export default function Home() {
     to: { opacity: 1 },
     from: { opacity: 0 },
     config: { tension: 70 },
+    delay: 3400,
   })
 
   const slideLeft = useSpring({
     opacity: 1,
     transform: 'translate(30%, -50%)',
     from: { opacity: 0, transform: 'translate(120%, -50%)' },
-    config: { tension: 80 },
-    delay: 1200,
+    config: { tension: 70 },
+    delay: 200,
   })
 
   const slideUp = useSpring({
     opacity: 1,
     transform: 'translate(-50%, -15%)',
     from: { opacity: 0, transform: 'translate(-50%, 20%)' },
-    config: { tension: 80 },
-    delay: 1200,
+    config: { tension: 70 },
+    delay: 200,
   })
 
   const shapeFadeIn = useSpring({
     to: { opacity: 0.7 },
     from: { opacity: 0 },
     config: { tension: 60 },
-    delay: 2500,
+    delay: 2000,
   })
 
   return (

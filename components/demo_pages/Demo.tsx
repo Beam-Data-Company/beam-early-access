@@ -8,6 +8,13 @@ import ReceiptPage from './ReceiptPage'
 export default function Demo() {
   const [pageNumber, setPageNumber] = useState(1)
 
+  const tagFadeIn = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { tension: 70 },
+    delay: 2000,
+  })
+
   const nextPage = () => {
     setPageNumber((pageNumber) => pageNumber + 1)
   }
@@ -80,7 +87,7 @@ export default function Demo() {
         <Page2 pageNumber={pageNumber} />
         <Page3 pageNumber={pageNumber} />
       </div>
-      <div className={styles.try_demo_tag}>Try Demo</div>
+      <animated.div style={tagFadeIn} className={styles.try_demo_tag}>Try Demo</animated.div>
     </div>
   )
 }
