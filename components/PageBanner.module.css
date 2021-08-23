@@ -1,0 +1,23 @@
+.container {
+  background-image: linear-gradient(to top, #001365, #000b3c, #000a33);
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.wrapper {
+  height: 243px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  gap: 400px;
+}
+
+.image_box {
+  width: 113px;
+}
+
+.image_wrapper {
+  display: flex;
+  gap: 24px;
+  padding-top: 25px;
+}
