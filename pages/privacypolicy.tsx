@@ -6,8 +6,7 @@ export default function PrivacyPolicy() {
   return (
     <div className={styles.main_container}>
       <PageBanner />
-      <div className={styles.content_wrapper}>
-      </div>
+      <div className={styles.content_wrapper}></div>
       <Footer />
     </div>
   )
