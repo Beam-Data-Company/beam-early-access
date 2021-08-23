@@ -47,6 +47,7 @@
 }
 
 .button_error_wrapper {
+  text-align: center;
   align-items: center;
   gap: 10px;
 }

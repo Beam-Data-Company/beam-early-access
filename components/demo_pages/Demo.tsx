@@ -87,7 +87,9 @@ export default function Demo() {
         <Page2 pageNumber={pageNumber} />
         <Page3 pageNumber={pageNumber} />
       </div>
-      <animated.div style={tagFadeIn} className={styles.try_demo_tag}>Try Demo</animated.div>
+      <animated.div style={tagFadeIn} className={styles.try_demo_tag}>
+        Try Demo
+      </animated.div>
     </div>
   )
 }

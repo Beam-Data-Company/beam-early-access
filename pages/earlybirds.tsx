@@ -127,7 +127,7 @@ export default function Earlybird() {
 
         <SignupForm />
 
-        <Spacer height={isPhonePortrait ? 100 : 80} />
+        <Spacer height={80} />
 
         <div className={styles.remarks}>
           <Text size={12} color="#535353" weight={600}>
