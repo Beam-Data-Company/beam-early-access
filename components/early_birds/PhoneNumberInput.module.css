@@ -12,6 +12,10 @@
   border-radius: 6px;
 }
 
+.phone_input::placeholder {
+  color: #dbdbdb;
+}
+
 .country {
   position: absolute;
   height: 45px;
@@ -19,11 +23,15 @@
   top: 0px;
   left: 0px;
   border: none;
-  background-color: transparent;
   border-right: 1px solid #939cc3;
   font-family: 'Lexend Deca';
   font-size: 18px;
-  padding-left: 15px;
+  padding-left: 16px;
+  background: url(../../public/earlybird/angle-down.png) no-repeat right;
+  background-size: 9px;
+  appearance: none;
+  background-position-x: 68px;
+  background-position-y: 52%;
 }
 
 .error_input_field {

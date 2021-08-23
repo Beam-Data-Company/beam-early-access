@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { Formik, Field, Form } from 'formik'
 import * as Yup from 'yup'
 import styles from './SignupForm.module.css'
 import axios from 'axios'
@@ -7,21 +7,30 @@ import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 import SuccessModal from '../SuccessModal'
 import PhoneNumberInput from './PhoneNumberInput'
+import ErrorStateMessage from './ErrorStateMessage'
+import Text from '../Text'
 
-const FormExtractSchema = Yup.object({
+const phoneRegExp =
+  /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+const SignUpFormSchema = Yup.object({
   fullName: Yup.string()
     .max(30, 'Must be 30 characters or less')
     .required('Required'),
   country: Yup.string().oneOf(PHONE_COUNTRY_CODE).required('Required'),
   phoneNumber: Yup.string()
-    .max(10, 'Must be 10 characters or less')
+    .matches(phoneRegExp, 'Please enter a valid phone number')
+    .min(8, 'Must be between 8-10 characters')
+    .max(10, 'Must be between 8-10 characters')
     .required('Required'),
-  email: Yup.string().email('Invalid email address').required('Required'),
+  email: Yup.string()
+    .email('Please enter a valid email address')
+    .required('Required'),
 })
 
 export default function SignupForm() {
   const [successModalVisible, setSuccessModalVisible] = useState(false)
-  const [failMessage, setFailMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
   return (
     <>
@@ -32,71 +41,80 @@ export default function SignupForm() {
           phoneNumber: '',
           email: '',
         }}
-        validationSchema={FormExtractSchema}
-        onSubmit={(values, { setSubmitting, resetForm }) => {
-          axios
-            .post('/api/subscribe', values)
-            .then(function (response) {
-              setSuccessModalVisible(true)
-              resetForm()
-              setFailMessage('')
-            })
-            .catch(function (error) {
-              setFailMessage(error.response.data.error)
-            })
-          setTimeout(() => {
-            // alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+        validationSchema={SignUpFormSchema}
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          try {
+            await axios.post('/api/subscribe', values)
+            setSuccessModalVisible(true)
+            resetForm()
+            setErrorMessage('')
+          } catch (error) {
+            setErrorMessage(error.response.data.error)
+          }
+          setSubmitting(false)
         }}
       >
-        {(props) => (
+        {(formik) => (
           <Form className={styles.form_container}>
-            <Field
-              name="fullName"
-              placeholder="Full Name"
-              className={classNames(
-                styles.input_field,
-                props.errors.fullName &&
-                  props.touched.fullName &&
-                  styles.error_input_field
+            <InputFieldWrapper>
+              <Field
+                name="fullName"
+                placeholder="Full Name"
+                className={classNames(
+                  styles.input_field,
+                  formik.errors.fullName &&
+                    formik.touched.fullName &&
+                    styles.error_input_field
+                )}
+                disabled={formik.isSubmitting}
+              />
+              {formik.errors.fullName && formik.touched.fullName && (
+                <ErrorStateMessage name="fullName" />
               )}
-            />
-            <div className={styles.error_message}>
-              <ErrorMessage name="fullName" />
-            </div>
+            </InputFieldWrapper>
 
-            <PhoneNumberInput renderProps={props} />
-            <div className={styles.error_message}>
-              <ErrorMessage name="phoneNumber" />
-            </div>
-
-            <Field
-              name="email"
-              type="email"
-              placeholder="Work Email"
-              className={classNames(
-                styles.input_field,
-                props.errors.email &&
-                  props.touched.email &&
-                  styles.error_input_field
+            <InputFieldWrapper>
+              <PhoneNumberInput formik={formik} />
+              {formik.errors.phoneNumber && formik.touched.phoneNumber && (
+                <ErrorStateMessage name="phoneNumber" />
               )}
-            />
-            <div className={styles.error_message}>
-              <ErrorMessage name="email" />
-            </div>
+            </InputFieldWrapper>
 
-            <button
-              type="submit"
-              className={classNames(
-                styles.submit_button,
-                props.isSubmitting && styles.submit_button_submitting
+            <InputFieldWrapper>
+              <Field
+                name="email"
+                type="email"
+                placeholder="Work Email"
+                className={classNames(
+                  styles.input_field,
+                  formik.errors.email &&
+                    formik.touched.email &&
+                    styles.error_input_field
+                )}
+                disabled={formik.isSubmitting}
+              />
+              {formik.errors.email && formik.touched.email && (
+                <ErrorStateMessage name="email" />
               )}
-              disabled={props.isSubmitting}
-            >
-              Register now
-            </button>
-            <div className={styles.fail_message}>{failMessage}</div>
+            </InputFieldWrapper>
+
+            <InputFieldWrapper className={styles.button_error_wrapper}>
+              <button
+                type="submit"
+                className={classNames(
+                  styles.submit_button,
+                  formik.isSubmitting && styles.submit_button_submitting
+                )}
+                disabled={formik.isSubmitting}
+              >
+                Register now
+              </button>
+              {errorMessage && (
+                <Text color="#f65129" size={18}>
+                  {errorMessage}
+                </Text>
+              )}
+            </InputFieldWrapper>
           </Form>
         )}
       </Formik>
@@ -105,5 +123,16 @@ export default function SignupForm() {
         closeModal={() => setSuccessModalVisible(false)}
       />
     </>
+  )
+}
+
+function InputFieldWrapper(props: {
+  className?: string
+  children: React.ReactNode
+}) {
+  return (
+    <div className={classNames(styles.input_field_wrapper, props.className)}>
+      {props.children}
+    </div>
   )
 }
