@@ -1,6 +1,7 @@
 .main_container {
+  font-family: 'Assistant';
 }
 
 .content_wrapper {
-  height: 1000px;
+  /* will be filled later on */
 }
