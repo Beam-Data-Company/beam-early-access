@@ -3,29 +3,16 @@ import Footer from '../components/Footer'
 import styles from '../styles/privacypolicy.module.css'
 import lockImage from '../public/lock-image.png'
 import Spacer from '../components/Spacer'
-
-const bannerImageArray = [
-  {
-    src: lockImage,
-    width: 113,
-    alt: 'Lock Image',
-  },
-  {
-    src: lockImage,
-    width: 113,
-    alt: 'Lock Image',
-  },
-  {
-    src: lockImage,
-    width: 113,
-    alt: 'Lock Image',
-  },
-]
+import ImageBox from '../components/ImageBox'
 
 export default function PrivacyPolicy() {
   return (
     <div className={styles.main_container}>
-      <PageBanner title="Privacy by Design" imageArray={bannerImageArray} />
+      <PageBanner title="Privacy by Design">
+        <ImageBox width={113} src={lockImage} alt="Lock Image" />
+        <ImageBox width={113} src={lockImage} alt="Lock Image" />
+        <ImageBox width={113} src={lockImage} alt="Lock Image" />
+      </PageBanner>
       <div className={styles.content_wrapper}>
         {/* to temporarily seperate the banner and footer */}
         <Spacer height={100} />
