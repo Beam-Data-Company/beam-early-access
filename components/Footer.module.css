@@ -11,9 +11,14 @@
 }
 
 .bottom_section {
-  height: 85px;
-  border-top: 1px solid #979aa5;
-  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language_wrapper_row {
+  display: flex;
+  gap: 8px;
 }
 
 .download_wrapper_row {
