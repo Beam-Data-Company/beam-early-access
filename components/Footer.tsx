@@ -94,7 +94,6 @@ export default function Footer() {
         </div> */}
       </div>
       <Spacer height={48} />
-      
     </footer>
   )
 }

@@ -3,5 +3,7 @@
 }
 
 .content_wrapper {
-  /* will be filled later on */
+  padding: 0 400px 0 120px;
+  margin-left: 275px;
+  border-left: solid 1px #979aa5;
 }
