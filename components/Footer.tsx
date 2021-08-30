@@ -9,8 +9,6 @@ import facebookIcon from '../public/footer/facebook-icon.png'
 import instagramIcon from '../public/footer/instagram-icon.png'
 import linkedinIcon from '../public/footer/linkedin-icon.png'
 import twitterIcon from '../public/footer/twitter-icon.png'
-// import globeIcon from '../public/footer/globe-icon.png'
-// import angleDownIcon from '../public/footer/angle-down-icon.png'
 
 const footerInfoArray = [
   {
@@ -87,11 +85,6 @@ export default function Footer() {
         <Text size={12}>
           © Beam Data Company Limited 2020. All rights reserved.
         </Text>
-        {/* <div className={styles.language_wrapper_row}>
-          <ImageBox src={globeIcon} width={15} alt="Globe Icon" />
-          <Text size={14}>EN</Text>
-          <ImageBox src={angleDownIcon} width={12} alt="Angle Down Icon" />
-        </div> */}
       </div>
       <Spacer height={48} />
     </footer>

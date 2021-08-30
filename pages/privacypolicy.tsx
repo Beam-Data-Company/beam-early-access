@@ -6,6 +6,7 @@ import Spacer from '../components/Spacer'
 import ImageBox from '../components/ImageBox'
 import Text from '../components/Text'
 import { InferGetStaticPropsType } from 'next'
+import SideBar from '../components/SideBar'
 
 //change this to axios??
 export const getStaticProps = async () => {
@@ -36,7 +37,9 @@ export default function PrivacyPolicy({
           {policy.title}
         </Text>
         <Spacer height={15} />
-        <Text color="#535353">{policy.content}</Text>
+        <Text color="#535353" lineHeight={26}>
+          {policy.content}
+        </Text>
         <Spacer height={20} />
       </>
     ))
@@ -49,16 +52,19 @@ export default function PrivacyPolicy({
         <ImageBox width={113} src={lockImage} alt="Lock Image" />
       </PageBanner>
       <Spacer height={55} />
-      <div className={styles.content_wrapper}>
-        <Text size={32} family="Lexend Deca">
-          {data.title}
-        </Text>
-        <Spacer height={10} />
-        <Text color="#535353" weight={600}>
-          Last Update: {data.last_update}
-        </Text>
-        <Spacer height={40} />
-        {renderPolicies()}
+      <div className={styles.main_area}>
+        <SideBar />
+        <div className={styles.content_wrapper}>
+          <Text size={32} family="Lexend Deca">
+            {data.title}
+          </Text>
+          <Spacer height={10} />
+          <Text color="#535353" weight={600}>
+            Last Update: {data.last_update}
+          </Text>
+          <Spacer height={40} />
+          {renderPolicies()}
+        </div>
       </div>
       <Spacer height={120} />
       <Footer />

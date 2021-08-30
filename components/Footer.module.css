@@ -16,11 +16,6 @@
   align-items: center;
 }
 
-.language_wrapper_row {
-  display: flex;
-  gap: 8px;
-}
-
 .download_wrapper_row {
   display: flex;
   gap: 16px;

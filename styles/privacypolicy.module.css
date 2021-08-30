@@ -2,8 +2,12 @@
   font-family: 'Assistant';
 }
 
+.main_area {
+  display: flex;
+}
+
 .content_wrapper {
-  padding: 0 400px 0 120px;
-  margin-left: 275px;
+  padding-left: 120px;
   border-left: solid 1px #979aa5;
+  padding-right: 420px;
 }
