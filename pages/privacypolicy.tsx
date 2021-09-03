@@ -1,12 +1,9 @@
-import PageBanner from '../components/PageBanner'
-import Footer from '../components/Footer'
-import styles from '../styles/privacypolicy.module.css'
 import lockImage from '../public/lock-image.png'
 import Spacer from '../components/Spacer'
 import ImageBox from '../components/ImageBox'
 import Text from '../components/Text'
 import { InferGetStaticPropsType } from 'next'
-import SideBar from '../components/SideBar'
+import Layout from '../components/Layout'
 
 //change this to axios??
 export const getStaticProps = async () => {
@@ -36,38 +33,34 @@ export default function PrivacyPolicy({
         <Text size={20} family="Lexend Deca">
           {policy.title}
         </Text>
-        <Spacer height={15} />
+        <Spacer height={15} heightPhoneResponsive={10} />
         <Text color="#535353" lineHeight={26}>
           {policy.content}
         </Text>
-        <Spacer height={20} />
+        <Spacer height={20} heightPhoneResponsive={28} />
       </>
     ))
   }
   return (
-    <div className={styles.main_container}>
-      <PageBanner title="Privacy by Design">
-        <ImageBox width={113} src={lockImage} alt="Lock Image" />
-        <ImageBox width={113} src={lockImage} alt="Lock Image" />
-        <ImageBox width={113} src={lockImage} alt="Lock Image" />
-      </PageBanner>
-      <Spacer height={55} />
-      <div className={styles.main_area}>
-        <SideBar />
-        <div className={styles.content_wrapper}>
-          <Text size={32} family="Lexend Deca">
-            {data.title}
-          </Text>
-          <Spacer height={10} />
-          <Text color="#535353" weight={600}>
-            Last Update: {data.last_update}
-          </Text>
-          <Spacer height={40} />
-          {renderPolicies()}
-        </div>
-      </div>
-      <Spacer height={120} />
-      <Footer />
-    </div>
+    <Layout
+      pageTitle="Privacy by Design"
+      image={
+        <>
+          <ImageBox width={113} src={lockImage} alt="Lock Image" />
+          <ImageBox width={113} src={lockImage} alt="Lock Image" />
+          <ImageBox width={113} src={lockImage} alt="Lock Image" />
+        </>
+      }
+    >
+      <Text size={32} sizePhoneResponsive={26} family="Lexend Deca">
+        {data.title}
+      </Text>
+      <Spacer height={10} />
+      <Text color="#535353" weight={600}>
+        Last Update: {data.last_update}
+      </Text>
+      <Spacer height={40} heightPhoneResponsive={30} />
+      {renderPolicies()}
+    </Layout>
   )
 }
