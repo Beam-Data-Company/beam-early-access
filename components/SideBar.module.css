@@ -2,3 +2,11 @@
   min-width: 276px;
   padding-left: 100px;
 }
+
+/* ipad and ipad pro portrait */
+@media (max-width: 1040px) {
+  .container {
+    min-width: 200px;
+    padding-left: 40px;
+  }
+}

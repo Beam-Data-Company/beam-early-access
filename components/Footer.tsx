@@ -9,6 +9,7 @@ import facebookIcon from '../public/footer/facebook-icon.png'
 import instagramIcon from '../public/footer/instagram-icon.png'
 import linkedinIcon from '../public/footer/linkedin-icon.png'
 import twitterIcon from '../public/footer/twitter-icon.png'
+import { useMediaQuery } from 'react-responsive'
 
 const footerInfoArray = [
   {
@@ -26,6 +27,8 @@ const footerInfoArray = [
 ]
 
 export default function Footer() {
+  const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
+
   const renderChild = (pages: string[]) =>
     pages.map((page) => {
       return (
@@ -39,7 +42,7 @@ export default function Footer() {
   const renderFooterInfo = () =>
     footerInfoArray.map(({ title, pages }) => {
       return (
-        <div key={title} style={{ width: '120px' }}>
+        <div key={title} className={styles.footer_info_wrapper}>
           <Text size={18} weight={600}>
             {title}
           </Text>
@@ -53,9 +56,13 @@ export default function Footer() {
     <footer className={styles.container}>
       <div className={styles.top_section}>
         <div className={styles.logo_download}>
-          <ImageBox src={beamLogo} width={92} alt="Beam Logo" />
-          <Spacer height={28} />
-          <div className={styles.download_wrapper_row}>
+          <ImageBox
+            src={beamLogo}
+            width={isPhonePortrait ? 74 : 92}
+            alt="Beam Logo"
+          />
+          <Spacer height={28} heightPhoneResponsive={16} />
+          <div className={styles.download_button_wrapper}>
             <ImageBox src={appStoreButton} width={155} alt="App Store" />
             <ImageBox src={googlePlayButton} width={155} alt="Google Play" />
           </div>
@@ -63,7 +70,7 @@ export default function Footer() {
 
         {renderFooterInfo()}
 
-        <div>
+        <div className={styles.footer_info_wrapper}>
           <Text size={18} weight={600}>
             Follow Us
           </Text>
@@ -80,10 +87,11 @@ export default function Footer() {
         </div>
       </div>
 
-      <Spacer height={24} />
+      <Spacer height={24} heightPhoneResponsive={14} />
       <div className={styles.bottom_section}>
-        <Text size={12}>
-          © Beam Data Company Limited 2020. All rights reserved.
+        <Text size={12} sizePhoneResponsive={10} lineHeight={14}>
+          © Beam Data Company Limited 2020. {isPhonePortrait && <br />}All
+          rights reserved.
         </Text>
       </div>
       <Spacer height={48} />
