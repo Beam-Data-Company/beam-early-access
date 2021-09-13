@@ -1,45 +1,34 @@
 import styles from './SideBar.module.css'
 import Text from './Text'
 import Spacer from './Spacer'
+import { useMediaQuery } from 'react-responsive'
 
-export default function SideBar() {
+type Props = {
+  title: string
+  contentTitle: any[] 
+}
+export default function SideBar(props: Props) {
+  const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
+
   return (
     <aside className={styles.container}>
       <Text size={18} weight={600}>
-        Data Collected
+        {props.title}
       </Text>
-      <Spacer height={20} />
-      <Text size={14} lineHeight={32}>
-        Online Payment
-        <br />
-        Instant Checkout
-        <br />
-        Social Commerce
-      </Text>
-      <Spacer height={40} />
-
-      <Text size={18} weight={600}>
-        Data Usage
-      </Text>
-      <Spacer height={20} />
-      <Text size={14} lineHeight={32}>
-        Membership Card
-        <br />
-        Rewards
-      </Text>
-      <Spacer height={40} />
-
-      <Text size={18} weight={600}>
-        Consent
-      </Text>
-      <Spacer height={20} />
-      <Text size={14} lineHeight={32}>
-        APIs
-        <br />
-        Form Creation
-        <br />
-        QR Links
-      </Text>
+      <Spacer height={24} />
+      <ul className={styles.content_list}>
+      {props.contentTitle.map((obj) => (
+        <li key={obj.title}>
+          <a href={`#${obj.title}`}>
+            <Text size={14} weight={400}>
+              {obj.title}
+            </Text>
+          </a>
+          <Spacer height={isPhonePortrait ? 10 : 18} />
+        </li>
+        ))
+      }
+      </ul>
     </aside>
   )
 }
