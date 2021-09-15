@@ -4,45 +4,36 @@ import ImageBox from '../components/ImageBox'
 import Text from '../components/Text'
 import { InferGetStaticPropsType } from 'next'
 import Layout from '../components/Layout'
-import SideBar from '../components/SideBar'
 import { useMediaQuery } from 'react-responsive'
 import axios from 'axios'
-import markdownToHtml from '../lib/markdownToHtml'
-
-export const getStaticProps = async () => {
-  const { data } = await axios.get('http://localhost:1337/privacy-policy')
-  const x = await Promise.all(data.policies.map((item)=>{
-    
-    return markdownToHtml(item.content)
-  }))
-
-  console.log(x)
-
-
-
-  return { props: { data }}
-}
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
 
 type Policy = {
   id: number
   title: string
   content: string
 }
+
+const components = { Text }
 export default function PrivacyPolicy({
   data,
+  policyContent,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const policiesArray = data.policies
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
-
   const renderPolicies = () => {
-    return policiesArray.map((policy: Policy) => (
+    return policiesArray.map((policy: Policy, i: number) => (
       <div id={policy.title} key={policy.title}>
         <Text size={20} family="Lexend Deca">
           {policy.title}
         </Text>
         <Spacer height={isPhonePortrait ? 10 : 15} />
         <Text color="#535353" lineHeight={26}>
-          {policy.content}  
+          <MDXRemote
+            compiledSource={policyContent[i].compiledSource}
+            components={components}
+          />
         </Text>
         <Spacer height={isPhonePortrait ? 28 : 20} />
       </div>
@@ -58,7 +49,8 @@ export default function PrivacyPolicy({
           <ImageBox width={113} src={lockImage} alt="Lock Image" />
         </>
       }
-      sideBar={<SideBar title={data.title} contentTitle={data.policies}/>}
+      contentTitle={data.title}
+      contentList={data.policies}
     >
       <Text size={isPhonePortrait ? 26 : 32} family="Lexend Deca">
         {data.title}
@@ -71,4 +63,12 @@ export default function PrivacyPolicy({
       {renderPolicies()}
     </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+  const { data } = await axios.get('http://localhost:1337/privacy-policy')
+  const html: { [x: string]: any } = await Promise.all(
+    data.policies.map((i: any) => serialize(i.content))
+  )
+  return { props: { data, policyContent: html } }
 }
