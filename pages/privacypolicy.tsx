@@ -65,10 +65,20 @@ export default function PrivacyPolicy({
   )
 }
 
+type PrivacyResponse = {
+  id: number
+  title: string
+  last_update: string
+  published_at: string
+  created_at: string
+  updated_at: string
+  policies: Policy[]
+}
+
 export const getStaticProps = async () => {
-  const { data } = await axios.get('http://localhost:1337/privacy-policy')
-  const html: { [x: string]: any } = await Promise.all(
-    data.policies.map((i: any) => serialize(i.content))
+  const { data } = await axios.get<Pick<PrivacyResponse,"title"|"last_update"|"policies">>(`${process.env.NEXT_PUBLIC_STRAPI_URL}/privacy-policy`)
+  const html = await Promise.all(
+    data.policies.map((i) => serialize(i.content))
   )
   return { props: { data, policyContent: html } }
 }
