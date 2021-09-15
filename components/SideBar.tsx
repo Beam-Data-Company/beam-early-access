@@ -4,30 +4,30 @@ import Spacer from './Spacer'
 import { useMediaQuery } from 'react-responsive'
 
 type Props = {
-  title: string
-  contentTitle: any[] 
+  contentTitle: string
+  contentList: any[]
 }
+
 export default function SideBar(props: Props) {
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
 
   return (
     <aside className={styles.container}>
       <Text size={18} weight={600}>
-        {props.title}
+        {props.contentTitle}
       </Text>
       <Spacer height={24} />
       <ul className={styles.content_list}>
-      {props.contentTitle.map((obj) => (
-        <li key={obj.title}>
-          <a href={`#${obj.title}`}>
-            <Text size={14} weight={400}>
-              {obj.title}
-            </Text>
-          </a>
-          <Spacer height={isPhonePortrait ? 10 : 18} />
-        </li>
-        ))
-      }
+        {props.contentList.map((child) => (
+          <li key={child.title}>
+            <a href={`#${child.title}`}>
+              <Text size={14} weight={400}>
+                {child.title}
+              </Text>
+            </a>
+            <Spacer height={isPhonePortrait ? 10 : 18} />
+          </li>
+        ))}
       </ul>
     </aside>
   )
