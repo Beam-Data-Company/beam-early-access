@@ -18,9 +18,9 @@ const messageArray = [
   {
     icon: triangleIcon,
     englishMessage:
-      'Sign up today get free fees of up to THB 120k in sales value',
+      'Sign up today get unlimited free fees of up to 3 months',
     thaiMessage:
-      'ฟรี GP สำหรับ SMEs รับชำระสินค้าในร้านของคุณได้สูงสุดถึง 120,000 บาท',
+      'ฟรีค่าธรรมเนียม ใช้บีมรับชำระสินค้าในร้านของคุณได้ไม่จำกัด สูงสุดถึง 3 เดือน',
   },
   {
     icon: squareIcon,
@@ -132,7 +132,7 @@ export default function Earlybird() {
         <div className={styles.remarks}>
           <Text size={12} color="#535353" weight={600}>
             Remarks: This campaign is applicable for stores with online sales
-            value of over THB 20k/month. By registering this campaign, you agree
+            value of over THB 80k/month. By registering this campaign, you agree
             to Beam&apos;s{' '}
             <Link href="https://beamdata.co/privacy/" passHref>
               Privacy Policy
