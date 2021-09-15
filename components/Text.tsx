@@ -10,7 +10,6 @@ type Props = {
 }
 
 export default function Text(props: Props) {
-
   return (
     <span
       style={{

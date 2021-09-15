@@ -61,7 +61,7 @@ export default function Footer() {
             width={isPhonePortrait ? 74 : 92}
             alt="Beam Logo"
           />
-          <Spacer height={28} heightPhoneResponsive={16} />
+          <Spacer height={isPhonePortrait ? 16 : 28} />
           <div className={styles.download_button_wrapper}>
             <ImageBox src={appStoreButton} width={155} alt="App Store" />
             <ImageBox src={googlePlayButton} width={155} alt="Google Play" />
@@ -87,9 +87,9 @@ export default function Footer() {
         </div>
       </div>
 
-      <Spacer height={24} heightPhoneResponsive={14} />
+      <Spacer height={isPhonePortrait ? 14 : 24} />
       <div className={styles.bottom_section}>
-        <Text size={12} sizePhoneResponsive={10} lineHeight={14}>
+        <Text size={isPhonePortrait ? 10 : 12} lineHeight={14}>
           © Beam Data Company Limited 2020. {isPhonePortrait && <br />}All
           rights reserved.
         </Text>

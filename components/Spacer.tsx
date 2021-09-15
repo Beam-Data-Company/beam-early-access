@@ -3,7 +3,6 @@ type Props = {
 }
 
 export default function Spacer(props: Props) {
- 
   return (
     <div
       style={{
