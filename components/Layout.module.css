@@ -1,0 +1,31 @@
+.main_container {
+  font-family: 'Assistant';
+  overflow: hidden;
+}
+
+.main_area {
+  display: flex;
+}
+
+.content_wrapper {
+  padding-left: 120px;
+  border-left: solid 1px #979aa5;
+  width: 800px;
+}
+
+/* ipad and ipad pro portrait */
+@media (max-width: 1040px) {
+  .content_wrapper {
+    padding-left: 50px;
+    padding-right: 70px;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 450px) {
+  .content_wrapper {
+    padding-left: 24px;
+    padding-right: 20px;
+    border: none;
+  }
+}

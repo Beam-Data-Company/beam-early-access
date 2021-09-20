@@ -1,0 +1,84 @@
+.container {
+  padding: 0 100px;
+}
+
+.top_section {
+  border-top: 1px solid #979aa5;
+  border-bottom: 1px solid #979aa5;
+  padding: 34px 42px 32px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.bottom_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download_button_wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.logo_download {
+  margin-right: 20px;
+}
+
+.icon_wrapper_row {
+  display: flex;
+  gap: 24px;
+}
+
+.footer_info_wrapper {
+  width: 120px;
+}
+
+/* ipad pro portrait */
+@media (max-width: 1040px) {
+  .container {
+    padding: 0px 40px;
+  }
+
+  .top_section {
+    padding-right: 15px;
+  }
+
+  .footer_info_wrapper {
+    width: auto;
+  }
+}
+
+/* ipad portrait */
+@media (max-width: 825px) {
+  .logo_download {
+    margin-right: 0px;
+  }
+
+  .download_button_wrapper {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 450px) {
+  .container {
+    padding: 0px 24px;
+  }
+
+  .top_section {
+    padding: 28px 0;
+    row-gap: 40px;
+    justify-content: space-between;
+  }
+
+  .footer_info_wrapper {
+    width: 120px;
+  }
+
+  .logo_download {
+    width: 100%;
+  }
+}

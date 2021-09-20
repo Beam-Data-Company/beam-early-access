@@ -1,0 +1,67 @@
+.container {
+  background-image: linear-gradient(to top, #001365, #000b3c, #000a33);
+  position: relative;
+  padding: 65px 150px 0px 100px;
+}
+
+.header {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+}
+
+.wrapper {
+  height: 242px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image_wrapper {
+  display: flex;
+  gap: 24px;
+  padding-top: 25px;
+  justify-content: center;
+}
+
+/* ipad pro portrait */
+@media (max-width: 1040px) {
+  .container {
+    padding-left: 80px;
+    padding-right: 120px;
+  }
+
+  .header {
+    left: -10px;
+  }
+}
+
+/* normal ipad portrait */
+@media (max-width: 820px) {
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .image_wrapper {
+    width: 320px;
+    gap: 20px;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 450px) {
+  .container {
+    padding: 75px 45px 0 45px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .image_wrapper {
+    width: 100%;
+    gap: 18px;
+  }
+}

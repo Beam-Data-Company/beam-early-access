@@ -1,0 +1,18 @@
+.container {
+  min-width: 276px;
+  padding-left: 100px;
+}
+
+.content_list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* ipad and ipad pro portrait */
+@media (max-width: 1040px) {
+  .container {
+    min-width: 200px;
+    padding-left: 40px;
+  }
+}

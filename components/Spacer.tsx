@@ -3,5 +3,11 @@ type Props = {
 }
 
 export default function Spacer(props: Props) {
-  return <div style={{ height: `${props.height}px` }}></div>
+  return (
+    <div
+      style={{
+        height: `${props.height}px`,
+      }}
+    ></div>
+  )
 }
