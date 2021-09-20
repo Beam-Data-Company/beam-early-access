@@ -76,9 +76,9 @@ type PrivacyResponse = {
 }
 
 export const getStaticProps = async () => {
-  const { data } = await axios.get<Pick<PrivacyResponse,"title"|"last_update"|"policies">>(`${process.env.NEXT_PUBLIC_STRAPI_URL}/privacy-policy`)
-  const html = await Promise.all(
-    data.policies.map((i) => serialize(i.content))
-  )
+  const { data } = await axios.get<
+    Pick<PrivacyResponse, 'title' | 'last_update' | 'policies'>
+  >(`${process.env.NEXT_PUBLIC_STRAPI_URL}/privacy-policy`)
+  const html = await Promise.all(data.policies.map((i) => serialize(i.content)))
   return { props: { data, policyContent: html } }
 }

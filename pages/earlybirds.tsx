@@ -17,8 +17,7 @@ import Spacer from '../components/Spacer'
 const messageArray = [
   {
     icon: triangleIcon,
-    englishMessage:
-      'Sign up today get unlimited free fees of up to 3 months',
+    englishMessage: 'Sign up today get unlimited free fees of up to 3 months',
     thaiMessage:
       'ฟรีค่าธรรมเนียม ใช้บีมรับชำระสินค้าในร้านของคุณได้ไม่จำกัด สูงสุดถึง 3 เดือน',
   },
