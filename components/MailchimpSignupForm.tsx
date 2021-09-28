@@ -58,8 +58,7 @@ export default function MailchimpApiForm() {
                   styles.input_field,
                   formik.errors.email &&
                     formik.touched.email &&
-                    styles.error_input_field,
-                  formik.isSubmitting && styles.disabled_input_field
+                    styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
@@ -71,13 +70,13 @@ export default function MailchimpApiForm() {
             <InputFieldWrapper>
               <Field
                 name="phoneNumber"
+                type="tel"
                 placeholder="Your phone number"
                 className={classNames(
                   styles.input_field,
                   formik.errors.phoneNumber &&
                     formik.touched.phoneNumber &&
-                    styles.error_input_field,
-                  formik.isSubmitting && styles.disabled_input_field
+                    styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
@@ -88,10 +87,7 @@ export default function MailchimpApiForm() {
 
             <button
               type="submit"
-              className={classNames(
-                styles.submit_button,
-                formik.isSubmitting && styles.submit_button_submitting
-              )}
+              className={styles.submit_button}
               disabled={formik.isSubmitting}
             >
               {formik.isSubmitting ? <Loading /> : 'Get Access'}
