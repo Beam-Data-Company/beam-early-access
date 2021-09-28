@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/Header'
-import MailchimpForm from '../components/MailchimpForm'
+import MailchimpSignupForm from '../components/MailchimpSignupForm'
 import Demo from '../components/demo_pages/Demo'
 import styles from '../styles/Home.module.css'
 import shape1 from '../public/shape1.png'
@@ -14,6 +14,8 @@ import { useMediaQuery } from 'react-responsive'
 export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
+  const isPhoneLandscape = useMediaQuery({ maxWidth: 850 }) && !isPortrait
+  const isPhonePortrait = useMediaQuery({ maxWidth: 600 })
 
   const shapeArray = [
     { data: shape1, name: 'shape1', className: styles.shape1 },
@@ -38,6 +40,13 @@ export default function Home() {
     from: { opacity: 0 },
     config: { tension: 70 },
     delay: 3400,
+  })
+
+  const fadeInFast = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { tension: 70 },
+    delay: 200,
   })
 
   const slideLeft = useSpring({
@@ -68,18 +77,20 @@ export default function Home() {
       <div className={styles.contentWrapper}>
         <Header />
 
-        <svg
-          className={styles.svgWrapper}
-          preserveAspectRatio="none"
-          width="1440"
-          height="500"
-          viewBox="0 0 1440 500"
-        >
-          <path
-            fill="#000a33"
-            d="M0,500 L0,370 L1440,0 L1440,500 L0,500 Z"
-          ></path>
-        </svg>
+        {!isPhoneLandscape && (
+          <svg
+            className={styles.svgWrapper}
+            preserveAspectRatio="none"
+            width="1440"
+            height="500"
+            viewBox="0 0 1440 500"
+          >
+            <path
+              fill="#000a33"
+              d="M0,500 L0,370 L1440,0 L1440,500 L0,500 Z"
+            ></path>
+          </svg>
+        )}
 
         {renderShapes()}
 
@@ -91,7 +102,10 @@ export default function Home() {
           <Demo />
         </animated.div>
 
-        <animated.div className={styles.main_container} style={fadeIn}>
+        <animated.div
+          className={styles.main_container}
+          style={isPhoneLandscape || isPhonePortrait ? fadeInFast : fadeIn}
+        >
           <main className={styles.main}>
             <div className={styles.title_with_description_container}>
               <h1 className={styles.title}>Get Early Access</h1>
@@ -100,7 +114,7 @@ export default function Home() {
                 your social messaging platforms and website.
               </span>
             </div>
-            <MailchimpForm />
+            <MailchimpSignupForm />
           </main>
         </animated.div>
       </div>

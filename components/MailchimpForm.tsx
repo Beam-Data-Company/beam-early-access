@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import MailchimpSubscribe, { EmailFormFields } from 'react-mailchimp-subscribe'
 import classNames from 'classnames'
-
 import Loading from './Loading'
 import SuccessModal from './SuccessModal'
-
 import styles from '../components/MailchimpForm.module.css'
 
 type Props = {
@@ -92,7 +90,7 @@ function EmailForm(props: Props) {
   )
 
   return (
-    <div style={{ width: '100%' }}>
+    <div className={styles.form_wrapper}>
       <form className={styles.form_container} onSubmit={handleSubmit}>
         <input
           ref={emailInput}
