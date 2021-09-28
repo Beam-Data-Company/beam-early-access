@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Formik, Field, Form } from 'formik'
 import * as Yup from 'yup'
-import styles from './MailchimpApiForm.module.css'
+import styles from './MailchimpSignupForm.module.css'
 import axios from 'axios'
 import classNames from 'classnames'
 import SuccessModal from './SuccessModal'

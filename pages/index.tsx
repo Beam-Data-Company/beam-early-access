@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/Header'
-import MailchimpApiForm from '../components/MailchimpApiForm'
+import MailchimpSignupForm from '../components/MailchimpSignupForm'
 import Demo from '../components/demo_pages/Demo'
 import styles from '../styles/Home.module.css'
 import shape1 from '../public/shape1.png'
@@ -114,7 +114,7 @@ export default function Home() {
                 your social messaging platforms and website.
               </span>
             </div>
-            <MailchimpApiForm />
+            <MailchimpSignupForm />
           </main>
         </animated.div>
       </div>
