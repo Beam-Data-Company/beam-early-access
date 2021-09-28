@@ -35,7 +35,7 @@ export default function PrivacyPolicy({
             components={components}
           />
         </Text>
-        <Spacer height={isPhonePortrait ? 28 : 20} />
+        <Spacer height={isPhonePortrait ? 30 : 24} />
       </div>
     ))
   }
