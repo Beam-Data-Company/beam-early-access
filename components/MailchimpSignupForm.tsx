@@ -57,8 +57,8 @@ export default function MailchimpSignupForm() {
                 className={classNames(
                   styles.input_field,
                   formik.errors.email &&
-                  formik.touched.email &&
-                  styles.error_input_field
+                    formik.touched.email &&
+                    styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
@@ -75,8 +75,8 @@ export default function MailchimpSignupForm() {
                 className={classNames(
                   styles.input_field,
                   formik.errors.phoneNumber &&
-                  formik.touched.phoneNumber &&
-                  styles.error_input_field
+                    formik.touched.phoneNumber &&
+                    styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
@@ -110,12 +110,6 @@ export default function MailchimpSignupForm() {
   )
 }
 
-function InputFieldWrapper(props: {
-  children: React.ReactNode
-}) {
-  return (
-    <div className={styles.input_field_wrapper}>
-      {props.children}
-    </div>
-  )
+function InputFieldWrapper(props: { children: React.ReactNode }) {
+  return <div className={styles.input_field_wrapper}>{props.children}</div>
 }
