@@ -15,6 +15,7 @@ export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
   const isPhoneLandscape = useMediaQuery({ maxWidth: 850 }) && !isPortrait
+  const isPhonePortrait = useMediaQuery({ maxWidth: 600 })
 
   const shapeArray = [
     { data: shape1, name: 'shape1', className: styles.shape1 },
@@ -39,6 +40,13 @@ export default function Home() {
     from: { opacity: 0 },
     config: { tension: 70 },
     delay: 3400,
+  })
+
+  const fadeInFast = useSpring({
+    to: { opacity: 1 },
+    from: { opacity: 0 },
+    config: { tension: 70 },
+    delay: 200,
   })
 
   const slideLeft = useSpring({
@@ -94,7 +102,10 @@ export default function Home() {
           <Demo />
         </animated.div>
 
-        <animated.div className={styles.main_container} style={fadeIn}>
+        <animated.div
+          className={styles.main_container}
+          style={isPhoneLandscape || isPhonePortrait ? fadeInFast : fadeIn}
+        >
           <main className={styles.main}>
             <div className={styles.title_with_description_container}>
               <h1 className={styles.title}>Get Early Access</h1>
