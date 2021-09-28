@@ -54,7 +54,7 @@
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 32px;
-  margin-top: 24vh;
+  margin-top: 20vh;
 }
 
 .main {
@@ -104,7 +104,7 @@
   }
 
   .phoneScreenPic {
-    top: 42%;
+    top: 50%;
     left: 50%;
   }
 
@@ -114,6 +114,7 @@
 
   .main {
     margin: auto;
+    align-items: center;
   }
 
   .main_container {
@@ -134,19 +135,19 @@
 /* normal ipad portrait */
 @media (max-width: 800px) {
   .main_container {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   .phoneScreenPic {
-    top: 40%;
+    top: 46%;
     left: 50%;
   }
 }
 
 /* phone portrait */
-@media (max-width: 650px) {
+@media (max-width: 600px) {
   .main_container {
-    margin-top: 100px;
+    margin-top: 80px;
   }
 
   .title {
@@ -173,6 +174,10 @@
     margin-right: 16px;
   }
 
+  .contentWrapper {
+    overflow: scroll;
+  }
+
   .main {
     flex-direction: row;
     align-items: flex-start;
@@ -197,5 +202,16 @@
   .shape4,
   .shape5 {
     display: none;
+  }
+}
+
+/* small phone portrait */
+@media (max-width: 350px) {
+  .main_container {
+    margin-top: 45px;
+  }
+
+  .wrapper {
+    height: 650px;
   }
 }
