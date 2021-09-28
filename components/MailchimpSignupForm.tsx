@@ -23,7 +23,7 @@ const SignUpFormSchema = Yup.object({
     .required('Required'),
 })
 
-export default function MailchimpApiForm() {
+export default function MailchimpSignupForm() {
   const [successModalVisible, setSuccessModalVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -57,8 +57,8 @@ export default function MailchimpApiForm() {
                 className={classNames(
                   styles.input_field,
                   formik.errors.email &&
-                    formik.touched.email &&
-                    styles.error_input_field
+                  formik.touched.email &&
+                  styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
@@ -75,8 +75,8 @@ export default function MailchimpApiForm() {
                 className={classNames(
                   styles.input_field,
                   formik.errors.phoneNumber &&
-                    formik.touched.phoneNumber &&
-                    styles.error_input_field
+                  formik.touched.phoneNumber &&
+                  styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
@@ -111,11 +111,10 @@ export default function MailchimpApiForm() {
 }
 
 function InputFieldWrapper(props: {
-  className?: string
   children: React.ReactNode
 }) {
   return (
-    <div className={classNames(styles.input_field_wrapper, props.className)}>
+    <div className={styles.input_field_wrapper}>
       {props.children}
     </div>
   )
