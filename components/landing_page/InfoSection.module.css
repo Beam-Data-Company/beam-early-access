@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.message_container {
+  width: 620px;
+  padding-right: 40px;
+}
+
+.info_list {
+  padding: 0;
+  margin: 40px 0 0 0;
+  max-width: 420px;
+}
+
+.list_child {
+  margin-top: 30px;
+  display: flex;
+}
+
+.icon_container {
+  width: 20px;
+  min-width: 20px;
+  padding-top: 3px;
+  margin-right: 24px;
+}
