@@ -1,5 +1,6 @@
 import styles from './Footer.module.css'
 import beamLogo from '../public/footer/beam-logo.png'
+import beamLogoWhite from '../public/footer/beam-logo-white.png'
 import appStoreButton from '../public/footer/app-store-button.png'
 import googlePlayButton from '../public/footer/google-play-button.png'
 import ImageBox from './ImageBox'
@@ -9,6 +10,10 @@ import facebookIcon from '../public/footer/facebook-icon.png'
 import instagramIcon from '../public/footer/instagram-icon.png'
 import linkedinIcon from '../public/footer/linkedin-icon.png'
 import twitterIcon from '../public/footer/twitter-icon.png'
+import facebookIconWhite from '../public/footer/facebook-icon-white.png'
+import instagramIconWhite from '../public/footer/instagram-icon-white.png'
+import linkedinIconWhite from '../public/footer/linkedin-icon-white.png'
+import twitterIconWhite from '../public/footer/twitter-icon-white.png'
 import { useMediaQuery } from 'react-responsive'
 
 const footerInfoArray = [
@@ -26,7 +31,11 @@ const footerInfoArray = [
   },
 ]
 
-export default function Footer() {
+type Props = {
+  color: 'white' | 'black'
+}
+
+export default function Footer(props: Props) {
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
 
   const renderChild = (pages: string[]) =>
@@ -53,11 +62,11 @@ export default function Footer() {
     })
 
   return (
-    <footer className={styles.container}>
+    <footer className={styles.container} style={{ color: props.color }}>
       <div className={styles.top_section}>
         <div className={styles.logo_download}>
           <ImageBox
-            src={beamLogo}
+            src={props.color === 'black' ? beamLogo : beamLogoWhite}
             width={isPhonePortrait ? 74 : 92}
             alt="Beam Logo"
           />
@@ -76,13 +85,29 @@ export default function Footer() {
           </Text>
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
-            <ImageBox src={facebookIcon} width={16} alt="Facebook Icon" />
-            <ImageBox src={instagramIcon} width={16} alt="Instagram Icon" />
+            <ImageBox
+              src={props.color === 'black' ? facebookIcon : facebookIconWhite}
+              width={16}
+              alt="Facebook Icon"
+            />
+            <ImageBox
+              src={props.color === 'black' ? instagramIcon : instagramIconWhite}
+              width={16}
+              alt="Instagram Icon"
+            />
           </div>
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
-            <ImageBox src={linkedinIcon} width={16} alt="Linkedin Icon" />
-            <ImageBox src={twitterIcon} width={18} alt="Twitter Icon" />
+            <ImageBox
+              src={props.color === 'black' ? linkedinIcon : linkedinIconWhite}
+              width={16}
+              alt="Linkedin Icon"
+            />
+            <ImageBox
+              src={props.color === 'black' ? twitterIcon : twitterIconWhite}
+              width={18}
+              alt="Twitter Icon"
+            />
           </div>
         </div>
       </div>
