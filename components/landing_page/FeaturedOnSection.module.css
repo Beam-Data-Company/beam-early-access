@@ -1,0 +1,26 @@
+.wrapper {
+  padding: 0 100px;
+  text-align: center;
+}
+
+.logo_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 10px;
+}
+
+/* for making title in the middle of the line */
+.title {
+  display: flex;
+}
+
+.title:before,
+.title:after {
+  content: '';
+  flex: 1 1;
+  border-bottom: 1px solid #ffffff;
+  margin: auto;
+}
