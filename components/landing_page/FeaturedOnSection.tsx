@@ -14,20 +14,40 @@ export default function FeaturedOnSection() {
         </Text>
       </div>
       <div className={styles.logo_container}>
-        <Image src={ForbesLogo} width={90} height={60} alt="Forbes Logo" />
         <Image
-          src={BangkokPostLogo}
-          width={153}
-          height={28}
-          alt="Bangkok Post Logo"
+          src={ForbesLogo}
+          width={90}
+          height={60}
+          alt="Forbes Logo"
+          priority
         />
-        <Image src={MediumLogo} height={45} width={180} alt="Medium Logo" />
-        <Image src={ForbesLogo} width={90} height={60} alt="Forbes Logo" />
         <Image
           src={BangkokPostLogo}
           width={153}
           height={28}
           alt="Bangkok Post Logo"
+          priority
+        />
+        <Image
+          src={MediumLogo}
+          height={45}
+          width={180}
+          alt="Medium Logo"
+          priority
+        />
+        <Image
+          src={ForbesLogo}
+          width={90}
+          height={60}
+          alt="Forbes Logo"
+          priority
+        />
+        <Image
+          src={BangkokPostLogo}
+          width={153}
+          height={28}
+          alt="Bangkok Post Logo"
+          priority
         />
       </div>
     </div>

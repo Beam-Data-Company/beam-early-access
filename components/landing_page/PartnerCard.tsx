@@ -17,7 +17,6 @@ type Props = {
 export default function PartnerCard(props: Props) {
   return (
     <div className={styles.container}>
-
       <Text size={24} color="#00d379">{`${props.percentage}% `}</Text>
       <Text size={24}>{props.title}</Text>
       <Spacer height={25} />
@@ -29,9 +28,10 @@ export default function PartnerCard(props: Props) {
 
       <div className={styles.bottom_section}>
         <div className={styles.logo_name_wrapper}>
-          <Image src={NaraLogo} alt="Logo" width={39} height={50} />
+          <Image src={NaraLogo} alt="Logo" width={39} height={50} priority />
           <Text color="#383838" family="Assistant" weight={600}>
-            {props.name} <br/>{props.companyName}
+            {props.name} <br />
+            {props.companyName}
           </Text>
         </div>
         <Text
@@ -41,7 +41,6 @@ export default function PartnerCard(props: Props) {
           weight={600}
         >{`Read ${props.industry} case studies`}</Text>
       </div>
-      
     </div>
   )
 }

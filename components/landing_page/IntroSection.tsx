@@ -9,7 +9,7 @@ import classNames from 'classnames'
 
 export default function Intro() {
   return (
-    <div className={styles.container}> 
+    <div className={styles.container}>
       <Text size={32} color="#ffffff">
         Beam Instant Checkout
       </Text>
@@ -21,7 +21,7 @@ export default function Intro() {
       </div>
 
       <div className={styles.image}>
-        <Image src={IntroPicture} alt="Intro Picture" />
+        <Image src={IntroPicture} alt="Intro Picture" priority />
       </div>
 
       <div className={styles.image_description}>
@@ -31,7 +31,13 @@ export default function Intro() {
             styles.social_commerce
           )}
         >
-          <Image src={CommentIcon} width={15} height={14} alt="Comment Icon" />
+          <Image
+            src={CommentIcon}
+            width={15}
+            height={14}
+            alt="Comment Icon"
+            priority
+          />
           <Text size={20} color="#ffffff">
             Social Commerce
           </Text>
@@ -42,7 +48,13 @@ export default function Intro() {
             styles.mobile_responsive
           )}
         >
-          <Image src={MobileIcon} width={9} height={14} alt="Mobile Icon" />
+          <Image
+            src={MobileIcon}
+            width={9}
+            height={14}
+            alt="Mobile Icon"
+            priority
+          />
           <Text size={20} color="#ffffff">
             Mobile Responsive
           </Text>
@@ -53,7 +65,13 @@ export default function Intro() {
             styles.desktop_ecommerce
           )}
         >
-          <Image src={LaptopIcon} width={17} height={14} alt="Laptop Icon" />
+          <Image
+            src={LaptopIcon}
+            width={17}
+            height={14}
+            alt="Laptop Icon"
+            priority
+          />
           <Text size={20} color="#ffffff">
             Desktop E-commerce
           </Text>
