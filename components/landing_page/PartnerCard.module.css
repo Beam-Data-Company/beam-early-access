@@ -1,0 +1,24 @@
+.container {
+  width: 470px;
+  height: 290px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  padding: 32px 28px 0 40px;
+  margin: 0 15px;
+  text-align: left;
+}
+
+.logo_name_wrapper {
+  display: flex;
+  width: 180px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom_section {
+  display: flex;
+  border-top: 1px solid #b8bfde;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
