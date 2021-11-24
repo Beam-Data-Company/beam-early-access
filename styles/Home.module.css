@@ -1,10 +1,9 @@
 .wrapper {
   background-image: linear-gradient(to left, #001365, #000b3c, #000a33);
-  height: 100%;
 }
 
-.contentWrapper {
-  height: 100%;
+.form_demo_section {
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }

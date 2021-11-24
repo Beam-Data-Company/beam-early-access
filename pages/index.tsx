@@ -11,6 +11,13 @@ import shape5 from '../public/shape5.png'
 import { useSpring, animated } from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
 
+import FeaturedOnSection from '../components/landing_page/FeaturedOnSection'
+import IntroSection from '../components/landing_page/IntroSection'
+import Spacer from '../components/Spacer'
+import InfoSection from '../components/landing_page/InfoSection'
+import PartnerCardCarousel from '../components/landing_page/PartnerCardCarousel'
+import Footer from '../components/Footer'
+
 export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
@@ -74,7 +81,7 @@ export default function Home() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.contentWrapper}>
+      <div className={styles.form_demo_section}>
         <Header />
 
         {!isPhoneLandscape && (
@@ -110,7 +117,7 @@ export default function Home() {
             <div className={styles.title_with_description_container}>
               <h1 className={styles.title}>Get Early Access</h1>
               <span className={styles.description}>
-                Beam Instant Checkout, a frictionless customer experience on
+                Beam One-Click Checkout, a frictionless customer experience on
                 your social messaging platforms and website.
               </span>
             </div>
@@ -118,6 +125,17 @@ export default function Home() {
           </main>
         </animated.div>
       </div>
+
+      <Spacer height={90} />
+      <FeaturedOnSection />
+      <Spacer height={120} />
+      <IntroSection />
+      <Spacer height={150} />
+      <InfoSection />
+      <Spacer height={200} />
+      <PartnerCardCarousel />
+      <Spacer height={300} />
+      <Footer color="white" />
     </div>
   )
 }
