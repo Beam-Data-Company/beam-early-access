@@ -2,9 +2,9 @@ import styles from './PartnerCardCarousel.module.css'
 import PartnerCard from './PartnerCard'
 import Text from '../Text'
 import Spacer from '../Spacer'
-import classNames from 'classnames'
+import Button from './Button'
 
-export default function PartnerSlider() {
+export default function PartnerCardCarousel() {
   return (
     <div className={styles.container}>
       <Text color="#ffffff" size={32}>
@@ -19,9 +19,9 @@ export default function PartnerSlider() {
         <PartnerCard
           percentage={40}
           title="higher conversion rate in 1 month!"
-          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
-          name="Jenny Jones"
-          companyName="Nara Thai Cuisine"
+          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
+          name="Jenny Jonessssssssssssssss"
+          companyName="Nara Thai Cuisineeeeeeeee"
           industry="F&#38;B"
         />
         <PartnerCard
@@ -117,17 +117,8 @@ export default function PartnerSlider() {
       </div>
 
       <Spacer height={70} />
-
-      <button className={classNames(styles.button, styles.outlined)}>
-        <Text family="Assistant" weight={600} size={18}>
-          View All Case Studies
-        </Text>
-      </button>
-      <button className={classNames(styles.button, styles.contained)}>
-        <Text family="Assistant" weight={600} size={18}>
-          Be our partner
-        </Text>
-      </button>
+      <Button content="View All Case Studies" variant="outlined" />
+      <Button content="Be our partner" variant="contained" />
     </div>
   )
 }

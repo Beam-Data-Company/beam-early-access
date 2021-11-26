@@ -8,11 +8,24 @@
   text-align: left;
 }
 
-.logo_name_wrapper {
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.logo_text_wrapper {
   display: flex;
-  width: 180px;
-  justify-content: space-between;
   align-items: center;
+}
+
+.name_company_wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 180px;
+  margin-left: 20px;
 }
 
 .bottom_section {
