@@ -133,13 +133,17 @@ export default function Earlybird() {
             Remarks: This campaign is applicable for stores with online sales
             value of over THB 80k/month. By registering this campaign, you agree
             to Beam&apos;s{' '}
-            <Link href="https://beamdata.co/privacy/" passHref>
-              Privacy Policy
-            </Link>{' '}
+            <Text weight={700}>
+              <Link href="https://beamdata.co/privacy/" passHref>
+                Privacy Policy
+              </Link>
+            </Text>{' '}
             and{' '}
-            <Link href="https://beamdata.co/terms-of-service/" passHref>
-              Terms and Conditions
-            </Link>
+            <Text weight={700}>
+              <Link href="https://beamdata.co/terms-of-service/" passHref>
+                Terms and Conditions
+              </Link>
+            </Text>
             . We reserve the right to refuse providing offers and/or promotions
             at any time, either for particular individuals or organizations at
             our discretion.
