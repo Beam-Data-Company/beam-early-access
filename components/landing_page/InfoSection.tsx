@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Text from '../Text'
 import ImageBox from '../ImageBox'
 
-type infoType = {
+type InfoType = {
   icon: StaticImageData
   message: string
 }
@@ -48,18 +48,16 @@ const PaymentInfoArray = [
   },
 ]
 
-const renderInfo = (array: infoType[]) =>
+const renderInfo = (array: InfoType[]) =>
   array.map(({ icon, message }) => {
     return (
       <li className={styles.list_child} key={message}>
         <div className={styles.icon_container}>
           <Image src={icon} alt="Icon" width={20} height={20} priority />
         </div>
-        <div>
-          <Text color="#ffffff" family="Assistant">
-            {message}
-          </Text>
-        </div>
+        <Text color="#ffffff" family="Assistant">
+          {message}
+        </Text>
       </li>
     )
   })
@@ -69,11 +67,9 @@ export default function InfoSection() {
     <>
       <div className={styles.wrapper}>
         <div className={styles.message_container}>
-          <div>
-            <Text color="#ffffff" size={32}>
-              Boost your sales conversion rate
-            </Text>
-          </div>
+          <Text color="#ffffff" size={32}>
+            Boost your sales conversion rate
+          </Text>
           <ul className={styles.info_list}>
             {renderInfo(BoostSalesInfoArray)}
           </ul>

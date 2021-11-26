@@ -1,6 +1,5 @@
 .wrapper {
   padding: 0 100px;
-  text-align: center;
 }
 
 .logo_container {
@@ -8,19 +7,27 @@
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #cccccc;
   padding-bottom: 10px;
 }
 
 /* for making title in the middle of the line */
 .title {
   display: flex;
+  align-items: center;
 }
 
 .title:before,
 .title:after {
   content: '';
   flex: 1 1;
-  border-bottom: 1px solid #ffffff;
-  margin: auto;
+  border-bottom: 1px solid #cccccc;
+}
+
+.title::before {
+  margin-right: 10px;
+}
+
+.title::after {
+  margin-left: 10px;
 }
