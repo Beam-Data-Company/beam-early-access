@@ -15,6 +15,7 @@ import instagramIconWhite from '../public/footer/instagram-icon-white.png'
 import linkedinIconWhite from '../public/footer/linkedin-icon-white.png'
 import twitterIconWhite from '../public/footer/twitter-icon-white.png'
 import { useMediaQuery } from 'react-responsive'
+import classNames from 'classnames'
 
 const footerInfoArray = [
   {
@@ -32,19 +33,20 @@ const footerInfoArray = [
 ]
 
 type Props = {
-  color: 'white' | 'black'
+  variant: 'white' | 'black'
 }
 
 export default function Footer(props: Props) {
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
+  const isBlackVariant = props.variant === 'black'
 
   const renderChild = (pages: string[]) =>
     pages.map((page) => {
       return (
-        <>
+        <div key={page}>
           <Spacer height={12} />
           <Text size={14}>{page}</Text>
-        </>
+        </div>
       )
     })
 
@@ -62,11 +64,16 @@ export default function Footer(props: Props) {
     })
 
   return (
-    <footer className={styles.container} style={{ color: props.color }}>
+    <footer
+      className={classNames(
+        styles.container,
+        isBlackVariant ? styles.black_variant : styles.white_variant
+      )}
+    >
       <div className={styles.top_section}>
         <div className={styles.logo_download}>
           <ImageBox
-            src={props.color === 'black' ? beamLogo : beamLogoWhite}
+            src={isBlackVariant ? beamLogo : beamLogoWhite}
             width={isPhonePortrait ? 74 : 92}
             alt="Beam Logo"
           />
@@ -86,12 +93,12 @@ export default function Footer(props: Props) {
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
             <ImageBox
-              src={props.color === 'black' ? facebookIcon : facebookIconWhite}
+              src={isBlackVariant ? facebookIcon : facebookIconWhite}
               width={16}
               alt="Facebook Icon"
             />
             <ImageBox
-              src={props.color === 'black' ? instagramIcon : instagramIconWhite}
+              src={isBlackVariant ? instagramIcon : instagramIconWhite}
               width={16}
               alt="Instagram Icon"
             />
@@ -99,12 +106,12 @@ export default function Footer(props: Props) {
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
             <ImageBox
-              src={props.color === 'black' ? linkedinIcon : linkedinIconWhite}
+              src={isBlackVariant ? linkedinIcon : linkedinIconWhite}
               width={16}
               alt="Linkedin Icon"
             />
             <ImageBox
-              src={props.color === 'black' ? twitterIcon : twitterIconWhite}
+              src={isBlackVariant ? twitterIcon : twitterIconWhite}
               width={18}
               alt="Twitter Icon"
             />

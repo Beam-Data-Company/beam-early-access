@@ -135,7 +135,7 @@ export default function Home() {
       <Spacer height={200} />
       <PartnerCardCarousel />
       <Spacer height={300} />
-      <Footer color="white" />
+      <Footer variant="white" />
     </div>
   )
 }

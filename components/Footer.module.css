@@ -36,6 +36,14 @@
   width: 120px;
 }
 
+.black_variant {
+  color: #000000;
+}
+
+.white_variant {
+  color: #ffffff;
+}
+
 /* ipad pro portrait */
 @media (max-width: 1040px) {
   .container {
