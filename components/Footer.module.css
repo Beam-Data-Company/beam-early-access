@@ -1,6 +1,8 @@
 .container {
   padding: 0 100px;
   font-family: 'Assistant';
+  max-width: 1500px;
+  margin: auto;
 }
 
 .top_section {
