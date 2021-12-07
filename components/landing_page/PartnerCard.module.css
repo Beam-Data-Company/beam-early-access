@@ -35,3 +35,16 @@
   justify-content: space-between;
   padding-top: 20px;
 }
+
+/* ipad portrait and phone*/
+@media (max-width: 1000px) {
+  .container {
+    width: 390px;
+    height: 240px;
+    padding: 22px 24px 0 32px;
+  }
+
+  .bottom_section {
+    padding-top: 14px;
+  }
+}

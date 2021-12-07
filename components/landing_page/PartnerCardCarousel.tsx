@@ -2,12 +2,15 @@ import styles from './PartnerCardCarousel.module.css'
 import PartnerCard from './PartnerCard'
 import Text from '../Text'
 import Spacer from '../Spacer'
-import Button from './Button'
+import Button from '../Button'
+import { useMediaQuery } from 'react-responsive'
 
 export default function PartnerCardCarousel() {
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
+
   return (
     <div className={styles.container}>
-      <Text color="#ffffff" size={32}>
+      <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
         What our strategic partners say
       </Text>
 
@@ -117,8 +120,8 @@ export default function PartnerCardCarousel() {
       </div>
 
       <Spacer height={70} />
-      <Button content="View All Case Studies" variant="outlined" />
-      <Button content="Be our partner" variant="contained" />
+      <Button variant="outlined">View All Case Studies</Button>
+      <Button variant="contained">Be our partner</Button>
     </div>
   )
 }

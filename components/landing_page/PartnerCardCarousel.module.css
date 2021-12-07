@@ -13,9 +13,7 @@
     transform: translateX(0%);
   }
 
-  /* 500 comes from the card's width, 6 comes from the number of cards 
-     (not including extra cards for making this carousel infinite) */
   100% {
-    transform: translateX(calc(-500px * 6));
+    transform: translateX(-50%);
   }
 }
