@@ -1,0 +1,21 @@
+.container {
+  overflow: hidden;
+  text-align: center;
+}
+
+.slider_track {
+  display: inline-flex;
+  align-items: center;
+  animation: scroll 80s infinite linear;
+  gap: 40px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
