@@ -1,13 +1,21 @@
 .wrapper {
+
+  text-align: center;
+  padding: 0 100px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.message_image_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 100px;
 }
 
 .message_container {
   width: 620px;
   margin-right: 40px;
+  text-align: left;
 }
 
 .info_list {
@@ -26,4 +34,23 @@
   min-width: 20px;
   padding-top: 3px;
   margin-right: 24px;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1000px) {
+  .wrapper {
+    padding: 0 40px;
+    flex-direction: column;
+  }
+
+  .info_list {
+    margin: 0;
+  }
+
+  .message_image_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
 }

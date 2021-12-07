@@ -8,6 +8,7 @@ import Spacer from '../Spacer'
 import Image from 'next/image'
 import Text from '../Text'
 import ImageBox from '../ImageBox'
+import { useMediaQuery } from 'react-responsive'
 
 type InfoType = {
   icon: StaticImageData
@@ -63,37 +64,55 @@ const renderInfo = (array: InfoType[]) =>
   })
 
 export default function InfoSection() {
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
+
   return (
     <>
       <div className={styles.wrapper}>
-        <div className={styles.message_container}>
-          <Text color="#ffffff" size={32}>
+        {isIpadPortraitAndPhone && (
+          <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
             Boost your sales conversion rate
           </Text>
-          <ul className={styles.info_list}>
-            {renderInfo(BoostSalesInfoArray)}
-          </ul>
-        </div>
+        )}
+        <div className={styles.message_image_wrapper}>
+          <div className={styles.message_container}>
+            {!isIpadPortraitAndPhone && (
+              <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
+                Boost your sales conversion rate
+              </Text>
+            )}
+            <ul className={styles.info_list}>
+              {renderInfo(BoostSalesInfoArray)}
+            </ul>
+          </div>
 
-        <ImageBox
-          src={BoostSalesPicture}
-          width={590}
-          alt="Boost Sales Picture"
-        />
+          <ImageBox
+            src={BoostSalesPicture}
+            width={590}
+            alt="Boost Sales Picture"
+          />
+        </div>
       </div>
 
       <Spacer height={160} />
 
       <div className={styles.wrapper}>
-        <div className={styles.message_container}>
-          <div>
-            <Text color="#ffffff" size={32}>
-              Accept all payment methods &#38; model
-            </Text>
+        {isIpadPortraitAndPhone && (
+          <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
+            Accept all payment methods &#38; model
+          </Text>
+        )}
+        <div className={styles.message_image_wrapper}>
+          <div className={styles.message_container}>
+            {!isIpadPortraitAndPhone && (
+              <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
+                Accept all payment methods &#38; model
+              </Text>
+            )}
+            <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
           </div>
-          <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
+          <ImageBox src={PaymentPicture} width={500} alt="Payment Picture" />
         </div>
-        <ImageBox src={PaymentPicture} width={500} alt="Payment Picture" />
       </div>
     </>
   )
