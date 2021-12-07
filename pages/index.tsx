@@ -17,12 +17,16 @@ import Spacer from '../components/Spacer'
 import InfoSection from '../components/landing_page/InfoSection'
 import PartnerCardCarousel from '../components/landing_page/PartnerCardCarousel'
 import Footer from '../components/Footer'
+import PartnerLogoCarousel from '../components/landing_page/PartnerLogoCarousel'
+import CardBottomSection from '../components/landing_page/CardBottomSection'
 
 export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
   const isPortrait = useMediaQuery({ orientation: 'portrait' })
   const isPhoneLandscape = useMediaQuery({ maxWidth: 850 }) && !isPortrait
   const isPhonePortrait = useMediaQuery({ maxWidth: 600 })
+
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
 
   const shapeArray = [
     { data: shape1, name: 'shape1', className: styles.shape1 },
@@ -126,7 +130,7 @@ export default function Home() {
         </animated.div>
       </div>
 
-      <Spacer height={90} />
+      {!isIpadPortraitAndPhone && <Spacer height={90} />}
       <FeaturedOnSection />
       <Spacer height={120} />
       <IntroSection />
@@ -134,7 +138,11 @@ export default function Home() {
       <InfoSection />
       <Spacer height={200} />
       <PartnerCardCarousel />
-      <Spacer height={300} />
+      <Spacer height={200} />
+      <PartnerLogoCarousel />
+      <Spacer height={140} />
+      <CardBottomSection />
+      <Spacer height={140} />
       <Footer variant="white" />
     </div>
   )
