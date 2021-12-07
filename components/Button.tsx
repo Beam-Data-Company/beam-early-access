@@ -1,9 +1,9 @@
 import styles from './Button.module.css'
-import Text from '../Text'
+import Text from './Text'
 import classNames from 'classnames'
 
 type Props = {
-  content: string
+  children: React.ReactNode
   variant: 'outlined' | 'contained'
 }
 
@@ -16,7 +16,7 @@ export default function Button(props: Props) {
       )}
     >
       <Text family="Assistant" weight={600} size={18}>
-        {props.content}
+        {props.children}
       </Text>
     </button>
   )
