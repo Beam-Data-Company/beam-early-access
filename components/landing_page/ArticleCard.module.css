@@ -1,0 +1,10 @@
+.container {
+  width: 374px;
+  height: 290px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.bottom_section {
+  padding: 16px 0 16px 24px;
+}
