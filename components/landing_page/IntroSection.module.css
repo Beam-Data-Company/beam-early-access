@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  max-width: 1500px;
+  margin: auto;
 }
 
 .description {
@@ -13,6 +15,7 @@
 
 .image {
   width: calc(100vw + 80px);
+  max-width: 1600px;
   padding-left: 120px;
 }
 

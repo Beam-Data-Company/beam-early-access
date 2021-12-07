@@ -1,5 +1,7 @@
 .wrapper {
   padding: 0 100px;
+  max-width: 1500px;
+  margin: auto;
 }
 
 .logo_container {
@@ -30,4 +32,11 @@
 
 .title::after {
   margin-left: 10px;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1000px) {
+  .wrapper {
+    display: none;
+  }
 }
