@@ -130,8 +130,7 @@ export default function ZortOutEarlybird() {
 
         <div className={styles.remarks}>
           <Text size={12} color="#535353" weight={600}>
-            Remarks: This campaign is applicable for stores with online sales
-            value of over THB 80k/month. By registering this campaign, you agree
+            Remarks: By registering this campaign, you agree
             to Beam&apos;s{' '}
             <Link href="https://beamdata.co/privacy/" passHref>
               Privacy Policy
