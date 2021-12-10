@@ -34,7 +34,7 @@ const messageArray = [
   },
 ]
 
-export default function ZortOutEarlybird() {
+export default function ZortOutEarlybirds() {
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
   const isSmallPhonePortrait = useMediaQuery({ maxWidth: 350 })
 
@@ -130,8 +130,7 @@ export default function ZortOutEarlybird() {
 
         <div className={styles.remarks}>
           <Text size={12} color="#535353" weight={600}>
-            Remarks: By registering this campaign, you agree
-            to Beam&apos;s{' '}
+            Remarks: By registering this campaign, you agree to Beam&apos;s{' '}
             <Link href="https://beamdata.co/privacy/" passHref>
               Privacy Policy
             </Link>{' '}
@@ -139,9 +138,9 @@ export default function ZortOutEarlybird() {
             <Link href="https://beamdata.co/terms-of-service/" passHref>
               Terms and Conditions
             </Link>
-            . We reserve the right to refuse providing offers and/or promotions
-            at any time, either for particular individuals or organizations at
-            our discretion.
+            . We reserved the rights to refuse providing offers and/or
+            promotions at any time, either for particular individuals or
+            organizations at our discretion, with a given notice.
           </Text>
         </div>
       </div>
