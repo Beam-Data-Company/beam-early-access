@@ -1,10 +1,65 @@
 .container {
-  width: 374px;
+  display: flex;
+  flex-direction: column;
+  width: 375px;
   height: 290px;
   background-color: #ffffff;
   border-radius: 20px;
+  min-width: 375px;
+  overflow: hidden;
 }
 
 .bottom_section {
-  padding: 16px 0 16px 24px;
+  padding: 16px 16px 16px 24px;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    width: 285px;
+    min-width: 285px;
+  }
+
+  .image {
+    min-width: 375px;
+  }
+}
+
+/*phone*/
+@media (max-width: 600px) {
+  .container {
+    flex-direction: row;
+    width: 335px;
+    height: 138px;
+  }
+
+  .image {
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 8px;
+    min-width: 122px;
+    position: relative;
+  }
+
+  .bottom_section {
+    padding-left: 6px;
+    padding-top: 20px;
+  }
+
+  .description {
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    width: 300px;
+  }
 }

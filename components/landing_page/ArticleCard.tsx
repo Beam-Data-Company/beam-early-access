@@ -2,6 +2,7 @@ import styles from './ArticleCard.module.css'
 import Text from '../Text'
 import Spacer from '../Spacer'
 import Image from 'next/image'
+import { useMediaQuery } from 'react-responsive'
 
 type Props = {
   title: string
@@ -11,15 +12,26 @@ type Props = {
 }
 
 export default function ArticleCard(props: Props) {
+  const isPhone = useMediaQuery({ maxWidth: 600 })
+
   return (
     <div className={styles.container}>
-      <Image src={props.image} alt={props.alt} width={374} height={178} />
+      <div className={styles.image}>
+        <Image
+          src={props.image}
+          alt={props.alt}
+          objectFit="cover"
+          layout={isPhone ? 'fill' : undefined}
+        />
+      </div>
       <div className={styles.bottom_section}>
         <Text color="#383838">{props.title}</Text>
         <Spacer height={10} />
-        <Text color="#383838" family="Assistant">
-          {props.description}
-        </Text>
+        <div className={styles.description}>
+          <Text color="#383838" family="Assistant">
+            {props.description}
+          </Text>
+        </div>
       </div>
     </div>
   )

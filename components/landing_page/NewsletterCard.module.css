@@ -10,4 +10,20 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-width: 375px;
+}
+
+/*phone*/
+@media (max-width: 600px) {
+  .container {
+    height: 205px;
+    width: 335px;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    width: 300px;
+  }
 }
