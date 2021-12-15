@@ -14,3 +14,11 @@
   background-color: white;
   color: #000b3c;
 }
+
+/*phone*/
+@media (max-width: 600px) {
+  .outlined {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
