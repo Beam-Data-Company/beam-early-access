@@ -1,5 +1,4 @@
 .wrapper {
-
   text-align: center;
   padding: 0 100px;
   max-width: 1500px;
@@ -37,7 +36,7 @@
 }
 
 /* ipad portrait and phone*/
-@media (max-width: 1000px) {
+@media (max-width: 1040px) {
   .wrapper {
     padding: 0 40px;
     flex-direction: column;
@@ -52,5 +51,28 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+  }
+}
+
+/*phone*/
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 0 25px;
+  }
+
+  .message_image_wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .message_container {
+    width: auto;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .info_list {
+    width: 100vw;
+    padding: 0 25px;
+    max-width: 500px;
   }
 }

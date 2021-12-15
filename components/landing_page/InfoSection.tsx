@@ -64,20 +64,21 @@ const renderInfo = (array: InfoType[]) =>
   })
 
 export default function InfoSection() {
-  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
+  const isPhone = useMediaQuery({ maxWidth: 600 })
 
   return (
     <>
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
-            Boost your sales conversion rate
+          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+            Boost your sales {isPhone && <br />}conversion rate
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
+              <Text color="#ffffff" size={32}>
                 Boost your sales conversion rate
               </Text>
             )}
@@ -88,30 +89,34 @@ export default function InfoSection() {
 
           <ImageBox
             src={BoostSalesPicture}
-            width={590}
+            width={isPhone ? undefined : 590}
             alt="Boost Sales Picture"
           />
         </div>
       </div>
 
-      <Spacer height={160} />
+      <Spacer height={isPhone ? 125 : 160} />
 
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
-            Accept all payment methods &#38; model
+          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+            Accept all payment {isPhone && <br />}methods &#38; model
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
+              <Text color="#ffffff" size={32}>
                 Accept all payment methods &#38; model
               </Text>
             )}
             <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
           </div>
-          <ImageBox src={PaymentPicture} width={500} alt="Payment Picture" />
+          <ImageBox
+            src={PaymentPicture}
+            width={isPhone ? undefined : 500}
+            alt="Payment Picture"
+          />
         </div>
       </div>
     </>
