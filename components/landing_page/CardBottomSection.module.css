@@ -9,3 +9,26 @@
   gap: 24px;
   justify-content: center;
 }
+
+.card_wrapper::-webkit-scrollbar {
+  width: 0;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1200px) {
+  .card_wrapper {
+    overflow-x: scroll;
+    width: 100vw;
+    justify-content: left;
+    padding: 0 40px;
+  }
+}
+
+/*phone*/
+@media (max-width: 600px) {
+  .card_wrapper {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: unset;
+  }
+}
