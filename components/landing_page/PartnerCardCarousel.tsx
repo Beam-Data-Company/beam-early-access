@@ -6,15 +6,20 @@ import Button from '../Button'
 import { useMediaQuery } from 'react-responsive'
 
 export default function PartnerCardCarousel() {
-  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
+  const isPhone = useMediaQuery({ maxWidth: 600 })
 
   return (
     <div className={styles.container}>
-      <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
-        What our strategic partners say
+      <Text
+        color="#ffffff"
+        size={isPhone ? 26 : isIpadPortraitAndPhone ? 28 : 32}
+        lineHeight={38}
+      >
+        What our strategic {isPhone && <br />}partners say
       </Text>
 
-      <Spacer height={60} />
+      <Spacer height={isPhone ? 35 : 60} />
 
       <div className={styles.slider_track}>
         {/* render Partner Card 12 times 
@@ -120,8 +125,10 @@ export default function PartnerCardCarousel() {
       </div>
 
       <Spacer height={70} />
-      <Button variant="outlined">View All Case Studies</Button>
-      <Button variant="contained">Be our partner</Button>
+      <div className={styles.button_wrapper}>
+        <Button variant="outlined">View All Case Studies</Button>
+        <Button variant="contained">Be our partner</Button>
+      </div>
     </div>
   )
 }

@@ -17,15 +17,17 @@ type Props = {
 }
 
 export default function PartnerCard(props: Props) {
-  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
+  const isPhone = useMediaQuery({ maxWidth: 600 })
 
+  const isIpadPortraitOnly = isIpadPortraitAndPhone && !isPhone
   return (
     <div className={styles.container}>
       <Text
-        size={isIpadPortraitAndPhone ? 22 : 24}
+        size={isIpadPortraitOnly ? 22 : 24}
         color="#00d379"
       >{`${props.percentage}% `}</Text>
-      <Text size={isIpadPortraitAndPhone ? 22 : 24}>{props.title}</Text>
+      <Text size={isIpadPortraitOnly ? 22 : 24}>{props.title}</Text>
       <Spacer height={isIpadPortraitAndPhone ? 18 : 25} />
       <Text color="#383838" family="Assistant">
         <div className={styles.description}>{props.description}</div>
@@ -47,7 +49,7 @@ export default function PartnerCard(props: Props) {
               color="#383838"
               family="Assistant"
               weight={600}
-              size={isIpadPortraitAndPhone ? 14 : 16}
+              size={isIpadPortraitOnly ? 14 : 16}
             >
               {props.name} <br />
               {props.companyName}
@@ -55,13 +57,13 @@ export default function PartnerCard(props: Props) {
           </div>
         </div>
         <Text
-          size={isIpadPortraitAndPhone ? 11 : 13}
+          size={isIpadPortraitOnly ? 11 : 13}
           color="#2c46b5"
           family="Assistant"
           weight={600}
         >
           <Link href="#" passHref>
-            {`Read ${props.industry} case studies`}
+            {isPhone ? 'Read' : `Read ${props.industry} case studies`}
           </Link>
         </Text>
       </div>

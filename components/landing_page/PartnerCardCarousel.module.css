@@ -8,6 +8,12 @@
   animation: scroll 50s infinite linear;
 }
 
+.button_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0%);
@@ -15,5 +21,12 @@
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* phone*/
+@media (max-width: 600px) {
+  .button_wrapper {
+    flex-direction: column;
   }
 }
