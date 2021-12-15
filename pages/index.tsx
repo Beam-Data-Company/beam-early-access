@@ -26,8 +26,6 @@ export default function Home() {
   const isPhoneLandscape = useMediaQuery({ maxWidth: 850 }) && !isPortrait
   const isPhonePortrait = useMediaQuery({ maxWidth: 600 })
 
-  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
-
   const shapeArray = [
     { data: shape1, name: 'shape1', className: styles.shape1 },
     { data: shape2, name: 'shape2', className: styles.shape2 },
@@ -130,19 +128,19 @@ export default function Home() {
         </animated.div>
       </div>
 
-      {!isIpadPortraitAndPhone && <Spacer height={90} />}
+      {!isTablet && <Spacer height={90} />}
       <FeaturedOnSection />
-      <Spacer height={120} />
+      <Spacer height={isPhonePortrait ? 0 : 120} />
       <IntroSection />
-      <Spacer height={150} />
+      <Spacer height={isTablet ? (isPhonePortrait ? 105 : 170) : 150} />
       <InfoSection />
-      <Spacer height={200} />
+      <Spacer height={isTablet ? (isPhonePortrait ? 145 : 120) : 200} />
       <PartnerCardCarousel />
-      <Spacer height={200} />
+      <Spacer height={isTablet ? (isPhonePortrait ? 145 : 225) : 300} />
       <PartnerLogoCarousel />
-      <Spacer height={140} />
+      <Spacer height={isTablet ? (isPhonePortrait ? 130 : 230) : 250} />
       <CardBottomSection />
-      <Spacer height={140} />
+      <Spacer height={isPhonePortrait ? 55 : 80} />
       <Footer variant="white" />
     </div>
   )
