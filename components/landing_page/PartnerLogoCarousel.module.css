@@ -7,7 +7,7 @@
   display: inline-flex;
   align-items: center;
   animation: scroll 80s infinite linear;
-  gap: 40px;
+  gap: 60px;
 }
 
 @keyframes scroll {

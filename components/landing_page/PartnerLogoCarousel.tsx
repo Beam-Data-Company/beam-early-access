@@ -23,52 +23,57 @@ import ToyotaLogo from '../../public/landing_page/partner_logo/toyota-logo.png'
 import ValentinoLogo from '../../public/landing_page/partner_logo/valentino-logo.png'
 
 export default function PartnerLogoCarousel() {
-  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1000 })
+  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
+  const isPhone = useMediaQuery({ maxWidth: 600 })
 
   return (
     <div className={styles.container}>
-      <Text color="#ffffff" size={isIpadPortraitAndPhone ? 28 : 32}>
-        Trusted by companies in all sectors
+      <Text
+        color="#ffffff"
+        size={isPhone ? 26 : isIpadPortraitAndPhone ? 28 : 32}
+        lineHeight={38}
+      >
+        Trusted by companies in {isPhone && <br />}all sectors
       </Text>
 
-      <Spacer height={isIpadPortraitAndPhone ? 20 : 60} />
+      <Spacer height={isIpadPortraitAndPhone ? 20 : 40} />
 
       <div className={styles.slider_track}>
         <ImageBox src={NaraLogoWhite} alt="Nara Logo White" width={150} />
-        <ImageBox src={ChanintrLogo} alt="Nara Logo White" width={160} />
-        <ImageBox src={ChloeLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={DisayaLogo} alt="Nara Logo White" width={150} />
-        <ImageBox src={HermanMillerLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={HondaLogo} alt="Nara Logo White" width={100} />
-        <ImageBox src={JimmyChooLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={LeicaLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={MatterMakersLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={MercedesBenzLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={PergoLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={RavipaLogo} alt="Nara Logo White" width={150} />
-        <ImageBox src={SansiriLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={ThaiSmileLogo} alt="Nara Logo White" width={100} />
-        <ImageBox src={ToochLogo} alt="Nara Logo White" width={140} />
-        <ImageBox src={ToyotaLogo} alt="Nara Logo White" width={100} />
-        <ImageBox src={ValentinoLogo} alt="Nara Logo White" width={180} />
+        <ImageBox src={ChanintrLogo} alt="Chanintr Logo" width={160} />
+        <ImageBox src={ChloeLogo} alt="Chloe Logo" width={120} />
+        <ImageBox src={DisayaLogo} alt="Disaya Logo" width={150} />
+        <ImageBox src={HermanMillerLogo} alt="Herman Miller Logo" width={200} />
+        <ImageBox src={HondaLogo} alt="Honda Logo" width={100} />
+        <ImageBox src={JimmyChooLogo} alt="Jimmy Choo Logo" width={200} />
+        <ImageBox src={LeicaLogo} alt="Leica Logo" width={120} />
+        <ImageBox src={MatterMakersLogo} alt="Matter Makers Logo" width={200} />
+        <ImageBox src={MercedesBenzLogo} alt="Mercedes Benz Logo" width={200} />
+        <ImageBox src={PergoLogo} alt="Pergo Logo" width={120} />
+        <ImageBox src={RavipaLogo} alt="Ravipa Logo" width={150} />
+        <ImageBox src={SansiriLogo} alt="Sansiri Logo" width={120} />
+        <ImageBox src={ThaiSmileLogo} alt="Thai Smile Logo" width={100} />
+        <ImageBox src={ToochLogo} alt="Tooch Logo" width={140} />
+        <ImageBox src={ToyotaLogo} alt="Toyota Logo" width={100} />
+        <ImageBox src={ValentinoLogo} alt="Valentino Logo" width={180} />
 
         <ImageBox src={NaraLogoWhite} alt="Nara Logo White" width={150} />
-        <ImageBox src={ChanintrLogo} alt="Nara Logo White" width={160} />
-        <ImageBox src={ChloeLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={DisayaLogo} alt="Nara Logo White" width={150} />
-        <ImageBox src={HermanMillerLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={HondaLogo} alt="Nara Logo White" width={100} />
-        <ImageBox src={JimmyChooLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={LeicaLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={MatterMakersLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={MercedesBenzLogo} alt="Nara Logo White" width={200} />
-        <ImageBox src={PergoLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={RavipaLogo} alt="Nara Logo White" width={150} />
-        <ImageBox src={SansiriLogo} alt="Nara Logo White" width={120} />
-        <ImageBox src={ThaiSmileLogo} alt="Nara Logo White" width={100} />
-        <ImageBox src={ToochLogo} alt="Nara Logo White" width={140} />
-        <ImageBox src={ToyotaLogo} alt="Nara Logo White" width={100} />
-        <ImageBox src={ValentinoLogo} alt="Nara Logo White" width={180} />
+        <ImageBox src={ChanintrLogo} alt="Chanintr Logo" width={160} />
+        <ImageBox src={ChloeLogo} alt="Chloe Logo" width={120} />
+        <ImageBox src={DisayaLogo} alt="Disaya Logo" width={150} />
+        <ImageBox src={HermanMillerLogo} alt="Herman Miller Logo" width={200} />
+        <ImageBox src={HondaLogo} alt="Honda Logo" width={100} />
+        <ImageBox src={JimmyChooLogo} alt="Jimmy Choo Logo" width={200} />
+        <ImageBox src={LeicaLogo} alt="Leica Logo" width={120} />
+        <ImageBox src={MatterMakersLogo} alt="Matter Makers Logo" width={200} />
+        <ImageBox src={MercedesBenzLogo} alt="Mercedes Benz Logo" width={200} />
+        <ImageBox src={PergoLogo} alt="Pergo Logo" width={120} />
+        <ImageBox src={RavipaLogo} alt="Ravipa Logo" width={150} />
+        <ImageBox src={SansiriLogo} alt="Sansiri Logo" width={120} />
+        <ImageBox src={ThaiSmileLogo} alt="Thai Smile Logo" width={100} />
+        <ImageBox src={ToochLogo} alt="Tooch Logo" width={140} />
+        <ImageBox src={ToyotaLogo} alt="Toyota Logo" width={100} />
+        <ImageBox src={ValentinoLogo} alt="Valentino Logo" width={180} />
       </div>
     </div>
   )
