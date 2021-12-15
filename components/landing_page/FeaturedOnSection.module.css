@@ -35,7 +35,7 @@
 }
 
 /* ipad portrait and phone*/
-@media (max-width: 1000px) {
+@media (max-width: 1040px) {
   .wrapper {
     display: none;
   }
