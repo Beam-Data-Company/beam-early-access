@@ -11,15 +11,20 @@ export default function PartnerCardCarousel() {
 
   return (
     <div className={styles.container}>
-      <Text
-        color="#ffffff"
-        size={isPhone ? 26 : isIpadPortraitAndPhone ? 28 : 32}
-        lineHeight={38}
-      >
-        What our strategic {isPhone && <br />}partners say
-      </Text>
-
-      <Spacer height={isPhone ? 35 : 60} />
+      {isIpadPortraitAndPhone && (
+        <div className={styles.title}>
+          <Text color="#ffffff" lineHeight={38}>
+            Why merchants{isPhone && <br />}enjoy Beam
+          </Text>
+        </div>
+      )}
+      {!isIpadPortraitAndPhone && (
+        <div className={styles.title}>
+          <Text color="#ffffff" lineHeight={38}>
+            Why merchants enjoy Beam
+          </Text>
+        </div>
+      )}
 
       <div className={styles.slider_track}>
         {/* render Partner Card 12 times 
@@ -125,10 +130,8 @@ export default function PartnerCardCarousel() {
       </div>
 
       <Spacer height={70} />
-      <div className={styles.button_wrapper}>
-        <Button variant="outlined">View All Case Studies</Button>
-        <Button variant="contained">Be our partner</Button>
-      </div>
+
+      <Button variant="contained">Be our partner</Button>
     </div>
   )
 }

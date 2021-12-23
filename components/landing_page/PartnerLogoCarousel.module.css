@@ -1,6 +1,11 @@
 .container {
   overflow: hidden;
   text-align: center;
+  margin-top: 300px;
+}
+
+.title {
+  font-size: 32px;
 }
 
 .slider_track {
@@ -8,6 +13,7 @@
   align-items: center;
   animation: scroll 80s infinite linear;
   gap: 60px;
+  margin-top: 40px;
 }
 
 @keyframes scroll {
@@ -17,5 +23,31 @@
 
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    margin-top: 225px;
+  }
+
+  .slider_track {
+    margin-top: 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+/* phone*/
+@media (max-width: 1040px) {
+  .container {
+    margin-top: 145px;
+  }
+
+  .title {
+    font-size: 26px;
   }
 }

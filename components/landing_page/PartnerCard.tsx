@@ -1,6 +1,5 @@
 import styles from './PartnerCard.module.css'
 import Text from '../Text'
-import Spacer from '../Spacer'
 import NaraLogo from '../../public/landing_page/nara-logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -28,12 +27,10 @@ export default function PartnerCard(props: Props) {
         color="#00d379"
       >{`${props.percentage}% `}</Text>
       <Text size={isIpadPortraitOnly ? 22 : 24}>{props.title}</Text>
-      <Spacer height={isIpadPortraitAndPhone ? 18 : 25} />
+
       <Text color="#383838" family="Assistant">
         <div className={styles.description}>{props.description}</div>
       </Text>
-
-      <Spacer height={isIpadPortraitAndPhone ? 22 : 35} />
 
       <div className={styles.bottom_section}>
         <div className={styles.logo_text_wrapper}>

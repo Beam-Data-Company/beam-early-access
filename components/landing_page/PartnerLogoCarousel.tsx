@@ -1,6 +1,5 @@
 import styles from './PartnerLogoCarousel.module.css'
 import Text from '../Text'
-import Spacer from '../Spacer'
 import ImageBox from '../ImageBox'
 import { useMediaQuery } from 'react-responsive'
 
@@ -23,20 +22,15 @@ import ToyotaLogo from '../../public/landing_page/partner_logo/toyota-logo.png'
 import ValentinoLogo from '../../public/landing_page/partner_logo/valentino-logo.png'
 
 export default function PartnerLogoCarousel() {
-  const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
   const isPhone = useMediaQuery({ maxWidth: 600 })
 
   return (
     <div className={styles.container}>
-      <Text
-        color="#ffffff"
-        size={isPhone ? 26 : isIpadPortraitAndPhone ? 28 : 32}
-        lineHeight={38}
-      >
-        Trusted by companies in {isPhone && <br />}all sectors
-      </Text>
-
-      <Spacer height={isIpadPortraitAndPhone ? 20 : 40} />
+      <div className={styles.title}>
+        <Text color="#ffffff" lineHeight={38}>
+          A trusted payments {isPhone && <br />}provider
+        </Text>
+      </div>
 
       <div className={styles.slider_track}>
         <ImageBox src={NaraLogoWhite} alt="Nara Logo White" width={150} />
