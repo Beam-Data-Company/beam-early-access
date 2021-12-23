@@ -13,7 +13,6 @@ import { useMediaQuery } from 'react-responsive'
 
 import FeaturedOnSection from '../components/landing_page/FeaturedOnSection'
 import IntroSection from '../components/landing_page/IntroSection'
-import Spacer from '../components/Spacer'
 import InfoSection from '../components/landing_page/InfoSection'
 import PartnerCardCarousel from '../components/landing_page/PartnerCardCarousel'
 import Footer from '../components/Footer'
@@ -117,10 +116,15 @@ export default function Home() {
         >
           <main className={styles.main}>
             <div className={styles.title_with_description_container}>
-              <h1 className={styles.title}>Get Early Access</h1>
+              <h1 className={styles.title}>
+                One-Click Checkout
+                <br />
+                For Social Commerce
+              </h1>
               <span className={styles.description}>
-                Beam One-Click Checkout, a frictionless customer experience on
-                your social messaging platforms and website.
+                Accept frictionless payments and boost conversion, through a
+                universe of payment methods from cards, e-wallets, mobile
+                banking, to BNPL and crypto!
               </span>
             </div>
             <MailchimpSignupForm />
@@ -128,19 +132,13 @@ export default function Home() {
         </animated.div>
       </div>
 
-      {!isTablet && <Spacer height={90} />}
+      {/* use margin in each component instead of spacer */}
       <FeaturedOnSection />
-      <Spacer height={isPhonePortrait ? 0 : 120} />
       <IntroSection />
-      <Spacer height={isTablet ? (isPhonePortrait ? 105 : 170) : 150} />
       <InfoSection />
-      <Spacer height={isTablet ? (isPhonePortrait ? 145 : 120) : 200} />
       <PartnerCardCarousel />
-      <Spacer height={isTablet ? (isPhonePortrait ? 145 : 225) : 300} />
       <PartnerLogoCarousel />
-      <Spacer height={isTablet ? (isPhonePortrait ? 130 : 230) : 250} />
       <CardBottomSection />
-      <Spacer height={isPhonePortrait ? 55 : 80} />
       <Footer variant="white" />
     </div>
   )
