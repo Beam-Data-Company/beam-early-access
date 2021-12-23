@@ -20,6 +20,10 @@
   overflow: hidden;
 }
 
+.image_phone {
+  display: none;
+}
+
 /* ipad portrait and phone*/
 @media (max-width: 1040px) {
   .container {
@@ -27,7 +31,7 @@
     min-width: 285px;
   }
 
-  .image {
+  .image_not_phone {
     min-width: 375px;
   }
 }
@@ -40,7 +44,12 @@
     height: 138px;
   }
 
-  .image {
+  .image_not_phone {
+    display: none;
+  }
+
+  .image_phone {
+    display: block;
     border-radius: 15px;
     overflow: hidden;
     margin: 8px;

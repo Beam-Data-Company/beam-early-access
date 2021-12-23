@@ -13,13 +13,13 @@ export default function CardBottomSection() {
       <div className={styles.card_wrapper}>
         <NewsletterCard />
         <ArticleCard
-          title="Article Name"
+          title="Bangkok Post"
           description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
           image={ArticlePictureOne}
           alt="Article Picture One"
         />
         <ArticleCard
-          title="Article Name"
+          title="Forbes"
           description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
           image={ArticlePictureTwo}
           alt="Article Picture Two"

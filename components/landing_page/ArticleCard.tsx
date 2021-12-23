@@ -2,7 +2,6 @@ import styles from './ArticleCard.module.css'
 import Text from '../Text'
 import Spacer from '../Spacer'
 import Image from 'next/image'
-import { useMediaQuery } from 'react-responsive'
 
 type Props = {
   title: string
@@ -12,16 +11,18 @@ type Props = {
 }
 
 export default function ArticleCard(props: Props) {
-  const isPhone = useMediaQuery({ maxWidth: 600 })
-
   return (
     <div className={styles.container}>
-      <div className={styles.image}>
+      <div className={styles.image_not_phone}>
+        <Image src={props.image} alt={props.alt} objectFit="cover" priority />
+      </div>
+      <div className={styles.image_phone}>
         <Image
           src={props.image}
           alt={props.alt}
           objectFit="cover"
-          layout={isPhone ? 'fill' : undefined}
+          layout="fill"
+          priority
         />
       </div>
       <div className={styles.bottom_section}>
