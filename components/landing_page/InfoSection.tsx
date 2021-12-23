@@ -1,13 +1,12 @@
 import styles from './InfoSection.module.css'
-import BoostSalesPicture from '../../public/landing_page/boost-sales-picture.png'
+import OneClickPicture from '../../public/landing_page/one-click-picture.png'
 import PaymentPicture from '../../public/landing_page/payment-picture.png'
+import NoCodingPicture from '../../public/landing_page/no-coding-picture.png'
 import triangleIcon from '../../public/earlybird/triangle-icon.png'
 import squareIcon from '../../public/earlybird/square-icon.png'
 import circleIcon from '../../public/earlybird/circle-icon.png'
-import Spacer from '../Spacer'
 import Image from 'next/image'
 import Text from '../Text'
-import ImageBox from '../ImageBox'
 import { useMediaQuery } from 'react-responsive'
 
 type InfoType = {
@@ -15,20 +14,15 @@ type InfoType = {
   message: string
 }
 
-const BoostSalesInfoArray = [
+const OneClickInfoArray = [
   {
     icon: triangleIcon,
-    message:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.',
+    message: 'Beam on any social messaging app DM and e-commerce website',
   },
   {
     icon: squareIcon,
     message:
-      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et',
-  },
-  {
-    icon: circleIcon,
-    message: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr',
+      'Proven to help you grow your e-commerce business: 30% higher conversions & improved loyalty',
   },
 ]
 
@@ -36,16 +30,29 @@ const PaymentInfoArray = [
   {
     icon: triangleIcon,
     message:
-      'Once filled, the data is stored in your locker, ready for re-use in your next go.',
-  },
-  {
-    icon: circleIcon,
-    message:
-      'Our magical scanner leverages AI OCR tech to read data from your ID or Passport and store it directly in your locker.',
+      'We connect to a range of payment methods so that you don’t have to: Major credit/debit cards, e-wallets, mobile banking, crypto, buy now pay later and regular installments',
   },
   {
     icon: squareIcon,
-    message: 'Scan the form’s designated QR code to locate the form.',
+    message:
+      'A simple & low fee per transaction. That’s it, no other hidden fees',
+  },
+]
+
+const NoCodingInfoArray = [
+  {
+    icon: triangleIcon,
+    message:
+      'No integration is required to use Beam on social commerce, get started in minutes',
+  },
+  {
+    icon: circleIcon,
+    message: 'E-commerce website plug-ins available with the simplest APIs',
+  },
+  {
+    icon: squareIcon,
+    message:
+      'Stick to your business-as-usual processes let us integrate your existing solutions for you',
   },
 ]
 
@@ -72,30 +79,28 @@ export default function InfoSection() {
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
           <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Boost your sales {isPhone && <br />}conversion rate
+            The one-click experience {isPhone && <br />}on your sales channel
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
-                Boost your sales conversion rate
+                The one-click experience on
+                <br />
+                your sales channel
               </Text>
             )}
             <ul className={styles.info_list}>
-              {renderInfo(BoostSalesInfoArray)}
+              {renderInfo(OneClickInfoArray)}
             </ul>
           </div>
 
-          <ImageBox
-            src={BoostSalesPicture}
-            width={isPhone ? undefined : 590}
-            alt="Boost Sales Picture"
-          />
+          <div className={styles.image_box}>
+            <Image src={OneClickPicture} alt="One Click Picture" priority />
+          </div>
         </div>
       </div>
-
-      <Spacer height={isPhone ? 125 : 160} />
 
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
@@ -107,16 +112,41 @@ export default function InfoSection() {
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
-                Accept all payment methods &#38; model
+                Offer all the payment methods
+                <br />
+                your customers love
               </Text>
             )}
             <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
           </div>
-          <ImageBox
-            src={PaymentPicture}
-            width={isPhone ? undefined : 500}
-            alt="Payment Picture"
-          />
+          <div className={styles.image_box}>
+            <Image src={PaymentPicture} alt="Payment Picture" priority />
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.wrapper}>
+        {isIpadPortraitAndPhone && (
+          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+            No coding needed{isPhone && <br />}for social commerce
+          </Text>
+        )}
+        <div className={styles.message_image_wrapper}>
+          <div className={styles.message_container}>
+            {!isIpadPortraitAndPhone && (
+              <Text color="#ffffff" size={32}>
+                No coding needed
+                <br />
+                for social commerce
+              </Text>
+            )}
+            <ul className={styles.info_list}>
+              {renderInfo(NoCodingInfoArray)}
+            </ul>
+          </div>
+          <div className={styles.image_box}>
+            <Image src={NoCodingPicture} alt="NoCodingPicture" priority />
+          </div>
         </div>
       </div>
     </>
