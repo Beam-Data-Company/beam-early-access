@@ -10,13 +10,18 @@ import classNames from 'classnames'
 export default function Intro() {
   return (
     <div className={styles.container}>
-      <Text size={32} color="#ffffff">
-        Beam Instant Checkout
-      </Text>
+      <div className={styles.title}>
+        <Text size={32} color="#ffffff" lineHeight={45}>
+          Shoppers go frictionless,
+          <br />
+          Stores grow sales
+        </Text>
+      </div>
       <div className={styles.description}>
-        <Text size={16} color="#ffffff" family="Assistant">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+        <Text size={16} color="#ffffff" family="Assistant" lineHeight={26}>
+          Beam One-Click Checkout, built for modern day e-commerce in
+          <br />
+          Southeast Asia, do it all in just a click.
         </Text>
       </div>
 

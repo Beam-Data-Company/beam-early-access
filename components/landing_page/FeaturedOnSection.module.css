@@ -1,7 +1,7 @@
 .wrapper {
   padding: 0 100px;
   max-width: 1500px;
-  margin: auto;
+  margin: 90px auto auto auto;
 }
 
 .logo_container {
@@ -38,5 +38,6 @@
 @media (max-width: 1040px) {
   .wrapper {
     display: none;
+    margin-top: 0;
   }
 }

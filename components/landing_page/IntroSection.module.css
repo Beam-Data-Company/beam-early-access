@@ -4,7 +4,11 @@
   align-items: center;
   overflow: hidden;
   max-width: 1500px;
-  margin: auto;
+  margin: 120px auto auto auto;
+}
+
+.title {
+  text-align: center;
 }
 
 .description {
@@ -47,6 +51,7 @@
   .container {
     padding: 0 24px;
     display: none;
+    margin-top: 0;
   }
 
   .social_commerce {

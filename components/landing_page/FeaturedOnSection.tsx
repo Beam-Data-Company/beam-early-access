@@ -10,7 +10,7 @@ export default function FeaturedOnSection() {
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <Text size={20} color="#ffffff">
-          Featured On
+          As featured on
         </Text>
       </div>
       <div className={styles.logo_container}>
