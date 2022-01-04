@@ -8,6 +8,7 @@ type Props = {
   description: string
   image: StaticImageData
   alt: string
+  isThai?: boolean
 }
 
 export default function ArticleCard(props: Props) {
@@ -28,11 +29,13 @@ export default function ArticleCard(props: Props) {
       <div className={styles.bottom_section}>
         <Text color="#383838">{props.title}</Text>
         <Spacer height={10} />
-        <div className={styles.description}>
-          <Text color="#383838" family="Assistant">
-            {props.description}
-          </Text>
-        </div>
+        <Text
+          color="#383838"
+          family={props.isThai ? 'Prompt' : 'Assistant'}
+          size={props.isThai ? 14 : 16}
+        >
+          <div className={styles.description}>{props.description}</div>
+        </Text>
       </div>
     </div>
   )

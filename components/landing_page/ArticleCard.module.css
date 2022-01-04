@@ -20,6 +20,14 @@
   overflow: hidden;
 }
 
+.image_not_phone {
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
 .image_phone {
   display: none;
 }
@@ -32,7 +40,7 @@
   }
 
   .image_not_phone {
-    min-width: 375px;
+    padding-top: 0;
   }
 }
 

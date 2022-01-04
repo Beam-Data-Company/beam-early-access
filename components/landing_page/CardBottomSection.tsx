@@ -1,9 +1,8 @@
 import styles from './CardBottomSection.module.css'
 import NewsletterCard from './NewsletterCard'
 import ArticleCard from './ArticleCard'
-import ArticlePictureOne from '../../public/landing_page/article-picture-1.png'
-import ArticlePictureTwo from '../../public/landing_page/article-picture-2.png'
-import Text from '../Text'
+import BangkokPostPicture from '../../public/landing_page/bangkok-post-picture.png'
+import ForbesPicture from '../../public/landing_page/forbes-picture.png'
 import Link from 'next/link'
 import Spacer from '../Spacer'
 
@@ -12,27 +11,47 @@ export default function CardBottomSection() {
     <div className={styles.container}>
       <div className={styles.card_wrapper}>
         <NewsletterCard />
-        <ArticleCard
-          title="Bangkok Post"
-          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
-          image={ArticlePictureOne}
-          alt="Article Picture One"
-        />
-        <ArticleCard
-          title="Forbes"
-          description="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod"
-          image={ArticlePictureTwo}
-          alt="Article Picture Two"
-        />
+
+        <Link
+          href="https://www.bangkokpost.com/thailand/pr/2177931/beam-pioneers-of-one-click-checkouts-for-southeast-asia"
+          passHref
+        >
+          <a>
+            <ArticleCard
+              title="Bangkok Post"
+              description="Checkouts are changing. In the midst of this pandemic, restrictions have brought us online for our"
+              image={BangkokPostPicture}
+              alt="Bangkok Post Picture"
+            />
+          </a>
+        </Link>
+
+        <Link
+          href="https://forbesthailand.com/sponsored-content/beam.html"
+          replace
+          passHref
+        >
+          <a>
+            <ArticleCard
+              title="Forbes"
+              description="วิธีการเช็กเอาท์ หรือการชำระเงินออนไลน์นั้นกำลังเปลี่ยนไป ท่ามกลางจุดเปลี่ยนที่สำคัญของโรคระบาดโควิด-19 นั้น เกิดการล็อกดาวน์"
+              image={ForbesPicture}
+              alt="Forbes Picture"
+              isThai
+            />
+          </a>
+        </Link>
       </div>
       <Spacer height={45} />
-      <Text size={18} color="#ffffff" family="Assistant">
+
+      {/* temporarily removing this link */}
+      {/* <Text size={18} color="#ffffff" family="Assistant">
         <u>
           <Link href="#" passHref>
             Read all articles
           </Link>
         </u>
-      </Text>
+      </Text> */}
     </div>
   )
 }
