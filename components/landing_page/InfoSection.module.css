@@ -2,7 +2,8 @@
   text-align: center;
   padding: 0 100px;
   max-width: 1500px;
-  margin: 150px auto auto auto;
+  margin: 120px auto auto auto;
+  white-space: pre-line;
 }
 
 .message_image_wrapper {
@@ -44,7 +45,7 @@
   .wrapper {
     padding: 0 40px;
     flex-direction: column;
-    margin-top: 170;
+    margin-top: 100px;
   }
 
   .info_list {
@@ -63,7 +64,7 @@
 @media (max-width: 600px) {
   .wrapper {
     padding: 0 25px;
-    margin-top: 125px;
+    margin-top: 60px;
   }
 
   .message_image_wrapper {
