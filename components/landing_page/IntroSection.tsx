@@ -18,10 +18,10 @@ export default function Intro() {
         </Text>
       </div>
       <div className={styles.description}>
-        <Text size={16} color="#ffffff" family="Assistant" lineHeight={26}>
-          Beam One-Click Checkout, built for modern day e-commerce in
+        <Text size={18} color="#ffffff" family="Assistant" lineHeight={26}>
+          Beam One-Click Checkout, built for modern day e-commerce
           <br />
-          Southeast Asia, do it all in just a click.
+          in Southeast Asia, do it all in just a click.
         </Text>
       </div>
 

@@ -52,7 +52,7 @@ const NoCodingInfoArray = [
   {
     icon: squareIcon,
     message:
-      'Stick to your business-as-usual processes let us integrate your existing solutions for you',
+      'Stick to your business-as-usual processes, let us integrate your existing solutions for you',
   },
 ]
 
@@ -63,7 +63,7 @@ const renderInfo = (array: InfoType[]) =>
         <div className={styles.icon_container}>
           <Image src={icon} alt="Icon" width={20} height={20} priority />
         </div>
-        <Text color="#ffffff" family="Assistant">
+        <Text color="#ffffff" family="Assistant" size={18}>
           {message}
         </Text>
       </li>
@@ -86,9 +86,9 @@ export default function InfoSection() {
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
-                The one-click experience on
+                The one-click experience
                 <br />
-                your sales channel
+                on your sales channel
               </Text>
             )}
             <ul className={styles.info_list}>
@@ -105,7 +105,9 @@ export default function InfoSection() {
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
           <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Accept all payment {isPhone && <br />}methods &#38; model
+            Offer all the payment methods
+            <br />
+            your customers love
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
@@ -128,7 +130,7 @@ export default function InfoSection() {
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
           <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            No coding needed{isPhone && <br />}for social commerce
+            No coding needed {isPhone && <br />}for social commerce
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
