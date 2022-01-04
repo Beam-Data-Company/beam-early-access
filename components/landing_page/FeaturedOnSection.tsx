@@ -15,13 +15,6 @@ export default function FeaturedOnSection() {
       </div>
       <div className={styles.logo_container}>
         <Image
-          src={ForbesLogo}
-          width={90}
-          height={60}
-          alt="Forbes Logo"
-          priority
-        />
-        <Image
           src={BangkokPostLogo}
           width={153}
           height={28}
@@ -40,13 +33,6 @@ export default function FeaturedOnSection() {
           width={90}
           height={60}
           alt="Forbes Logo"
-          priority
-        />
-        <Image
-          src={BangkokPostLogo}
-          width={153}
-          height={28}
-          alt="Bangkok Post Logo"
           priority
         />
       </div>
