@@ -1,0 +1,81 @@
+.input_button_container {
+  height: 50px;
+  position: relative;
+}
+
+.form_container {
+  width: 300px;
+}
+
+.input_field {
+  padding: 12px 50px 12px 15px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  outline: none;
+  height: 50px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.error_input_field {
+  border-color: #f65129;
+}
+
+.input_field:disabled {
+  background-color: gray;
+  border-color: gray;
+}
+
+.input_field_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.submit_button {
+  position: absolute;
+  height: 50px;
+  padding-top: 5px;
+  color: #3a52b8;
+  background-color: transparent;
+  border: none;
+  top: 0px;
+  right: 10px;
+}
+
+.submit_button:hover {
+  color: #4166ff;
+}
+
+.error_container {
+  color: white;
+  background-color: rgb(237, 36, 29);
+  font-size: 0.8rem;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* phone portrait */
+@media (max-width: 600px) {
+  .form_container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  .form_container {
+    min-width: 230px;
+  }
+
+  .input_field_wrapper {
+    margin-bottom: 7px;
+  }
+
+  .submit_button {
+    margin-bottom: 12px;
+  }
+}
