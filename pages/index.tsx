@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/Header'
-import MailchimpSignupForm from '../components/MailchimpSignupForm'
+// import MailchimpSignupForm from '../components/MailchimpSignupForm'
 import Demo from '../components/demo_pages/Demo'
 import styles from '../styles/Home.module.css'
 import shape1 from '../public/shape1.png'
@@ -10,11 +10,12 @@ import shape4 from '../public/shape4.png'
 import shape5 from '../public/shape5.png'
 import { useSpring, animated } from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
+import Link from 'next/link'
 
 import FeaturedOnSection from '../components/landing_page/FeaturedOnSection'
 import IntroSection from '../components/landing_page/IntroSection'
 import InfoSection from '../components/landing_page/InfoSection'
-import PartnerCardCarousel from '../components/landing_page/PartnerCardCarousel'
+// import PartnerCardCarousel from '../components/landing_page/PartnerCardCarousel'
 import Footer from '../components/Footer'
 import PartnerLogoCarousel from '../components/landing_page/PartnerLogoCarousel'
 import CardBottomSection from '../components/landing_page/CardBottomSection'
@@ -122,12 +123,15 @@ export default function Home() {
                 For Social Commerce
               </h1>
               <span className={styles.description}>
-                Accept frictionless payments and boost conversion, through a
-                universe of payment methods from cards, e-wallets, mobile
-                banking, to BNPL and crypto!
+                Accept frictionless payments and boost conversion. Offer a
+                universe of payments from cards, e-wallets, mobile banking to
+                BNPL!
               </span>
             </div>
-            <MailchimpSignupForm />
+            {/* <MailchimpSignupForm /> */}
+            <Link href="/beamfreeforthree" passHref>
+              <button className={styles.get_started_button}>Get Started</button>
+            </Link>
           </main>
         </animated.div>
       </div>
@@ -136,7 +140,7 @@ export default function Home() {
       <FeaturedOnSection />
       <IntroSection />
       <InfoSection />
-      <PartnerCardCarousel />
+      {/* <PartnerCardCarousel /> */}
       <PartnerLogoCarousel />
       <CardBottomSection />
       <Footer variant="white" />

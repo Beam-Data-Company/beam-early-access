@@ -4,6 +4,7 @@ import Text from '../Text'
 import Spacer from '../Spacer'
 import Button from '../Button'
 import { useMediaQuery } from 'react-responsive'
+import Link from 'next/link'
 
 export default function PartnerCardCarousel() {
   const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
@@ -131,7 +132,9 @@ export default function PartnerCardCarousel() {
 
       <Spacer height={70} />
 
-      <Button variant="contained">Be our partner</Button>
+      <Link href="/beamfreeforthree" passHref>
+        <Button variant="contained">Be our partner</Button>
+      </Link>
     </div>
   )
 }
