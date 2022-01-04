@@ -1,8 +1,8 @@
 import styles from './Footer.module.css'
 import beamLogo from '../public/footer/beam-logo.png'
 import beamLogoWhite from '../public/footer/beam-logo-white.png'
-import appStoreButton from '../public/footer/app-store-button.png'
-import googlePlayButton from '../public/footer/google-play-button.png'
+// import appStoreButton from '../public/footer/app-store-button.png'
+// import googlePlayButton from '../public/footer/google-play-button.png'
 import ImageBox from './ImageBox'
 import Text from './Text'
 import Spacer from './Spacer'
@@ -16,6 +16,7 @@ import linkedinIconWhite from '../public/footer/linkedin-icon-white.png'
 import twitterIconWhite from '../public/footer/twitter-icon-white.png'
 import { useMediaQuery } from 'react-responsive'
 import classNames from 'classnames'
+import Link from 'next/link'
 
 const footerInfoArray = [
   {
@@ -78,13 +79,18 @@ export default function Footer(props: Props) {
             alt="Beam Logo"
           />
           <Spacer height={isPhonePortrait ? 16 : 28} />
-          <div className={styles.download_button_wrapper}>
-            <ImageBox src={appStoreButton} width={155} alt="App Store" />
-            <ImageBox src={googlePlayButton} width={155} alt="Google Play" />
-          </div>
+          {/* <div className={styles.download_button_wrapper}>
+            <Link href="https://apps.apple.com/th/app/beam-personal-data-locker/id1514539564" passHref>
+              <ImageBox src={appStoreButton} width={155} alt="App Store" />
+            </Link>
+            <Link href="https://play.google.com/store/apps/details?id=co.beamdata.beam.app.android" passHref>
+              <ImageBox src={googlePlayButton} width={155} alt="Google Play" />
+            </Link>
+          </div> */}
         </div>
 
-        {renderFooterInfo()}
+        {/* hide footer info for now */}
+        {/* {renderFooterInfo()} */}
 
         <div className={styles.footer_info_wrapper}>
           <Text size={18} weight={600}>
@@ -92,29 +98,40 @@ export default function Footer(props: Props) {
           </Text>
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
-            <ImageBox
-              src={isBlackVariant ? facebookIcon : facebookIconWhite}
-              width={16}
-              alt="Facebook Icon"
-            />
-            <ImageBox
-              src={isBlackVariant ? instagramIcon : instagramIconWhite}
-              width={16}
-              alt="Instagram Icon"
-            />
+            <Link href="https://www.facebook.com/beamcheckout" passHref>
+              <ImageBox
+                src={isBlackVariant ? facebookIcon : facebookIconWhite}
+                width={16}
+                alt="Facebook Icon"
+              />
+            </Link>
+            <Link href="https://www.instagram.com/beamcheckout/" passHref>
+              <ImageBox
+                src={isBlackVariant ? instagramIcon : instagramIconWhite}
+                width={16}
+                alt="Instagram Icon"
+              />
+            </Link>
           </div>
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
-            <ImageBox
-              src={isBlackVariant ? linkedinIcon : linkedinIconWhite}
-              width={16}
-              alt="Linkedin Icon"
-            />
-            <ImageBox
-              src={isBlackVariant ? twitterIcon : twitterIconWhite}
-              width={18}
-              alt="Twitter Icon"
-            />
+            <Link
+              href="https://www.linkedin.com/company/beamcheckout/?originalSubdomain=th"
+              passHref
+            >
+              <ImageBox
+                src={isBlackVariant ? linkedinIcon : linkedinIconWhite}
+                width={16}
+                alt="Linkedin Icon"
+              />
+            </Link>
+            <Link href="https://twitter.com/beamcheckout" passHref>
+              <ImageBox
+                src={isBlackVariant ? twitterIcon : twitterIconWhite}
+                width={18}
+                alt="Twitter Icon"
+              />
+            </Link>
           </div>
         </div>
       </div>
@@ -122,8 +139,8 @@ export default function Footer(props: Props) {
       <Spacer height={isPhonePortrait ? 14 : 24} />
       <div className={styles.bottom_section}>
         <Text size={isPhonePortrait ? 10 : 12} lineHeight={14}>
-          © Beam Data Company Limited 2020. {isPhonePortrait && <br />}All
-          rights reserved.
+          © Beam Data Pte., Ltd. 2022. {isPhonePortrait && <br />}All rights
+          reserved.
         </Text>
       </div>
       <Spacer height={48} />
