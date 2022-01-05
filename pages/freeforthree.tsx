@@ -1,7 +1,7 @@
 import MobileBankingBanner from '../components/early_birds/MobileBankingBanner'
 import SignupForm from '../components/early_birds/SignupForm'
 import Header from '../components/Header'
-import styles from '../styles/beamfreeforthree.module.css'
+import styles from '../styles/freeforthree.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import triangleIcon from '../public/earlybird/triangle-icon.png'
@@ -19,7 +19,7 @@ const messageArray = [
   {
     icon: triangleIcon,
     englishMessage: 'A special deal for new joiners!',
-    thaiMessage: ' แคมเปญสุดพิเศษสำหรับร้านค้าใหม่ เพียงสมัครสมาชิกกับบีม',
+    thaiMessage: 'แคมเปญสุดพิเศษสำหรับร้านค้าใหม่ เพียงสมัครสมาชิกกับบีม',
   },
   {
     icon: squareIcon,
@@ -37,8 +37,6 @@ const messageArray = [
 
 export default function BeamFreeForThree() {
   const isMoreThan815 = useMediaQuery({ maxWidth: 815 })
-  // const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
-  // const isSmallPhonePortrait = useMediaQuery({ maxWidth: 350 })
   const [mounted, setMounted] = useState(false)
   useEffect(() => {
     setMounted(true)
@@ -64,7 +62,7 @@ export default function BeamFreeForThree() {
       )
     })
 
-  const renderParagraph = () => {
+  const renderParagraphItems = () => {
     return (
       <p className={styles.paragraph}>
         {isMoreThan815 ? (
@@ -121,7 +119,7 @@ export default function BeamFreeForThree() {
           />
         </div>
 
-        {renderParagraph()}
+        {renderParagraphItems()}
 
         <ul className={styles.message_list}>{renderMessages()}</ul>
 
