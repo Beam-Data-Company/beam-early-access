@@ -53,7 +53,7 @@
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 32px;
-  margin-top: 20vh;
+  margin-top: 25vh;
 }
 
 .main {
@@ -97,16 +97,22 @@
 }
 
 .get_started_button {
-  width: 350px;
-  box-shadow: 0 2px 20px 2px #141e4b;
-  color: #ffffff;
+  width: 280px;
+  box-shadow: 0 10px 40px 0 rgba(183, 197, 255, 0.4);
+  border: 2px solid #ffffff;
+  color: #3a52b8;
+  background-color: #ffffff;
   padding: 12px 0;
-  margin-bottom: 20px;
 }
 
 .get_started_button:hover {
   border: solid 2px #4166ff;
-  background-color: #4166ff;
+}
+
+.bottom_wrapper {
+  padding: 0 40px;
+  max-width: 1400px;
+  margin: auto;
 }
 
 /* ipad pro portrait */
@@ -188,6 +194,10 @@
     width: 100%;
     margin-top: 40px;
   }
+
+  .bottom_wrapper {
+    padding: 0 25px;
+  }
 }
 
 /* phone landscape */
@@ -235,5 +245,9 @@
 @media (max-width: 350px) {
   .main_container {
     margin-top: 45px;
+  }
+
+  .bottom_wrapper {
+    padding: 0 15px;
   }
 }

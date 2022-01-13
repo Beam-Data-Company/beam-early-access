@@ -136,14 +136,16 @@ export default function Home() {
         </animated.div>
       </div>
 
-      {/* use margin in each component instead of spacer */}
-      <FeaturedOnSection />
-      <IntroSection />
-      <InfoSection />
-      {/* <PartnerCardCarousel /> */}
-      <PartnerLogoCarousel />
-      <CardBottomSection />
-      <Footer variant="white" />
+      <div className={styles.bottom_wrapper}>
+        {/* use margin in each component instead of spacer */}
+        <FeaturedOnSection />
+        <IntroSection />
+        <InfoSection />
+        {/* <PartnerCardCarousel /> */}
+        <PartnerLogoCarousel />
+        <CardBottomSection />
+        <Footer variant="white" />
+      </div>
     </div>
   )
 }
