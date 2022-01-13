@@ -43,11 +43,11 @@ export default function PartnerLogoCarousel() {
         <ImageBox src={LeicaLogo} alt="Leica Logo" width={120} />
         <ImageBox src={MatterMakersLogo} alt="Matter Makers Logo" width={200} />
         <ImageBox src={MercedesBenzLogo} alt="Mercedes Benz Logo" width={200} />
-        <ImageBox src={PergoLogo} alt="Pergo Logo" width={120} />
+        <ImageBox src={PergoLogo} alt="Pergo Logo" width={150} />
         <ImageBox src={RavipaLogo} alt="Ravipa Logo" width={150} />
         <ImageBox src={SansiriLogo} alt="Sansiri Logo" width={120} />
         <ImageBox src={ThaiSmileLogo} alt="Thai Smile Logo" width={100} />
-        <ImageBox src={ToochLogo} alt="Tooch Logo" width={140} />
+        <ImageBox src={ToochLogo} alt="Tooch Logo" width={160} />
         <ImageBox src={ToyotaLogo} alt="Toyota Logo" width={100} />
         <ImageBox src={ValentinoLogo} alt="Valentino Logo" width={180} />
 
@@ -61,11 +61,11 @@ export default function PartnerLogoCarousel() {
         <ImageBox src={LeicaLogo} alt="Leica Logo" width={120} />
         <ImageBox src={MatterMakersLogo} alt="Matter Makers Logo" width={200} />
         <ImageBox src={MercedesBenzLogo} alt="Mercedes Benz Logo" width={200} />
-        <ImageBox src={PergoLogo} alt="Pergo Logo" width={120} />
+        <ImageBox src={PergoLogo} alt="Pergo Logo" width={150} />
         <ImageBox src={RavipaLogo} alt="Ravipa Logo" width={150} />
         <ImageBox src={SansiriLogo} alt="Sansiri Logo" width={120} />
         <ImageBox src={ThaiSmileLogo} alt="Thai Smile Logo" width={100} />
-        <ImageBox src={ToochLogo} alt="Tooch Logo" width={140} />
+        <ImageBox src={ToochLogo} alt="Tooch Logo" width={160} />
         <ImageBox src={ToyotaLogo} alt="Toyota Logo" width={100} />
         <ImageBox src={ValentinoLogo} alt="Valentino Logo" width={180} />
       </div>
