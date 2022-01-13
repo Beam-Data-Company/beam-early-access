@@ -17,12 +17,12 @@ type InfoType = {
 const OneClickInfoArray = [
   {
     icon: triangleIcon,
-    message: 'Beam on any social messaging app DM and e-commerce website',
+    message: 'Beam on any social messaging app DM and e-\u00A0commerce website',
   },
   {
     icon: squareIcon,
     message:
-      'Proven to help you grow your e-commerce business: 30% higher conversions & improved loyalty',
+      'Proven to help you grow your e-\u00A0commerce business: 30% higher conversions & improved loyalty',
   },
 ]
 
@@ -30,7 +30,7 @@ const PaymentInfoArray = [
   {
     icon: triangleIcon,
     message:
-      'We connect to a range of payment methods so that you don’t have to: Major credit/debit cards, e-wallets, mobile banking, crypto, buy now pay later and regular installments',
+      'We connect to a range of payment methods so that you don’t have to: Major credit/debit cards, e-\u00A0wallets, mobile banking, crypto, buy now pay later and regular installments',
   },
   {
     icon: squareIcon,
