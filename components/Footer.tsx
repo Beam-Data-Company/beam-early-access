@@ -99,18 +99,22 @@ export default function Footer(props: Props) {
           <Spacer height={22} />
           <div className={styles.icon_wrapper_row}>
             <Link href="https://www.facebook.com/beamcheckout" passHref>
-              <ImageBox
-                src={isBlackVariant ? facebookIcon : facebookIconWhite}
-                width={16}
-                alt="Facebook Icon"
-              />
+              <a>
+                <ImageBox
+                  src={isBlackVariant ? facebookIcon : facebookIconWhite}
+                  width={16}
+                  alt="Facebook Icon"
+                />
+              </a>
             </Link>
             <Link href="https://www.instagram.com/beamcheckout/" passHref>
-              <ImageBox
-                src={isBlackVariant ? instagramIcon : instagramIconWhite}
-                width={16}
-                alt="Instagram Icon"
-              />
+              <a>
+                <ImageBox
+                  src={isBlackVariant ? instagramIcon : instagramIconWhite}
+                  width={16}
+                  alt="Instagram Icon"
+                />
+              </a>
             </Link>
           </div>
           <Spacer height={22} />
@@ -119,18 +123,22 @@ export default function Footer(props: Props) {
               href="https://www.linkedin.com/company/beamcheckout/?originalSubdomain=th"
               passHref
             >
-              <ImageBox
-                src={isBlackVariant ? linkedinIcon : linkedinIconWhite}
-                width={16}
-                alt="Linkedin Icon"
-              />
+              <a>
+                <ImageBox
+                  src={isBlackVariant ? linkedinIcon : linkedinIconWhite}
+                  width={16}
+                  alt="Linkedin Icon"
+                />
+              </a>
             </Link>
             <Link href="https://twitter.com/beamcheckout" passHref>
-              <ImageBox
-                src={isBlackVariant ? twitterIcon : twitterIconWhite}
-                width={18}
-                alt="Twitter Icon"
-              />
+              <a>
+                <ImageBox
+                  src={isBlackVariant ? twitterIcon : twitterIconWhite}
+                  width={18}
+                  alt="Twitter Icon"
+                />
+              </a>
             </Link>
           </div>
         </div>
