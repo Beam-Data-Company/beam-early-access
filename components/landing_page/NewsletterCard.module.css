@@ -17,14 +17,13 @@
 @media (max-width: 600px) {
   .container {
     height: 205px;
-    width: 335px;
+    width: 100%;
     min-width: 0;
   }
 }
 
 @media (max-width: 350px) {
   .container {
-    width: 300px;
     padding: 0 10px;
   }
 }

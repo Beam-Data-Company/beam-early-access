@@ -48,7 +48,7 @@
 @media (max-width: 600px) {
   .container {
     flex-direction: row;
-    width: 335px;
+    width: 100%;
     height: 138px;
   }
 
@@ -72,11 +72,5 @@
 
   .description {
     -webkit-line-clamp: 3;
-  }
-}
-
-@media (max-width: 350px) {
-  .container {
-    width: 300px;
   }
 }

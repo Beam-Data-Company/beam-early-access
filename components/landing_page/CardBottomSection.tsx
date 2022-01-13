@@ -19,7 +19,7 @@ export default function CardBottomSection() {
           <a>
             <ArticleCard
               title="Bangkok Post"
-              description="Checkouts are changing. In the midst of this pandemic, restrictions have brought us online for our"
+              description="Checkouts are changing. In the midst of this pandemic, restrictions have brought us online for our shopping therapies whether for essential or non-essential items as we keep our distance from physical stores."
               image={BangkokPostPicture}
               alt="Bangkok Post Picture"
             />
@@ -34,7 +34,7 @@ export default function CardBottomSection() {
           <a>
             <ArticleCard
               title="Forbes"
-              description="วิธีการเช็กเอาท์ หรือการชำระเงินออนไลน์นั้นกำลังเปลี่ยนไป ท่ามกลางจุดเปลี่ยนที่สำคัญของโรคระบาดโควิด-19 นั้น เกิดการล็อกดาวน์"
+              description="วิธีการเช็กเอาท์ หรือการชำระเงินออนไลน์นั้นกำลังเปลี่ยนไป ท่ามกลางจุดเปลี่ยนที่สำคัญของโรคระบาดโควิด-19 นั้น เกิดการล็อกดาวน์ในหลายประเทศรวมถึงประเทศไทย ย่อมส่งผลทำให้คนส่วนใหญ่นั้นได้หันมาใช้ระบบ E-Commerce"
               image={ForbesPicture}
               alt="Forbes Picture"
               isThai
