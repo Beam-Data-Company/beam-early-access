@@ -17,12 +17,12 @@ type InfoType = {
 const OneClickInfoArray = [
   {
     icon: triangleIcon,
-    message: 'Beam on any social messaging app DM and e-\u00A0commerce website',
+    message: 'Works on any social messaging app and e-\u00A0commerce website',
   },
   {
     icon: squareIcon,
     message:
-      'Proven to help you grow your e-\u00A0commerce business: 30% higher conversions & improved loyalty',
+      'Proven to help you grow your e-\u00A0commerce business with 30% higher sales conversions',
   },
 ]
 
@@ -30,12 +30,12 @@ const PaymentInfoArray = [
   {
     icon: triangleIcon,
     message:
-      'We connect to a range of payment methods so that you don’t have to: Major credit/debit cards, e-\u00A0wallets, mobile banking, crypto, buy now pay later and regular installments',
+      'We connect to a range of payment methods, so that you don’t have to: \n \nCredit & Debit Cards - E-\u00A0wallets - Mobile banking - Crypto - Buy now, pay later - and many more',
   },
   {
     icon: squareIcon,
     message:
-      'A simple & low fee per transaction. That’s it, no other hidden fees',
+      'Low fees per transaction and no hidden fees',
   },
 ]
 
@@ -43,16 +43,16 @@ const NoCodingInfoArray = [
   {
     icon: triangleIcon,
     message:
-      'No integration is required to use Beam on social commerce, get started in minutes',
+      'No integration required, get started in minutes',
   },
   {
     icon: circleIcon,
-    message: 'E-commerce website plug-ins available with the simplest APIs',
+    message: 'E-commerce website plug-ins available',
   },
   {
     icon: squareIcon,
     message:
-      'Stick to your business-as-usual processes, let us integrate your existing solutions for you',
+      'Stick to your business-as-usual processes,\nlet us do the hard work',
   },
 ]
 
@@ -79,16 +79,16 @@ export default function InfoSection() {
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
           <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            The one-click experience {isPhone && <br />}on your sales channel
+            The One-Click Experience {isPhone && <br />}on your Sales Channel
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
-                The one-click experience
+                The One-Click Experience
                 <br />
-                on your sales channel
+                on your Sales Channel
               </Text>
             )}
             <ul className={styles.info_list}>
@@ -105,18 +105,18 @@ export default function InfoSection() {
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
           <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Offer all the payment methods
+            Offer all the Payment Methods
             <br />
-            your customers love
+            your Customers Love
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
-                Offer all the payment methods
+                Offer all the Payment Methods
                 <br />
-                your customers love
+                your Customers Love
               </Text>
             )}
             <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
@@ -130,16 +130,16 @@ export default function InfoSection() {
       <div className={styles.wrapper}>
         {isIpadPortraitAndPhone && (
           <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            No coding needed {isPhone && <br />}for social commerce
+            Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
           </Text>
         )}
         <div className={styles.message_image_wrapper}>
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
-                No coding needed
+                Just Plug &#38; Play,
                 <br />
-                for social commerce
+                No Coding Needed
               </Text>
             )}
             <ul className={styles.info_list}>

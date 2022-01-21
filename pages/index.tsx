@@ -118,9 +118,9 @@ export default function Home() {
           <main className={styles.main}>
             <div className={styles.title_with_description_container}>
               <h1 className={styles.title}>
-                One-Click Checkout
+                A True One-Click
                 <br />
-                For Social Commerce
+                Checkout Experience
               </h1>
               <span className={styles.description}>
                 Accept frictionless payments and boost conversion. Offer a
