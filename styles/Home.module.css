@@ -143,8 +143,8 @@
     margin-top: 120px;
   }
 
-  .get_started_button {
-    width: 480px;
+  .bottom_wrapper {
+    padding: 0 60px;
   }
 }
 
@@ -191,7 +191,6 @@
   }
 
   .get_started_button {
-    width: 100%;
     margin-top: 40px;
   }
 
@@ -243,5 +242,9 @@
 
   .bottom_wrapper {
     padding: 0 15px;
+  }
+
+  .get_started_button {
+    width: 250px;
   }
 }
