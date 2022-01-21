@@ -17,12 +17,12 @@ type InfoType = {
 const OneClickInfoArray = [
   {
     icon: triangleIcon,
-    message: 'Works on any social messaging app and e-\u00A0commerce website',
+    message: 'Works on any social messaging app and e-\u2060commerce website',
   },
   {
     icon: squareIcon,
     message:
-      'Proven to help you grow your e-\u00A0commerce business with 30% higher sales conversions',
+      'Proven to help you grow your e-\u2060commerce business with 30% higher sales conversions',
   },
 ]
 
@@ -30,20 +30,18 @@ const PaymentInfoArray = [
   {
     icon: triangleIcon,
     message:
-      'We connect to a range of payment methods, so that you don’t have to: \n \nCredit & Debit Cards - E-\u00A0wallets - Mobile banking - Crypto - Buy now, pay later - and many more',
+      'We connect to a range of payment methods, so that you don’t have to:\n \nCredit & Debit Cards - E-\u2060wallets - Mobile banking - Crypto - Buy now, pay later - and many more',
   },
   {
     icon: squareIcon,
-    message:
-      'Low fees per transaction and no hidden fees',
+    message: 'Low fees per transaction and no hidden fees',
   },
 ]
 
 const NoCodingInfoArray = [
   {
     icon: triangleIcon,
-    message:
-      'No integration required, get started in minutes',
+    message: 'No integration required, get started in minutes',
   },
   {
     icon: circleIcon,
