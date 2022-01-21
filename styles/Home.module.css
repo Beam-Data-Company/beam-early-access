@@ -171,11 +171,11 @@
 }
 
 /* phone portrait */
-@media (max-width: 600px) and (orientation: portrait){
+@media (max-width: 600px) and (orientation: portrait) {
   .form_demo_section {
     height: 1000px;
   }
-  
+
   .main_container {
     margin-top: 80px;
   }

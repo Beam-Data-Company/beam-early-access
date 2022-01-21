@@ -142,7 +142,9 @@ export default function Home() {
         <IntroSection />
         <InfoSection />
         {/* <PartnerCardCarousel /> */}
-        <PartnerLogoCarousel />
+      </div>
+      <PartnerLogoCarousel />
+      <div className={styles.bottom_wrapper}>
         <CardBottomSection />
         <Footer variant="white" />
       </div>
