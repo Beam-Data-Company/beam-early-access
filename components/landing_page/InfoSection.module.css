@@ -1,0 +1,84 @@
+.wrapper {
+  text-align: center;
+  margin-top: 120px;
+  white-space: pre-line;
+}
+
+.message_image_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message_container {
+  width: 620px;
+  margin-right: 40px;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.image_box {
+  width: 590px;
+}
+
+.info_list {
+  padding: 0;
+  margin: 40px 0 0 0;
+  max-width: 420px;
+}
+
+.list_child {
+  margin-top: 30px;
+  display: flex;
+}
+
+.icon_container {
+  width: 20px;
+  min-width: 20px;
+  padding-top: 3px;
+  margin-right: 24px;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .wrapper {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  .info_list {
+    margin: 0;
+  }
+
+  .message_image_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+  }
+}
+
+/*phone*/
+@media (max-width: 600px) {
+  .wrapper {
+    margin-top: 60px;
+  }
+
+  .message_image_wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .message_container {
+    width: auto;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+
+  .info_list {
+    width: 100%;
+  }
+
+  .image_box {
+    width: auto;
+  }
+}

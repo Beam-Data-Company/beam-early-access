@@ -1,0 +1,57 @@
+.container {
+  overflow: hidden;
+  text-align: center;
+  margin-top: 160px;
+}
+
+.title {
+  font-size: 32px;
+}
+
+.slider_track {
+  display: inline-flex;
+  animation: scroll 50s infinite linear;
+  margin-top: 60px;
+}
+
+.button_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    margin-top: 120px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+}
+
+/* phone*/
+@media (max-width: 600px) {
+  .container {
+    margin-top: 145px;
+  }
+
+  .slider_track {
+    margin-top: 35px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}

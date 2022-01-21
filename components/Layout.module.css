@@ -18,6 +18,7 @@
   .content_wrapper {
     padding-left: 50px;
     padding-right: 70px;
+    width: 100%;
   }
 }
 
@@ -27,5 +28,6 @@
     padding-left: 24px;
     padding-right: 20px;
     border: none;
+    width: 100%;
   }
 }

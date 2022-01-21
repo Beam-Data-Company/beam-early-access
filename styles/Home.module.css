@@ -1,10 +1,9 @@
 .wrapper {
   background-image: linear-gradient(to left, #001365, #000b3c, #000a33);
-  height: 100%;
 }
 
-.contentWrapper {
-  height: 100%;
+.form_demo_section {
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -54,7 +53,7 @@
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 32px;
-  margin-top: 20vh;
+  margin-top: 25vh;
 }
 
 .main {
@@ -79,7 +78,7 @@
   margin-top: 24px;
   margin-bottom: 32px;
   font-weight: 400;
-  max-width: 480px;
+  max-width: 530px;
   text-align: left;
 }
 
@@ -97,6 +96,25 @@
   align-items: flex-start;
 }
 
+.get_started_button {
+  width: 280px;
+  box-shadow: 0 10px 40px 0 rgba(183, 197, 255, 0.4);
+  border: 2px solid #ffffff;
+  color: #3a52b8;
+  background-color: #ffffff;
+  padding: 12px 0;
+}
+
+.get_started_button:hover {
+  border: solid 2px #4166ff;
+}
+
+.bottom_wrapper {
+  padding: 0 40px;
+  max-width: 1400px;
+  margin: auto;
+}
+
 /* ipad pro portrait */
 @media (max-width: 1040px) and (orientation: portrait) {
   .description {
@@ -104,8 +122,12 @@
   }
 
   .phoneScreenPic {
-    top: 50%;
+    top: 45%;
     left: 50%;
+  }
+
+  .title {
+    text-align: center;
   }
 
   .title_with_description_container {
@@ -119,6 +141,10 @@
 
   .main_container {
     margin-top: 120px;
+  }
+
+  .bottom_wrapper {
+    padding: 0 60px;
   }
 }
 
@@ -139,19 +165,24 @@
   }
 
   .phoneScreenPic {
-    top: 46%;
+    top: 40%;
     left: 50%;
   }
 }
 
 /* phone portrait */
-@media (max-width: 600px) {
+@media (max-width: 600px) and (orientation: portrait) {
+  .form_demo_section {
+    height: 1000px;
+  }
+
   .main_container {
     margin-top: 80px;
   }
 
   .title {
     font-size: 1.6rem;
+    text-align: center;
   }
 
   .description {
@@ -159,8 +190,12 @@
     margin-bottom: 0;
   }
 
-  .phoneScreenPic {
-    display: none;
+  .get_started_button {
+    margin-top: 40px;
+  }
+
+  .bottom_wrapper {
+    padding: 0 25px;
   }
 }
 
@@ -189,12 +224,6 @@
   }
 }
 
-@media (max-width: 950px) and (max-height: 960px) {
-  .phoneScreenPic {
-    display: none;
-  }
-}
-
 @media (max-height: 700px) and (orientation: landscape) {
   .shape1,
   .shape2,
@@ -211,7 +240,11 @@
     margin-top: 45px;
   }
 
-  .wrapper {
-    height: 650px;
+  .bottom_wrapper {
+    padding: 0 15px;
+  }
+
+  .get_started_button {
+    width: 250px;
   }
 }

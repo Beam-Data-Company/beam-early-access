@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  defaultTitle: 'Get Early Access',
-  description: 'Your exclusive invitation to Beam Instant Checkout',
+  defaultTitle: 'Beam One-Click Checkout',
+  description: 'Frictionless Payments For Social Commerce',
   additionalMetaTags: [
     {
       property: 'keywords',
@@ -13,7 +13,7 @@ export default {
     locale: 'en_US',
     url: 'https://beamcheckout.com',
     title: 'Get Early Access',
-    description: 'Your exclusive invitation to Beam Instant Checkout',
+    description: 'Frictionless Payments For Social Commerce',
     images: [
       {
         url: 'https://beamcheckout.com/social-image.jpg',

@@ -31,7 +31,7 @@ export default function Layout(props: Props) {
         <div className={styles.content_wrapper}>{props.children}</div>
       </div>
       {!isPhonePortrait && <Spacer height={120} />}
-      <Footer />
+      <Footer variant="black" />
     </div>
   )
 }

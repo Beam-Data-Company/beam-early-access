@@ -97,9 +97,7 @@ export default function ChatPage(props: Props) {
           >
             Good choice! That will be $12,
             <br />
-            you can instantly checkout
-            <br />
-            via this link
+            One-Click Checkout here!
           </div>
         </div>
         <div className={classNames(styles.message_row, styles.row_align_left)}>
@@ -126,7 +124,7 @@ export default function ChatPage(props: Props) {
                 />
               </animated.div>
             </div>
-            <div className={styles.shopping_bag_title}>Instant Checkout</div>
+            <div className={styles.shopping_bag_title}>One-Click Checkout</div>
             <div className={styles.shopping_bag_id}>Order ID# 923812397</div>
           </div>
           <div className={styles.message_time}>9:41</div>

@@ -25,17 +25,17 @@ export default function PrivacyPolicy({
   const renderPolicies = () => {
     return policiesArray.map((policy: Policy, i: number) => (
       <div id={policy.title} key={policy.title}>
-        <Text size={20} family="Lexend Deca">
+        <Text size={isPhonePortrait ? 18 : 20} family="Lexend Deca">
           {policy.title}
         </Text>
         <Spacer height={isPhonePortrait ? 10 : 15} />
-        <Text color="#535353" lineHeight={26}>
+        <Text color="#535353" lineHeight={26} size={isPhonePortrait ? 14 : 16}>
           <MDXRemote
             compiledSource={policyContent[i].compiledSource}
             components={components}
           />
         </Text>
-        <Spacer height={isPhonePortrait ? 30 : 24} />
+        <Spacer height={isPhonePortrait ? 20 : 14} />
       </div>
     ))
   }
@@ -57,7 +57,7 @@ export default function PrivacyPolicy({
       </Text>
       <Spacer height={10} />
       <Text color="#535353" weight={600}>
-        Last Update: {data.last_update}
+        Updated as of: {data.last_update}
       </Text>
       <Spacer height={isPhonePortrait ? 30 : 40} />
       {renderPolicies()}

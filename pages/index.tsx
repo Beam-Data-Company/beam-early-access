@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/Header'
-import MailchimpSignupForm from '../components/MailchimpSignupForm'
+// import MailchimpSignupForm from '../components/MailchimpSignupForm'
 import Demo from '../components/demo_pages/Demo'
 import styles from '../styles/Home.module.css'
 import shape1 from '../public/shape1.png'
@@ -10,6 +10,15 @@ import shape4 from '../public/shape4.png'
 import shape5 from '../public/shape5.png'
 import { useSpring, animated } from 'react-spring'
 import { useMediaQuery } from 'react-responsive'
+import Link from 'next/link'
+
+import FeaturedOnSection from '../components/landing_page/FeaturedOnSection'
+import IntroSection from '../components/landing_page/IntroSection'
+import InfoSection from '../components/landing_page/InfoSection'
+// import PartnerCardCarousel from '../components/landing_page/PartnerCardCarousel'
+import Footer from '../components/Footer'
+import PartnerLogoCarousel from '../components/landing_page/PartnerLogoCarousel'
+import CardBottomSection from '../components/landing_page/CardBottomSection'
 
 export default function Home() {
   const isTablet = useMediaQuery({ maxWidth: 1040 })
@@ -74,7 +83,7 @@ export default function Home() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.contentWrapper}>
+      <div className={styles.form_demo_section}>
         <Header />
 
         {!isPhoneLandscape && (
@@ -108,15 +117,36 @@ export default function Home() {
         >
           <main className={styles.main}>
             <div className={styles.title_with_description_container}>
-              <h1 className={styles.title}>Get Early Access</h1>
+              <h1 className={styles.title}>
+                A True One-Click
+                <br />
+                Checkout Experience
+              </h1>
               <span className={styles.description}>
-                Beam Instant Checkout, a frictionless customer experience on
-                your social messaging platforms and website.
+                Accept frictionless payments and boost conversion. Offer a
+                universe of payments from cards, e-wallets, mobile banking to
+                BNPL!
               </span>
             </div>
-            <MailchimpSignupForm />
+            {/* <MailchimpSignupForm /> */}
+            <Link href="/freeforthree" passHref>
+              <button className={styles.get_started_button}>Get Started</button>
+            </Link>
           </main>
         </animated.div>
+      </div>
+
+      <div className={styles.bottom_wrapper}>
+        {/* use margin in each component instead of spacer */}
+        <FeaturedOnSection />
+        <IntroSection />
+        <InfoSection />
+        {/* <PartnerCardCarousel /> */}
+      </div>
+      <PartnerLogoCarousel />
+      <div className={styles.bottom_wrapper}>
+        <CardBottomSection />
+        <Footer variant="white" />
       </div>
     </div>
   )

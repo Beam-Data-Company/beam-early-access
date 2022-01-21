@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+  height: 290px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  min-width: 375px;
+  overflow: hidden;
+}
+
+.bottom_section {
+  padding: 16px 16px 16px 24px;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.image_not_phone {
+  height: 180px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.image_phone {
+  display: none;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    width: 285px;
+    min-width: 285px;
+  }
+
+  .image_not_phone {
+    padding-top: 0;
+  }
+}
+
+/*phone*/
+@media (max-width: 600px) {
+  .container {
+    flex-direction: row;
+    width: 100%;
+    height: 138px;
+  }
+
+  .image_not_phone {
+    display: none;
+  }
+
+  .image_phone {
+    display: block;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 8px;
+    min-width: 122px;
+    position: relative;
+  }
+
+  .bottom_section {
+    padding-left: 6px;
+    padding-top: 20px;
+  }
+
+  .description {
+    -webkit-line-clamp: 3;
+  }
+}
