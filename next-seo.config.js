@@ -5,14 +5,15 @@ export default {
   additionalMetaTags: [
     {
       property: 'keywords',
-      content: 'personal data locker, personal data app, personal data storage',
+      content:
+        'beam one-click checkout, instant checkout, credit card payment, payment facilitator, social commerce solution, one-click checkout',
     },
   ],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://beamcheckout.com',
-    title: 'Get Early Access',
+    title: 'Beam One-Click Checkout',
     description: 'Frictionless Payments For Social Commerce',
     images: [
       {
