@@ -1,6 +1,5 @@
 .container {
-  width: 350px;
-  padding-left: 100px;
+  width: 250px;
   padding-right: 20px;
 }
 
@@ -13,7 +12,6 @@
 /* ipad and ipad pro portrait */
 @media (max-width: 1040px) {
   .container {
-    width: 300px;
-    padding-left: 40px;
+    width: 260px;
   }
 }

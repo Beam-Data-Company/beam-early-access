@@ -50,7 +50,7 @@
 }
 
 /* phone portrait */
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .container {
     padding: 75px 45px 0 45px;
   }
