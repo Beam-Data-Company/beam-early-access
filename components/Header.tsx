@@ -3,6 +3,7 @@ import logo from '../public/logo.svg'
 import styles from './Header.module.css'
 import StartedModal from './StartedModal'
 import React, { useState } from 'react'
+import Link from 'next/link'
 
 export default function Header() {
   const [startedModalVisible, setStartedModalVisible] = useState(false)
@@ -10,7 +11,11 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <Image src={logo} alt="Beam Logo" priority />
+        <Link href="https://beamcheckout.com" passHref>
+          <a>
+            <Image src={logo} alt="Beam Logo" priority />
+          </a>
+        </Link>
       </div>
 
       {/* will bring this button back when the lighthouse website is ready */}
