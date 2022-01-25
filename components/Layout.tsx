@@ -15,23 +15,26 @@ type Props = {
 }
 
 export default function Layout(props: Props) {
+  const isLessThan600 = useMediaQuery({ maxWidth: 600 })
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
 
   return (
     <div className={styles.main_container}>
       <PageBanner title={props.pageTitle}>{props.image}</PageBanner>
-      <Spacer height={isPhonePortrait ? 30 : 55} />
-      <div className={styles.main_area}>
-        {!isPhonePortrait && (
-          <SideBar
-            contentTitle={props.contentTitle}
-            contentList={props.contentList}
-          />
-        )}
-        <div className={styles.content_wrapper}>{props.children}</div>
+      <div className={styles.main_footer_wrapper}>
+        <Spacer height={isPhonePortrait ? 30 : 55} />
+        <div className={styles.main_area}>
+          {!isLessThan600 && (
+            <SideBar
+              contentTitle={props.contentTitle}
+              contentList={props.contentList}
+            />
+          )}
+          <div className={styles.content_wrapper}>{props.children}</div>
+        </div>
+        {!isPhonePortrait && <Spacer height={120} />}
+        <Footer variant="black" />
       </div>
-      {!isPhonePortrait && <Spacer height={120} />}
-      <Footer variant="black" />
     </div>
   )
 }
