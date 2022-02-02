@@ -4,6 +4,7 @@ import ImageBox from '../components/ImageBox'
 import Text from '../components/Text'
 import { InferGetStaticPropsType } from 'next'
 import Layout from '../components/Layout'
+import { generateAnchorID } from '../components/SideBar'
 import { useMediaQuery } from 'react-responsive'
 import axios from 'axios'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -16,29 +17,14 @@ type Policy = {
 }
 
 const components = { Text }
+
 export default function PrivacyPolicy({
   data,
   policyContent,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const policiesArray = data.policies
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
-  const renderPolicies = () => {
-    return policiesArray.map((policy: Policy, i: number) => (
-      <div id={policy.title} key={policy.title}>
-        <Text size={isPhonePortrait ? 18 : 20} family="Lexend Deca">
-          {policy.title}
-        </Text>
-        <Spacer height={isPhonePortrait ? 10 : 15} />
-        <Text color="#535353" lineHeight={26} size={isPhonePortrait ? 14 : 16}>
-          <MDXRemote
-            compiledSource={policyContent[i].compiledSource}
-            components={components}
-          />
-        </Text>
-        <Spacer height={isPhonePortrait ? 20 : 14} />
-      </div>
-    ))
-  }
+
   return (
     <Layout
       pageTitle="Privacy by Design"
@@ -60,7 +46,26 @@ export default function PrivacyPolicy({
         Updated as of: {data.last_update}
       </Text>
       <Spacer height={isPhonePortrait ? 30 : 40} />
-      {renderPolicies()}
+
+      {policiesArray.map((policy: Policy, index: number) => (
+        <section id={generateAnchorID(policy.title)} key={policy.title}>
+          <Text size={isPhonePortrait ? 18 : 20} family="Lexend Deca">
+            {policy.title}
+          </Text>
+          <Spacer height={isPhonePortrait ? 10 : 15} />
+          <Text
+            color="#535353"
+            lineHeight={26}
+            size={isPhonePortrait ? 14 : 16}
+          >
+            <MDXRemote
+              compiledSource={policyContent[index].compiledSource}
+              components={components}
+            />
+          </Text>
+          <Spacer height={isPhonePortrait ? 20 : 14} />
+        </section>
+      ))}
     </Layout>
   )
 }
@@ -79,6 +84,10 @@ export const getStaticProps = async () => {
   const { data } = await axios.get<
     Pick<PrivacyResponse, 'title' | 'last_update' | 'policies'>
   >(`${process.env.NEXT_PUBLIC_STRAPI_URL}/privacy-policy`)
-  const html = await Promise.all(data.policies.map((i) => serialize(i.content)))
+
+  const html = await Promise.all(
+    data.policies.map((policy) => serialize(policy.content))
+  )
+
   return { props: { data, policyContent: html } }
 }
