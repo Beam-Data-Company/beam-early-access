@@ -27,13 +27,15 @@
   overflow: hidden;
 }
 
-.description {
+.description_container {
   margin-top: 28px;
+  margin-bottom: 12px;
   text-align: center;
   width: 100%;
 }
 
 .remarks {
+  margin-top: 80px;
   line-height: 20px;
   padding-top: 20px;
   border-top: solid 1px #bbc1db;
@@ -47,14 +49,9 @@
   width: 110%;
 }
 
-.spacer {
-  height: 80px;
-  margin-top: 80px;
-}
-
-.link {
-  font-weight: bold;
-  text-decoration: underline;
+.description {
+  font-weight: normal;
+  margin: 0;
 }
 
 @media (max-width: 1000px) {

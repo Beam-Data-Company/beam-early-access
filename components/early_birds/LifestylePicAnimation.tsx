@@ -23,25 +23,25 @@ const slides = [
 ]
 
 export default function LifestylePicAnimation() {
-  const [index, set] = useState(0)
-  const transitions = useTransition(index, {
-    key: index,
+  const [slideIndex, setSlideIndex] = useState(0)
+  const transitions = useTransition(slideIndex, {
+    key: slideIndex,
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
     config: { duration: 4000 },
     onRest: (_a, _b, item) => {
-      if (index === item) {
-        set((state) => (state + 1) % slides.length)
+      if (slideIndex === item) {
+        setSlideIndex((state) => (state + 1) % slides.length)
       }
     },
     exitBeforeEnter: true,
   })
   return (
-    <div>
+    <>
       {transitions((style, i) => (
         <animated.div
-          className={styles.bg}
+          className={styles.image_container}
           style={{
             ...style,
           }}
@@ -49,6 +49,6 @@ export default function LifestylePicAnimation() {
           <Image src={slides[i]} alt="Banner Picture" priority />
         </animated.div>
       ))}
-    </div>
+    </>
   )
 }
