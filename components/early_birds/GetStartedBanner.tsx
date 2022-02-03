@@ -17,7 +17,7 @@ export default function GetStartedBanner() {
           color="#ffffff"
           size={widthLessThan550 ? 32 : 40}
         >
-          Register As Merchant
+          Get started {widthLessThan550 && <br />}as a Merchant
         </Text>
       </div>
     </div>

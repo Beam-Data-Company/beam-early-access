@@ -32,6 +32,7 @@
   margin-bottom: 12px;
   text-align: center;
   width: 100%;
+  max-width: 660px;
 }
 
 .remarks {
