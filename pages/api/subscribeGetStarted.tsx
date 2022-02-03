@@ -13,7 +13,7 @@ type Data = {
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
-  const { fullName, phoneNumber, email, shopName } = req.body
+  const { fullName, phoneNumber, email, storeName } = req.body
   const audienceID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID_GET_STARTED
 
   if (!email) {
@@ -30,7 +30,7 @@ export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       merge_fields: {
         FULLNAME: fullName,
         PHONE: phoneNumber,
-        SHOPNAME: shopName,
+        STORENAME: storeName,
       },
       status: 'subscribed' as any,
     })
