@@ -23,7 +23,7 @@ const SignUpFormSchema = Yup.object({
   email: Yup.string()
     .email('Please enter a valid email address')
     .required('Required'),
-  shopName: Yup.string()
+  storeName: Yup.string()
     .max(30, 'Must be 30 characters or less')
     .required('Required'),
 })
@@ -39,7 +39,7 @@ export default function SignupForm() {
           fullName: '',
           phoneNumber: '',
           email: '',
-          shopName: '',
+          storeName: '',
         }}
         validationSchema={SignUpFormSchema}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
@@ -57,10 +57,10 @@ export default function SignupForm() {
         {(formik) => (
           <Form className={styles.form_container}>
             <InputFieldWrapper>
-              <div className={styles.field_name}>Full Name</div>
               <Field
+                id="fullName"
                 name="fullName"
-                placeholder="Full Name"
+                placeholder=" "
                 className={classNames(
                   styles.input_field,
                   formik.errors.fullName &&
@@ -69,16 +69,22 @@ export default function SignupForm() {
                 )}
                 disabled={formik.isSubmitting}
               />
+              <label
+                htmlFor="fullName"
+                className={classNames(styles.field_label)}
+              >
+                Full Name
+              </label>
               {formik.errors.fullName && formik.touched.fullName && (
                 <ErrorStateMessage name="fullName" />
               )}
             </InputFieldWrapper>
 
             <InputFieldWrapper>
-              <div className={styles.field_name}>Telephone</div>
               <Field
+                id="phoneNumber"
                 name="phoneNumber"
-                placeholder="+66 098 000 0000"
+                placeholder=" "
                 className={classNames(
                   styles.input_field,
                   formik.errors.phoneNumber &&
@@ -87,17 +93,22 @@ export default function SignupForm() {
                 )}
                 disabled={formik.isSubmitting}
               />
+              <label
+                htmlFor="phoneNumber"
+                className={classNames(styles.field_label)}
+              >
+                Work Mobile Number
+              </label>
               {formik.errors.phoneNumber && formik.touched.phoneNumber && (
                 <ErrorStateMessage name="phoneNumber" />
               )}
             </InputFieldWrapper>
 
             <InputFieldWrapper>
-              <div className={styles.field_name}>Work Email</div>
               <Field
                 name="email"
                 type="email"
-                placeholder="Work Email"
+                placeholder=" "
                 className={classNames(
                   styles.input_field,
                   formik.errors.email &&
@@ -106,26 +117,34 @@ export default function SignupForm() {
                 )}
                 disabled={formik.isSubmitting}
               />
+              <label htmlFor="email" className={classNames(styles.field_label)}>
+                Work Email
+              </label>
               {formik.errors.email && formik.touched.email && (
                 <ErrorStateMessage name="email" />
               )}
             </InputFieldWrapper>
 
             <InputFieldWrapper>
-              <div className={styles.field_name}>Shop Name</div>
               <Field
-                name="shopName"
-                placeholder="Shop Name"
+                name="storeName"
+                placeholder=" "
                 className={classNames(
                   styles.input_field,
-                  formik.errors.shopName &&
-                    formik.touched.shopName &&
+                  formik.errors.storeName &&
+                    formik.touched.storeName &&
                     styles.error_input_field
                 )}
                 disabled={formik.isSubmitting}
               />
-              {formik.errors.shopName && formik.touched.shopName && (
-                <ErrorStateMessage name="shopName" />
+              <label
+                htmlFor="storeName"
+                className={classNames(styles.field_label)}
+              >
+                Store Name
+              </label>
+              {formik.errors.storeName && formik.touched.storeName && (
+                <ErrorStateMessage name="storeName" />
               )}
             </InputFieldWrapper>
 

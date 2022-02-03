@@ -3,13 +3,28 @@
   height: 28px;
   border: none;
   border-bottom: solid 2px #98a4bf;
-  padding-bottom: 4px;
-  padding-left: 0;
+  padding: 4px 2px 4px 0;
   outline: none;
+  word-break: keep-all;
+  transition: all 0.175s;
 }
 
-.input_field::placeholder {
-  color: #dbdbdb;
+.input_field:focus + .field_label,
+.input_field:not(:placeholder-shown) + .field_label {
+  transform: translate(0, -20px);
+  font-family: 'Assistant';
+  color: #5d5d5d;
+}
+
+.field_label {
+  color: #b9b9b9;
+  font-family: 'Lexend Deca';
+  height: 24px;
+  position: absolute;
+  padding-bottom: 6px;
+  transform-origin: top left;
+  transition: all 0.175s;
+  word-break: break-all;
 }
 
 .submit_button {
@@ -32,9 +47,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
   width: 330px;
-  gap: 20px;
+  gap: 36px;
 }
 
 .error_input_field {
@@ -46,17 +61,13 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  position: relative;
 }
 
 .button_error_wrapper {
   text-align: center;
   align-items: center;
   gap: 10px;
-}
-
-.field_name {
-  color: #5d5d5d;
-  size: 14px;
 }
 
 @media (max-width: 400px) {
