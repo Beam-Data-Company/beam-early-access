@@ -129,7 +129,7 @@ export default function Home() {
               </span>
             </div>
             {/* <MailchimpSignupForm /> */}
-            <Link href="/freeforthree" passHref>
+            <Link href="/getstarted" passHref>
               <button className={styles.get_started_button}>Get Started</button>
             </Link>
           </main>
