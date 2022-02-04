@@ -106,6 +106,7 @@ export default function SignupForm() {
 
             <InputFieldWrapper>
               <Field
+                id="email"
                 name="email"
                 type="email"
                 placeholder=" "
@@ -127,6 +128,7 @@ export default function SignupForm() {
 
             <InputFieldWrapper>
               <Field
+                id="storeName"
                 name="storeName"
                 placeholder=" "
                 className={classNames(
