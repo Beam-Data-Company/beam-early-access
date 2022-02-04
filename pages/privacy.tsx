@@ -45,7 +45,7 @@ export default function PrivacyPolicy({
       <Text color="#535353" weight={600}>
         Updated as of: {data.last_update}
       </Text>
-      <Spacer height={isPhonePortrait ? 30 : 40} />
+      <Spacer height={isPhonePortrait ? 20 : 25} />
 
       {policiesArray.map((policy: Policy, index: number) => (
         <section id={generateAnchorID(policy.title)} key={policy.title}>
