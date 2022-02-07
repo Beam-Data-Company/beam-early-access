@@ -55,6 +55,11 @@
   margin: 0;
 }
 
+.remarks a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 @media (max-width: 1000px) {
   .shapes_container {
     display: none;
