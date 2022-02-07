@@ -47,11 +47,11 @@ export default function GetStarted() {
         <div className={styles.remarks}>
           <Text size={12} color="#535353" weight={600}>
             Remarks: By registering this campaign, you agree to Beam&apos;s{' '}
-            <Link href="https://beamdata.co/privacy/" passHref>
+            <Link href="https://www.beamcheckout.com/privacy" passHref>
               Privacy Policy
             </Link>{' '}
             and{' '}
-            <Link href="https://beamdata.co/terms-of-service/" passHref>
+            <Link href="https://www.beamcheckout.com/tncs" passHref>
               Terms and Conditions
             </Link>
             . We reserved the rights to refuse providing offers and/or
