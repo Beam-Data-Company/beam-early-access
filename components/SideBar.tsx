@@ -8,6 +8,11 @@ type Props = {
   contentList: any[]
 }
 
+export function generateAnchorID(title: string) {
+  // Note: Replace whitespace with `-`
+  return title ? title.replace(/\s/g, '-') : title
+}
+
 export default function SideBar(props: Props) {
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
 
@@ -16,11 +21,11 @@ export default function SideBar(props: Props) {
       <Text size={18} weight={600}>
         {props.contentTitle}
       </Text>
-      <Spacer height={24} />
+      <Spacer height={6} />
       <ul className={styles.content_list}>
         {props.contentList.map((child) => (
           <li key={child.title}>
-            <a href={`#${child.title}`}>
+            <a href={`#${generateAnchorID(child.title)}`}>
               <Text size={14} weight={400}>
                 {child.title}
               </Text>

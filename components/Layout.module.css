@@ -3,6 +3,10 @@
   overflow: hidden;
 }
 
+.main_footer_wrapper {
+  padding: 0 100px;
+}
+
 .main_area {
   display: flex;
 }
@@ -16,18 +20,32 @@
 /* ipad and ipad pro portrait */
 @media (max-width: 1040px) {
   .content_wrapper {
-    padding-left: 50px;
-    padding-right: 70px;
+    padding-left: 40px;
     width: 100%;
+  }
+
+  .main_footer_wrapper {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .content_wrapper {
+    border: none;
+    padding: 0;
   }
 }
 
 /* phone portrait */
 @media (max-width: 450px) {
-  .content_wrapper {
-    padding-left: 24px;
-    padding-right: 20px;
-    border: none;
-    width: 100%;
+  .main_footer_wrapper {
+    padding: 0 25px;
+  }
+}
+
+/* small phone portrait */
+@media (max-width: 350px) {
+  .main_footer_wrapper {
+    padding: 0 15px;
   }
 }

@@ -19,9 +19,8 @@
 
 .image_wrapper {
   display: flex;
-  gap: 24px;
-  padding-top: 25px;
-  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
 }
 
 /* ipad pro portrait */
@@ -45,23 +44,23 @@
 
   .image_wrapper {
     width: 320px;
-    gap: 20px;
   }
 }
 
 /* phone portrait */
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .container {
-    padding: 75px 45px 0 45px;
+    padding: 110px 45px 0 45px;
   }
 
   .wrapper {
     flex-direction: column;
-    justify-content: center;
+    height: 205px;
+    text-align: center;
   }
 
   .image_wrapper {
     width: 100%;
-    gap: 18px;
+    max-width: 280px;
   }
 }

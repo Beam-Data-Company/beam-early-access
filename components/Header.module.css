@@ -10,6 +10,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  /* adding z-index to make the header stay on top 
+  of background shapes picture in campaign pages */
+  z-index: 1;
 }
 
 .getStartedButton {
