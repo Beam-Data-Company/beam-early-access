@@ -78,16 +78,6 @@
   width: 110%;
 }
 
-.spacer {
-  height: 80px;
-  margin-top: 80px;
-}
-
-.link {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 @media (max-width: 1000px) {
   .shapes_container {
     display: none;
