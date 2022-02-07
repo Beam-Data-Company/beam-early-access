@@ -1,6 +1,6 @@
-import lockImage from '../public/lock-image.png'
+import privacyImage from '../public/privacy-image.png'
 import Spacer from '../components/Spacer'
-import ImageBox from '../components/ImageBox'
+import Image from 'next/image'
 import Text from '../components/Text'
 import { InferGetStaticPropsType } from 'next'
 import Layout from '../components/Layout'
@@ -29,11 +29,9 @@ export default function PrivacyPolicy({
     <Layout
       pageTitle="Privacy by Design"
       image={
-        <>
-          <ImageBox width={113} src={lockImage} alt="Lock Image" />
-          <ImageBox width={113} src={lockImage} alt="Lock Image" />
-          <ImageBox width={113} src={lockImage} alt="Lock Image" />
-        </>
+        <div style={{ display: 'flex', width: '390px', marginBottom: '35px' }}>
+          <Image src={privacyImage} alt="Privacy Image" />
+        </div>
       }
       contentTitle={data.title}
       contentList={data.policies}
