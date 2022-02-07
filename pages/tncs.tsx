@@ -1,6 +1,6 @@
-import lockImage from '../public/lock-image.png'
+import tncsImage from '../public/tncs-image.png'
 import Spacer from '../components/Spacer'
-import ImageBox from '../components/ImageBox'
+import Image from 'next/image'
 import Text from '../components/Text'
 import { InferGetStaticPropsType } from 'next'
 import Layout from '../components/Layout'
@@ -18,7 +18,7 @@ type Term = {
 
 const components = { Text }
 
-export default function TermsOfService({
+export default function TermsAndConditions({
   data,
   termContent,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -27,13 +27,11 @@ export default function TermsOfService({
 
   return (
     <Layout
-      pageTitle="Privacy by Design"
+      pageTitle="Terms &amp; Conditions"
       image={
-        <>
-          <ImageBox width={113} src={lockImage} alt="Lock Image" />
-          <ImageBox width={113} src={lockImage} alt="Lock Image" />
-          <ImageBox width={113} src={lockImage} alt="Lock Image" />
-        </>
+        <div style={{ display: 'flex', width: '424px' }}>
+          <Image src={tncsImage} alt="TNCS Image" />
+        </div>
       }
       contentTitle={data.title}
       contentList={data.terms}
