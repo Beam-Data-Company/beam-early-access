@@ -134,13 +134,13 @@ export default function Earlybird() {
             value of over THB 80k/month. By registering this campaign, you agree
             to Beam&apos;s{' '}
             <Text weight={700}>
-              <Link href="https://beamdata.co/privacy/" passHref>
+              <Link href="https://www.beamcheckout.com/privacy" passHref>
                 Privacy Policy
               </Link>
             </Text>{' '}
             and{' '}
             <Text weight={700}>
-              <Link href="https://beamdata.co/terms-of-service/" passHref>
+              <Link href="https://www.beamcheckout.com/tncs" passHref>
                 Terms and Conditions
               </Link>
             </Text>
