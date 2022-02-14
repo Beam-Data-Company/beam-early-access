@@ -4,15 +4,24 @@ import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 
 type Props = {
-  formik: FormikProps<{
-    fullName: string
-    country: string
-    phoneNumber: string
-    email: string
-  }>
+  formik: //for SignupForm
+  | FormikProps<{
+        fullName: string
+        country: string
+        phoneNumber: string
+        email: string
+      }>
+    //for ZortSignupForm
+    | FormikProps<{
+        merchantName: string
+        email: string
+        fullName: string
+        country: string
+        phoneNumber: string
+      }>
 }
 
-export default function SignupForm(props: Props) {
+export default function PhoneNumberInput(props: Props) {
   const renderCountryCode = () => {
     return PHONE_COUNTRY_CODE.map((code) => {
       return (
