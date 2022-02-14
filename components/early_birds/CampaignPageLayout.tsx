@@ -11,6 +11,7 @@ type Props = {
   banner: React.ReactNode
   form: React.ReactNode
   mountedRemarks?: boolean
+  boxShadow?: boolean
 }
 
 export default function CampaignPageLayout(props: Props) {
@@ -23,7 +24,12 @@ export default function CampaignPageLayout(props: Props) {
     <div className={classNames(styles.wrapper, props.classNameBackground)}>
       <Header />
       <BackgroundShapes />
-      <div className={styles.main_container}>
+      <div
+        className={classNames(
+          styles.main_container,
+          props.boxShadow && styles.main_container_shadow
+        )}
+      >
         {props.banner}
         {props.children}
         {props.form}

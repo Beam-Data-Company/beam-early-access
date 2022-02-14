@@ -106,6 +106,7 @@ export default function Earlybird() {
       classNameBackground={styles.background}
       banner={<Banner />}
       form={<SignupForm />}
+      boxShadow
     >
       <div className={styles.bird_left}>
         <Image src={birdLeft} alt="Bird Left" priority />
