@@ -1,11 +1,9 @@
 import GetStartedBanner from '../components/early_birds/GetStartedBanner'
-import SignupForm from '../components/early_birds/GetStartedSignupForm'
-import Header from '../components/Header'
+import GetStartedSignupForm from '../components/early_birds/GetStartedSignupForm'
 import styles from '../styles/getstarted.module.css'
 import Text from '../components/Text'
 import Spacer from '../components/Spacer'
-import Remarks from '../components/early_birds/Remarks'
-import BackgroundShapes from '../components/early_birds/BackgroundShapes'
+import CampaignLayout from '../components/early_birds/CampaignPageLayout'
 
 export default function GetStarted() {
   const renderDescription = () => {
@@ -32,15 +30,12 @@ export default function GetStarted() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <Header />
-      <BackgroundShapes />
-      <div className={styles.main_container}>
-        <GetStartedBanner />
-        {renderDescription()}
-        <SignupForm />
-        <Remarks />
-      </div>
-    </div>
+    <CampaignLayout
+      classNameBackground={styles.background}
+      banner={<GetStartedBanner />}
+      form={<GetStartedSignupForm />}
+    >
+      {renderDescription()}
+    </CampaignLayout>
   )
 }

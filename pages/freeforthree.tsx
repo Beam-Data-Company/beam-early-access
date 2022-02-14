@@ -1,6 +1,5 @@
 import MobileBankingBanner from '../components/early_birds/MobileBankingBanner'
 import SignupForm from '../components/early_birds/SignupForm'
-import Header from '../components/Header'
 import styles from '../styles/freeforthree.module.css'
 import Image from 'next/image'
 import triangleIcon from '../public/earlybird/triangle-icon.png'
@@ -11,9 +10,7 @@ import Text from '../components/Text'
 import Spacer from '../components/Spacer'
 import mobileBankingPicture from '../public/earlybird/mobile-banking-picture.png'
 import mobileBankingPicturePhone from '../public/earlybird/mobile-banking-picture-phone.png'
-import { useState, useEffect } from 'react'
-import Remarks from '../components/early_birds/Remarks'
-import BackgroundShapes from '../components/early_birds/BackgroundShapes'
+import CampaignLayout from '../components/early_birds/CampaignPageLayout'
 
 const messageArray = [
   {
@@ -37,10 +34,6 @@ const messageArray = [
 
 export default function BeamFreeForThree() {
   const isMoreThan815 = useMediaQuery({ maxWidth: 815 })
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const renderMessages = () =>
     messageArray.map(({ icon, englishMessage, thaiMessage }) => {
@@ -94,37 +87,31 @@ export default function BeamFreeForThree() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <Header />
-      <BackgroundShapes />
-
-      <div className={styles.main_container}>
-        <MobileBankingBanner />
-
-        <div className={styles.mobile_banking_picture}>
-          <Image
-            src={mobileBankingPicture}
-            alt="Mobile Banking Picture"
-            priority
-          />
-        </div>
-
-        <div className={styles.mobile_banking_picture_phone}>
-          <Image
-            src={mobileBankingPicturePhone}
-            alt="Mobile Banking Picture Phone"
-            priority
-          />
-        </div>
-
-        {renderParagraphItems()}
-
-        <ul className={styles.message_list}>{renderMessages()}</ul>
-
-        <SignupForm />
-
-        {mounted && <Remarks />}
+    <CampaignLayout
+      classNameBackground={styles.background}
+      banner={<MobileBankingBanner />}
+      form={<SignupForm />}
+      mountedRemarks
+    >
+      <div className={styles.mobile_banking_picture}>
+        <Image
+          src={mobileBankingPicture}
+          alt="Mobile Banking Picture"
+          priority
+        />
       </div>
-    </div>
+
+      <div className={styles.mobile_banking_picture_phone}>
+        <Image
+          src={mobileBankingPicturePhone}
+          alt="Mobile Banking Picture Phone"
+          priority
+        />
+      </div>
+
+      {renderParagraphItems()}
+
+      <ul className={styles.message_list}>{renderMessages()}</ul>
+    </CampaignLayout>
   )
 }

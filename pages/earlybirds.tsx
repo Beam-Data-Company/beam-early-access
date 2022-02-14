@@ -1,6 +1,5 @@
 import Banner from '../components/early_birds/Banner'
 import SignupForm from '../components/early_birds/SignupForm'
-import Header from '../components/Header'
 import styles from '../styles/earlybird.module.css'
 import Image from 'next/image'
 import birdLeft from '../public/earlybird/bird-left.png'
@@ -11,8 +10,7 @@ import circleIcon from '../public/earlybird/circle-icon.png'
 import { useMediaQuery } from 'react-responsive'
 import Text from '../components/Text'
 import Spacer from '../components/Spacer'
-import Remarks from '../components/early_birds/Remarks'
-import BackgroundShapes from '../components/early_birds/BackgroundShapes'
+import CampaignLayout from '../components/early_birds/CampaignPageLayout'
 
 const messageArray = [
   {
@@ -104,27 +102,21 @@ export default function Earlybird() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <Header />
-      <BackgroundShapes />
-
-      <div className={styles.main_container}>
-        <Banner />
-
-        <div className={styles.bird_left}>
-          <Image src={birdLeft} alt="Bird Left" priority />
-        </div>
-        <div className={styles.bird_right}>
-          <Image src={birdRight} alt="Bird Right" priority />
-        </div>
-
-        {renderParagraph()}
-
-        <ul className={styles.message_list}>{renderMessages()}</ul>
-
-        <SignupForm />
-        <Remarks />
+    <CampaignLayout
+      classNameBackground={styles.background}
+      banner={<Banner />}
+      form={<SignupForm />}
+    >
+      <div className={styles.bird_left}>
+        <Image src={birdLeft} alt="Bird Left" priority />
       </div>
-    </div>
+      <div className={styles.bird_right}>
+        <Image src={birdRight} alt="Bird Right" priority />
+      </div>
+
+      {renderParagraph()}
+
+      <ul className={styles.message_list}>{renderMessages()}</ul>
+    </CampaignLayout>
   )
 }
