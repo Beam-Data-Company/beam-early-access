@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Formik, Field, Form } from 'formik'
+import { Formik, Field } from 'formik'
 import * as Yup from 'yup'
 import styles from './GetStartedSignupForm.module.css'
 import axios from 'axios'
@@ -7,16 +7,19 @@ import classNames from 'classnames'
 import SuccessModal from '../SuccessModal'
 import ErrorStateMessage from './ErrorStateMessage'
 import Text from '../Text'
-
-const phoneRegExp =
-  /^(([+\\]+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+import { PHONE_WITH_COUNTRY_CODE_REG_EXP } from './phoneRegExp'
+import FormContainer from './FormContainer'
+import InputFieldWrapper from './InputFieldWrapper'
 
 const SignUpFormSchema = Yup.object({
   fullName: Yup.string()
     .max(30, 'Must be 30 characters or less')
     .required('Required'),
   phoneNumber: Yup.string()
-    .matches(phoneRegExp, 'Please enter a valid phone number')
+    .matches(
+      PHONE_WITH_COUNTRY_CODE_REG_EXP,
+      'Please enter a valid phone number'
+    )
     .min(8, 'Must be between 8-20 characters')
     .max(20, 'Must be between 8-20 characters')
     .required('Required'),
@@ -28,7 +31,7 @@ const SignUpFormSchema = Yup.object({
     .required('Required'),
 })
 
-export default function SignupForm() {
+export default function GetStartedSignupForm() {
   const [successModalVisible, setSuccessModalVisible] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -55,7 +58,7 @@ export default function SignupForm() {
         }}
       >
         {(formik) => (
-          <Form className={styles.form_container}>
+          <FormContainer className={styles.form_container}>
             <InputFieldWrapper>
               <Field
                 id="fullName"
@@ -75,9 +78,7 @@ export default function SignupForm() {
               >
                 Full Name
               </label>
-              {formik.errors.fullName && formik.touched.fullName && (
-                <ErrorStateMessage name="fullName" />
-              )}
+              <ErrorStateMessage name="fullName" />
             </InputFieldWrapper>
 
             <InputFieldWrapper>
@@ -99,9 +100,7 @@ export default function SignupForm() {
               >
                 Work Mobile Number
               </label>
-              {formik.errors.phoneNumber && formik.touched.phoneNumber && (
-                <ErrorStateMessage name="phoneNumber" />
-              )}
+              <ErrorStateMessage name="phoneNumber" />
             </InputFieldWrapper>
 
             <InputFieldWrapper>
@@ -121,9 +120,7 @@ export default function SignupForm() {
               <label htmlFor="email" className={classNames(styles.field_label)}>
                 Work Email
               </label>
-              {formik.errors.email && formik.touched.email && (
-                <ErrorStateMessage name="email" />
-              )}
+              <ErrorStateMessage name="email" />
             </InputFieldWrapper>
 
             <InputFieldWrapper>
@@ -145,9 +142,7 @@ export default function SignupForm() {
               >
                 Store Name
               </label>
-              {formik.errors.storeName && formik.touched.storeName && (
-                <ErrorStateMessage name="storeName" />
-              )}
+              <ErrorStateMessage name="storeName" />
             </InputFieldWrapper>
 
             <InputFieldWrapper className={styles.button_error_wrapper}>
@@ -167,7 +162,7 @@ export default function SignupForm() {
                 </Text>
               )}
             </InputFieldWrapper>
-          </Form>
+          </FormContainer>
         )}
       </Formik>
       <SuccessModal
@@ -175,16 +170,5 @@ export default function SignupForm() {
         closeModal={() => setSuccessModalVisible(false)}
       />
     </>
-  )
-}
-
-function InputFieldWrapper(props: {
-  className?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className={classNames(styles.input_field_wrapper, props.className)}>
-      {props.children}
-    </div>
   )
 }
