@@ -3,16 +3,16 @@ import SignupForm from '../components/early_birds/SignupForm'
 import Header from '../components/Header'
 import styles from '../styles/earlybird.module.css'
 import Image from 'next/image'
-import Link from 'next/link'
 import birdLeft from '../public/earlybird/bird-left.png'
 import birdRight from '../public/earlybird/bird-right.png'
 import triangleIcon from '../public/earlybird/triangle-icon.png'
 import squareIcon from '../public/earlybird/square-icon.png'
 import circleIcon from '../public/earlybird/circle-icon.png'
-import backgroundShapes from '../public/earlybird/background-shapes.png'
 import { useMediaQuery } from 'react-responsive'
 import Text from '../components/Text'
 import Spacer from '../components/Spacer'
+import Remarks from '../components/early_birds/Remarks'
+import BackgroundShapes from '../components/early_birds/BackgroundShapes'
 
 const messageArray = [
   {
@@ -106,9 +106,7 @@ export default function Earlybird() {
   return (
     <div className={styles.wrapper}>
       <Header />
-      <div className={styles.shapes_container}>
-        <Image src={backgroundShapes} alt="Background Shapes" />
-      </div>
+      <BackgroundShapes />
 
       <div className={styles.main_container}>
         <Banner />
@@ -125,30 +123,7 @@ export default function Earlybird() {
         <ul className={styles.message_list}>{renderMessages()}</ul>
 
         <SignupForm />
-
-        <Spacer height={80} />
-
-        <div className={styles.remarks}>
-          <Text size={12} color="#535353" weight={600}>
-            Remarks: This campaign is applicable for stores with online sales
-            value of over THB 80k/month. By registering this campaign, you agree
-            to Beam&apos;s{' '}
-            <Text weight={700}>
-              <Link href="https://www.beamcheckout.com/privacy" passHref>
-                Privacy Policy
-              </Link>
-            </Text>{' '}
-            and{' '}
-            <Text weight={700}>
-              <Link href="https://www.beamcheckout.com/tncs" passHref>
-                Terms and Conditions
-              </Link>
-            </Text>
-            . We reserve the right to refuse providing offers and/or promotions
-            at any time, either for particular individuals or organizations at
-            our discretion.
-          </Text>
-        </div>
+        <Remarks />
       </div>
     </div>
   )

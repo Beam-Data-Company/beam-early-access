@@ -1,0 +1,10 @@
+.shapes_container {
+  position: absolute;
+  width: 110%;
+}
+
+@media (max-width: 1000px) {
+  .shapes_container {
+    display: none;
+  }
+}

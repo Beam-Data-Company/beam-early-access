@@ -3,17 +3,17 @@ import SignupForm from '../components/early_birds/SignupForm'
 import Header from '../components/Header'
 import styles from '../styles/freeforthree.module.css'
 import Image from 'next/image'
-import Link from 'next/link'
 import triangleIcon from '../public/earlybird/triangle-icon.png'
 import squareIcon from '../public/earlybird/square-icon.png'
 import circleIcon from '../public/earlybird/circle-icon.png'
-import backgroundShapes from '../public/earlybird/background-shapes.png'
 import { useMediaQuery } from 'react-responsive'
 import Text from '../components/Text'
 import Spacer from '../components/Spacer'
 import mobileBankingPicture from '../public/earlybird/mobile-banking-picture.png'
 import mobileBankingPicturePhone from '../public/earlybird/mobile-banking-picture-phone.png'
 import { useState, useEffect } from 'react'
+import Remarks from '../components/early_birds/Remarks'
+import BackgroundShapes from '../components/early_birds/BackgroundShapes'
 
 const messageArray = [
   {
@@ -96,9 +96,7 @@ export default function BeamFreeForThree() {
   return (
     <div className={styles.wrapper}>
       <Header />
-      <div className={styles.shapes_container}>
-        <Image src={backgroundShapes} alt="Background Shapes" />
-      </div>
+      <BackgroundShapes />
 
       <div className={styles.main_container}>
         <MobileBankingBanner />
@@ -125,27 +123,7 @@ export default function BeamFreeForThree() {
 
         <SignupForm />
 
-        {mounted && (
-          <>
-            <Spacer height={80} />
-
-            <div className={styles.remarks}>
-              <Text size={12} color="#535353" weight={600}>
-                Remarks: By registering this campaign, you agree to Beam&apos;s{' '}
-                <Link href="https://www.beamcheckout.com/privacy" passHref>
-                  Privacy Policy
-                </Link>{' '}
-                and{' '}
-                <Link href="https://www.beamcheckout.com/tncs" passHref>
-                  Terms and Conditions
-                </Link>
-                . We reserved the rights to refuse providing offers and/or
-                promotions at any time, either for particular individuals or
-                organizations at our discretion, with a given notice.
-              </Text>
-            </div>
-          </>
-        )}
+        {mounted && <Remarks />}
       </div>
     </div>
   )

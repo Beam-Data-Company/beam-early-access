@@ -64,31 +64,6 @@
   margin-right: 18px;
 }
 
-.remarks {
-  line-height: 20px;
-  padding-top: 20px;
-  border-top: solid 1px #bbc1db;
-  width: 700px;
-  padding-left: 6px;
-  padding-bottom: 45px;
-}
-
-.shapes_container {
-  position: absolute;
-  width: 110%;
-}
-
-.remarks a {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-@media (max-width: 1000px) {
-  .shapes_container {
-    display: none;
-  }
-}
-
 /* phone landscape, normal ipad portrait */
 @media (max-width: 815px) {
   .wrapper {
@@ -106,10 +81,6 @@
   .paragraph,
   .message_list {
     padding: 0;
-  }
-
-  .remarks {
-    width: 100%;
   }
 
   .mobile_banking_picture {
@@ -153,11 +124,5 @@
 
   .message_list {
     padding: 0 5px;
-  }
-
-  .remarks {
-    margin-left: 5px;
-    margin-right: 5px;
-    width: auto;
   }
 }

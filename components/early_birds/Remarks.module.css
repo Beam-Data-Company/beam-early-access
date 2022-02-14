@@ -1,0 +1,30 @@
+.remarks {
+  margin-top: 80px;
+  line-height: 20px;
+  padding-top: 20px;
+  border-top: solid 1px #bbc1db;
+  width: 700px;
+  padding-left: 6px;
+  padding-bottom: 45px;
+}
+
+.remarks a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* phone landscape, normal ipad portrait */
+@media (max-width: 815px) {
+  .remarks {
+    width: 100%;
+  }
+}
+
+/* small phone portrait */
+@media (max-width: 350px) {
+  .remarks {
+    margin-left: 5px;
+    margin-right: 5px;
+    width: auto;
+  }
+}
