@@ -8,6 +8,9 @@ import circleIcon from '../../public/earlybird/circle-icon.png'
 import Image from 'next/image'
 import Text from '../Text'
 import { useMediaQuery } from 'react-responsive'
+import { useRef, useEffect } from 'react'
+import { gsap } from 'gsap/dist/gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 type InfoType = {
   icon: StaticImageData
@@ -72,15 +75,139 @@ export default function InfoSection() {
   const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
   const isPhone = useMediaQuery({ maxWidth: 600 })
 
+  gsap.registerPlugin(ScrollTrigger)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('#first-picture'),
+      {
+        opacity: 0,
+        transform: 'scale(0.5)',
+      },
+      {
+        opacity: 1,
+        transform: 'scale(1)',
+        scrollTrigger: {
+          trigger: element.querySelector('#first-wrapper'),
+          start: 'top bottom',
+          end: 'center bottom',
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('#first-picture'),
+      {
+        opacity: 1,
+        transform: 'scale(1)',
+      },
+      {
+        opacity: 0,
+        transform: 'scale(0)',
+        scrollTrigger: {
+          trigger: element.querySelector('#second-wrapper'),
+          start: 'top bottom',
+          end: 'center bottom',
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('#second-picture'),
+      {
+        opacity: 0,
+        transform: 'scale(0.5)',
+      },
+      {
+        opacity: 1,
+        transform: 'scale(1)',
+        scrollTrigger: {
+          trigger: element.querySelector('#second-wrapper'),
+          start: 'center bottom',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('#second-picture'),
+      {
+        opacity: 1,
+        transform: 'scale(1)',
+      },
+      {
+        opacity: 0,
+        transform: 'scale(0)',
+        scrollTrigger: {
+          trigger: element.querySelector('#third-wrapper'),
+          start: 'top bottom',
+          end: 'center bottom',
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('#third-picture'),
+      {
+        opacity: 0,
+        transform: 'scale(0.5)',
+      },
+      {
+        opacity: 1,
+        transform: 'scale(1)',
+        scrollTrigger: {
+          trigger: element.querySelector('#third-wrapper'),
+          start: 'center bottom',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
   return (
-    <>
-      <div className={styles.wrapper}>
-        {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            The One-Click Experience {isPhone && <br />}on your Sales Channel
-          </Text>
-        )}
-        <div className={styles.message_image_wrapper}>
+    <div className={styles.container} ref={ref}>
+      <div className={styles.picture_container}>
+        <div className={styles.sticky_container}>
+          <div className={styles.image_box} id="first-picture">
+            <Image src={OneClickPicture} alt="One Click Picture" priority />
+          </div>
+
+          <div className={styles.image_box} id="second-picture">
+            <Image src={PaymentPicture} alt="Payment Picture" priority />
+          </div>
+
+          <div className={styles.image_box} id="third-picture">
+            <Image src={NoCodingPicture} alt="No Coding Picture" priority />
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.info_container}>
+        <div className={styles.wrapper} id="first-wrapper">
+          {isIpadPortraitAndPhone && (
+            <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+              The One-Click Experience {isPhone && <br />}on your Sales Channel
+            </Text>
+          )}
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
@@ -93,22 +220,16 @@ export default function InfoSection() {
               {renderInfo(OneClickInfoArray)}
             </ul>
           </div>
-
-          <div className={styles.image_box}>
-            <Image src={OneClickPicture} alt="One Click Picture" priority />
-          </div>
         </div>
-      </div>
 
-      <div className={styles.wrapper}>
-        {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Offer all the Payment Methods
-            <br />
-            your Customers Love
-          </Text>
-        )}
-        <div className={styles.message_image_wrapper}>
+        <div className={styles.wrapper} id="second-wrapper">
+          {isIpadPortraitAndPhone && (
+            <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+              Offer all the Payment Methods
+              <br />
+              your Customers Love
+            </Text>
+          )}
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
@@ -119,19 +240,14 @@ export default function InfoSection() {
             )}
             <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
           </div>
-          <div className={styles.image_box}>
-            <Image src={PaymentPicture} alt="Payment Picture" priority />
-          </div>
         </div>
-      </div>
 
-      <div className={styles.wrapper}>
-        {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
-          </Text>
-        )}
-        <div className={styles.message_image_wrapper}>
+        <div className={styles.wrapper} id="third-wrapper">
+          {isIpadPortraitAndPhone && (
+            <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+              Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
+            </Text>
+          )}
           <div className={styles.message_container}>
             {!isIpadPortraitAndPhone && (
               <Text color="#ffffff" size={32}>
@@ -144,11 +260,8 @@ export default function InfoSection() {
               {renderInfo(NoCodingInfoArray)}
             </ul>
           </div>
-          <div className={styles.image_box}>
-            <Image src={NoCodingPicture} alt="NoCodingPicture" priority />
-          </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }

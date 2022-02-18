@@ -1,6 +1,6 @@
 .wrapper {
   text-align: center;
-  margin-top: 120px;
+  margin-top: 500px;
   white-space: pre-line;
 }
 
@@ -19,6 +19,7 @@
 
 .image_box {
   width: 590px;
+  position: absolute;
 }
 
 .info_list {
@@ -37,6 +38,32 @@
   min-width: 20px;
   padding-top: 3px;
   margin-right: 24px;
+}
+
+.container {
+  position: relative;
+  padding-top: 200px;
+}
+
+.picture_container {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  height: calc(100% - 330px);
+}
+
+.sticky_container {
+  position: sticky;
+  top: calc(50vh - 224px);
+  height: 383px;
+  width: 590px;
+}
+
+.info_container {
+  position: relative;
+  margin-top: -320px;
 }
 
 /* ipad portrait and phone*/
