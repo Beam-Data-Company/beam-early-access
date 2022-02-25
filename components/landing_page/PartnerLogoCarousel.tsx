@@ -9,7 +9,6 @@ import HermanMillerLogo from '../../public/landing_page/partner_logo/herman-mill
 import HondaLogo from '../../public/landing_page/partner_logo/honda-logo.png'
 import LeicaLogo from '../../public/landing_page/partner_logo/leica-logo.png'
 import MatterMakersLogo from '../../public/landing_page/partner_logo/matter-makers-logo.png'
-import MercedesBenzLogo from '../../public/landing_page/partner_logo/mercedes-benz-logo.png'
 import PergoLogo from '../../public/landing_page/partner_logo/pergo-logo.png'
 import RavipaLogo from '../../public/landing_page/partner_logo/ravipa-logo.png'
 import SansiriLogo from '../../public/landing_page/partner_logo/sansiri-logo.png'
@@ -38,7 +37,6 @@ export default function PartnerLogoCarousel() {
         <ImageBox src={LeicaLogo} alt="Leica Logo" width={120} />
         <ImageBox src={MatterMakersLogo} alt="Matter Makers Logo" width={200} />
         <ImageBox src={PoemLogo} alt="Poem Logo" width={130} />
-        <ImageBox src={MercedesBenzLogo} alt="Mercedes Benz Logo" width={200} />
         <ImageBox src={PergoLogo} alt="Pergo Logo" width={130} />
         <ImageBox src={SansiriLogo} alt="Sansiri Logo" width={120} />
         <ImageBox src={SuvimolLogo} alt="Suvimol Logo" width={150} />
@@ -54,7 +52,6 @@ export default function PartnerLogoCarousel() {
         <ImageBox src={LeicaLogo} alt="Leica Logo" width={120} />
         <ImageBox src={MatterMakersLogo} alt="Matter Makers Logo" width={200} />
         <ImageBox src={PoemLogo} alt="Poem Logo" width={130} />
-        <ImageBox src={MercedesBenzLogo} alt="Mercedes Benz Logo" width={200} />
         <ImageBox src={PergoLogo} alt="Pergo Logo" width={130} />
         <ImageBox src={SansiriLogo} alt="Sansiri Logo" width={120} />
         <ImageBox src={SuvimolLogo} alt="Suvimol Logo" width={150} />
