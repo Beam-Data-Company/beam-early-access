@@ -1,19 +1,16 @@
 import MobileBankingBanner from '../components/early_birds/MobileBankingBanner'
 import SignupForm from '../components/early_birds/SignupForm'
-import Header from '../components/Header'
 import styles from '../styles/freeforthree.module.css'
 import Image from 'next/image'
-import Link from 'next/link'
 import triangleIcon from '../public/earlybird/triangle-icon.png'
 import squareIcon from '../public/earlybird/square-icon.png'
 import circleIcon from '../public/earlybird/circle-icon.png'
-import backgroundShapes from '../public/earlybird/background-shapes.png'
 import { useMediaQuery } from 'react-responsive'
 import Text from '../components/Text'
 import Spacer from '../components/Spacer'
 import mobileBankingPicture from '../public/earlybird/mobile-banking-picture.png'
 import mobileBankingPicturePhone from '../public/earlybird/mobile-banking-picture-phone.png'
-import { useState, useEffect } from 'react'
+import CampaignLayout from '../components/early_birds/CampaignPageLayout'
 
 const messageArray = [
   {
@@ -37,10 +34,6 @@ const messageArray = [
 
 export default function BeamFreeForThree() {
   const isMoreThan815 = useMediaQuery({ maxWidth: 815 })
-  const [mounted, setMounted] = useState(false)
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   const renderMessages = () =>
     messageArray.map(({ icon, englishMessage, thaiMessage }) => {
@@ -94,59 +87,30 @@ export default function BeamFreeForThree() {
   }
 
   return (
-    <div className={styles.wrapper}>
-      <Header />
-      <div className={styles.shapes_container}>
-        <Image src={backgroundShapes} alt="Background Shapes" />
+    <CampaignLayout
+      className={styles.background}
+      banner={<MobileBankingBanner />}
+      form={<SignupForm />}
+    >
+      <div className={styles.mobile_banking_picture}>
+        <Image
+          src={mobileBankingPicture}
+          alt="Mobile Banking Picture"
+          priority
+        />
       </div>
 
-      <div className={styles.main_container}>
-        <MobileBankingBanner />
-
-        <div className={styles.mobile_banking_picture}>
-          <Image
-            src={mobileBankingPicture}
-            alt="Mobile Banking Picture"
-            priority
-          />
-        </div>
-
-        <div className={styles.mobile_banking_picture_phone}>
-          <Image
-            src={mobileBankingPicturePhone}
-            alt="Mobile Banking Picture Phone"
-            priority
-          />
-        </div>
-
-        {renderParagraphItems()}
-
-        <ul className={styles.message_list}>{renderMessages()}</ul>
-
-        <SignupForm />
-
-        {mounted && (
-          <>
-            <Spacer height={80} />
-
-            <div className={styles.remarks}>
-              <Text size={12} color="#535353" weight={600}>
-                Remarks: By registering this campaign, you agree to Beam&apos;s{' '}
-                <Link href="https://www.beamcheckout.com/privacy" passHref>
-                  Privacy Policy
-                </Link>{' '}
-                and{' '}
-                <Link href="https://www.beamcheckout.com/tncs" passHref>
-                  Terms and Conditions
-                </Link>
-                . We reserved the rights to refuse providing offers and/or
-                promotions at any time, either for particular individuals or
-                organizations at our discretion, with a given notice.
-              </Text>
-            </div>
-          </>
-        )}
+      <div className={styles.mobile_banking_picture_phone}>
+        <Image
+          src={mobileBankingPicturePhone}
+          alt="Mobile Banking Picture Phone"
+          priority
+        />
       </div>
-    </div>
+
+      {renderParagraphItems()}
+
+      <ul className={styles.message_list}>{renderMessages()}</ul>
+    </CampaignLayout>
   )
 }
