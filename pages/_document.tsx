@@ -19,6 +19,8 @@ export default class MyDocument extends Document {
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
               page_path: window.location.pathname,
             });
+
+            gtag('event', 'conversion', {'send_to': '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}/8Sg1CL_Rs6MDEIPirbgo'});
           `,
             }}
           />
