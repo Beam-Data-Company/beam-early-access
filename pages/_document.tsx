@@ -20,7 +20,7 @@ export default class MyDocument extends Document {
               page_path: window.location.pathname,
             });
 
-            gtag('event', 'conversion', {'send_to': '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}/8Sg1CL_Rs6MDEIPirbgo'});
+            gtag('event', 'conversion', {'send_to': '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}/${process.env.NEXT_PUBLIC_GA_EVENT}'});
           `,
             }}
           />
