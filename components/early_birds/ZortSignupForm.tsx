@@ -12,6 +12,7 @@ import Text from '../Text'
 import { PHONE_REG_EXP } from './phoneRegExp'
 import FormContainer from './FormContainer'
 import InputFieldWrapper from './InputFieldWrapper'
+import { ZortSignupFormikForm } from './PhoneNumberInput'
 
 const SignUpFormSchema = Yup.object({
   merchantName: Yup.string()
@@ -38,13 +39,15 @@ export default function SignupForm() {
   return (
     <>
       <Formik
-        initialValues={{
-          merchantName: '',
-          email: '',
-          fullName: '',
-          country: '+66',
-          phoneNumber: '',
-        }}
+        initialValues={
+          {
+            merchantName: '',
+            email: '',
+            fullName: '',
+            country: '+66',
+            phoneNumber: '',
+          } as ZortSignupFormikForm
+        }
         validationSchema={SignUpFormSchema}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
           try {

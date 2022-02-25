@@ -10,18 +10,19 @@ type Props = {
     | FormikProps<ZortSignupFormikForm>
 }
 
-type SignupFormikForm = {
+export type SignupFormikForm = {
   fullName: string
   country: string
   phoneNumber: string
   email: string
 }
 
-type ZortSignupFormikForm = {
+export type ZortSignupFormikForm = {
   fullName: string
   country: string
   phoneNumber: string
   email: string
+  merchantName: string
 }
 
 export default function PhoneNumberInput(props: Props) {

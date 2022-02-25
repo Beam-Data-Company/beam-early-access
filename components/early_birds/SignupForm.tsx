@@ -12,6 +12,7 @@ import Text from '../Text'
 import { PHONE_REG_EXP } from './phoneRegExp'
 import FormContainer from './FormContainer'
 import InputFieldWrapper from './InputFieldWrapper'
+import { SignupFormikForm } from './PhoneNumberInput'
 
 const SignUpFormSchema = Yup.object({
   fullName: Yup.string()
@@ -35,12 +36,14 @@ export default function SignupForm() {
   return (
     <>
       <Formik
-        initialValues={{
-          fullName: '',
-          country: '+66',
-          phoneNumber: '',
-          email: '',
-        }}
+        initialValues={
+          {
+            fullName: '',
+            country: '+66',
+            phoneNumber: '',
+            email: '',
+          } as SignupFormikForm
+        }
         validationSchema={SignUpFormSchema}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
           try {
