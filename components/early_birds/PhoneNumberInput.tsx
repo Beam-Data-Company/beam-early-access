@@ -4,10 +4,7 @@ import classNames from 'classnames'
 import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 
 type Props = {
-  formik: //for SignupForm
-  | FormikProps<SignupFormikForm>
-    //for ZortSignupForm
-    | FormikProps<ZortSignupFormikForm>
+  formik: FormikProps<SignupFormikForm> | FormikProps<ZortSignupFormikForm>
 }
 
 export type SignupFormikForm = {
