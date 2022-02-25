@@ -5,20 +5,23 @@ import { PHONE_COUNTRY_CODE } from './phoneCountryCode'
 
 type Props = {
   formik: //for SignupForm
-  | FormikProps<{
-        fullName: string
-        country: string
-        phoneNumber: string
-        email: string
-      }>
+  | FormikProps<SignupFormikForm>
     //for ZortSignupForm
-    | FormikProps<{
-        merchantName: string
-        email: string
-        fullName: string
-        country: string
-        phoneNumber: string
-      }>
+    | FormikProps<ZortSignupFormikForm>
+}
+
+type SignupFormikForm = {
+  fullName: string
+  country: string
+  phoneNumber: string
+  email: string
+}
+
+type ZortSignupFormikForm = {
+  fullName: string
+  country: string
+  phoneNumber: string
+  email: string
 }
 
 export default function PhoneNumberInput(props: Props) {

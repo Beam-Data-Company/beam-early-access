@@ -88,10 +88,9 @@ export default function BeamFreeForThree() {
 
   return (
     <CampaignLayout
-      classNameBackground={styles.background}
+      className={styles.background}
       banner={<MobileBankingBanner />}
       form={<SignupForm />}
-      mountedRemarks
     >
       <div className={styles.mobile_banking_picture}>
         <Image

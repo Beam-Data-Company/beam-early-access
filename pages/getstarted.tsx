@@ -31,7 +31,7 @@ export default function GetStarted() {
 
   return (
     <CampaignLayout
-      classNameBackground={styles.background}
+      className={styles.background}
       banner={<GetStartedBanner />}
       form={<GetStartedSignupForm />}
     >

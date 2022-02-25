@@ -20,8 +20,19 @@
   overflow: hidden;
 }
 
-.main_container_shadow {
+.main_container.__box_shadow {
   box-shadow: 0 3px 30px 0 rgba(184, 191, 222, 0.3);
+}
+
+.shapes_container {
+  position: absolute;
+  width: 110%;
+}
+
+@media (max-width: 1000px) {
+  .shapes_container {
+    display: none;
+  }
 }
 
 /* phone landscape, normal ipad portrait */

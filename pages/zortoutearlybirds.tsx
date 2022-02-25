@@ -103,7 +103,7 @@ export default function ZortOutEarlybirds() {
 
   return (
     <CampaignLayout
-      classNameBackground={styles.background}
+      className={styles.background}
       banner={<Banner />}
       form={<ZortSignupForm />}
     >

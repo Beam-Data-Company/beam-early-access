@@ -103,7 +103,7 @@ export default function Earlybird() {
 
   return (
     <CampaignLayout
-      classNameBackground={styles.background}
+      className={styles.background}
       banner={<Banner />}
       form={<SignupForm />}
       boxShadow
