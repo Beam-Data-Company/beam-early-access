@@ -78,6 +78,7 @@ export default function InfoSection() {
   gsap.registerPlugin(ScrollTrigger)
   const ref = useRef(null)
 
+  //first picture in
   useEffect(() => {
     const element = ref.current
     gsap.fromTo(
@@ -99,6 +100,7 @@ export default function InfoSection() {
     )
   }, [])
 
+  //first picture out
   useEffect(() => {
     const element = ref.current
     gsap.fromTo(
@@ -120,27 +122,7 @@ export default function InfoSection() {
     )
   }, [])
 
-  useEffect(() => {
-    const element = ref.current
-    gsap.fromTo(
-      element.querySelector('#second-picture'),
-      {
-        opacity: 0,
-        transform: 'scale(0.5)',
-      },
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-        scrollTrigger: {
-          trigger: element.querySelector('#second-wrapper'),
-          start: 'center bottom',
-          end: 'bottom bottom',
-          scrub: true,
-        },
-      }
-    )
-  }, [])
-
+  //second picture out
   useEffect(() => {
     const element = ref.current
     gsap.fromTo(
@@ -162,6 +144,29 @@ export default function InfoSection() {
     )
   }, [])
 
+  //second picture in
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('#second-picture'),
+      {
+        opacity: 0,
+        transform: 'scale(0.5)',
+      },
+      {
+        opacity: 1,
+        transform: 'scale(1)',
+        scrollTrigger: {
+          trigger: element.querySelector('#second-wrapper'),
+          start: 'center bottom',
+          end: 'bottom bottom',
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
+  //third picture in
   useEffect(() => {
     const element = ref.current
     gsap.fromTo(
