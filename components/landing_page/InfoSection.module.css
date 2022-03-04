@@ -4,22 +4,11 @@
   white-space: pre-line;
 }
 
-.message_image_wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .message_container {
   width: 620px;
   margin-right: 40px;
   text-align: left;
   padding-bottom: 20px;
-}
-
-.image_box {
-  width: 590px;
-  position: absolute;
 }
 
 .info_list {
@@ -49,9 +38,9 @@
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  margin-top: 100px;
+  margin-top: 90px;
   width: 100%;
-  height: calc(100% - 330px);
+  height: calc(100% - 300px);
 }
 
 .sticky_container {
@@ -76,23 +65,12 @@
   .info_list {
     margin: 0;
   }
-
-  .message_image_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-  }
 }
 
 /*phone*/
 @media (max-width: 600px) {
   .wrapper {
     margin-top: 60px;
-  }
-
-  .message_image_wrapper {
-    flex-direction: column-reverse;
   }
 
   .message_container {

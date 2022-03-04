@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import Header from '../components/Header'
-// import MailchimpSignupForm from '../components/MailchimpSignupForm'
 import Demo from '../components/demo_pages/Demo'
 import styles from '../styles/Home.module.css'
 import shape1 from '../public/shape1.png'
