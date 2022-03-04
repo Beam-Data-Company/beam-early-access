@@ -1,16 +1,15 @@
 import styles from './InfoSection.module.css'
-import OneClickPicture from '../../public/landing_page/one-click-picture.png'
-import PaymentPicture from '../../public/landing_page/payment-picture.png'
-import NoCodingPicture from '../../public/landing_page/no-coding-picture.png'
 import triangleIcon from '../../public/earlybird/triangle-icon.png'
 import squareIcon from '../../public/earlybird/square-icon.png'
 import circleIcon from '../../public/earlybird/circle-icon.png'
 import Image from 'next/image'
 import Text from '../Text'
 import { useMediaQuery } from 'react-responsive'
-import { useRef, useEffect } from 'react'
-import { gsap } from 'gsap/dist/gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { useState } from 'react'
+import PaymentAnimation from '../../components/landing_page/animation/PaymentAnimation'
+import SalesChannelAnimation from '../../components/landing_page/animation/SalesChannelAnimation'
+import SocialCommerceAnimation from '../../components/landing_page/animation/SocialCommerceAnimation'
+import { Waypoint } from 'react-waypoint'
 
 type InfoType = {
   icon: StaticImageData
@@ -75,139 +74,40 @@ export default function InfoSection() {
   const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
   const isPhone = useMediaQuery({ maxWidth: 600 })
 
-  gsap.registerPlugin(ScrollTrigger)
-  const ref = useRef(null)
+  const [salesChannelVisible, setSalesChannelVisible] = useState(false)
+  const [paymentVisible, setPaymentVisible] = useState(false)
+  const [socialCommerceVisible, setSocialCommerceVisible] = useState(false)
 
-  //first picture in
-  useEffect(() => {
-    const element = ref.current
-    gsap.fromTo(
-      element.querySelector('#first-picture'),
-      {
-        opacity: 0,
-        transform: 'scale(0.5)',
-      },
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-        scrollTrigger: {
-          trigger: element.querySelector('#first-wrapper'),
-          start: 'top bottom',
-          end: 'center bottom',
-          scrub: true,
-        },
-      }
-    )
-  }, [])
+  const salesChannelInfoOnEnter = () => {
+    setPaymentVisible(false)
+    setSocialCommerceVisible(false)
+    setSalesChannelVisible(true)
+  }
 
-  //first picture out
-  useEffect(() => {
-    const element = ref.current
-    gsap.fromTo(
-      element.querySelector('#first-picture'),
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-      },
-      {
-        opacity: 0,
-        transform: 'scale(0)',
-        scrollTrigger: {
-          trigger: element.querySelector('#second-wrapper'),
-          start: 'top bottom',
-          end: 'center bottom',
-          scrub: true,
-        },
-      }
-    )
-  }, [])
+  const paymentInfoOnEnter = () => {
+    setSalesChannelVisible(false)
+    setSocialCommerceVisible(false)
+    setPaymentVisible(true)
+  }
 
-  //second picture out
-  useEffect(() => {
-    const element = ref.current
-    gsap.fromTo(
-      element.querySelector('#second-picture'),
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-      },
-      {
-        opacity: 0,
-        transform: 'scale(0)',
-        scrollTrigger: {
-          trigger: element.querySelector('#third-wrapper'),
-          start: 'top bottom',
-          end: 'center bottom',
-          scrub: true,
-        },
-      }
-    )
-  }, [])
-
-  //second picture in
-  useEffect(() => {
-    const element = ref.current
-    gsap.fromTo(
-      element.querySelector('#second-picture'),
-      {
-        opacity: 0,
-        transform: 'scale(0.5)',
-      },
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-        scrollTrigger: {
-          trigger: element.querySelector('#second-wrapper'),
-          start: 'center bottom',
-          end: 'bottom bottom',
-          scrub: true,
-        },
-      }
-    )
-  }, [])
-
-  //third picture in
-  useEffect(() => {
-    const element = ref.current
-    gsap.fromTo(
-      element.querySelector('#third-picture'),
-      {
-        opacity: 0,
-        transform: 'scale(0.5)',
-      },
-      {
-        opacity: 1,
-        transform: 'scale(1)',
-        scrollTrigger: {
-          trigger: element.querySelector('#third-wrapper'),
-          start: 'center bottom',
-          end: 'bottom bottom',
-          scrub: true,
-        },
-      }
-    )
-  }, [])
+  const socialCommerceOnEnter = () => {
+    setPaymentVisible(false)
+    setSalesChannelVisible(false)
+    setSocialCommerceVisible(true)
+  }
 
   return (
-    <div className={styles.container} ref={ref}>
+    <div className={styles.container}>
       <div className={styles.picture_container}>
         <div className={styles.sticky_container}>
-          <div className={styles.image_box} id="first-picture">
-            <Image src={OneClickPicture} alt="One Click Picture" priority />
-          </div>
-
-          <div className={styles.image_box} id="second-picture">
-            <Image src={PaymentPicture} alt="Payment Picture" priority />
-          </div>
-
-          <div className={styles.image_box} id="third-picture">
-            <Image src={NoCodingPicture} alt="No Coding Picture" priority />
-          </div>
+          <SalesChannelAnimation visible={salesChannelVisible} />
+          <PaymentAnimation visible={paymentVisible} />
+          <SocialCommerceAnimation visible={socialCommerceVisible} />
         </div>
       </div>
 
       <div className={styles.info_container}>
-        <div className={styles.wrapper} id="first-wrapper">
+        <div className={styles.wrapper}>
           {isIpadPortraitAndPhone && (
             <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
               The One-Click Experience {isPhone && <br />}on your Sales Channel
@@ -226,8 +126,9 @@ export default function InfoSection() {
             </ul>
           </div>
         </div>
+        <Waypoint onEnter={salesChannelInfoOnEnter} />
 
-        <div className={styles.wrapper} id="second-wrapper">
+        <div className={styles.wrapper}>
           {isIpadPortraitAndPhone && (
             <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
               Offer all the Payment Methods
@@ -246,8 +147,9 @@ export default function InfoSection() {
             <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
           </div>
         </div>
+        <Waypoint onEnter={paymentInfoOnEnter} />
 
-        <div className={styles.wrapper} id="third-wrapper">
+        <div className={styles.wrapper}>
           {isIpadPortraitAndPhone && (
             <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
               Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
@@ -266,6 +168,7 @@ export default function InfoSection() {
             </ul>
           </div>
         </div>
+        <Waypoint onEnter={socialCommerceOnEnter} />
       </div>
     </div>
   )

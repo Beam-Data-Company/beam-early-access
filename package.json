@@ -34,6 +34,7 @@
     "react-modal": "^3.14.3",
     "react-responsive": "^8.2.0",
     "react-spring": "^9.2.3",
+    "react-waypoint": "^10.1.0",
     "remark": "^14.0.1",
     "remark-html": "^14.0.1",
     "remark-typescript": "^0.3.1",
