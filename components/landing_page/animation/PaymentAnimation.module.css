@@ -1,0 +1,41 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 20px 0 0 40px;
+}
+
+.payment_1 {
+  position: absolute;
+  width: 389px;
+  top: 0px;
+  left: 0px;
+}
+
+.payment_2 {
+  position: absolute;
+  width: 246px;
+  top: 91px;
+  left: 253px;
+}
+
+.payment_3 {
+  position: absolute;
+  width: 77px;
+  top: 209px;
+  left: 239px;
+}
+
+.payment_4 {
+  position: absolute;
+  width: 77px;
+  top: 209px;
+  left: 145px;
+}
+
+.payment_5 {
+  position: absolute;
+  width: 77px;
+  top: 209px;
+  left: 51px;
+}
