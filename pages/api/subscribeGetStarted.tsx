@@ -3,8 +3,8 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import mailchimp from '@mailchimp/mailchimp_marketing'
 
 mailchimp.setConfig({
-  apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY_GET_STARTED,
-  server: process.env.NEXT_PUBLIC_MAILCHIMP_API_SERVER_GET_STARTED,
+  apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY,
+  server: process.env.NEXT_PUBLIC_MAILCHIMP_API_SERVER,
 })
 
 type Data = {
@@ -14,7 +14,7 @@ type Data = {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { fullName, phoneNumber, email, storeName } = req.body
-  const audienceID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID_GET_STARTED
+  const audienceID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID
 
   if (!email) {
     return res.status(400).json({ error: 'Email is required' })

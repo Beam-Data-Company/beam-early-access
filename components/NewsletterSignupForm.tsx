@@ -10,6 +10,7 @@ import Text from './Text'
 import Loading from './Loading'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import InputFieldWrapper from './early_birds/InputFieldWrapper'
 
 const SignUpFormSchema = Yup.object({
   email: Yup.string()
@@ -68,9 +69,7 @@ export default function NewsletterSignupForm() {
                   )}
                 </button>
               </div>
-              {formik.errors.email && formik.touched.email && (
-                <ErrorStateMessage name="email" />
-              )}
+              <ErrorStateMessage name="email" />
             </InputFieldWrapper>
 
             {errorMessage && (
@@ -89,8 +88,4 @@ export default function NewsletterSignupForm() {
       />
     </>
   )
-}
-
-function InputFieldWrapper(props: { children: React.ReactNode }) {
-  return <div className={styles.input_field_wrapper}>{props.children}</div>
 }
