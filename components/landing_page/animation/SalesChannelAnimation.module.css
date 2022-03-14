@@ -1,8 +1,6 @@
 .container {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  margin-left: -25px;
+  left: -25px;
 }
 
 .sales_channel_1 {
@@ -10,15 +8,11 @@
   width: 234px;
   top: 179px;
   left: 213px;
-  z-index: 2;
 }
 
 .sales_channel_2 {
   position: absolute;
   width: 383px;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
 }
 
 .sales_channel_3 {
@@ -26,7 +20,6 @@
   width: 316px;
   top: 101px;
   left: 142px;
-  z-index: 3;
 }
 
 .sales_channel_4 {
@@ -34,5 +27,4 @@
   width: 538px;
   top: 81px;
   left: 41px;
-  z-index: 4;
 }

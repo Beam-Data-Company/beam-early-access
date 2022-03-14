@@ -19,12 +19,12 @@ export default function SalesChannelAnimation(props: Props) {
 
   return (
     <div className={styles.container}>
-      <animated.div className={styles.sales_channel_1} style={fadeIn1}>
-        <Image src={sales_channel_1} alt="Sales Channel 1" priority />
-      </animated.div>
-
       <animated.div className={styles.sales_channel_2} style={fadeIn2}>
         <Image src={sales_channel_2} alt="Sales Channel 2" priority />
+      </animated.div>
+
+      <animated.div className={styles.sales_channel_1} style={fadeIn1}>
+        <Image src={sales_channel_1} alt="Sales Channel 1" priority />
       </animated.div>
 
       <animated.div className={styles.sales_channel_3} style={fadeIn3}>
