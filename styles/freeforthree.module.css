@@ -1,4 +1,4 @@
-.wrapper {
+.background {
   background-image: linear-gradient(
     to top,
     #ffffff -6%,
@@ -6,25 +6,6 @@
     #2c46b5 88%,
     #2c46b5 101%
   );
-  font-family: 'Assistant';
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 40px;
-}
-
-.main_container {
-  width: 815px;
-  border-radius: 25px;
-  position: relative;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  overflow: hidden;
 }
 
 .mobile_banking_picture {
@@ -64,52 +45,11 @@
   margin-right: 18px;
 }
 
-.remarks {
-  line-height: 20px;
-  padding-top: 20px;
-  border-top: solid 1px #bbc1db;
-  width: 700px;
-  padding-left: 6px;
-  padding-bottom: 45px;
-}
-
-.shapes_container {
-  position: absolute;
-  width: 110%;
-}
-
-.remarks a {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-@media (max-width: 1000px) {
-  .shapes_container {
-    display: none;
-  }
-}
-
 /* phone landscape, normal ipad portrait */
 @media (max-width: 815px) {
-  .wrapper {
-    padding-bottom: 0px;
-  }
-
-  .main_container {
-    width: 100%;
-    border-radius: 25px 25px 0px 0px;
-    margin-top: 30px;
-    overflow: hidden;
-    padding: 0px 40px;
-  }
-
   .paragraph,
   .message_list {
     padding: 0;
-  }
-
-  .remarks {
-    width: 100%;
   }
 
   .mobile_banking_picture {
@@ -119,10 +59,6 @@
 
 /* phone portrait */
 @media (max-width: 650px) {
-  .main_container {
-    padding: 0px 20px;
-  }
-
   .message_list {
     padding-left: 10px;
   }
@@ -147,17 +83,7 @@
 
 /* small phone portrait */
 @media (max-width: 350px) {
-  .main_container {
-    padding: 0px 7px;
-  }
-
   .message_list {
     padding: 0 5px;
-  }
-
-  .remarks {
-    margin-left: 5px;
-    margin-right: 5px;
-    width: auto;
   }
 }
