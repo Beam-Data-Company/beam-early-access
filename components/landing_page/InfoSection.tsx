@@ -10,6 +10,7 @@ import PaymentAnimation from '../../components/landing_page/animation/PaymentAni
 import SalesChannelAnimation from '../../components/landing_page/animation/SalesChannelAnimation'
 import SocialCommerceAnimation from '../../components/landing_page/animation/SocialCommerceAnimation'
 import { Waypoint } from 'react-waypoint'
+import classNames from 'classnames'
 
 type InfoType = {
   icon: StaticImageData
@@ -79,26 +80,32 @@ export default function InfoSection() {
   const [socialCommerceVisible, setSocialCommerceVisible] = useState(false)
 
   const salesChannelInfoOnEnter = () => {
-    setPaymentVisible(false)
-    setSocialCommerceVisible(false)
+    if (!isIpadPortraitAndPhone) {
+      setPaymentVisible(false)
+      setSocialCommerceVisible(false)
+    }
     setSalesChannelVisible(true)
   }
 
   const paymentInfoOnEnter = () => {
-    setSalesChannelVisible(false)
-    setSocialCommerceVisible(false)
+    if (!isIpadPortraitAndPhone) {
+      setSalesChannelVisible(false)
+      setSocialCommerceVisible(false)
+    }
     setPaymentVisible(true)
   }
 
   const socialCommerceOnEnter = () => {
-    setPaymentVisible(false)
-    setSalesChannelVisible(false)
+    if (!isIpadPortraitAndPhone) {
+      setPaymentVisible(false)
+      setSalesChannelVisible(false)
+    }
     setSocialCommerceVisible(true)
   }
 
   return (
     <div className={styles.container}>
-      <div className={styles.picture_container}>
+      <div className={styles.animation_container}>
         <div className={styles.sticky_container}>
           <SalesChannelAnimation visible={salesChannelVisible} />
           <PaymentAnimation visible={paymentVisible} />
@@ -113,17 +120,22 @@ export default function InfoSection() {
               The One-Click Experience {isPhone && <br />}on your Sales Channel
             </Text>
           )}
-          <div className={styles.message_container}>
-            {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={32}>
-                The One-Click Experience
-                <br />
-                on your Sales Channel
-              </Text>
-            )}
-            <ul className={styles.info_list}>
-              {renderInfo(OneClickInfoArray)}
-            </ul>
+          <div className={styles.message_animation_wrapper}>
+            <div className={styles.message_container}>
+              {!isIpadPortraitAndPhone && (
+                <Text color="#ffffff" size={32}>
+                  The One-Click Experience
+                  <br />
+                  on your Sales Channel
+                </Text>
+              )}
+              <ul className={styles.info_list}>
+                {renderInfo(OneClickInfoArray)}
+              </ul>
+            </div>
+            <div className={styles.animation_responsive_ver}>
+              <SalesChannelAnimation visible={salesChannelVisible} />
+            </div>
           </div>
         </div>
         <Waypoint onEnter={salesChannelInfoOnEnter} />
@@ -136,15 +148,22 @@ export default function InfoSection() {
               your Customers Love
             </Text>
           )}
-          <div className={styles.message_container}>
-            {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={32}>
-                Offer all the Payment Methods
-                <br />
-                your Customers Love
-              </Text>
-            )}
-            <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
+          <div className={styles.message_animation_wrapper}>
+            <div className={styles.message_container}>
+              {!isIpadPortraitAndPhone && (
+                <Text color="#ffffff" size={32}>
+                  Offer all the Payment Methods
+                  <br />
+                  your Customers Love
+                </Text>
+              )}
+              <ul className={styles.info_list}>
+                {renderInfo(PaymentInfoArray)}
+              </ul>
+            </div>
+            <div className={styles.animation_responsive_ver}>
+              <PaymentAnimation visible={paymentVisible} />
+            </div>
           </div>
         </div>
         <Waypoint onEnter={paymentInfoOnEnter} />
@@ -155,17 +174,27 @@ export default function InfoSection() {
               Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
             </Text>
           )}
-          <div className={styles.message_container}>
-            {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={32}>
-                Just Plug &#38; Play,
-                <br />
-                No Coding Needed
-              </Text>
-            )}
-            <ul className={styles.info_list}>
-              {renderInfo(NoCodingInfoArray)}
-            </ul>
+          <div className={styles.message_animation_wrapper}>
+            <div className={styles.message_container}>
+              {!isIpadPortraitAndPhone && (
+                <Text color="#ffffff" size={32}>
+                  Just Plug &#38; Play,
+                  <br />
+                  No Coding Needed
+                </Text>
+              )}
+              <ul className={styles.info_list}>
+                {renderInfo(NoCodingInfoArray)}
+              </ul>
+            </div>
+            <div
+              className={classNames(
+                styles.animation_responsive_ver,
+                styles.social_commerce_animation
+              )}
+            >
+              <SocialCommerceAnimation visible={socialCommerceVisible} />
+            </div>
           </div>
         </div>
         <Waypoint onEnter={socialCommerceOnEnter} />

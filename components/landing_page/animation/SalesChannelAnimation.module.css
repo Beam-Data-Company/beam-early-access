@@ -28,3 +28,29 @@
   top: 81px;
   left: 41px;
 }
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    left: -65px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    top: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    top: 0px;
+    left: -15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    top: -25px;
+  }
+}
