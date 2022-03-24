@@ -1,13 +1,16 @@
 import styles from './InfoSection.module.css'
-import OneClickPicture from '../../public/landing_page/one-click-picture.png'
-import PaymentPicture from '../../public/landing_page/payment-picture.png'
-import NoCodingPicture from '../../public/landing_page/no-coding-picture.png'
 import triangleIcon from '../../public/earlybird/triangle-icon.png'
 import squareIcon from '../../public/earlybird/square-icon.png'
 import circleIcon from '../../public/earlybird/circle-icon.png'
 import Image from 'next/image'
 import Text from '../Text'
 import { useMediaQuery } from 'react-responsive'
+import { useState } from 'react'
+import PaymentAnimation from '../../components/landing_page/animation/PaymentAnimation'
+import SalesChannelAnimation from '../../components/landing_page/animation/SalesChannelAnimation'
+import SocialCommerceAnimation from '../../components/landing_page/animation/SocialCommerceAnimation'
+import { Waypoint } from 'react-waypoint'
+import classNames from 'classnames'
 
 type InfoType = {
   icon: StaticImageData
@@ -72,83 +75,130 @@ export default function InfoSection() {
   const isIpadPortraitAndPhone = useMediaQuery({ maxWidth: 1040 })
   const isPhone = useMediaQuery({ maxWidth: 600 })
 
+  const [salesChannelVisible, setSalesChannelVisible] = useState(false)
+  const [paymentVisible, setPaymentVisible] = useState(false)
+  const [socialCommerceVisible, setSocialCommerceVisible] = useState(false)
+
+  const salesChannelInfoOnEnter = () => {
+    if (!isIpadPortraitAndPhone) {
+      setPaymentVisible(false)
+      setSocialCommerceVisible(false)
+    }
+    setSalesChannelVisible(true)
+  }
+
+  const paymentInfoOnEnter = () => {
+    if (!isIpadPortraitAndPhone) {
+      setSalesChannelVisible(false)
+      setSocialCommerceVisible(false)
+    }
+    setPaymentVisible(true)
+  }
+
+  const socialCommerceOnEnter = () => {
+    if (!isIpadPortraitAndPhone) {
+      setPaymentVisible(false)
+      setSalesChannelVisible(false)
+    }
+    setSocialCommerceVisible(true)
+  }
+
   return (
-    <>
-      <div className={styles.wrapper}>
-        {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            The One-Click Experience {isPhone && <br />}on your Sales Channel
-          </Text>
-        )}
-        <div className={styles.message_image_wrapper}>
-          <div className={styles.message_container}>
-            {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={32}>
-                The One-Click Experience
-                <br />
-                on your Sales Channel
-              </Text>
-            )}
-            <ul className={styles.info_list}>
-              {renderInfo(OneClickInfoArray)}
-            </ul>
-          </div>
-
-          <div className={styles.image_box}>
-            <Image src={OneClickPicture} alt="One Click Picture" priority />
-          </div>
+    <div className={styles.container}>
+      <div className={styles.animation_container}>
+        <div className={styles.sticky_container}>
+          <SalesChannelAnimation visible={salesChannelVisible} />
+          <PaymentAnimation visible={paymentVisible} />
+          <SocialCommerceAnimation visible={socialCommerceVisible} />
         </div>
       </div>
 
-      <div className={styles.wrapper}>
-        {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Offer all the Payment Methods
-            <br />
-            your Customers Love
-          </Text>
-        )}
-        <div className={styles.message_image_wrapper}>
-          <div className={styles.message_container}>
-            {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={32}>
-                Offer all the Payment Methods
-                <br />
-                your Customers Love
-              </Text>
-            )}
-            <ul className={styles.info_list}>{renderInfo(PaymentInfoArray)}</ul>
-          </div>
-          <div className={styles.image_box}>
-            <Image src={PaymentPicture} alt="Payment Picture" priority />
+      <div className={styles.info_container}>
+        <div className={styles.wrapper}>
+          {isIpadPortraitAndPhone && (
+            <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+              The One-Click Experience {isPhone && <br />}on your Sales Channel
+            </Text>
+          )}
+          <div className={styles.message_animation_wrapper}>
+            <div className={styles.message_container}>
+              {!isIpadPortraitAndPhone && (
+                <Text color="#ffffff" size={32}>
+                  The One-Click Experience
+                  <br />
+                  on your Sales Channel
+                </Text>
+              )}
+              <ul className={styles.info_list}>
+                {renderInfo(OneClickInfoArray)}
+              </ul>
+            </div>
+            <div className={styles.animation_responsive_ver}>
+              <SalesChannelAnimation visible={salesChannelVisible} />
+            </div>
           </div>
         </div>
-      </div>
+        <Waypoint onEnter={salesChannelInfoOnEnter} />
 
-      <div className={styles.wrapper}>
-        {isIpadPortraitAndPhone && (
-          <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
-            Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
-          </Text>
-        )}
-        <div className={styles.message_image_wrapper}>
-          <div className={styles.message_container}>
-            {!isIpadPortraitAndPhone && (
-              <Text color="#ffffff" size={32}>
-                Just Plug &#38; Play,
-                <br />
-                No Coding Needed
-              </Text>
-            )}
-            <ul className={styles.info_list}>
-              {renderInfo(NoCodingInfoArray)}
-            </ul>
-          </div>
-          <div className={styles.image_box}>
-            <Image src={NoCodingPicture} alt="NoCodingPicture" priority />
+        <div className={styles.wrapper}>
+          {isIpadPortraitAndPhone && (
+            <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+              Offer all the Payment Methods
+              <br />
+              your Customers Love
+            </Text>
+          )}
+          <div className={styles.message_animation_wrapper}>
+            <div className={styles.message_container}>
+              {!isIpadPortraitAndPhone && (
+                <Text color="#ffffff" size={32}>
+                  Offer all the Payment Methods
+                  <br />
+                  your Customers Love
+                </Text>
+              )}
+              <ul className={styles.info_list}>
+                {renderInfo(PaymentInfoArray)}
+              </ul>
+            </div>
+            <div className={styles.animation_responsive_ver}>
+              <PaymentAnimation visible={paymentVisible} />
+            </div>
           </div>
         </div>
+        <Waypoint onEnter={paymentInfoOnEnter} />
+
+        <div className={styles.wrapper}>
+          {isIpadPortraitAndPhone && (
+            <Text color="#ffffff" size={isPhone ? 26 : 28} lineHeight={38}>
+              Just Plug &#38; Play,{isPhone && <br />} No Coding Needed
+            </Text>
+          )}
+          <div className={styles.message_animation_wrapper}>
+            <div className={styles.message_container}>
+              {!isIpadPortraitAndPhone && (
+                <Text color="#ffffff" size={32}>
+                  Just Plug &#38; Play,
+                  <br />
+                  No Coding Needed
+                </Text>
+              )}
+              <ul className={styles.info_list}>
+                {renderInfo(NoCodingInfoArray)}
+              </ul>
+            </div>
+            <div
+              className={classNames(
+                styles.animation_responsive_ver,
+                styles.social_commerce_animation
+              )}
+            >
+              <SocialCommerceAnimation visible={socialCommerceVisible} />
+            </div>
+          </div>
+        </div>
+        <Waypoint onEnter={socialCommerceOnEnter} />
       </div>
-    </>
+    </div>
   )
 }

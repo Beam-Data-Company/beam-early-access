@@ -1,0 +1,58 @@
+.container {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.payment_1 {
+  width: 389px;
+}
+
+.payment_2 {
+  position: absolute;
+  width: 246px;
+  top: 91px;
+  left: 253px;
+}
+
+.payment_3 {
+  position: absolute;
+  width: 77px;
+  top: 209px;
+  left: 239px;
+}
+
+.payment_4 {
+  position: absolute;
+  width: 77px;
+  top: 209px;
+  left: 145px;
+}
+
+.payment_5 {
+  position: absolute;
+  width: 77px;
+  top: 209px;
+  left: 51px;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    top: 55px;
+    left: 5px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    top: 10px;
+    left: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    top: -5px;
+  }
+}
