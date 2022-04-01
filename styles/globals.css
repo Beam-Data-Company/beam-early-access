@@ -36,6 +36,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'IBM Plex Sans Thai';
+  src: url('/fonts/IBMPlexSansThai-Light.ttf');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
 html,
 body {
   padding: 0;
@@ -80,4 +88,24 @@ p {
 
 code {
   font-family: 'Assistant';
+}
+
+.faq-page-table th,
+td {
+  border: 1px solid #dfe2e5;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+.faq-page-table table {
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+.faq-page-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.faq-page-table th {
+  background-color: #f2f2f2;
 }
