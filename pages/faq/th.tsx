@@ -1,9 +1,10 @@
-import FaqImage from '../public/faq-image.png'
-import Spacer from '../components/Spacer'
+import FaqImage from '../../public/faq-image.png'
+import Spacer from '../../components/Spacer'
 import Image from 'next/image'
-import Text from '../components/Text'
+import Text from '../../components/Text'
 import { InferGetStaticPropsType } from 'next'
-import FaqLayout from '../components/faq_page/FaqLayout'
+import Layout from '../../components/Layout'
+import { generateAnchorID } from '../../components/SideBar'
 import { useMediaQuery } from 'react-responsive'
 import axios from 'axios'
 import { serialize } from 'next-mdx-remote/serialize'
@@ -17,7 +18,7 @@ type Question = {
 
 const components = { Text }
 
-export default function Faq({
+export default function FaqThai({
   data,
   questionContent,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -25,23 +26,34 @@ export default function Faq({
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
 
   return (
-    <FaqLayout
+    <Layout
       pageTitle="Frequently Asked Questions"
       image={
         <div style={{ display: 'flex', width: '390px', marginBottom: '0px' }}>
           <Image src={FaqImage} alt="Faq Image" />
         </div>
       }
+      contentTitle={data.title}
       contentList={data.questions}
+      isFaq
+      isThai
     >
-      <Text size={isPhonePortrait ? 26 : 32} family="Lexend Deca">
+      <Text
+        size={isPhonePortrait ? 26 : 32}
+        family="IBM Plex Sans Thai"
+        weight={600}
+      >
         {data.title}
       </Text>
       <Spacer height={isPhonePortrait ? 25 : 30} />
 
       {questionsArray.map((question: Question, index: number) => (
-        <section key={question.title}>
-          <Text size={isPhonePortrait ? 18 : 20} family="Lexend Deca">
+        <section id={generateAnchorID(question.title)} key={question.title}>
+          <Text
+            size={isPhonePortrait ? 18 : 20}
+            family="IBM Plex Sans Thai"
+            weight={600}
+          >
             {question.title}
           </Text>
           <Spacer height={isPhonePortrait ? 10 : 15} />
@@ -49,6 +61,7 @@ export default function Faq({
             color="#535353"
             lineHeight={26}
             size={isPhonePortrait ? 14 : 16}
+            family="IBM Plex Sans Thai"
           >
             <MDXRemote
               compiledSource={questionContent[index].compiledSource}
@@ -58,7 +71,7 @@ export default function Faq({
           <Spacer height={isPhonePortrait ? 20 : 14} />
         </section>
       ))}
-    </FaqLayout>
+    </Layout>
   )
 }
 
@@ -75,7 +88,7 @@ type FaqResponse = {
 export const getStaticProps = async () => {
   const { data } = await axios.get<
     Pick<FaqResponse, 'title' | 'last_updated' | 'questions'>
-  >(`${process.env.NEXT_PUBLIC_STRAPI_URL}/faq`)
+  >(`${process.env.NEXT_PUBLIC_STRAPI_URL}/faq-thai`)
 
   const html = await Promise.all(
     data.questions.map((question) => serialize(question.content))
