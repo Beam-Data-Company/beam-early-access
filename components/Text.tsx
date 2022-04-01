@@ -3,7 +3,7 @@ import React from 'react'
 type Props = {
   size?: number
   color?: string
-  family?: 'Lexend Deca' | 'Assistant' | 'Prompt'
+  family?: 'Lexend Deca' | 'Assistant' | 'Prompt' | 'IBM Plex Sans Thai'
   weight?: number
   lineHeight?: number
   children: React.ReactNode
