@@ -1,6 +1,5 @@
 .main_container {
   font-family: 'Assistant';
-  overflow: hidden;
 }
 
 .main_footer_wrapper {
@@ -15,6 +14,11 @@
   padding-left: 80px;
   border-left: solid 1px #979aa5;
   width: 800px;
+}
+
+.content_wrapper a {
+  color: #5f7aef;
+  text-decoration: underline;
 }
 
 /* ipad and ipad pro portrait */

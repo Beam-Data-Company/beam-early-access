@@ -5,6 +5,7 @@ import Spacer from './Spacer'
 import styles from './Layout.module.css'
 import Footer from './Footer'
 import SideBar from './SideBar'
+import ContactSupportCard from './faq_page/ContactSupportCard'
 
 type Props = {
   pageTitle: string
@@ -12,6 +13,8 @@ type Props = {
   children: React.ReactNode
   contentTitle: string
   contentList: any[]
+  isFaq?: boolean
+  isThai?: boolean
 }
 
 export default function Layout(props: Props) {
@@ -28,11 +31,19 @@ export default function Layout(props: Props) {
             <SideBar
               contentTitle={props.contentTitle}
               contentList={props.contentList}
+              isFaq={props.isFaq}
+              isThai={props.isThai}
             />
           )}
           <div className={styles.content_wrapper}>{props.children}</div>
         </div>
         {!isPhonePortrait && <Spacer height={120} />}
+        {props.isFaq && (
+          <>
+            <ContactSupportCard />
+            <Spacer height={50} />
+          </>
+        )}
         <Footer variant="black" />
       </div>
     </div>
