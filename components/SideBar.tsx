@@ -7,7 +7,8 @@ import classNames from 'classnames'
 type Props = {
   contentTitle: string
   contentList: any[]
-  isFaq?: boolean
+  sticky?: boolean
+  noFirstParagraph?: boolean
   isThai?: boolean
 }
 
@@ -21,7 +22,7 @@ export default function SideBar(props: Props) {
 
   return (
     <aside
-      className={classNames(styles.container, props.isFaq && styles.sticky)}
+      className={classNames(styles.container, props.sticky && styles.sticky)}
     >
       <Text
         size={18}
@@ -30,7 +31,7 @@ export default function SideBar(props: Props) {
       >
         {props.contentTitle}
       </Text>
-      <Spacer height={props.isFaq ? 24 : 6} />
+      <Spacer height={props.noFirstParagraph ? 24 : 6} />
       <ul className={styles.content_list}>
         {props.contentList.map((child) => (
           <li key={child.title}>
@@ -39,6 +40,7 @@ export default function SideBar(props: Props) {
                 size={14}
                 weight={400}
                 family={props.isThai ? 'IBM Plex Sans Thai' : 'Assistant'}
+                underlineOnHover
               >
                 {child.title}
               </Text>
