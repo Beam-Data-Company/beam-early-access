@@ -35,7 +35,9 @@ export default function Faq({
       }
       contentTitle={data.title}
       contentList={data.questions}
-      isFaq
+      showContactSupportCard
+      stickySideBar
+      noFirstParagraph
     >
       <Text size={isPhonePortrait ? 26 : 32} family="Lexend Deca">
         {data.title}

@@ -13,7 +13,9 @@ type Props = {
   children: React.ReactNode
   contentTitle: string
   contentList: any[]
-  isFaq?: boolean
+  showContactSupportCard?: boolean
+  stickySideBar?: boolean
+  noFirstParagraph?: boolean
   isThai?: boolean
 }
 
@@ -31,14 +33,15 @@ export default function Layout(props: Props) {
             <SideBar
               contentTitle={props.contentTitle}
               contentList={props.contentList}
-              isFaq={props.isFaq}
+              sticky={props.stickySideBar}
+              noFirstParagraph={props.noFirstParagraph}
               isThai={props.isThai}
             />
           )}
           <div className={styles.content_wrapper}>{props.children}</div>
         </div>
         {!isPhonePortrait && <Spacer height={120} />}
-        {props.isFaq && (
+        {props.showContactSupportCard && (
           <>
             <ContactSupportCard />
             <Spacer height={50} />

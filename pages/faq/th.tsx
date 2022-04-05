@@ -35,7 +35,9 @@ export default function FaqThai({
       }
       contentTitle={data.title}
       contentList={data.questions}
-      isFaq
+      showContactSupportCard
+      stickySideBar
+      noFirstParagraph
       isThai
     >
       <Text
