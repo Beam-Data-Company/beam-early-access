@@ -1,6 +1,7 @@
 import styles from './ContactSupportCard.module.css'
 import Text from '../Text'
 import { useMediaQuery } from 'react-responsive'
+import Link from 'next/link'
 
 export default function ContactSupportCard() {
   const isLessThan1160 = useMediaQuery({ maxWidth: 1160 })
@@ -24,7 +25,11 @@ export default function ContactSupportCard() {
           possible
         </Text>
       </div>
-      <button className={styles.button}>Contact Support</button>
+      <Link href="mailto:info@beamcheckout.com" passHref>
+        <a>
+          <button className={styles.button}>Contact Support</button>
+        </a>
+      </Link>
     </div>
   )
 }
