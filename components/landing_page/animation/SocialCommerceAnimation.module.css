@@ -1,0 +1,73 @@
+.container {
+  position: absolute;
+  width: 523px;
+  height: 386px;
+  left: 20px;
+}
+
+.animation5_1 {
+  position: absolute;
+  width: 523px;
+}
+
+.animation5_2 {
+  position: absolute;
+  width: 53px;
+  top: 19px;
+  left: 127px;
+}
+
+.animation5_3 {
+  position: absolute;
+  width: 53px;
+  top: -24px;
+  left: 195px;
+}
+
+.animation5_4 {
+  position: absolute;
+  width: 53px;
+  top: -24px;
+  left: 276px;
+}
+
+.animation5_5 {
+  position: absolute;
+  width: 53px;
+  top: 19px;
+  left: 344px;
+}
+
+.animation5_6 {
+  position: absolute;
+  width: 324px;
+  top: 224px;
+  left: 252px;
+}
+
+/* ipad portrait and phone*/
+@media (max-width: 1040px) {
+  .container {
+    top: 60px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    top: 90px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    top: 50px;
+    left: 0px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    top: 40px;
+  }
+}
