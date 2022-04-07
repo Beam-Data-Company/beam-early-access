@@ -1,11 +1,12 @@
-import React from 'react'
+import styles from './Text.module.css'
 
 type Props = {
   size?: number
   color?: string
-  family?: 'Lexend Deca' | 'Assistant' | 'Prompt'
+  family?: 'Lexend Deca' | 'Assistant' | 'Prompt' | 'IBM Plex Sans Thai'
   weight?: number
   lineHeight?: number
+  underlineOnHover?: boolean
   children: React.ReactNode
 }
 
@@ -19,6 +20,7 @@ export default function Text(props: Props) {
         fontWeight: props.weight,
         lineHeight: props.lineHeight && `${props.lineHeight}px`,
       }}
+      className={props.underlineOnHover ? styles.text : ''}
     >
       {props.children}
     </span>
