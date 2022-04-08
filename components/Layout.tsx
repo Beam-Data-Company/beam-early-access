@@ -6,6 +6,7 @@ import styles from './Layout.module.css'
 import Footer from './Footer'
 import SideBar from './SideBar'
 import ContactSupportCard from './faq_page/ContactSupportCard'
+import { useState, useEffect } from 'react'
 
 type Props = {
   pageTitle: string
@@ -22,6 +23,11 @@ type Props = {
 export default function Layout(props: Props) {
   const isLessThan600 = useMediaQuery({ maxWidth: 600 })
   const isPhonePortrait = useMediaQuery({ maxWidth: 450 })
+
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <div className={styles.main_container}>
@@ -41,8 +47,9 @@ export default function Layout(props: Props) {
           <div className={styles.content_wrapper}>{props.children}</div>
         </div>
         {!isPhonePortrait && <Spacer height={120} />}
-        {props.showContactSupportCard && (
+        {mounted && props.showContactSupportCard && (
           <>
+            <Spacer height={15} />
             <ContactSupportCard />
             <Spacer height={50} />
           </>
