@@ -35,7 +35,7 @@
   .container {
     flex-direction: column;
     padding: 35px 45px;
-    height: unset;
+    height: initial;
   }
 
   .info {
