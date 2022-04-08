@@ -1,13 +1,11 @@
 .container {
-  height: 216px;
   border-radius: 30px;
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.16);
   background-image: linear-gradient(119deg, #2c46b5 45%, #001e9f 87%);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 55px;
-  padding-right: 125px;
+  padding: 60px 125px 60px 55px;
 }
 
 .info {
@@ -35,12 +33,11 @@
   .container {
     flex-direction: column;
     padding: 35px 45px;
-    height: unset;
   }
 
   .info {
     text-align: center;
-    width: unset;
+    width: initial;
   }
 
   .button {
@@ -54,7 +51,7 @@
   }
 
   .button {
-    min-width: unset;
+    min-width: 0;
     width: 100%;
   }
 }
