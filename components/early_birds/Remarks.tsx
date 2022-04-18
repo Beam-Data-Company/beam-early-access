@@ -2,11 +2,18 @@ import Text from '../Text'
 import Link from 'next/link'
 import styles from './Remarks.module.css'
 
-export default function Remarks() {
+type Props = {
+  is10kBoosterPage?: boolean
+}
+
+export default function Remarks(props: Props) {
   return (
     <div className={styles.remarks}>
       <Text size={12} color="#535353" weight={600}>
-        Remarks: By registering this campaign, you agree to Beam&apos;s{' '}
+        Remarks:{' '}
+        {props.is10kBoosterPage &&
+          'Credit will be expired in 60 days after merchants signed the MSA. '}
+        By registering this campaign, you agree to Beam&apos;s{' '}
         <Link href="https://www.beamcheckout.com/privacy" passHref>
           <a className={styles.remark_link}>Privacy Policy</a>
         </Link>{' '}
