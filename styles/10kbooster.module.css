@@ -1,0 +1,71 @@
+.background {
+  background-image: linear-gradient(
+    to bottom,
+    #000000 -6%,
+    #2c46b5 65%,
+    #08154d 102%
+  );
+}
+
+.ten_k_gift_card {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  width: 362px;
+}
+
+.message_list {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding: 0 50px;
+  align-self: flex-start;
+}
+
+.list_child {
+  margin-top: 25px;
+  display: flex;
+}
+
+.icon_container {
+  width: 12px;
+  min-width: 12px;
+  padding-top: 3px;
+  margin-right: 18px;
+}
+
+/* phone landscape, normal ipad portrait */
+@media (max-width: 815px) {
+  .message_list {
+    padding: 0;
+  }
+}
+
+@media (max-width: 750px) {
+  .ten_k_gift_card {
+    display: none;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 650px) {
+  .message_list {
+    margin-top: 30px;
+    padding-left: 10px;
+  }
+
+  .ten_k_gift_card {
+    display: block;
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 320px;
+  }
+}
+
+/* small phone portrait */
+@media (max-width: 350px) {
+  .message_list {
+    padding: 0 5px;
+  }
+}
