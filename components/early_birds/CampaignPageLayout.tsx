@@ -12,6 +12,8 @@ type Props = {
   banner: React.ReactNode
   form: React.ReactNode
   boxShadow?: boolean
+  is10kBoosterPage?: boolean
+  noBackgroundShapes?: boolean
 }
 
 export default function CampaignPageLayout(props: Props) {
@@ -23,9 +25,11 @@ export default function CampaignPageLayout(props: Props) {
   return (
     <div className={classNames(styles.wrapper, props.className)}>
       <Header />
-      <div className={styles.shapes_container}>
-        <Image src={backgroundShapes} alt="Background Shapes" />
-      </div>
+      {!props.noBackgroundShapes && (
+        <div className={styles.shapes_container}>
+          <Image src={backgroundShapes} alt="Background Shapes" />
+        </div>
+      )}
       <div
         className={classNames(
           styles.main_container,
@@ -35,7 +39,7 @@ export default function CampaignPageLayout(props: Props) {
         {props.banner}
         {props.children}
         {props.form}
-        {mounted && <Remarks />}
+        {mounted && <Remarks is10kBoosterPage={props.is10kBoosterPage} />}
       </div>
     </div>
   )

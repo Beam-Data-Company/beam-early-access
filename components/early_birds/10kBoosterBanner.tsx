@@ -1,31 +1,30 @@
-import styles from './MobileBankingBanner.module.css'
+import styles from './10kBoosterBanner.module.css'
 import Image from 'next/image'
-import mobileBankingBannerPicture from '../../public/earlybird/mobile-banking-banner-picture.png'
+import TenKBoosterBannerPicture from '../../public/earlybird/10k-booster-banner-picture.png'
 import Text from '../Text'
 import Spacer from '../Spacer'
 import { useMediaQuery } from 'react-responsive'
 
-export default function MobileBankingBanner() {
+export default function TenKBoosterBanner() {
   const widthLessThan650 = useMediaQuery({ maxWidth: 650 })
 
   return (
     <div className={styles.container}>
-      <div className={styles.banner_picture}>
-        <Image src={mobileBankingBannerPicture} alt="Banner Picture" priority />
+      <div>
+        <Image src={TenKBoosterBannerPicture} alt="Banner Picture" priority />
       </div>
+      <div className={styles.gradient}></div>
       <div className={styles.text_container}>
         <Text
           family="Lexend Deca"
           color="#ffffff"
           size={widthLessThan650 ? 32 : 40}
         >
-          Free for Three!
+          10k BOOSTER
         </Text>
         <Spacer height={14} />
         <Text color="#ffffff" weight={400}>
-          {widthLessThan650
-            ? 'Today - 31 March 2022'
-            : 'Sign up today to receive free one-click mobile banking \n transactions for 3 months'}
+          Boost your sales conversion instantly <br /> with #Beam10kBooster !
         </Text>
       </div>
     </div>
