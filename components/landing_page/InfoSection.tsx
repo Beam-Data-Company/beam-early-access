@@ -33,7 +33,7 @@ const PaymentInfoArray = [
   {
     icon: triangleIcon,
     message:
-      'We connect to a range of payment methods, so that you don’t have to:\n \nCredit & Debit Cards - E-\u2060wallets - Mobile banking - Crypto - Buy now, pay later - and many more',
+      'We connect to a range of payment methods, so that you don’t have to:\n \nCredit & Debit Cards - E-\u2060wallets - Mobile Banking - Buy Now, Pay Later - Installments - and many more',
   },
   {
     icon: squareIcon,
