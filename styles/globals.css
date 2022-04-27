@@ -90,22 +90,91 @@ code {
   font-family: 'Assistant';
 }
 
-.faq-page-table th,
-td {
+.faq-table th,
+.faq-table td {
   border: 1px solid #dfe2e5;
   border-collapse: collapse;
   padding: 10px;
 }
 
-.faq-page-table table {
-  margin-bottom: 20px;
+.faq-table th {
+  background-color: #949dc4;
+  color: #ffffff;
+}
+
+.faq-table table {
   border-collapse: collapse;
 }
 
-.faq-page-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+.faq-table {
+  margin-bottom: 20px;
 }
 
-.faq-page-table th {
-  background-color: #f2f2f2;
+#faq-english-roles-table tr,
+#faq-thai-roles-table tr {
+  font-family: 'Lexend Deca';
+  font-size: 14px;
+}
+
+#faq-status-table tr {
+  font-weight: 600;
+}
+
+#faq-english-roles-table th,
+#faq-status-table th {
+  font-family: 'Lexend Deca';
+  font-weight: 400;
+}
+
+#faq-thai-roles-table th {
+  font-family: 'IBM Plex Sans Thai';
+  font-weight: 600;
+}
+
+#faq-status-table .status-box {
+  width: 100px;
+  height: 28px;
+  border-radius: 4px;
+  padding-top: 1px;
+  font-family: 'Assistant';
+}
+
+#faq-status-table #pending {
+  background-color: #ffefba;
+  color: #ff8d2b;
+}
+
+#faq-status-table #paid {
+  background-color: #c1ffe5;
+  color: #03a05d;
+}
+
+#faq-status-table #failed {
+  background-color: #ffe1d9;
+  color: #f65129;
+}
+
+#faq-status-table #voided {
+  background-color: #dbdbdb;
+  color: #6c6c6c;
+}
+
+#faq-status-table #refunded {
+  background-color: #e8e2ff;
+  color: #747fff;
+}
+
+#faq-status-table #disabled {
+  background-color: #efefef;
+  color: #9f9f9f;
+}
+
+#faq-status-table #expired {
+  background-color: #f5e7d6;
+  color: #b7604b;
+}
+
+#faq-english-roles-table,
+#faq-thai-roles-table {
+  overflow-x: auto;
 }
