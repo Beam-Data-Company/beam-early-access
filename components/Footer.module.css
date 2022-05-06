@@ -28,7 +28,8 @@
 
 .icon_wrapper_row {
   display: flex;
-  gap: 24px;
+  gap: 22px;
+  align-items: center;
 }
 
 .footer_info_wrapper {
@@ -74,7 +75,7 @@
 @media (max-width: 450px) {
   .top_section {
     padding: 28px 0;
-    row-gap: 40px;
+    row-gap: 30px;
     justify-content: space-between;
   }
 
