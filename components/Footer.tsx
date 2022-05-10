@@ -75,7 +75,7 @@ export default function Footer(props: Props) {
         <div className={styles.logo_download}>
           <ImageBox
             src={isBlackVariant ? beamLogo : beamLogoWhite}
-            width={isPhonePortrait ? 74 : 92}
+            width={92}
             alt="Beam Logo"
           />
           <Spacer height={isPhonePortrait ? 16 : 28} />
@@ -94,15 +94,25 @@ export default function Footer(props: Props) {
 
         <div className={styles.footer_info_wrapper}>
           <Text size={18} weight={600}>
-            Follow Us
+            Contact
+          </Text>
+          <Spacer height={14} />
+          <Text size={14} weight={600} lineHeight={28}>
+            02-253-9389
+            <br />
+            info@beamcheckout.com
           </Text>
           <Spacer height={22} />
+          <Text size={18} weight={600}>
+            Follow Us
+          </Text>
+          <Spacer height={18} />
           <div className={styles.icon_wrapper_row}>
             <Link href="https://www.facebook.com/beamcheckout" passHref>
               <a>
                 <ImageBox
                   src={isBlackVariant ? facebookIcon : facebookIconWhite}
-                  width={16}
+                  width={24}
                   alt="Facebook Icon"
                 />
               </a>
@@ -111,14 +121,11 @@ export default function Footer(props: Props) {
               <a>
                 <ImageBox
                   src={isBlackVariant ? instagramIcon : instagramIconWhite}
-                  width={16}
+                  width={24}
                   alt="Instagram Icon"
                 />
               </a>
             </Link>
-          </div>
-          <Spacer height={22} />
-          <div className={styles.icon_wrapper_row}>
             <Link
               href="https://www.linkedin.com/company/beamcheckout/?originalSubdomain=th"
               passHref
@@ -126,7 +133,7 @@ export default function Footer(props: Props) {
               <a>
                 <ImageBox
                   src={isBlackVariant ? linkedinIcon : linkedinIconWhite}
-                  width={16}
+                  width={24}
                   alt="Linkedin Icon"
                 />
               </a>
@@ -135,7 +142,7 @@ export default function Footer(props: Props) {
               <a>
                 <ImageBox
                   src={isBlackVariant ? twitterIcon : twitterIconWhite}
-                  width={18}
+                  width={27}
                   alt="Twitter Icon"
                 />
               </a>
