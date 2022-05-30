@@ -1,5 +1,223 @@
 .wrapper {
   background-image: linear-gradient(to left, #001365, #000b3c, #000a33);
+  height: 100%;
+}
+
+.contentWrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.phoneScreenPic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+.shape1,
+.shape2,
+.shape3,
+.shape4,
+.shape5 {
+  position: absolute;
+  bottom: 315px;
+  left: 50vw;
+}
+
+.shape1 {
+  transform: translate(-50%, 10%);
+}
+
+.shape2 {
+  transform: translate(52%, calc(-50px + 2vw));
+}
+
+.shape3 {
+  transform: translate(70%, calc(-150px + 4.3vw));
+}
+
+.shape4 {
+  transform: translate(322%, calc(-182px + 5vw));
+}
+
+.shape5 {
+  transform: translate(260%, calc(-250px + 8vw));
+}
+
+.main_container {
+  /* Make sure  this element will stack on top (order of DOM element) */
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 32px;
+  margin-top: 20vh;
+}
+
+.main {
+  max-width: 675px;
+  margin: auto;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.description {
+  display: inline-block;
+  color: #ffffff;
+  line-height: 1.8;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  font-weight: 400;
+  max-width: 480px;
+  text-align: left;
+}
+
+.svgWrapper {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.title_with_description_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ipad pro portrait */
+@media (max-width: 1040px) and (orientation: portrait) {
+  .description {
+    text-align: center;
+  }
+
+  .phoneScreenPic {
+    top: 50%;
+    left: 50%;
+  }
+
+  .title_with_description_container {
+    align-items: center;
+  }
+
+  .main {
+    margin: auto;
+    align-items: center;
+  }
+
+  .main_container {
+    margin-top: 120px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .shape1,
+  .shape2,
+  .shape3,
+  .shape4,
+  .shape5 {
+    display: none;
+  }
+}
+
+/* normal ipad portrait */
+@media (max-width: 800px) {
+  .main_container {
+    margin-top: 40px;
+  }
+
+  .phoneScreenPic {
+    top: 46%;
+    left: 50%;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 600px) {
+  .main_container {
+    margin-top: 80px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .phoneScreenPic {
+    display: none;
+  }
+}
+
+/* phone landscape */
+@media (max-width: 850px) and (orientation: landscape) {
+  .main_container {
+    margin-top: 15vh;
+  }
+
+  .title_with_description_container {
+    margin-right: 16px;
+  }
+
+  .contentWrapper {
+    overflow: scroll;
+  }
+
+  .main {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .phoneScreenPic {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) and (max-height: 960px) {
+  .phoneScreenPic {
+    display: none;
+  }
+}
+
+@media (max-height: 700px) and (orientation: landscape) {
+  .shape1,
+  .shape2,
+  .shape3,
+  .shape4,
+  .shape5 {
+    display: none;
+  }
+}
+
+/* small phone portrait */
+@media (max-width: 350px) {
+  .main_container {
+    margin-top: 45px;
+  }
+
+  .wrapper {
+    height: 650px;
+  }
+}
+
+/* .wrapper {
+  background-image: linear-gradient(to left, #001365, #000b3c, #000a33);
 }
 
 .form_demo_section {
@@ -46,7 +264,7 @@
 }
 
 .main_container {
-  /* Make sure  this element will stack on top (order of DOM element) */
+  Make sure  this element will stack on top (order of DOM element)
   position: relative;
   width: 100%;
   height: 100%;
@@ -116,7 +334,7 @@
   margin: auto;
 }
 
-/* ipad pro portrait */
+ipad pro portrait
 @media (max-width: 1040px) and (orientation: portrait) {
   .description {
     text-align: center;
@@ -159,7 +377,7 @@
   }
 }
 
-/* normal ipad portrait */
+normal ipad portrait
 @media (max-width: 800px) {
   .main_container {
     margin-top: 40px;
@@ -171,7 +389,7 @@
   }
 }
 
-/* phone portrait */
+phone portrait
 @media (max-width: 600px) and (orientation: portrait) {
   .form_demo_section {
     height: 1000px;
@@ -200,7 +418,7 @@
   }
 }
 
-/* phone landscape */
+phone landscape
 @media (max-width: 850px) and (orientation: landscape) {
   .main_container {
     margin-top: 15vh;
@@ -231,7 +449,7 @@
   }
 }
 
-/* small phone portrait */
+small phone portrait
 @media (max-width: 350px) {
   .main_container {
     margin-top: 45px;
@@ -244,4 +462,4 @@
   .get_started_button {
     width: 250px;
   }
-}
+} */
