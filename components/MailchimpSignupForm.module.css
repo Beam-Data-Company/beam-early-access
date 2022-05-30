@@ -1,0 +1,85 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.input_field {
+  padding: 12px 0 12px 15px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 5px;
+}
+
+.error_input_field {
+  border-color: #f65129;
+}
+
+.input_field:disabled {
+  background-color: gray;
+  border-color: gray;
+}
+
+.input_field_wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.submit_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 20px 2px #141e4b;
+  color: #ffffff;
+  padding: 12px 0;
+  margin-bottom: 20px;
+}
+
+.submit_button:hover {
+  border: solid 2px #4166ff;
+  background-color: #4166ff;
+}
+
+.error_container {
+  color: white;
+  background-color: rgb(237, 36, 29);
+  font-size: 0.8rem;
+  border-radius: 6px;
+  padding: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ipad pro and ipad portrait */
+@media (max-width: 1040px) and (orientation: portrait) {
+  .form_container {
+    width: 480px;
+    justify-content: center;
+  }
+}
+
+/* phone portrait */
+@media (max-width: 450px) {
+  .form_container {
+    width: 100%;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 600px) and (orientation: landscape) {
+  .form_container {
+    min-width: 230px;
+  }
+
+  .input_field_wrapper {
+    margin-bottom: 7px;
+  }
+
+  .submit_button {
+    margin-bottom: 12px;
+  }
+}
