@@ -98,15 +98,18 @@ export default function Footer(props: Props) {
           </Text>
           <Spacer height={14} />
           <Text size={14} weight={600} lineHeight={28}>
-            02-253-9389
-            <br />
+            {/* 02-253-9389
+            <br /> */}
             info@beamcheckout.com
           </Text>
-          <Spacer height={22} />
+          {/* <Spacer height={22} />
           <Text size={18} weight={600}>
             Follow Us
           </Text>
-          <Spacer height={18} />
+          <Spacer height={18} /> */}
+          <Spacer height={60} />
+
+          {/* this div is set to display: none */}
           <div className={styles.icon_wrapper_row}>
             <Link href="https://www.facebook.com/beamcheckout" passHref>
               <a>
